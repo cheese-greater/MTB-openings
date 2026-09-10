@@ -132,6 +132,7 @@ export default [
 			'*.config.*',
 			'src/i18n/*.ts',
 			'server.mjs',
+			'lib/**',
 			'scripts/**'
 		]
 	},

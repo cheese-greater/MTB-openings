@@ -1,56 +1,62 @@
 name: Probe scrape sources
 
-# Diagnostic only: it builds nothing and deploys nothing. It runs the scraper
-# from a GitHub runner to find out whether the trail sources serve GitHub's IP
-# ranges the same way they serve a home connection, which is the open question
-# for scraping on a schedule and publishing a static trails.json.
+# Diagnostic only: it builds nothing and publishes nothing. Run it when a card
+# goes grey, to find out which source stopped answering; the page itself cannot
+# tell you, since a blocked source looks the same as a quiet trail. The report
+# lands in the run's summary.
 #
-# The report is committed back to this branch so it can be read without digging
-# through logs. Pushing that report must not start another run, hence
-# paths-ignore plus the [skip ci] commit subject.
+# It also answers the question it was written for: whether these sites serve
+# GitHub's IP ranges the same way they serve a home connection. Pushing a
+# probe/* branch runs it and commits the report to that branch, which is how you
+# compare a CI report against `yarn probe` at home.
 
 on:
-  push:
-    branches: [ci/source-probe]
-    paths-ignore: [probe-report.md]
-  workflow_dispatch:
+    push:
+        branches: ['probe/**']
+    workflow_dispatch:
 
 permissions:
-  contents: write
+    contents: write
 
 jobs:
-  probe:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v7
+    probe:
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        steps:
+            - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 24
+            - uses: actions/setup-node@v7
+              with:
+                  node-version: 24
 
-      - name: Install dependencies
-        run: |
-          corepack enable
-          yarn install --immutable
+            - name: Install dependencies
+              run: |
+                  corepack enable
+                  yarn install --immutable
 
-      - name: Probe the sources
-        id: probe
-        continue-on-error: true
-        run: node scripts/probe-sources.mjs
+            - name: Probe the sources
+              id: probe
+              continue-on-error: true
+              run: yarn probe
 
-      - name: Publish the report
-        if: always()
-        run: |
-          cat probe-report.md >> "$GITHUB_STEP_SUMMARY"
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add probe-report.md
-          git diff --cached --quiet || git commit -m 'Source probe report from CI [skip ci]'
-          git push
+            - name: Publish the report
+              if: always()
+              run: cat probe-report.md >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Fail if a source was blocked
-        if: steps.probe.outcome != 'success'
-        run: |
-          echo 'A source did not serve the markup the scraper needs. See the report above.'
-          exit 1
+            # Only on a probe branch, and force-added because the report is ignored by
+            # default: it is a local scratch file everywhere except here, where
+            # committing it is the one way to read a CI report without a token.
+            - name: Commit the report to the probe branch
+              if: always() && startsWith(github.ref, 'refs/heads/probe/')
+              run: |
+                  git config user.name 'github-actions[bot]'
+                  git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+                  git add -f probe-report.md
+                  git diff --cached --quiet || git commit -m 'Source probe report from CI [skip ci]'
+                  git push
+
+            - name: Fail if a source was blocked
+              if: steps.probe.outcome != 'success'
+              run: |
+                  echo 'A source did not serve the markup the scraper needs. See the summary above.'
+                  exit 1
