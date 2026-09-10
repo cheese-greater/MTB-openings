@@ -21,7 +21,9 @@ Nothing to install, on a phone or anywhere else. The site is static, hosted free
 
 The trail sources send no CORS headers, so a browser can't scrape them, and GitHub Pages has no server to scrape them for it. It doesn't need one: conditions are the same for every visitor, so the scrape happens ahead of time instead of per request.
 
-[.github/workflows/pages.yml](.github/workflows/pages.yml) runs hourly, scrapes every source with the same code the local server uses, writes [public/trails.json](public/trails.json), builds the site, and publishes it. The page then just reads that file. When conditions have actually changed, the workflow also commits it, which gives a history of trail conditions over time and keeps the schedule alive (GitHub disables cron workflows after 60 days of repo inactivity).
+[.github/workflows/pages.yml](.github/workflows/pages.yml) runs hourly, scrapes every source with the same code the local server uses, writes [public/trails.json](public/trails.json), builds the site, and publishes it. The page then just reads that file. When conditions have actually changed, the workflow also commits it, which gives a history of trail conditions over time.
+
+None of that depends on anyone visiting: the scrape runs on GitHub's machines whether the site gets a single hit or none. The one thing that can stop it is GitHub disabling scheduled workflows after 60 days of repository inactivity. The hourly data commits may count as activity, but pushes made by a workflow's own token are widely reported not to, so don't count on it. If the schedule does stop, GitHub emails the repo owner and it takes one click in the Actions tab to start it again.
 
 If every source fails, the workflow keeps the last published file rather than putting up a page of empty cards, and the run goes red so it gets noticed.
 
