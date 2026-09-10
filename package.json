@@ -41,6 +41,7 @@
 		"gen-qr": "node scripts/gen-qr.mjs",
 		"lint": "eslint .",
 		"preview": "vite preview",
+		"probe": "node scripts/probe-sources.mjs",
 		"start": "node server.mjs",
 		"update": "node scripts/update.mjs"
 	},

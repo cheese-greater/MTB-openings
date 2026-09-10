@@ -1,0 +1,56 @@
+name: Probe scrape sources
+
+# Diagnostic only: it builds nothing and deploys nothing. It runs the scraper
+# from a GitHub runner to find out whether the trail sources serve GitHub's IP
+# ranges the same way they serve a home connection, which is the open question
+# for scraping on a schedule and publishing a static trails.json.
+#
+# The report is committed back to this branch so it can be read without digging
+# through logs. Pushing that report must not start another run, hence
+# paths-ignore plus the [skip ci] commit subject.
+
+on:
+  push:
+    branches: [ci/source-probe]
+    paths-ignore: [probe-report.md]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: |
+          corepack enable
+          yarn install --immutable
+
+      - name: Probe the sources
+        id: probe
+        continue-on-error: true
+        run: node scripts/probe-sources.mjs
+
+      - name: Publish the report
+        if: always()
+        run: |
+          cat probe-report.md >> "$GITHUB_STEP_SUMMARY"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add probe-report.md
+          git diff --cached --quiet || git commit -m 'Source probe report from CI [skip ci]'
+          git push
+
+      - name: Fail if a source was blocked
+        if: steps.probe.outcome != 'success'
+        run: |
+          echo 'A source did not serve the markup the scraper needs. See the report above.'
+          exit 1
