@@ -66,7 +66,7 @@ function compareTrails(a: Trail, b: Trail, sort: SortKey): number {
 	}
 }
 
-const SHARE_URL = 'https://github.com/Joe-Eager/MTB-openings';
+const SHARE_URL = 'https://joe-eager.github.io/MTB-openings/';
 
 function App() {
 	const [error, setError] = useState(false);
@@ -119,7 +119,10 @@ function App() {
 	}, [trails, favorites, favoritesFirst, sort]);
 
 	useEffect(() => {
-		fetch('/api/trails')
+		// Relative to BASE_URL so it works both at the site root and under the
+		// /MTB-openings/ path Pages serves from. On Pages this is the file the
+		// hourly workflow published; run by server.mjs it is scraped on the spot.
+		fetch(`${import.meta.env.BASE_URL}trails.json`)
 			.then((res) => {
 				if (!res.ok) throw new Error();
 				return res.json() as Promise<{ cachedAt: number; trails: Trail[] }>;
@@ -261,7 +264,7 @@ function App() {
 				{loading && <p className='status-msg'>Loading trail conditions...</p>}
 				{error && (
 					<p className='status-msg status-msg--error'>
-						Could not load trail conditions. Check the server is running.
+						Could not load trail conditions. Try again in a moment.
 					</p>
 				)}
 				{!loading &&
@@ -277,9 +280,7 @@ function App() {
 			</main>
 			<footer className='site-footer'>
 				<p>v{__APP_VERSION__}</p>
-				{cachedAt != null && (
-					<p>Last hourly cache: {cachedAgo}</p>
-				)}
+				{cachedAt != null && <p>Last hourly cache: {cachedAgo}</p>}
 			</footer>
 			{shareOpen && (
 				<div
@@ -300,7 +301,11 @@ function App() {
 						</button>
 						<h2 className='qr-modal__title'>Share this site</h2>
 						<p className='qr-modal__subtitle'>Scan the code or copy the link</p>
-						<img alt={`QR code linking to ${SHARE_URL}`} className='qr-modal__qr' src='/site-qr.svg' />
+						<img
+							alt={`QR code linking to ${SHARE_URL}`}
+							className='qr-modal__qr'
+							src={`${import.meta.env.BASE_URL}site-qr.svg`}
+						/>
 						<div className='qr-modal__link'>
 							<span className='qr-modal__url'>{SHARE_URL}</span>
 							<button

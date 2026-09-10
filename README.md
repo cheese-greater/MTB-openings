@@ -2,19 +2,32 @@
 
 Live trail status page for mountain bike trails around Cleveland, Ohio. Shows open/closed/caution status sourced from Cleveland Metroparks, Bluesky, CAMBA, and TrailForks, with static links for trails that don't publish live data.
 
+## **[Open it](https://joe-eager.github.io/MTB-openings/)**
+
+Nothing to install, on a phone or anywhere else. The site is static, hosted free on GitHub Pages, and a scheduled GitHub Action rescrapes the conditions every hour and republishes it.
+
 ## What it does
 
 - Scrapes live status from [Cleveland Metroparks](https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status)
 - Pulls latest post from Bluesky accounts that post trail conditions (e.g. Summit Metro Parks)
-- Scrapes CVNP East Rim conditions from CAMBA Trailmate
-- Pulls community-reported conditions for every CAMBA-tracked trail from the [CAMBA Trailmate home page](https://dualrates.com/a/r/szz/camba/home) in one fetch, used as a fallback to refresh a trail when its primary source is missing/stale or older than the CAMBA post, and to surface trails that have no other live source
+- Pulls community-reported conditions for every CAMBA-tracked trail from the [CAMBA Trailmate home page](https://dualrates.com/a/r/szz/camba/home) in one fetch, used as a fallback to refresh a trail when its primary source is missing/stale or older than the CAMBA post, and to surface trails that have no other live source (CVNP East Rim included)
 - Pulls community-reported conditions from TrailForks regions
 - Shows static link cards for trails without live data sources
 - Marks status stale after a week with no update
 - Caches all data for 1 hour
 - Light/dark theme toggle
 
-## Run it yourself and view it from your phone (beginner guide)
+## How the hosting works
+
+The trail sources send no CORS headers, so a browser can't scrape them, and GitHub Pages has no server to scrape them for it. It doesn't need one: conditions are the same for every visitor, so the scrape happens ahead of time instead of per request.
+
+[.github/workflows/pages.yml](.github/workflows/pages.yml) runs hourly, scrapes every source with the same code the local server uses, writes [public/trails.json](public/trails.json), builds the site, and publishes it. The page then just reads that file. When conditions have actually changed, the workflow also commits it, which gives a history of trail conditions over time and keeps the schedule alive (GitHub disables cron workflows after 60 days of repo inactivity).
+
+If every source fails, the workflow keeps the last published file rather than putting up a page of empty cards, and the run goes red so it gets noticed.
+
+## Run your own copy (optional)
+
+**You don't need this to use the site**, which is the link at the top. This is for running it on your own machine: as a backup if this repo ever goes away, to point it at different trails, or just to have it on your own network.
 
 Never used a "console" or "terminal"? No problem. Follow these steps exactly. You'll run the page on one computer that stays on (call it the **host**: a desktop, an old laptop, whatever), and then view it from your phone using a free app called **Tailscale**.
 
@@ -129,6 +142,17 @@ yarn dev
 
 This starts both the Express scraper server (port 3000) and the Vite dev server (port 5173) together. Open `http://localhost:5173`.
 
+The frontend always reads `trails.json`. In dev and on a self-hosted copy, `server.mjs` answers that path with a live scrape; on Pages, it's the file the workflow published. Same shape either way, so nothing in the app has to know which one it got.
+
+Other commands:
+
+```bash
+yarn build:data   # scrape once and write public/trails.json (what the workflow runs)
+yarn probe        # check every source and report which ones are answering
+```
+
+`yarn probe` is the thing to run when a card goes grey: the page can't tell you whether a source is blocked or the trail is just quiet, and the probe can. It checks each source for the markup the scraper needs, since a bot block usually arrives as a normal-looking HTTP 200.
+
 ### Deploying to a server
 
 Build and serve with the included Express server:
@@ -138,7 +162,7 @@ yarn build
 node server.mjs
 ```
 
-The server serves the built frontend and the `/api/trails` endpoint on port 3000. Set the `PORT` environment variable to change it.
+The server serves the built frontend and the trail data (`/trails.json`, also at the older `/api/trails`) on port 3000. Set the `PORT` environment variable to change it.
 
 For a persistent deployment (e.g. a Raspberry Pi), use the included systemd service approach:
 
@@ -148,14 +172,14 @@ For a persistent deployment (e.g. a Raspberry Pi), use the included systemd serv
 
 ### Adding trails
 
-All sources live in `server.mjs`:
+All sources live in [lib/trails.mjs](lib/trails.mjs), which both the local server and the hourly workflow call:
 
 - **Cleveland Metroparks trails**: add an entry to `TRAIL_META`, keyed by the trail name exactly as it appears on the Metroparks status page
 - **Bluesky accounts**: add an entry to `BSKY_ACCOUNTS`
 - **TrailForks regions** (community-reported conditions): add an entry to `TRAILFORKS_REGIONS`
-- **CVNP East Rim**: configured via the `CVNP_EAST_RIM` entry
+- **CVNP East Rim**: the card is the `CVNP_EAST_RIM` entry; its status comes from CAMBA like the other CAMBA trails
 - **CAMBA Trailmate**: the home page lists every CAMBA-tracked trail. To let it refresh a trail you already track, map the trail's CAMBA `p6_id` (from its `trail?p6_id=...` URL) to your app trail id in `CAMBA_TRAIL_IDS`. To surface a CAMBA-only trail as its own card, add an entry (name, location, links) to `CAMBA_NEW_TRAILS` keyed by `p6_id`
-- **Ray's Indoor**: runs on a fixed published schedule rather than live conditions; edit `RAYS_SCHEDULE` in `server.mjs` when a new season is posted
+- **Ray's Indoor**: runs on a fixed published schedule rather than live conditions; edit `RAYS_SCHEDULE` when a new season is posted
 
 Every trail in those registries automatically gets a greyed-out "no live data" fallback card when its source is unreachable, so a failed fetch never drops a trail from the page.
 

@@ -1,0 +1,87 @@
+name: Publish to Pages
+
+# Pages has no Node runtime, and the trail sources send no CORS headers, so the
+# browser cannot scrape them either. Nothing here needs to happen per visitor
+# though: conditions are the same for everyone and the app already caches them
+# for an hour. So the scrape runs here on a schedule, the result is baked into
+# the published site as trails.json, and the site itself is static.
+#
+# The hourly commit of that file (only when conditions actually change) doubles
+# as repo activity, which keeps GitHub from disabling this schedule after 60
+# idle days.
+
+on:
+    push:
+        branches: [master]
+        # The data commit below would otherwise trigger another run.
+        paths-ignore: [public/trails.json]
+    schedule:
+        # :17 rather than :00, where every cron on GitHub queues at once.
+        - cron: '17 * * * *'
+    workflow_dispatch:
+
+permissions:
+    contents: write
+    id-token: write
+    pages: write
+
+# Queue runs instead of cancelling: a cancelled run could drop a data commit
+# halfway, and two runs pushing at once would collide.
+concurrency:
+    group: pages
+    cancel-in-progress: false
+
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
+        environment:
+            name: github-pages
+            url: ${{ steps.deploy.outputs.page_url }}
+        steps:
+            - uses: actions/checkout@v7
+              with:
+                  # vite.config.ts builds the version number from the commit count, and
+                  # the default shallow clone would make every build report the same one.
+                  fetch-depth: 0
+
+            - uses: actions/setup-node@v7
+              with:
+                  node-version: 24
+
+            - name: Install dependencies
+              run: |
+                  corepack enable
+                  yarn install --immutable
+
+            - name: Scrape the trail data
+              id: data
+              run: yarn build:data
+
+            - name: Commit the data when conditions changed
+              if: steps.data.outputs.changed == 'true' && github.ref_name == github.event.repository.default_branch
+              run: |
+                  git config user.name 'github-actions[bot]'
+                  git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+                  git add public/trails.json
+                  git commit -m 'Update trail conditions [skip ci]'
+                  git push
+
+            - name: Build the site
+              env:
+                  # Switches the asset base to /<repo>/, which is where Pages serves from.
+                  GITHUB_PAGES: 'true'
+              run: yarn build
+
+            - uses: actions/configure-pages@v6
+              with:
+                  # Turns Pages on the first time this runs, so the repo needs no visit
+                  # to Settings.
+                  enablement: true
+
+            - uses: actions/upload-pages-artifact@v5
+              with:
+                  path: dist
+
+            - id: deploy
+              uses: actions/deploy-pages@v5

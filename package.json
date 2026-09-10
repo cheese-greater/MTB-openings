@@ -35,6 +35,7 @@
 	"private": true,
 	"scripts": {
 		"build": "tsc -b && vite build",
+		"build:data": "node scripts/build-data.mjs",
 		"deploy": "yarn build && rsync -av --exclude=node_modules --exclude=src --exclude=.git --exclude=.yarn . jelly@192.168.1.117:~/mtb-trails/ && ssh jelly@192.168.1.117 'cd ~/mtb-trails && yarn install && sudo systemctl restart mtb-trails'",
 		"deploy:local": "yarn build && node server.mjs",
 		"dev": "concurrently \"node server.mjs\" \"vite\"",
