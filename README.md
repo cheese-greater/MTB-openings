@@ -2,7 +2,7 @@
 
 Live trail status page for mountain bike trails around Cleveland, Ohio. Shows open/closed/caution status sourced from Cleveland Metroparks, Bluesky, CAMBA, and TrailForks, with static links for trails that don't publish live data.
 
-## **[Open it](https://joe-eager.github.io/MTB-openings/)**
+## **[Open it](https://cheese-greater.github.io/MTB-openings/)**
 
 Nothing to install, on a phone or anywhere else. The site is static, hosted free on GitHub Pages, and a scheduled GitHub Action rescrapes the conditions every hour and republishes it.
 
@@ -64,7 +64,7 @@ Never used a "console" or "terminal"? No problem. Follow these steps exactly. Yo
     - Install it from [git-scm.com/downloads](https://git-scm.com/downloads) and click through the defaults. (On a Mac you can instead just type `git --version` in the terminal and accept the popup that offers to install it.)
     - Then copy this line into your terminal and press Enter:
         ```bash
-        git clone https://github.com/Joe-Eager/MTB-openings.git
+        git clone https://github.com/cheese-greater/MTB-openings.git
         ```
         This creates a folder named `MTB-openings` inside whatever folder your terminal is currently in (your home folder, by default).
 

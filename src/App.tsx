@@ -66,7 +66,7 @@ function compareTrails(a: Trail, b: Trail, sort: SortKey): number {
 	}
 }
 
-const SHARE_URL = 'https://joe-eager.github.io/MTB-openings/';
+const SHARE_URL = 'https://cheese-greater.github.io/MTB-openings/';
 
 function App() {
 	const [error, setError] = useState(false);

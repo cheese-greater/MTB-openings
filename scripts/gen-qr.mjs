@@ -13,7 +13,7 @@ import QRCode from 'qrcode';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
 
-const URL = 'https://joe-eager.github.io/MTB-openings/';
+const URL = 'https://cheese-greater.github.io/MTB-openings/';
 const OUT = resolve(root, 'public/site-qr.svg');
 const LOGO = resolve(root, 'public/favicon.png');
 
