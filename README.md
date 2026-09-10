@@ -25,6 +25,8 @@ The trail sources send no CORS headers, so a browser can't scrape them, and GitH
 
 If every source fails, the workflow keeps the last published file rather than putting up a page of empty cards, and the run goes red so it gets noticed.
 
+Forking it? The workflow publishes under your own repo name with no edits, but Pages has to be switched on once by hand: **Settings > Pages > Build and deployment > Source: GitHub Actions**. A workflow token isn't allowed to do that itself.
+
 ## Run your own copy (optional)
 
 **You don't need this to use the site**, which is the link at the top. This is for running it on your own machine: as a backup if this repo ever goes away, to point it at different trails, or just to have it on your own network.
