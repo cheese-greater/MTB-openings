@@ -1,455 +1,489 @@
 {
-	"cachedAt": 1789842276788,
+	"cachedAt": 1789845347937,
 	"sources": {
 		"bsky": 1,
 		"cambaHome": 21,
 		"metroparks": 7,
-		"trailforks": 1
+		"trailforks": 1,
+		"weather": 20
 	},
 	"trails": [
 		{
 			"condition": "No issues reported",
 			"id": "bedford-olander",
-			"links": [
-				{
-					"name": "Cleveland Metroparks",
-					"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
-				},
-				{
-					"name": "TrailForks",
-					"url": "https://www.trailforks.com/region/bedford-reservation/"
-				}
-			],
 			"location": "9C5P+GH Walton Hills, Ohio",
 			"name": "Bedford - Olander Lot",
+			"source": {
+				"name": "Cleveland Metroparks",
+				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
+			},
 			"status": "open",
-			"timestamp": 1789741476631,
-			"updatedAt": "28 hours ago",
-			"stale": false
+			"timestamp": 1789740960000,
+			"updatedAt": "Sep 18, 10:16 AM",
+			"stale": false,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 66,
+				"forecastUrl": "https://www.accuweather.com/en/us/walton-hills/44146/weather-forecast/2190767"
+			}
 		},
 		{
 			"condition": "No issues reported",
 			"id": "bedford-farley",
-			"links": [
-				{
-					"name": "Cleveland Metroparks",
-					"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
-				},
-				{
-					"name": "TrailForks",
-					"url": "https://www.trailforks.com/region/bedford-reservation/"
-				}
-			],
 			"location": "9CFM+2R Walton Hills, Ohio",
 			"name": "Bedford - Farley Lot",
+			"source": {
+				"name": "Cleveland Metroparks",
+				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
+			},
 			"status": "open",
-			"timestamp": 1789741476631,
-			"updatedAt": "28 hours ago",
-			"stale": false
+			"timestamp": 1789740960000,
+			"updatedAt": "Sep 18, 10:16 AM",
+			"stale": false,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 66,
+				"forecastUrl": "https://www.accuweather.com/en/us/walton-hills/44146/weather-forecast/2190767"
+			}
+		},
+		{
+			"condition": "Wet with some puddles. It’s raining now with more rain in the forecast.\r\n\r\nStay safe",
+			"id": "oec-flow",
+			"location": "C8JQ+92 Cuyahoga Heights, Ohio",
+			"name": "Ohio & Erie Canal - Flow Trail",
+			"source": {
+				"name": "Cleveland Metroparks",
+				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
+			},
+			"status": "closed",
+			"timestamp": 1789822140000,
+			"updatedAt": "Sep 19, 08:49 AM",
+			"stale": false,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 67,
+				"forecastUrl": "https://www.accuweather.com/en/us/cuyahoga-heights/44125/weather-forecast/2115659"
+			}
 		},
 		{
 			"condition": "Happy Friday! Go ride.",
 			"id": "oec-primitive",
-			"links": [
-				{
-					"name": "Cleveland Metroparks",
-					"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
-				},
-				{
-					"name": "TrailForks",
-					"url": "https://www.trailforks.com/region/ohio--erie-canal-reservation/"
-				}
-			],
-			"location": "C8JQ+92 Cleveland, Ohio",
+			"location": "C8JQ+92 Cuyahoga Heights, Ohio",
 			"name": "Ohio & Erie Canal - Primitive Loop & Canal Trail",
+			"source": {
+				"name": "Cleveland Metroparks",
+				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
+			},
 			"status": "open",
-			"timestamp": 1789737876632,
-			"updatedAt": "29 hours ago",
-			"stale": false
+			"timestamp": 1789737540000,
+			"updatedAt": "Sep 18, 09:19 AM",
+			"stale": false,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 67,
+				"forecastUrl": "https://www.accuweather.com/en/us/cuyahoga-heights/44125/weather-forecast/2115659"
+			}
 		},
 		{
 			"condition": "Happy Friday!",
 			"id": "oec-pump",
-			"links": [
-				{
-					"name": "Cleveland Metroparks",
-					"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
-				},
-				{
-					"name": "TrailForks",
-					"url": "https://www.trailforks.com/region/ohio--erie-canal-reservation/"
-				}
-			],
-			"location": "C8JQ+92 Cleveland, Ohio",
+			"location": "C8JQ+92 Cuyahoga Heights, Ohio",
 			"name": "Ohio & Erie Canal - Pump Track",
+			"source": {
+				"name": "Cleveland Metroparks",
+				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
+			},
 			"status": "open",
-			"timestamp": 1789737876631,
-			"updatedAt": "29 hours ago",
-			"stale": false
+			"timestamp": 1789737600000,
+			"updatedAt": "Sep 18, 09:20 AM",
+			"stale": false,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 67,
+				"forecastUrl": "https://www.accuweather.com/en/us/cuyahoga-heights/44125/weather-forecast/2115659"
+			}
 		},
 		{
 			"condition": "No issues reported",
 			"id": "royalview-red",
-			"links": [
-				{
-					"name": "Cleveland Metroparks",
-					"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
-				},
-				{
-					"name": "TrailForks",
-					"url": "https://www.trailforks.com/trails/royalview-red-trail/"
-				}
-			],
 			"location": "8664+8H Strongsville, Ohio",
 			"name": "Royalview - Red Loop",
+			"source": {
+				"name": "Cleveland Metroparks",
+				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
+			},
 			"status": "open",
-			"timestamp": 1789669476632,
-			"updatedAt": "2 days ago",
-			"stale": false
+			"timestamp": 1789659300000,
+			"updatedAt": "Sep 17, 11:35 AM",
+			"stale": false,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 66,
+				"forecastUrl": "https://www.accuweather.com/en/us/strongsville/44149/weather-forecast/2086719"
+			}
 		},
 		{
 			"condition": "No issues reported",
 			"id": "royalview-yellow",
-			"links": [
-				{
-					"name": "Cleveland Metroparks",
-					"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
-				},
-				{
-					"name": "TrailForks",
-					"url": "https://www.trailforks.com/trails/royalview-yellow/"
-				}
-			],
 			"location": "852W+87 Strongsville, Ohio",
 			"name": "Royalview - Yellow Loop",
+			"source": {
+				"name": "Cleveland Metroparks",
+				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
+			},
 			"status": "open",
-			"timestamp": 1789669476633,
-			"updatedAt": "2 days ago",
-			"stale": false
+			"timestamp": 1789659300000,
+			"updatedAt": "Sep 17, 11:35 AM",
+			"stale": false,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 66,
+				"forecastUrl": "https://www.accuweather.com/en/us/strongsville/44149/weather-forecast/2086719"
+			}
 		},
 		{
 			"condition": "West Creek is in good shape. Light rain is forecast, but please stay off the trails if the rain becomes heavy.",
 			"id": "west-creek",
-			"links": [
-				{
-					"name": "Cleveland Metroparks",
-					"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
-				},
-				{
-					"name": "TrailForks",
-					"url": "https://www.trailforks.com/region/hampton-hills-15249/"
-				}
-			],
 			"location": "98Q4+68 Parma, Ohio",
 			"name": "West Creek - Mountain Bike Trails",
+			"source": {
+				"name": "Cleveland Metroparks",
+				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
+			},
 			"status": "open",
-			"timestamp": 1789824276631,
-			"updatedAt": "5 hours ago",
-			"stale": false
+			"timestamp": 1789822680000,
+			"updatedAt": "Sep 19, 08:58 AM",
+			"stale": false,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 66,
+				"forecastUrl": "https://www.accuweather.com/en/us/parma/44129/weather-forecast/349939"
+			}
 		},
 		{
 			"condition": "9/18 the trails are open.",
 			"id": "hampton-hills",
-			"links": [
-				{
-					"name": "Bluesky - @smpmountainbike",
-					"url": "https://bsky.app/profile/smpmountainbike.bsky.social/post/3mvst3uknv22o"
-				},
-				{
-					"name": "TrailForks",
-					"url": "https://www.trailforks.com/region/hampton-hills-15249/"
-				}
-			],
 			"location": "5C2X+FP Akron, Ohio",
 			"name": "Hampton Hills",
+			"source": {
+				"name": "Bluesky - @smpmountainbike",
+				"url": "https://bsky.app/profile/smpmountainbike.bsky.social/post/3mvst3uknv22o"
+			},
 			"status": "open",
-			"timestamp": 1789759476631,
-			"updatedAt": "23 hours ago",
-			"stale": false
+			"timestamp": 1789756957764,
+			"updatedAt": "Sep 18, 2:42 PM",
+			"stale": false,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 67,
+				"forecastUrl": "https://www.accuweather.com/en/us/akron/44308/weather-forecast/330119"
+			}
 		},
 		{
 			"condition": "9/13: Several folks contributed to sessions to clean up the trail and get rid of the worst of the brush. It's open and rideable.",
 			"id": "austin-badger",
-			"links": [
-				{
-					"name": "TrailForks",
-					"url": "https://www.trailforks.com/region/austin-badger-park-17345/"
-				},
-				{
-					"name": "Facebook - Wick's Outlaw Trails",
-					"url": "https://www.facebook.com/WicksOutlawTrails/"
-				},
-				{
-					"name": "Instagram - @wicks_outlaw_trails",
-					"url": "https://www.instagram.com/wicks_outlaw_trails/"
-				}
-			],
 			"location": "459P+6R Medina, Ohio",
 			"name": "Austin Badger Park",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=105"
+			},
 			"status": "open",
-			"timestamp": 1789410276633,
-			"updatedAt": "5 days ago",
-			"stale": false
-		},
-		{
-			"condition": "If you ride it let us know how it is",
-			"id": "lake-milton",
-			"links": [
-				{
-					"name": "CAMBA Trailmate",
-					"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=112"
-				}
-			],
-			"location": "324M+H2 Berlin Center, Ohio",
-			"name": "Lake Milton",
-			"status": "open",
-			"timestamp": 1789730676632,
-			"updatedAt": "31 hours ago",
-			"stale": false
-		},
-		{
-			"condition": "See CAMBA Trailmate for current conditions.",
-			"id": "quail-hollow",
-			"links": [
-				{
-					"name": "CAMBA Trailmate",
-					"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=116"
-				}
-			],
-			"location": "XMGQ+PR Hartville, Ohio",
-			"name": "Quail Hollow",
-			"status": "open",
-			"timestamp": 1789730676632,
-			"updatedAt": "31 hours ago",
-			"stale": false
-		},
-		{
-			"condition": "Trail surfaces should be ok but trails haven't been fully inspected for downed branches from recent thunderstorms.",
-			"id": "camp-tuscazoar",
-			"links": [
-				{
-					"name": "CAMBA Trailmate",
-					"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=109"
-				}
-			],
-			"location": "GJW2+G2 Dover, Ohio",
-			"name": "Camp Tuscazoar",
-			"status": "open",
-			"timestamp": 1789410276633,
-			"updatedAt": "5 days ago",
-			"stale": false
-		},
-		{
-			"id": "rays-indoor",
-			"links": [
-				{
-					"name": "Ray's prices, hours, and directions",
-					"url": "https://www.raysmtb.com/about/prices-hours-and-directions-pg141.htm"
-				}
-			],
-			"location": "F63X+V3 Cleveland, Ohio",
-			"name": "Ray's Indoor Mountain Bike Park",
-			"condition": "Open now until 8:00 PM. Today's hours 2:00 PM-8:00 PM - Fall hours.",
-			"status": "open",
-			"timestamp": 1789790436788,
-			"updatedAt": "Updated daily from the published schedule",
-			"stale": false
-		},
-		{
-			"id": "cvnp-east-rim",
-			"links": [
-				{
-					"name": "CAMBA Trailmate",
-					"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=103"
-				},
-				{
-					"name": "X - @cvnpmtb",
-					"url": "https://x.com/cvnpmtb"
-				},
-				{
-					"name": "NPS Conditions",
-					"url": "https://www.nps.gov/cuva/planyourvisit/conditions.htm"
-				},
-				{
-					"name": "TrailForks",
-					"url": "https://www.trailforks.com/region/east-rim-trails/"
-				}
-			],
-			"location": "7F4J+3C Peninsula, Ohio",
-			"name": "CVNP East Rim",
-			"condition": "East Rim trails remain open 9/16.",
-			"status": "open",
-			"timestamp": 1789669476633,
-			"updatedAt": "2 days ago",
-			"stale": false
-		},
-		{
-			"condition": "Wet with some puddles. It’s raining now with more rain in the forecast. Stay safe",
-			"id": "oec-flow",
-			"links": [
-				{
-					"name": "Cleveland Metroparks",
-					"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
-				},
-				{
-					"name": "TrailForks",
-					"url": "https://www.trailforks.com/region/ohio--erie-canal-reservation/"
-				}
-			],
-			"location": "C8JQ+92 Cleveland, Ohio",
-			"name": "Ohio & Erie Canal - Flow Trail",
-			"status": "closed",
-			"timestamp": 1789820676631,
-			"updatedAt": "6 hours ago",
-			"stale": false
+			"timestamp": 1789326947936,
+			"updatedAt": "6 days ago",
+			"stale": false,
+			"weather": {
+				"code": 500,
+				"description": "Light rain",
+				"isDay": true,
+				"temperature": 67,
+				"forecastUrl": "https://www.accuweather.com/en/us/medina/44256/weather-forecast/335014"
+			}
 		},
 		{
 			"condition": "Wet",
 			"id": "west-branch",
-			"links": [
-				{
-					"name": "CAMBA Trailmate",
-					"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=115"
-				},
-				{
-					"name": "Ohio DNR",
-					"url": "https://ohiodnr.gov/go-and-do/plan-a-visit/find-a-property/west-branch-state-park"
-				},
-				{
-					"name": "TrailForks",
-					"url": "https://www.trailforks.com/region/west-branch-state-park/"
-				}
-			],
 			"location": "4VJ5+V4 Ravenna, Ohio",
 			"name": "West Branch",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=115"
+			},
 			"status": "closed",
-			"timestamp": 1789831476630,
-			"updatedAt": "3 hours ago",
-			"stale": false
+			"timestamp": 1789830947934,
+			"updatedAt": "4 hours ago",
+			"stale": false,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 67,
+				"forecastUrl": "https://www.accuweather.com/en/us/ravenna/44266/weather-forecast/335063"
+			}
+		},
+		{
+			"condition": "If you ride it let us know how it is",
+			"id": "lake-milton",
+			"location": "324M+H2 Lake Milton, Ohio",
+			"name": "Lake Milton",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=112"
+			},
+			"status": "open",
+			"timestamp": 1789733747935,
+			"updatedAt": "31 hours ago",
+			"stale": false,
+			"weather": {
+				"code": 500,
+				"description": "Light rain",
+				"isDay": true,
+				"temperature": 67,
+				"forecastUrl": "https://www.accuweather.com/en/us/craig-beach/44429/weather-forecast/2190967"
+			}
+		},
+		{
+			"condition": "See CAMBA Trailmate for current conditions.",
+			"id": "quail-hollow",
+			"location": "XMGQ+PR Hartville, Ohio",
+			"name": "Quail Hollow",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=116"
+			},
+			"status": "open",
+			"timestamp": 1789733747935,
+			"updatedAt": "31 hours ago",
+			"stale": false,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 66,
+				"forecastUrl": "https://www.accuweather.com/en/us/hartville/44632/weather-forecast/2238767"
+			}
 		},
 		{
 			"condition": "9/17: The rainiest part of Ohio for 2026 was holding it down again last night. You may want to wait until sometime tomorrow to ride",
 			"id": "mohican",
-			"links": [
-				{
-					"name": "CAMBA Trailmate",
-					"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=106"
-				},
-				{
-					"name": "Ohio DNR",
-					"url": "https://ohiodnr.gov/go-and-do/plan-a-visit/find-a-property/mohican-state-park"
-				},
-				{
-					"name": "TrailForks",
-					"url": "https://www.trailforks.com/region/mohican-state-park/"
-				}
-			],
 			"location": "JP5R+6Q Loudonville, Ohio",
 			"name": "Mohican",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=106"
+			},
 			"status": "closed",
-			"timestamp": 1789669476633,
+			"timestamp": 1789672547936,
 			"updatedAt": "2 days ago",
-			"stale": false
+			"stale": false,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 73,
+				"forecastUrl": "https://www.accuweather.com/en/us/loudonville/44842/weather-forecast/2214984"
+			}
+		},
+		{
+			"condition": "Trail surfaces should be ok but trails haven't been fully inspected for downed branches from recent thunderstorms.",
+			"id": "camp-tuscazoar",
+			"location": "GJW2+G2 Dover, Ohio",
+			"name": "Camp Tuscazoar",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=109"
+			},
+			"status": "open",
+			"timestamp": 1789413347936,
+			"updatedAt": "5 days ago",
+			"stale": false,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 69,
+				"forecastUrl": "https://www.accuweather.com/en/us/new-philadelphia/44663/weather-forecast/335059"
+			}
 		},
 		{
 			"condition": "Open as of 09/08/2026 11am",
 			"id": "big-creek",
-			"links": [
-				{
-					"name": "CAMBA Trailmate",
-					"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=117"
-				}
-			],
-			"location": "JQ9V+89 Chardon, OH",
+			"location": "JQ9V+89 Chardon, Ohio",
 			"name": "Big Creek",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=117"
+			},
 			"status": "open",
-			"timestamp": 1788891876633,
+			"timestamp": 1788894947936,
 			"updatedAt": "11 days ago",
-			"stale": true
+			"stale": true,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 68,
+				"forecastUrl": "https://www.accuweather.com/en/us/chardon/44024/weather-forecast/335053"
+			}
 		},
 		{
 			"condition": "9/1: \"This is the end, my only friend, the end'. Poor one out for the Knob! The Knob is dead, long live the Knob! So long and thanks for all the fish!",
 			"id": "vulturesknob",
-			"links": [
-				{
-					"name": "CAMBA Trailmate",
-					"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=107"
-				},
-				{
-					"name": "TrailForks",
-					"url": "https://www.trailforks.com/region/vultures-knob/"
-				}
-			],
 			"location": "V229+9R Wooster, Ohio",
 			"name": "Vulture's Knob",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=107"
+			},
 			"status": "closed",
-			"timestamp": 1788632676633,
+			"timestamp": 1788635747936,
 			"updatedAt": "2 weeks ago",
-			"stale": true
+			"stale": true,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 66,
+				"forecastUrl": "https://www.accuweather.com/en/us/wooster/44691/weather-forecast/335050"
+			}
 		},
 		{
 			"condition": "Rain will keep the trails wet. Continued to use your judgement and don't ride if you are damaging the trail.",
 			"id": "reagan-loop",
-			"links": [
-				{
-					"name": "CAMBA Trailmate",
-					"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=114"
-				}
-			],
 			"location": "5535+9W Medina, Ohio",
 			"name": "Reagan Park - Reagan Loop",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=114"
+			},
 			"status": "caution",
-			"timestamp": 1786818276633,
+			"timestamp": 1786821347936,
 			"updatedAt": "5 weeks ago",
-			"stale": true
+			"stale": true,
+			"weather": {
+				"code": 500,
+				"description": "Light rain",
+				"isDay": true,
+				"temperature": 66,
+				"forecastUrl": "https://www.accuweather.com/en/us/medina/44256/weather-forecast/335014"
+			}
 		},
 		{
 			"condition": "Rain will keep the trails wet. Continued to use your judgement and don't ride if you are damaging the trail.",
 			"id": "reagan-river",
-			"links": [
-				{
-					"name": "CAMBA Trailmate",
-					"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=114"
-				}
-			],
 			"location": "5549+56 Medina, Ohio",
 			"name": "Reagan Park - River Trail",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=114"
+			},
 			"status": "caution",
-			"timestamp": 1786818276633,
+			"timestamp": 1786821347936,
 			"updatedAt": "5 weeks ago",
-			"stale": true
+			"stale": true,
+			"weather": {
+				"code": 500,
+				"description": "Light rain",
+				"isDay": true,
+				"temperature": 66,
+				"forecastUrl": "https://www.accuweather.com/en/us/medina/44256/weather-forecast/335014"
+			}
 		},
 		{
 			"condition": "Lingering rain showers will keep the trail wet. There will be puddles and slippery surfaces. Use your judgement and don't continue riding if you are rutting the trail.",
 			"id": "huffman",
-			"links": [
-				{
-					"name": "CAMBA Trailmate",
-					"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=113"
-				}
-			],
 			"location": "RW44+2M Dayton, Ohio",
 			"name": "Huffman",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=113"
+			},
 			"status": "caution",
-			"timestamp": 1786818276634,
+			"timestamp": 1786821347936,
 			"updatedAt": "5 weeks ago",
-			"stale": true
+			"stale": true,
+			"weather": {
+				"code": 802,
+				"description": "Scattered clouds",
+				"isDay": true,
+				"temperature": 82,
+				"forecastUrl": "https://www.accuweather.com/en/us/dayton/45402/weather-forecast/330120"
+			}
 		},
 		{
 			"condition": "7/13: Trail is open.",
 			"id": "thorn-ftp",
-			"links": [
-				{
-					"name": "CAMBA Trailmate",
-					"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=110"
-				}
-			],
 			"location": "4QQP+98 Wellington, Ohio",
 			"name": "Thorn (FTP)",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=110"
+			},
 			"status": "open",
-			"timestamp": 1784658276634,
+			"timestamp": 1784661347937,
 			"updatedAt": "2 months ago",
-			"stale": true
+			"stale": true,
+			"weather": {
+				"code": 501,
+				"description": "Moderate rain",
+				"isDay": true,
+				"temperature": 66,
+				"forecastUrl": "https://www.accuweather.com/en/us/wellington/44090/weather-forecast/340044"
+			}
+		},
+		{
+			"id": "rays-indoor",
+			"location": "F63X+V3 Cleveland, Ohio",
+			"name": "Ray's Indoor Mountain Bike Park",
+			"source": {
+				"name": "Ray's prices, hours, and directions",
+				"url": "https://www.raysmtb.com/about/prices-hours-and-directions-pg141.htm"
+			},
+			"condition": "Open now until 8:00 PM. Today's hours 2:00 PM-8:00 PM - Fall hours.",
+			"status": "open",
+			"timestamp": 1789790447937,
+			"updatedAt": "Updated daily from the published schedule",
+			"stale": false,
+			"weather": null
+		},
+		{
+			"id": "cvnp-east-rim",
+			"location": "7F4J+3C Peninsula, Ohio",
+			"name": "CVNP East Rim",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=103"
+			},
+			"condition": "East Rim trails remain open 9/16.",
+			"status": "open",
+			"timestamp": 1789672547936,
+			"updatedAt": "2 days ago",
+			"stale": false,
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 67,
+				"forecastUrl": "https://www.accuweather.com/en/us/boston-heights/44236/weather-forecast/2238469"
+			}
 		}
 	]
 }
