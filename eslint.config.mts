@@ -13,6 +13,15 @@ import type { Linter } from 'eslint';
 
 export default [
 	js.configs.recommended,
+	// Plain Node modules, which is what the unit tests are, get Node's globals.
+	// The TypeScript block below only covers files the tsconfig knows about.
+	{
+		files: ['**/*.mjs'],
+		languageOptions: {
+			globals: { ...globals.node },
+			sourceType: 'module'
+		}
+	},
 	{
 		files: ['**/*.{js,jsx,ts,tsx,mts}'],
 		languageOptions: {
@@ -56,7 +65,6 @@ export default [
 					'**/*.tsx': 'PASCAL_CASE'
 				},
 				{
-					caseSensitive: true, // Ensure exact case matching
 					ignoreMiddleExtensions: true // Allow multiple extensions
 				}
 			],

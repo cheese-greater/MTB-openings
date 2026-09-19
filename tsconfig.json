@@ -23,5 +23,5 @@
 		"types": ["node"],
 		"useDefineForClassFields": true
 	},
-	"include": ["src/**/*", "eslint.config.mts", "cypress/**/*"]
+	"include": ["src/**/*", "eslint.config.mts", "cypress/**/*", "playwright.config.ts", "test/e2e/**/*"]
 }

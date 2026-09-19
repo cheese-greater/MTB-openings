@@ -37,6 +37,9 @@ jobs:
             - name: Probe the sources
               id: probe
               continue-on-error: true
+              env:
+                  # Lets the probe check OpenWeather too; it skips that row without one.
+                  OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
               run: yarn probe
 
             - name: Publish the report

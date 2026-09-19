@@ -79,6 +79,35 @@
 	width: 22px;
 }
 
+/* Paw print that switches the cursor-chasing trail dog on and off. */
+.dog-button {
+	align-items: center;
+	background: none;
+	border: 0;
+	color: var(--text-h);
+	cursor: pointer;
+	display: inline-flex;
+	opacity: 0.4;
+	padding: 6px;
+	transition:
+		color 0.15s,
+		opacity 0.15s;
+}
+
+.dog-button:hover {
+	opacity: 0.8;
+}
+
+.dog-button.is-active {
+	color: var(--accent);
+	opacity: 1;
+}
+
+.dog-button__icon {
+	height: 22px;
+	width: 22px;
+}
+
 .qr-modal {
 	align-items: center;
 	background: rgba(0, 0, 0, 0.6);
@@ -423,7 +452,6 @@
 	background: none;
 	border: 0;
 	color: inherit;
-	cursor: pointer;
 	display: flex;
 	font: inherit;
 	gap: 10px;
@@ -508,7 +536,11 @@
 	gap: 4px;
 	max-width: 100%;
 	opacity: 0.55;
-	text-decoration: none;
+	transition: opacity 0.15s;
+}
+
+.trail-card__location:hover {
+	opacity: 1;
 }
 
 .trail-card__location-icon {
@@ -523,8 +555,43 @@
 	white-space: nowrap;
 }
 
-.trail-card__location:hover .trail-card__location-text {
-	text-decoration: underline;
+/* Location on the left, the trailhead's sky and temperature on the right. */
+.trail-card__place {
+	align-items: center;
+	display: flex;
+	gap: 12px;
+	justify-content: space-between;
+	min-width: 0;
+}
+
+/* A link to the AccuWeather Today page. Icon and reading dim and brighten
+   together like the other card links. */
+.trail-card__weather {
+	align-items: center;
+	color: var(--text-h);
+	display: inline-flex;
+	flex-shrink: 0;
+	font-size: 13px;
+	gap: 5px;
+	opacity: 0.55;
+	transition: opacity 0.15s;
+}
+
+.trail-card__weather:hover {
+	opacity: 1;
+}
+
+/* Digits and the degree sign fill the cap height while the location text is
+   mostly lowercase, so on a shared baseline the reading looks a touch high.
+   A one-pixel drop lines their visual centres up across the row. */
+.trail-card__weather-temp {
+	transform: translateY(1px);
+}
+
+.trail-card__weather-icon {
+	flex-shrink: 0;
+	height: 17px;
+	width: 17px;
 }
 
 .trail-card__condition {
@@ -567,7 +634,7 @@
 	}
 }
 
-.trail-card__links {
+.trail-card__source-row {
 	align-items: center;
 	border-top: 1px solid var(--border);
 	display: flex;
@@ -583,7 +650,6 @@
 	font-size: 12px;
 	gap: 3px;
 	opacity: 0.55;
-	text-decoration: none;
 	transition: opacity 0.15s;
 
 	&:hover {
@@ -628,6 +694,11 @@
 	/* Reserve space on the right so a long title never slides under the toggles. */
 	.site-header h1 {
 		padding-right: 92px;
+	}
+
+	/* A narrow window with a mouse gets the dog toggle too, so a bit more. */
+	.site-header:has(.dog-button) h1 {
+		padding-right: 130px;
 	}
 
 	.site-header__subtitle {
@@ -675,6 +746,10 @@
 
 	.trail-card__title {
 		font-size: 16px;
+	}
+
+	.trail-card__summary {
+		cursor: pointer;
 	}
 
 	.trail-card__chevron {

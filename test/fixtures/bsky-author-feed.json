@@ -1,0 +1,43 @@
+{
+	"feed": [
+		{
+			"post": {
+				"author": {
+					"handle": "someoneelse.bsky.social"
+				},
+				"indexedAt": "2026-09-19T15:00:00.000Z",
+				"record": {
+					"text": "A repost that the scraper must skip. Trails closed."
+				},
+				"uri": "at://did:plc:repost/app.bsky.feed.post/3repost"
+			},
+			"reason": {
+				"$type": "app.bsky.feed.defs#reasonRepost"
+			}
+		},
+		{
+			"post": {
+				"author": {
+					"handle": "smpmountainbike.bsky.social"
+				},
+				"indexedAt": "2026-09-18T18:42:37.764Z",
+				"record": {
+					"text": "9/18 the trails are open."
+				},
+				"uri": "at://did:plc:cmgazu2avhqkfgmm2wy7vl3w/app.bsky.feed.post/3mvst3uknv22o"
+			}
+		},
+		{
+			"post": {
+				"author": {
+					"handle": "smpmountainbike.bsky.social"
+				},
+				"indexedAt": "2026-09-17T15:03:24.677Z",
+				"record": {
+					"text": "Mountain Bike trail is closed unfortunately due to weather. We will advise when we are able to open again."
+				},
+				"uri": "at://did:plc:cmgazu2avhqkfgmm2wy7vl3w/app.bsky.feed.post/3mvpwexc3ic2w"
+			}
+		}
+	]
+}

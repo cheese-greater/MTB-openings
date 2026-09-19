@@ -17,6 +17,7 @@ import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+import { conditionsChanged } from '../lib/summary.mjs';
 import { getTrailsPayload } from '../lib/trails.mjs';
 
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
@@ -43,7 +44,8 @@ const { bsky, cambaHome, metroparks } = payload.sources;
 const liveCardCount = payload.trails.filter((trail) => !trail.stale).length;
 
 console.log(
-	`Sources: metroparks=${metroparks} camba=${cambaHome} bsky=${bsky} trailforks=${payload.sources.trailforks}`
+	`Sources: metroparks=${metroparks} camba=${cambaHome} bsky=${bsky} trailforks=${payload.sources.trailforks} ` +
+		`weather=${payload.sources.weather} trailheads`
 );
 console.log(`${payload.trails.length} cards, ${liveCardCount} of them live`);
 
@@ -51,8 +53,8 @@ console.log(`${payload.trails.length} cards, ${liveCardCount} of them live`);
 // from its published schedule so it survives regardless, which is why the check
 // is on the sources rather than on the card count.
 if (metroparks === 0 && cambaHome === 0 && bsky === 0) {
-	reportChanged(false);
 	if (previous) {
+		reportChanged(false);
 		console.error(
 			'\nEvery live source failed. Keeping the published trails.json from ' +
 				`${new Date(previous.cachedAt).toISOString()} rather than publishing empty cards.\n` +
@@ -65,13 +67,9 @@ if (metroparks === 0 && cambaHome === 0 && bsky === 0) {
 
 writeFileSync(OUTPUT_PATH, `${JSON.stringify(payload, null, '\t')}\n`);
 
-// Not a whole-file comparison: CAMBA reports "6 hours ago", which gets resolved
-// against the clock, so timestamp and updatedAt move on every single scrape and
-// every run would look like a change. Compare what a reader would actually
-// notice instead.
-const summarize = (trails) =>
-	trails?.map(({ condition, id, stale, status }) => `${id}|${status}|${stale}|${condition}`).join('\n');
-const changed = summarize(previous?.trails) !== summarize(payload.trails);
+// What counts as a change, and what is ignored as hourly noise, is spelled out
+// in lib/summary.mjs.
+const changed = conditionsChanged(previous?.trails, payload.trails);
 
 reportChanged(changed);
 console.log(changed ? 'Conditions changed since the last commit.' : 'Conditions unchanged; only timestamps moved.');

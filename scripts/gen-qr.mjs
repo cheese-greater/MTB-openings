@@ -2,7 +2,7 @@
 // and the site favicon embedded in the middle. High error correction (H) keeps
 // it scannable despite the logo covering the center.
 //
-// Regenerate with: yarn gen-qr
+// Runs as the first step of `yarn build`, and by hand with: yarn gen-qr
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -13,7 +13,10 @@ import QRCode from 'qrcode';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
 
-const URL = 'https://cheese-greater.github.io/MTB-openings/';
+// The published address this QR points at, from package.json's homepage. The
+// share dialog shows the same field (vite.config.ts bakes it into the bundle),
+// so a fork changes it in one place and the code and the link cannot disagree.
+const { homepage: SITE_URL } = JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8'));
 const OUT = resolve(root, 'public/site-qr.svg');
 const LOGO = resolve(root, 'public/favicon.png');
 
@@ -22,7 +25,7 @@ const MARGIN = 4; // quiet-zone modules
 const DARK = '#282a36'; // module color (Dracula foreground-ish, high contrast on white)
 const LOGO_RATIO = 0.24; // fraction of the QR the logo (with its padding) covers
 
-const qr = QRCode.create(URL, { errorCorrectionLevel: 'H' });
+const qr = QRCode.create(SITE_URL, { errorCorrectionLevel: 'H' });
 const size = qr.modules.size;
 const data = qr.modules.data;
 const at = (r, c) => r >= 0 && c >= 0 && r < size && c < size && !!data[r * size + c];
@@ -95,4 +98,4 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${dimPx}" height="${
 `;
 
 writeFileSync(OUT, svg);
-console.log(`Wrote ${OUT} (${size}x${size} modules, logo ~${logoModules} modules)`);
+console.log(`Wrote ${OUT} for ${SITE_URL} (${size}x${size} modules, logo ~${logoModules} modules)`);

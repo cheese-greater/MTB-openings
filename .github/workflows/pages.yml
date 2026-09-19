@@ -56,6 +56,10 @@ jobs:
 
             - name: Scrape the trail data
               id: data
+              env:
+                  # Weather on the cards. Without the secret the build still
+                  # succeeds; the cards just carry no weather.
+                  OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
               run: yarn build:data
 
             - name: Commit the data when conditions changed

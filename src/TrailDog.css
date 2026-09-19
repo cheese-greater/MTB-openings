@@ -1,0 +1,157 @@
+/* The cursor-chasing trail dog (TrailDog.tsx). Position comes from JS as a
+   transform; everything else, the running legs, the wagging tail, the tongue,
+   is driven by the data-pose attribute it sets. */
+.trail-dog {
+	--dog-fur: #d9a96a;
+	--dog-fur-dark: #9a6a3a;
+	--dog-fur-light: #f1d3a4;
+	--dog-nose: #1f1f1f;
+	--dog-tongue: #ff79c6;
+
+	height: 35px;
+	left: 0;
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	/* Off the left edge until the first pointer movement, matching the parked
+	   position TrailDog.tsx starts from. */
+	transform: translate3d(-100px, 80vh, 0);
+	width: 56px;
+	will-change: transform;
+	/* Above the cards, below the share dialog's overlay (100). */
+	z-index: 90;
+}
+
+:root[data-theme='alucard'] .trail-dog {
+	--dog-fur: #b9834a;
+	--dog-fur-dark: #7a4f27;
+	--dog-fur-light: #e2bd8b;
+	--dog-tongue: #d6457f;
+}
+
+.trail-dog__sprite {
+	display: block;
+	height: 100%;
+	overflow: visible;
+	width: 100%;
+}
+
+/* SVG transforms rotate about the viewBox origin unless told otherwise; hinge
+   each part on its own joint instead. */
+.trail-dog__leg,
+.trail-dog__tail,
+.trail-dog__ear,
+.trail-dog__body {
+	transform-box: fill-box;
+}
+
+.trail-dog__leg {
+	transform-origin: 50% 0;
+}
+
+.trail-dog__tail {
+	transform-origin: 100% 100%;
+}
+
+.trail-dog__ear {
+	transform-origin: 80% 10%;
+}
+
+.trail-dog__body {
+	transform-origin: 50% 50%;
+}
+
+.trail-dog__tongue {
+	opacity: 0;
+	transition: opacity 0.15s;
+}
+
+/* Standing: a slow breath and the odd wag. */
+.trail-dog[data-pose='idle'] .trail-dog__body {
+	animation: trail-dog-breathe 2.4s ease-in-out infinite;
+}
+
+.trail-dog[data-pose='idle'] .trail-dog__tail {
+	animation: trail-dog-wag 0.55s ease-in-out infinite alternate;
+}
+
+/* Running: legs on two opposite phases, a bob to the whole body, ears back,
+   tongue out. */
+.trail-dog[data-pose='run'] .trail-dog__sprite {
+	animation: trail-dog-bob 0.16s ease-in-out infinite alternate;
+}
+
+.trail-dog[data-pose='run'] .trail-dog__leg {
+	animation: trail-dog-stride 0.16s ease-in-out infinite alternate;
+}
+
+.trail-dog[data-pose='run'] .trail-dog__leg--phase-b {
+	animation-delay: -0.16s;
+}
+
+.trail-dog[data-pose='run'] .trail-dog__tail {
+	animation: trail-dog-stream 0.32s ease-in-out infinite alternate;
+}
+
+.trail-dog[data-pose='run'] .trail-dog__ear {
+	animation: trail-dog-flap 0.32s ease-in-out infinite alternate;
+}
+
+.trail-dog[data-pose='run'] .trail-dog__tongue {
+	opacity: 1;
+}
+
+@keyframes trail-dog-stride {
+	from {
+		transform: rotate(30deg);
+	}
+	to {
+		transform: rotate(-30deg);
+	}
+}
+
+@keyframes trail-dog-bob {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-2.5px);
+	}
+}
+
+@keyframes trail-dog-wag {
+	from {
+		transform: rotate(-12deg);
+	}
+	to {
+		transform: rotate(22deg);
+	}
+}
+
+@keyframes trail-dog-stream {
+	from {
+		transform: rotate(18deg);
+	}
+	to {
+		transform: rotate(36deg);
+	}
+}
+
+@keyframes trail-dog-flap {
+	from {
+		transform: rotate(-10deg);
+	}
+	to {
+		transform: rotate(14deg);
+	}
+}
+
+@keyframes trail-dog-breathe {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.03, 1.05);
+	}
+}

@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import { useMediaQuery } from './mediaQuery';
 import { useTimeAgo } from './timeAgo';
 import TrailCard from './TrailCard';
 import type { Trail } from './trailData';
+import TrailDog from './TrailDog';
 
 import './App.css';
 
@@ -24,21 +26,41 @@ const STATUS_ORDER: Record<Trail['status'], number> = {
 	stale: 3
 };
 
+// Accessing localStorage throws outright in a browser with site data blocked, and
+// these run inside useState initializers, so an unguarded read takes the whole app
+// down before it mounts. Going through these means such a browser loses the saved
+// preference, not the page.
+function readStored(key: string): string | null {
+	try {
+		return localStorage.getItem(key);
+	} catch {
+		return null;
+	}
+}
+
+function writeStored(key: string, value: string): void {
+	try {
+		localStorage.setItem(key, value);
+	} catch {
+		// Storage blocked or full: the setting just will not survive a reload.
+	}
+}
+
 function getInitialTheme(): Theme {
-	const saved = localStorage.getItem('theme');
+	const saved = readStored('theme');
 	if (saved === 'dracula' || saved === 'alucard') return saved;
 	return window.matchMedia('(prefers-color-scheme: light)').matches ? 'alucard' : 'dracula';
 }
 
 function getInitialSort(): SortKey {
-	const saved = localStorage.getItem('sort');
+	const saved = readStored('sort');
 	if (saved === 'name' || saved === 'status' || saved === 'updated') return saved;
 	return 'updated';
 }
 
 function getInitialFavorites(): Set<string> {
 	try {
-		const saved = JSON.parse(localStorage.getItem('favorites') ?? '[]') as unknown;
+		const saved = JSON.parse(readStored('favorites') ?? '[]') as unknown;
 		if (Array.isArray(saved)) return new Set(saved.filter((id): id is string => typeof id === 'string'));
 	} catch {
 		// ignore malformed storage
@@ -66,7 +88,10 @@ function compareTrails(a: Trail, b: Trail, sort: SortKey): number {
 	}
 }
 
-const SHARE_URL = 'https://cheese-greater.github.io/MTB-openings/';
+// The published address from package.json's homepage, baked in by vite.config.ts.
+// The QR code beside it is generated from the same field, so the two agree, and
+// a self-hosted copy offers the public site rather than its own LAN address.
+const SHARE_URL = __SITE_URL__;
 
 function App() {
 	const [error, setError] = useState(false);
@@ -76,26 +101,39 @@ function App() {
 	const [theme, setTheme] = useState<Theme>(getInitialTheme);
 	const [sort, setSort] = useState<SortKey>(getInitialSort);
 	const [favorites, setFavorites] = useState<Set<string>>(getInitialFavorites);
-	const [favoritesFirst, setFavoritesFirst] = useState(() => localStorage.getItem('favoritesFirst') === 'true');
+	const [favoritesFirst, setFavoritesFirst] = useState(() => readStored('favoritesFirst') === 'true');
 	const [shareOpen, setShareOpen] = useState(false);
 	const [copied, setCopied] = useState(false);
 
+	// The dog chases the mouse, so it only makes sense with one: a touch screen
+	// has no cursor to follow (a laptop with a touchscreen still has a fine
+	// primary pointer, so it keeps it). It also stays away when the reader has
+	// asked the OS for less motion. Otherwise it is on until switched off.
+	const hasFinePointer = useMediaQuery('(pointer: fine)');
+	const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
+	const trailDogAvailable = hasFinePointer && !prefersReducedMotion;
+	const [trailDog, setTrailDog] = useState(() => readStored('trailDog') !== 'false');
+
 	useEffect(() => {
 		document.documentElement.dataset.theme = theme;
-		localStorage.setItem('theme', theme);
+		writeStored('theme', theme);
 	}, [theme]);
 
 	useEffect(() => {
-		localStorage.setItem('sort', sort);
+		writeStored('sort', sort);
 	}, [sort]);
 
 	useEffect(() => {
-		localStorage.setItem('favorites', JSON.stringify([...favorites]));
+		writeStored('favorites', JSON.stringify([...favorites]));
 	}, [favorites]);
 
 	useEffect(() => {
-		localStorage.setItem('favoritesFirst', String(favoritesFirst));
+		writeStored('favoritesFirst', String(favoritesFirst));
 	}, [favoritesFirst]);
+
+	useEffect(() => {
+		writeStored('trailDog', String(trailDog));
+	}, [trailDog]);
 
 	const toggleFavorite = (id: string) =>
 		setFavorites((prev) => {
@@ -122,7 +160,9 @@ function App() {
 		// Relative to BASE_URL so it works both at the site root and under the
 		// /MTB-openings/ path Pages serves from. On Pages this is the file the
 		// hourly workflow published; run by server.mjs it is scraped on the spot.
-		fetch(`${import.meta.env.BASE_URL}trails.json`)
+		// Always revalidated: Pages caches it for ten minutes, and a copy from
+		// before a deploy that changed its shape would otherwise meet the new app.
+		fetch(`${import.meta.env.BASE_URL}trails.json`, { cache: 'no-cache' })
 			.then((res) => {
 				if (!res.ok) throw new Error();
 				return res.json() as Promise<{ cachedAt: number; trails: Trail[] }>;
@@ -144,6 +184,28 @@ function App() {
 		<>
 			<header className='site-header'>
 				<div className='header-toggles'>
+					{trailDogAvailable && (
+						<button
+							aria-label='Trail dog follows the cursor'
+							aria-pressed={trailDog}
+							className={`dog-button${trailDog ? ' is-active' : ''}`}
+							onClick={() => setTrailDog((current) => !current)}
+							type='button'
+						>
+							<svg
+								aria-hidden='true'
+								className='dog-button__icon'
+								fill='currentColor'
+								viewBox='0 0 24 24'
+							>
+								<circle cx='6' cy='9.5' r='2.1' />
+								<circle cx='10' cy='5.5' r='2.1' />
+								<circle cx='14' cy='5.5' r='2.1' />
+								<circle cx='18' cy='9.5' r='2.1' />
+								<path d='M12 10.5c-3 0-6.2 3.2-6.2 5.8 0 1.7 1.3 2.7 2.8 2.7 1.3 0 2.2-.8 3.4-.8s2.1.8 3.4.8c1.5 0 2.8-1 2.8-2.7 0-2.6-3.2-5.8-6.2-5.8z' />
+							</svg>
+						</button>
+					)}
 					<button
 						aria-label='Show QR code and link'
 						className='qr-button'
@@ -282,6 +344,7 @@ function App() {
 				<p>v{__APP_VERSION__}</p>
 				{cachedAt != null && <p>Last hourly cache: {cachedAgo}</p>}
 			</footer>
+			{trailDogAvailable && trailDog && <TrailDog />}
 			{shareOpen && (
 				<div
 					aria-label='Share this site'

@@ -1,25 +1,13 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 
+import { useMediaQuery } from './mediaQuery';
 import { useTimeAgo } from './timeAgo';
 import type { Trail } from './trailData';
+import WeatherIcon from './WeatherIcon';
 
 // Matches the mobile breakpoint in App.css. On mobile the whole card already
 // collapses/expands on tap, so the condition clamp is desktop-only.
 const MOBILE_QUERY = '(max-width: 768px)';
-
-function useMediaQuery(query: string): boolean {
-	const [matches, setMatches] = useState(() =>
-		typeof window === 'undefined' ? false : window.matchMedia(query).matches
-	);
-	useLayoutEffect(() => {
-		const mql = window.matchMedia(query);
-		const onChange = () => setMatches(mql.matches);
-		onChange();
-		mql.addEventListener('change', onChange);
-		return () => mql.removeEventListener('change', onChange);
-	}, [query]);
-	return matches;
-}
 
 const STATUS_LABEL: Record<Trail['status'], string> = {
 	caution: 'Caution',
@@ -74,29 +62,39 @@ function TrailCard({ isFavorite, onToggleFavorite, trail }: Props) {
 		return () => observer.disconnect();
 	}, [trail.condition, isMobile, conditionOpen]);
 
+	const summary = (
+		<>
+			<span className={`trail-card__badge trail-card__badge--${trail.stale ? 'stale' : trail.status}`}>
+				{STATUS_LABEL[trail.status]}
+			</span>
+			<span className='trail-card__title'>{displayName}</span>
+			<span aria-hidden='true' className='trail-card__chevron'>
+				{'>'}
+			</span>
+		</>
+	);
+
 	return (
 		<article
-			className={`trail-card trail-card--${trail.stale ? 'stale' : trail.status}${expanded ? ' is-expanded' : ''}`}
+			className={`trail-card trail-card--${trail.stale ? 'stale' : trail.status}${
+				isMobile && expanded ? ' is-expanded' : ''
+			}`}
 		>
 			<div className='trail-card__head'>
 				<h2 className='trail-card__name'>
-					<button
-						aria-controls={detailsId}
-						aria-expanded={expanded}
-						className='trail-card__summary'
-						onClick={() => setExpanded((v) => !v)}
-						type='button'
-					>
-						<span
-							className={`trail-card__badge trail-card__badge--${trail.stale ? 'stale' : trail.status}`}
+					{isMobile ? (
+						<button
+							aria-controls={detailsId}
+							aria-expanded={expanded}
+							className='trail-card__summary'
+							onClick={() => setExpanded((value) => !value)}
+							type='button'
 						>
-							{STATUS_LABEL[trail.status]}
-						</span>
-						<span className='trail-card__title'>{displayName}</span>
-						<span aria-hidden='true' className='trail-card__chevron'>
-							{'>'}
-						</span>
-					</button>
+							{summary}
+						</button>
+					) : (
+						<span className='trail-card__summary'>{summary}</span>
+					)}
 				</h2>
 				<button
 					aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
@@ -119,23 +117,37 @@ function TrailCard({ isFavorite, onToggleFavorite, trail }: Props) {
 				</button>
 			</div>
 			<div className='trail-card__details' id={detailsId}>
-				<a
-					className='trail-card__location'
-					href={mapsUrl(trail)}
-					rel='noopener noreferrer'
-					target='_blank'
-					title={`Directions to ${displayLocation(trail.location)}`}
-				>
-					<svg
-						aria-hidden='true'
-						className='trail-card__location-icon'
-						fill='currentColor'
-						viewBox='0 0 24 24'
+				<div className='trail-card__place'>
+					<a
+						className='trail-card__location'
+						href={mapsUrl(trail)}
+						rel='noopener noreferrer'
+						target='_blank'
+						title={`Directions to ${displayLocation(trail.location)}`}
 					>
-						<path d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z' />
-					</svg>
-					<span className='trail-card__location-text'>{displayLocation(trail.location)}</span>
-				</a>
+						<svg
+							aria-hidden='true'
+							className='trail-card__location-icon'
+							fill='currentColor'
+							viewBox='0 0 24 24'
+						>
+							<path d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z' />
+						</svg>
+						<span className='trail-card__location-text'>{displayLocation(trail.location)}</span>
+					</a>
+					{trail.weather && (
+						<a
+							className='trail-card__weather'
+							href={trail.weather.forecastUrl}
+							rel='noopener noreferrer'
+							target='_blank'
+							title={`${trail.weather.description} at the trailhead as of the last hourly update (OpenWeather). Opens today's AccuWeather forecast.`}
+						>
+							<WeatherIcon className='trail-card__weather-icon' weather={trail.weather} />
+							<span className='trail-card__weather-temp'>{`${trail.weather.temperature}°F`}</span>
+						</a>
+					)}
+				</div>
 				<p
 					onClick={!isMobile && conditionOverflows ? () => setConditionOpen((v) => !v) : undefined}
 					ref={conditionRef}
@@ -161,26 +173,24 @@ function TrailCard({ isFavorite, onToggleFavorite, trail }: Props) {
 							{updatedAgo}
 						</span>
 					)}
-					<div className='trail-card__links'>
-						{(trail.links ?? []).map((link) => (
-							<a
-								className='trail-card__source'
-								href={link.url}
-								key={link.url}
-								rel='noopener noreferrer'
-								target='_blank'
+					<div className='trail-card__source-row'>
+						<a
+							className='trail-card__source'
+							href={trail.source.url}
+							rel='noopener noreferrer'
+							target='_blank'
+							title='Where this report came from'
+						>
+							{trail.source.name}
+							<svg
+								aria-hidden='true'
+								className='trail-card__source-icon'
+								fill='currentColor'
+								viewBox='0 0 24 24'
 							>
-								{link.name}
-								<svg
-									aria-hidden='true'
-									className='trail-card__source-icon'
-									fill='currentColor'
-									viewBox='0 0 24 24'
-								>
-									<path d='M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z' />
-								</svg>
-							</a>
-						))}
+								<path d='M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z' />
+							</svg>
+						</a>
 					</div>
 				</div>
 			</div>

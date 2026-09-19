@@ -26,7 +26,9 @@ import {
 	CAMBA_HOME_URL,
 	getTrailsPayload,
 	METROPARKS_URL,
-	TRAILFORKS_REGIONS
+	openWeatherUrl,
+	TRAILFORKS_REGIONS,
+	WEATHER_POINTS
 } from '../lib/trails.mjs';
 
 const execFileAsync = promisify(execFile);
@@ -71,7 +73,7 @@ const SOURCES = [
 		},
 		name: `TrailForks (${TRAILFORKS_REGIONS[0].name})`,
 		transport: 'curl',
-		url: TRAILFORKS_REGIONS[0].url
+		url: TRAILFORKS_REGIONS[0].source.url
 	},
 	{
 		carries: BSKY_ACCOUNTS[0].name,
@@ -82,7 +84,30 @@ const SOURCES = [
 		name: `Bluesky (@${BSKY_ACCOUNTS[0].handle.split('.')[0]})`,
 		transport: 'fetch',
 		url: bskyFeedUrl(BSKY_ACCOUNTS[0].handle)
-	}
+	},
+	// Only when a key is configured: without one the scraper skips weather on
+	// purpose, which is not a blocked source. The URL carries the key, and the
+	// report prints names and measurements, never URLs.
+	...(process.env.OPENWEATHER_API_KEY
+		? [
+				{
+					carries: 'the temperature and sky on every outdoor card',
+					measure: (body) => {
+						const current = JSON.parse(body);
+						const ok = typeof current.main?.temp === 'number';
+						return {
+							detail: ok
+								? `${Math.round(current.main.temp)}°F, ${current.weather?.[0]?.description ?? 'no description'}`
+								: 'no temperature in the response',
+							ok
+						};
+					},
+					name: 'OpenWeather (first trailhead)',
+					transport: 'fetch',
+					url: openWeatherUrl(WEATHER_POINTS[0], process.env.OPENWEATHER_API_KEY)
+				}
+			]
+		: [])
 ];
 
 async function fetchWithNode(url) {

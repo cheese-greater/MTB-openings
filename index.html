@@ -7,8 +7,15 @@
 		<title>CLE MTB Trails</title>
 		<script>
 			// Apply saved/preferred theme before paint to avoid a flash of the wrong palette.
+			// A browser with site data blocked throws on the read, and an uncaught error
+			// here would leave the page unthemed, so fall back to the media query.
 			(function () {
-				var saved = localStorage.getItem('theme');
+				var saved = null;
+				try {
+					saved = localStorage.getItem('theme');
+				} catch {
+					// Storage blocked: saved stays null and the media query decides.
+				}
 				var theme =
 					saved === 'dracula' || saved === 'alucard'
 						? saved

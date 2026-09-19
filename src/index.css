@@ -28,6 +28,17 @@
 
 	--accent: #ff79c6; /* pink */
 
+	/* The weather chip on each card: filled icons in the palette's own colours */
+	--weather-sun: #f1fa8c; /* yellow */
+	--weather-sun-rays: #ffb86c; /* orange */
+	--weather-moon: #bd93f9; /* purple */
+	--weather-cloud: #f8f8f2; /* foreground */
+	--weather-cloud-dark: #6272a4; /* comment */
+	--weather-rain: #8be9fd; /* cyan */
+	--weather-snow: #f8f8f2; /* foreground */
+	--weather-bolt: #f1fa8c; /* yellow */
+	--weather-fog: #6272a4; /* comment */
+
 	--sans: system-ui, 'Segoe UI', Roboto, sans-serif;
 
 	font: 16px/150% var(--sans);
@@ -70,6 +81,16 @@
 
 	--accent: #a3144d; /* pink */
 
+	--weather-sun: #e0a30a; /* amber: Alucard's own yellow is too dark to read as a sun */
+	--weather-sun-rays: #a34d14; /* orange */
+	--weather-moon: #644ac9; /* purple */
+	--weather-cloud: #aab3c5; /* a step darker than selection, for contrast on white */
+	--weather-cloud-dark: #6c664b; /* comment */
+	--weather-rain: #036a96; /* cyan */
+	--weather-snow: #036a96; /* cyan */
+	--weather-bolt: #e0a30a; /* amber */
+	--weather-fog: #6c664b; /* comment */
+
 	color-scheme: light;
 }
 
@@ -83,12 +104,20 @@ body {
 	margin: 0;
 }
 
+/* Links signal by brightening on hover, never by underlining. */
+a {
+	text-decoration: none;
+}
+
 body,
 .trail-card,
 .summary-chip,
 .site-header,
 .site-footer {
-	transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+	transition:
+		background-color 0.2s ease,
+		border-color 0.2s ease,
+		color 0.2s ease;
 }
 
 #root {

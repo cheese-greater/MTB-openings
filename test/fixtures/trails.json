@@ -1,0 +1,168 @@
+{
+	"cachedAt": 1789837200000,
+	"sources": {
+		"bsky": 1,
+		"cambaHome": 21,
+		"metroparks": 7,
+		"trailforks": 0,
+		"weather": 20
+	},
+	"trails": [
+		{
+			"condition": "West Creek is in good shape. Light rain is forecast, but please stay off the trails if the rain becomes heavy.",
+			"id": "west-creek",
+			"location": "98Q4+68 Parma, Ohio",
+			"name": "West Creek - Mountain Bike Trails",
+			"source": {
+				"name": "Cleveland Metroparks",
+				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
+			},
+			"stale": false,
+			"status": "open",
+			"timestamp": 1789822680000,
+			"updatedAt": "Sep 19, 08:58 AM",
+			"weather": {
+				"code": 804,
+				"description": "Overcast clouds",
+				"forecastUrl": "https://www.accuweather.com/en/us/parma/44129/weather-forecast/349939",
+				"isDay": true,
+				"temperature": 64
+			}
+		},
+		{
+			"condition": "Wet with some puddles. It is raining now with more rain in the forecast. Stay safe",
+			"id": "oec-flow",
+			"location": "C8JQ+92 Cuyahoga Heights, Ohio",
+			"name": "Ohio & Erie Canal - Flow Trail",
+			"source": {
+				"name": "Cleveland Metroparks",
+				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
+			},
+			"stale": false,
+			"status": "closed",
+			"timestamp": 1789822140000,
+			"updatedAt": "Sep 19, 08:49 AM",
+			"weather": {
+				"code": 501,
+				"description": "Moderate rain",
+				"forecastUrl": "https://www.accuweather.com/en/us/cuyahoga-heights/44125/weather-forecast/2115659",
+				"isDay": true,
+				"temperature": 66
+			}
+		},
+		{
+			"condition": "9/18 the trails are open.",
+			"id": "hampton-hills",
+			"location": "5C2X+FP Akron, Ohio",
+			"name": "Hampton Hills",
+			"source": {
+				"name": "Bluesky - @smpmountainbike",
+				"url": "https://bsky.app/profile/smpmountainbike.bsky.social/post/3mvst3uknv22o"
+			},
+			"stale": false,
+			"status": "open",
+			"timestamp": 1789757640000,
+			"updatedAt": "Sep 18, 2:54 PM",
+			"weather": {
+				"code": 800,
+				"description": "Clear sky",
+				"forecastUrl": "https://www.accuweather.com/en/us/akron/44308/weather-forecast/330119",
+				"isDay": true,
+				"temperature": 67
+			}
+		},
+		{
+			"condition": "No issues reported",
+			"id": "bedford-olander",
+			"location": "9C5P+GH Walton Hills, Ohio",
+			"name": "Bedford - Olander Lot",
+			"source": {
+				"name": "Cleveland Metroparks",
+				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
+			},
+			"stale": false,
+			"status": "open",
+			"timestamp": 1789740960000,
+			"updatedAt": "Sep 18, 10:16 AM",
+			"weather": {
+				"code": 802,
+				"description": "Scattered clouds",
+				"forecastUrl": "https://www.accuweather.com/en/us/walton-hills/44146/weather-forecast/2190767",
+				"isDay": true,
+				"temperature": 65
+			}
+		},
+		{
+			"condition": "No issues reported",
+			"id": "bedford-farley",
+			"location": "9CFM+2R Walton Hills, Ohio",
+			"name": "Bedford - Farley Lot",
+			"source": {
+				"name": "Cleveland Metroparks",
+				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
+			},
+			"stale": false,
+			"status": "open",
+			"timestamp": 1789740960000,
+			"updatedAt": "Sep 18, 10:16 AM",
+			"weather": null
+		},
+		{
+			"condition": "Trails are soft in spots after the rain, ride with care.",
+			"id": "austin-badger",
+			"location": "459P+6R Medina, Ohio",
+			"name": "Austin Badger Park",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=105"
+			},
+			"stale": false,
+			"status": "caution",
+			"timestamp": 1789675200000,
+			"updatedAt": "2 days ago",
+			"weather": {
+				"code": 211,
+				"description": "Thunderstorm",
+				"forecastUrl": "https://www.accuweather.com/en/us/medina/44256/weather-forecast/335014",
+				"isDay": true,
+				"temperature": 63
+			}
+		},
+		{
+			"condition": "Weekend work day, trails open but expect crews.",
+			"id": "big-creek",
+			"location": "JQ9V+89 Chardon, Ohio",
+			"name": "Big Creek",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=117"
+			},
+			"stale": true,
+			"status": "open",
+			"timestamp": 1788264000000,
+			"updatedAt": "3 weeks ago",
+			"weather": {
+				"code": 600,
+				"description": "Light snow",
+				"forecastUrl": "https://www.accuweather.com/en/us/chardon/44024/weather-forecast/335053",
+				"isDay": true,
+				"temperature": 30
+			}
+		},
+		{
+			"condition": "Open now until 8:00 PM. Today's hours 2:00 PM-8:00 PM - Fall hours.",
+			"id": "rays-indoor",
+			"location": "F63X+V3 Cleveland, Ohio",
+			"name": "Ray's Indoor Mountain Bike Park",
+			"source": {
+				"name": "Ray's prices, hours, and directions",
+				"url": "https://www.raysmtb.com/about/prices-hours-and-directions-pg141.htm"
+			},
+			"stale": false,
+			"status": "open",
+			"timestamp": 1789790400000,
+			"updatedAt": "Updated daily from the published schedule",
+			"weather": null
+		}
+	]
+}
