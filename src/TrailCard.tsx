@@ -141,7 +141,7 @@ function TrailCard({ isFavorite, onToggleFavorite, trail }: Props) {
 							href={trail.weather.forecastUrl}
 							rel='noopener noreferrer'
 							target='_blank'
-							title={`${trail.weather.description} at the trailhead as of the last hourly update (OpenWeather). Opens today's AccuWeather forecast.`}
+							title={`${trail.weather.description} at the trailhead as of the last hourly update (OpenWeather). Opens today's Foreca forecast.`}
 						>
 							<WeatherIcon className='trail-card__weather-icon' weather={trail.weather} />
 							<span className='trail-card__weather-temp'>{`${trail.weather.temperature}°F`}</span>

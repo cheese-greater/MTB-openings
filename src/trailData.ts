@@ -11,7 +11,7 @@ export interface TrailLink {
 export interface TrailWeather {
 	code: number; // OpenWeather condition id, grouped by hundreds in WeatherIcon.tsx
 	description: string;
-	forecastUrl: string; // AccuWeather's Today page for the trailhead's locality
+	forecastUrl: string; // Foreca's forecast page (forecaweather.com) for the trailhead's locality
 	isDay: boolean;
 	temperature: number; // Fahrenheit
 }
