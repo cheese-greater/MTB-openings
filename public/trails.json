@@ -1,5 +1,5 @@
 {
-	"cachedAt": 1789878231404,
+	"cachedAt": 1789910548991,
 	"sources": {
 		"bsky": 1,
 		"cambaHome": 21,
@@ -24,8 +24,8 @@
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
-				"temperature": 65,
+				"isDay": true,
+				"temperature": 66,
 				"forecastUrl": "https://www.accuweather.com/en/us/walton-hills/44146/weather-forecast/2190767"
 			}
 		},
@@ -45,13 +45,13 @@
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
+				"isDay": true,
 				"temperature": 65,
 				"forecastUrl": "https://www.accuweather.com/en/us/walton-hills/44146/weather-forecast/2190767"
 			}
 		},
 		{
-			"condition": "Wet with some puddles. It’s raining now with more rain in the forecast.\r\n\r\nStay safe",
+			"condition": "Still wet with more rain expected all day today.",
 			"id": "oec-flow",
 			"location": "C8JQ+92 Cuyahoga Heights, Ohio",
 			"name": "Ohio & Erie Canal - Flow Trail",
@@ -60,19 +60,19 @@
 				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
 			},
 			"status": "closed",
-			"timestamp": 1789822140000,
-			"updatedAt": "Sep 19, 08:49 AM",
+			"timestamp": 1789908840000,
+			"updatedAt": "Sep 20, 08:54 AM",
 			"stale": false,
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
+				"isDay": true,
 				"temperature": 66,
 				"forecastUrl": "https://www.accuweather.com/en/us/cuyahoga-heights/44125/weather-forecast/2115659"
 			}
 		},
 		{
-			"condition": "Happy Friday! Go ride.",
+			"condition": "With rain in the forecast, trails will be wet and potentially slippery in spots. Stay safe",
 			"id": "oec-primitive",
 			"location": "C8JQ+92 Cuyahoga Heights, Ohio",
 			"name": "Ohio & Erie Canal - Primitive Loop & Canal Trail",
@@ -81,19 +81,19 @@
 				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
 			},
 			"status": "open",
-			"timestamp": 1789737540000,
-			"updatedAt": "Sep 18, 09:19 AM",
+			"timestamp": 1789908900000,
+			"updatedAt": "Sep 20, 08:55 AM",
 			"stale": false,
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
+				"isDay": true,
 				"temperature": 66,
 				"forecastUrl": "https://www.accuweather.com/en/us/cuyahoga-heights/44125/weather-forecast/2115659"
 			}
 		},
 		{
-			"condition": "Happy Friday!",
+			"condition": "No issues reported",
 			"id": "oec-pump",
 			"location": "C8JQ+92 Cuyahoga Heights, Ohio",
 			"name": "Ohio & Erie Canal - Pump Track",
@@ -102,13 +102,13 @@
 				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
 			},
 			"status": "open",
-			"timestamp": 1789737600000,
-			"updatedAt": "Sep 18, 09:20 AM",
+			"timestamp": 1789908840000,
+			"updatedAt": "Sep 20, 08:54 AM",
 			"stale": false,
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
+				"isDay": true,
 				"temperature": 66,
 				"forecastUrl": "https://www.accuweather.com/en/us/cuyahoga-heights/44125/weather-forecast/2115659"
 			}
@@ -129,7 +129,7 @@
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
+				"isDay": true,
 				"temperature": 66,
 				"forecastUrl": "https://www.accuweather.com/en/us/strongsville/44149/weather-forecast/2086719"
 			}
@@ -150,8 +150,8 @@
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
-				"temperature": 65,
+				"isDay": true,
+				"temperature": 66,
 				"forecastUrl": "https://www.accuweather.com/en/us/strongsville/44149/weather-forecast/2086719"
 			}
 		},
@@ -171,8 +171,8 @@
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
-				"temperature": 65,
+				"isDay": true,
+				"temperature": 66,
 				"forecastUrl": "https://www.accuweather.com/en/us/parma/44129/weather-forecast/349939"
 			}
 		},
@@ -192,8 +192,8 @@
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
-				"temperature": 65,
+				"isDay": true,
+				"temperature": 67,
 				"forecastUrl": "https://www.accuweather.com/en/us/akron/44308/weather-forecast/330119"
 			}
 		},
@@ -207,14 +207,14 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=105"
 			},
 			"status": "open",
-			"timestamp": 1789359831260,
+			"timestamp": 1789392148914,
 			"updatedAt": "6 days ago",
 			"stale": false,
 			"weather": {
-				"code": 804,
-				"description": "Overcast clouds",
-				"isDay": false,
-				"temperature": 65,
+				"code": 500,
+				"description": "Light rain",
+				"isDay": true,
+				"temperature": 66,
 				"forecastUrl": "https://www.accuweather.com/en/us/medina/44256/weather-forecast/335014"
 			}
 		},
@@ -228,14 +228,14 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=115"
 			},
 			"status": "closed",
-			"timestamp": 1789831431256,
-			"updatedAt": "13 hours ago",
+			"timestamp": 1789831348912,
+			"updatedAt": "22 hours ago",
 			"stale": false,
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
-				"temperature": 65,
+				"isDay": true,
+				"temperature": 66,
 				"forecastUrl": "https://www.accuweather.com/en/us/ravenna/44266/weather-forecast/335063"
 			}
 		},
@@ -249,14 +249,14 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=112"
 			},
 			"status": "open",
-			"timestamp": 1789730631258,
-			"updatedAt": "41 hours ago",
+			"timestamp": 1789737748913,
+			"updatedAt": "2 days ago",
 			"stale": false,
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
-				"temperature": 65,
+				"isDay": true,
+				"temperature": 66,
 				"forecastUrl": "https://www.accuweather.com/en/us/craig-beach/44429/weather-forecast/2190967"
 			}
 		},
@@ -270,14 +270,14 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=116"
 			},
 			"status": "open",
-			"timestamp": 1789730631259,
-			"updatedAt": "41 hours ago",
+			"timestamp": 1789737748913,
+			"updatedAt": "2 days ago",
 			"stale": false,
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
-				"temperature": 65,
+				"isDay": true,
+				"temperature": 67,
 				"forecastUrl": "https://www.accuweather.com/en/us/hartville/44632/weather-forecast/2238767"
 			}
 		},
@@ -291,14 +291,14 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=106"
 			},
 			"status": "closed",
-			"timestamp": 1789705431259,
-			"updatedAt": "2 days ago",
+			"timestamp": 1789651348913,
+			"updatedAt": "3 days ago",
 			"stale": false,
 			"weather": {
-				"code": 803,
-				"description": "Broken clouds",
-				"isDay": false,
-				"temperature": 67,
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 70,
 				"forecastUrl": "https://www.accuweather.com/en/us/loudonville/44842/weather-forecast/2214984"
 			}
 		},
@@ -312,14 +312,14 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=109"
 			},
 			"status": "open",
-			"timestamp": 1789446231260,
-			"updatedAt": "5 days ago",
+			"timestamp": 1789392148914,
+			"updatedAt": "6 days ago",
 			"stale": false,
 			"weather": {
-				"code": 803,
-				"description": "Broken clouds",
-				"isDay": false,
-				"temperature": 67,
+				"code": 804,
+				"description": "Overcast clouds",
+				"isDay": true,
+				"temperature": 68,
 				"forecastUrl": "https://www.accuweather.com/en/us/new-philadelphia/44663/weather-forecast/335059"
 			}
 		},
@@ -333,14 +333,14 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=117"
 			},
 			"status": "open",
-			"timestamp": 1788927831260,
+			"timestamp": 1788960148914,
 			"updatedAt": "11 days ago",
 			"stale": true,
 			"weather": {
-				"code": 804,
-				"description": "Overcast clouds",
-				"isDay": false,
-				"temperature": 63,
+				"code": 501,
+				"description": "Moderate rain",
+				"isDay": true,
+				"temperature": 64,
 				"forecastUrl": "https://www.accuweather.com/en/us/chardon/44024/weather-forecast/335053"
 			}
 		},
@@ -354,14 +354,14 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=107"
 			},
 			"status": "closed",
-			"timestamp": 1788668631260,
+			"timestamp": 1788700948914,
 			"updatedAt": "2 weeks ago",
 			"stale": true,
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
-				"temperature": 65,
+				"isDay": true,
+				"temperature": 68,
 				"forecastUrl": "https://www.accuweather.com/en/us/wooster/44691/weather-forecast/335050"
 			}
 		},
@@ -375,14 +375,14 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=114"
 			},
 			"status": "caution",
-			"timestamp": 1786854231260,
+			"timestamp": 1786886548914,
 			"updatedAt": "5 weeks ago",
 			"stale": true,
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
-				"temperature": 65,
+				"isDay": true,
+				"temperature": 66,
 				"forecastUrl": "https://www.accuweather.com/en/us/medina/44256/weather-forecast/335014"
 			}
 		},
@@ -396,14 +396,14 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=114"
 			},
 			"status": "caution",
-			"timestamp": 1786854231260,
+			"timestamp": 1786886548914,
 			"updatedAt": "5 weeks ago",
 			"stale": true,
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
-				"temperature": 65,
+				"isDay": true,
+				"temperature": 66,
 				"forecastUrl": "https://www.accuweather.com/en/us/medina/44256/weather-forecast/335014"
 			}
 		},
@@ -417,13 +417,13 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=113"
 			},
 			"status": "caution",
-			"timestamp": 1786854231261,
+			"timestamp": 1786886548914,
 			"updatedAt": "5 weeks ago",
 			"stale": true,
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
+				"isDay": true,
 				"temperature": 73,
 				"forecastUrl": "https://www.accuweather.com/en/us/dayton/45402/weather-forecast/330120"
 			}
@@ -438,14 +438,14 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=110"
 			},
 			"status": "open",
-			"timestamp": 1784694231261,
+			"timestamp": 1784726548915,
 			"updatedAt": "2 months ago",
 			"stale": true,
 			"weather": {
 				"code": 804,
 				"description": "Overcast clouds",
-				"isDay": false,
-				"temperature": 65,
+				"isDay": true,
+				"temperature": 66,
 				"forecastUrl": "https://www.accuweather.com/en/us/wellington/44090/weather-forecast/340044"
 			}
 		},
@@ -459,7 +459,7 @@
 			},
 			"condition": "Opens today at 2:00 PM. Today's hours 2:00 PM-8:00 PM - Fall hours.",
 			"status": "caution",
-			"timestamp": 1789876851404,
+			"timestamp": 1789876828991,
 			"updatedAt": "Updated daily from the published schedule",
 			"stale": false,
 			"weather": null
@@ -474,14 +474,14 @@
 			},
 			"condition": "East Rim trails remain open 9/16.",
 			"status": "open",
-			"timestamp": 1789619031259,
+			"timestamp": 1789651348913,
 			"updatedAt": "3 days ago",
 			"stale": false,
 			"weather": {
-				"code": 804,
-				"description": "Overcast clouds",
-				"isDay": false,
-				"temperature": 65,
+				"code": 500,
+				"description": "Light rain",
+				"isDay": true,
+				"temperature": 66,
 				"forecastUrl": "https://www.accuweather.com/en/us/boston-heights/44236/weather-forecast/2238469"
 			}
 		}
