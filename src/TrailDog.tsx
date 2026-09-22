@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import './TrailDog.css';
 
-// How far short of the cursor the dog pulls up, measured from its centre, so it
+// How far short of the cursor the dog pulls up, measured from its center, so it
 // never sits on top of whatever the reader is about to click.
 const HEEL_DISTANCE = 44;
 // Top speed in px per ms (about 600 px a second): quick enough to keep up with a

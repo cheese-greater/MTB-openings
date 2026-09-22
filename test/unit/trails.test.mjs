@@ -10,16 +10,20 @@ import {
 	bskyTrailFromFeed,
 	buildRaysTrail,
 	formatBskyDate,
+	HISTORY_POINTS,
 	inferStatus,
 	mergeTrails,
 	parseCambaHome,
+	parseForecast,
+	parseHistory,
 	parseMetroparks,
 	parseMetroparksDate,
 	parseRelativeOrDate,
 	parseTrailforksRegion,
 	RAYS_SCHEDULE,
 	TRAILFORKS_REGIONS,
-	TRAILHEADS
+	TRAILHEADS,
+	WEATHER_CELLS
 } from '../../lib/trails.mjs';
 
 const fixture = (name) => readFileSync(new URL(`../fixtures/${name}`, import.meta.url), 'utf8');
@@ -108,7 +112,7 @@ describe('parseMetroparks', () => {
 		assert.equal(bedford.condition, 'No issues reported');
 	});
 
-	it('greys out a row whose status box it cannot read', () => {
+	it('grays out a row whose status box it cannot read', () => {
 		const html = `<table class="loc-status-table"><tbody><tr>
 			<td class="loc-status-table-loc">Mystery Trail</td>
 			<td><div class="loc-status-table-status-box loc-status-mystery"></div></td>
@@ -130,7 +134,7 @@ describe('parseCambaHome', () => {
 		assert.ok(entries.every((entry) => Number.isInteger(entry.p6Id) && entry.p6Id > 0));
 	});
 
-	it('takes the status from the alert colour and the words from the post', () => {
+	it('takes the status from the alert color and the words from the post', () => {
 		const flowTrail = entries.find((entry) => entry.p6Id === 6);
 		assert.equal(flowTrail.status, 'closed');
 		assert.match(flowTrail.condition, /^Wet with some puddles/);
@@ -154,7 +158,7 @@ describe('parseTrailforksRegion', () => {
 		<span class="clickable">as of Jul 12, 2024</span>
 	</div>`;
 
-	it('reads the icon colour as the status and the title as the condition', () => {
+	it('reads the icon color as the status and the title as the condition', () => {
 		const trail = parseTrailforksRegion(regionPage('sgreen'), region);
 		assert.equal(trail.status, 'open');
 		assert.equal(trail.condition, 'Trails are dry and fast');
@@ -163,7 +167,7 @@ describe('parseTrailforksRegion', () => {
 		assert.equal(trail.source, region.source);
 	});
 
-	it('maps the warning colours to caution and red to closed', () => {
+	it('maps the warning colors to caution and red to closed', () => {
 		assert.equal(parseTrailforksRegion(regionPage('syellow'), region).status, 'caution');
 		assert.equal(parseTrailforksRegion(regionPage('sred'), region).status, 'closed');
 	});
@@ -244,7 +248,7 @@ describe("Ray's schedule", () => {
 		assert.match(trail.condition, /Next open (tomorrow|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday) /);
 	});
 
-	it('honours a closed holiday over the season it sits in', () => {
+	it('honors a closed holiday over the season it sits in', () => {
 		const trail = buildRaysTrail(easternInstant(closedDate, 15 * 60));
 		assert.equal(trail.status, 'closed');
 		assert.equal(trail.condition.startsWith(`Closed today (${closedException.label}).`), true);
@@ -256,7 +260,7 @@ describe("Ray's schedule", () => {
 		assert.equal(trail.timestamp, instant.getTime() - 15 * 60 * 60000);
 	});
 
-	it('greys out a date no season covers', () => {
+	it('grays out a date no season covers', () => {
 		const trail = buildRaysTrail(new Date('2000-01-01T12:00:00'));
 		assert.equal(trail.status, 'stale');
 		assert.equal(trail.timestamp, null);
@@ -286,7 +290,7 @@ describe('mergeTrails', () => {
 		updatedAt: '4 hours ago',
 		...overrides
 	});
-	const empty = { bsky: [], cambaHome: [], metroparks: [], trailforks: [], weather: new Map() };
+	const empty = { bsky: [], cambaHome: [], history: new Map(), metroparks: [], trailforks: [], weather: new Map() };
 	const merge = (inputs) => mergeTrails({ ...empty, ...inputs }, now);
 	const cardById = (result, id) => result.trails.find((trail) => trail.id === id);
 
@@ -344,7 +348,14 @@ describe('mergeTrails', () => {
 		assert.equal(westCreek.status, 'stale');
 		assert.equal(westCreek.stale, true);
 		assert.equal(westCreek.source.name, 'Cleveland Metroparks');
-		assert.deepEqual(result.sources, { bsky: 0, cambaHome: 0, metroparks: 0, trailforks: 0, weather: 0 });
+		assert.deepEqual(result.sources, {
+			bsky: 0,
+			cambaHome: 0,
+			history: 0,
+			metroparks: 0,
+			trailforks: 0,
+			weather: 0
+		});
 	});
 
 	it('splits a multi-lot trail into one card per lot', () => {
@@ -377,18 +388,81 @@ describe('mergeTrails', () => {
 		assert.equal(card.stale, true);
 	});
 
-	it("attaches weather and the forecast link by trailhead, and none to Ray's", () => {
-		const point = TRAILHEADS['west-creek'];
-		const current = { code: 800, description: 'Clear sky', isDay: true, temperature: 68 };
-		const weather = new Map([[`${point.latitude},${point.longitude}`, current]]);
+	it("attaches weather and the forecast link by grid cell, and none to Ray's", () => {
+		const trailhead = TRAILHEADS['west-creek'];
+		const current = {
+			condition: 'skc',
+			description: 'Sunny',
+			isDay: true,
+			periods: [],
+			precipitationChance: 0,
+			temperature: 68
+		};
+		const weather = new Map([[trailhead.grid, current]]);
 		const result = merge({
 			metroparks: [metroparksCard('west-creek', 'West Creek - Mountain Bike Trails')],
 			weather
 		});
-		assert.deepEqual(cardById(result, 'west-creek').weather, { ...current, forecastUrl: point.forecastUrl });
-		assert.equal(cardById(result, 'oec-flow').weather, null, 'a point with no reading gets none');
+		assert.deepEqual(cardById(result, 'west-creek').weather, {
+			...current,
+			forecastUrl: trailhead.forecastUrl,
+			history: []
+		});
+		assert.equal(cardById(result, 'oec-flow').weather, null, 'a cell with no forecast gets none');
 		assert.equal(cardById(result, 'rays-indoor').weather, null);
 		assert.equal(result.sources.weather, 1);
+	});
+
+	it('attaches the past days by trailhead point, and only where there is a forecast to hang them on', () => {
+		const trailhead = TRAILHEADS['west-creek'];
+		const forecast = {
+			condition: 'skc',
+			description: 'Sunny',
+			isDay: true,
+			periods: [],
+			precipitationChance: 0,
+			temperature: 68
+		};
+		const day = {
+			condition: 'rain',
+			date: '2026-09-20',
+			description: 'Rain',
+			high: 70,
+			low: 61,
+			name: 'Sunday',
+			precipitation: 0.11
+		};
+		const pointKey = `${trailhead.latitude},${trailhead.longitude}`;
+		const oecFlow = TRAILHEADS['oec-flow'];
+		const result = merge({
+			history: new Map([
+				[pointKey, [day]],
+				[`${oecFlow.latitude},${oecFlow.longitude}`, [day]]
+			]),
+			metroparks: [metroparksCard('west-creek', 'West Creek - Mountain Bike Trails')],
+			weather: new Map([[trailhead.grid, forecast]])
+		});
+		assert.deepEqual(cardById(result, 'west-creek').weather.history, [day]);
+		assert.equal(cardById(result, 'oec-flow').weather, null, 'past days alone make no chip');
+		assert.equal(result.sources.history, 2);
+	});
+
+	it('shares one forecast between trailheads in the same grid cell', () => {
+		assert.equal(TRAILHEADS['reagan-loop'].grid, TRAILHEADS['reagan-river'].grid);
+		assert.equal(TRAILHEADS['oec-flow'].grid, TRAILHEADS['oec-pump'].grid);
+		assert.equal(new Set(WEATHER_CELLS).size, WEATHER_CELLS.length, 'each cell is listed once');
+		assert.ok(WEATHER_CELLS.length < Object.keys(TRAILHEADS).length);
+	});
+
+	it('gives every trailhead a grid cell and a weather.gov page for its own coordinates', () => {
+		for (const [id, trailhead] of Object.entries(TRAILHEADS)) {
+			assert.match(trailhead.grid, /^[A-Z]{3}\/\d+,\d+$/, id);
+			assert.equal(
+				trailhead.forecastUrl,
+				`https://forecast.weather.gov/MapClick.php?lat=${trailhead.latitude}&lon=${trailhead.longitude}`,
+				id
+			);
+		}
 	});
 
 	it("includes Ray's card computed for the given clock", () => {
@@ -396,5 +470,182 @@ describe('mergeTrails', () => {
 		assert.ok(rays);
 		assert.equal(rays.source.name, "Ray's prices, hours, and directions");
 		assert.equal(rays.updatedAt, 'Updated daily from the published schedule');
+	});
+});
+
+// The saved responses are for the Royalview grid cell, generated at 6:47 PM
+// Eastern on Monday 21 September 2026, so the forecast leads with "Tonight" and
+// the hourly forecast's first period is the 6 PM hour.
+describe('parseForecast', () => {
+	const daily = () => JSON.parse(fixture('nws-forecast.json'));
+	const hourly = () => JSON.parse(fixture('nws-forecast-hourly.json'));
+	const now = Date.parse('2026-09-21T18:30:00-04:00');
+
+	it('reads the current hour off the hourly forecast', () => {
+		const weather = parseForecast(hourly(), daily(), now);
+		assert.equal(weather.condition, 'rain_showers');
+		assert.equal(weather.date, '2026-09-21');
+		assert.equal(weather.description, 'Rain Showers Likely');
+		assert.equal(weather.isDay, false);
+		assert.equal(weather.precipitationChance, 62);
+		assert.equal(weather.temperature, 61);
+	});
+
+	it('picks the hour that contains now, not whichever comes first', () => {
+		const weather = parseForecast(hourly(), daily(), Date.parse('2026-09-21T20:15:00-04:00'));
+		assert.equal(weather.temperature, 58);
+		assert.equal(weather.precipitationChance, 67);
+	});
+
+	it('keeps the day and night periods through the fifth day counting today', () => {
+		const { periods } = parseForecast(hourly(), daily(), now);
+		assert.deepEqual(
+			periods.map((period) => period.name),
+			[
+				'Tonight',
+				'Tuesday',
+				'Tuesday Night',
+				'Wednesday',
+				'Wednesday Night',
+				'Thursday',
+				'Thursday Night',
+				'Friday',
+				'Friday Night'
+			]
+		);
+		assert.deepEqual(periods[0], {
+			condition: 'rain_showers',
+			date: '2026-09-21',
+			description: 'Rain Showers Likely',
+			isDay: false,
+			name: 'Tonight',
+			precipitationChance: 67,
+			temperature: 54
+		});
+		assert.equal(periods[1].date, '2026-09-22', 'Tuesday');
+		assert.equal(periods[2].date, '2026-09-22', 'and Tuesday night, which starts on Tuesday');
+		assert.equal(periods[5].condition, 'sct', 'Thursday is mostly sunny');
+		assert.equal(periods[6].condition, 'few', 'Thursday night is mostly clear');
+		assert.equal(periods[7].precipitationChance, 0);
+	});
+
+	it('keeps the night under way after midnight and counts the days from the new date', () => {
+		const smallHours = Date.parse('2026-09-22T00:30:00-04:00');
+		const { periods } = parseForecast(hourly(), daily(), smallHours);
+		assert.equal(periods[0].name, 'Tonight', 'the night that began yesterday evening is still on');
+		assert.equal(periods[0].date, '2026-09-22', 'and files under today, where the reader is');
+		assert.equal(periods.at(-1).name, 'Saturday Night', 'and Saturday is now the fifth day');
+		assert.equal(periods.length, 11);
+	});
+
+	it('reads a period that changes partway as how it starts', () => {
+		const { periods } = parseForecast(hourly(), daily(), now);
+		const wednesdayNight = periods.find((period) => period.name === 'Wednesday Night');
+		assert.equal(wednesdayNight.description, 'Rain Showers Likely then Mostly Cloudy');
+		assert.equal(wednesdayNight.condition, 'rain_showers');
+	});
+
+	it('treats a missing chance of precipitation as none and drops the windy prefix', () => {
+		const forecast = daily();
+		const [tonight, tuesday] = forecast.properties.periods;
+		tonight.probabilityOfPrecipitation.value = null;
+		tuesday.icon = 'https://api.weather.gov/icons/land/day/wind_sct?size=medium';
+		const { periods } = parseForecast(hourly(), forecast, now);
+		assert.equal(periods[0].precipitationChance, 0);
+		assert.equal(periods[1].condition, 'sct');
+	});
+
+	it('falls back to the short forecast when a period carries no icon', () => {
+		const forecast = daily();
+		const texts = [
+			['Slight Chance Showers And Thunderstorms', 'tsra'],
+			['Rain Showers Likely then Mostly Cloudy', 'rain'],
+			['Chance Light Snow', 'snow'],
+			['Patchy Fog then Sunny', 'fog'],
+			['Partly Sunny', 'sct'],
+			['Mostly Cloudy', 'bkn'],
+			['Mostly Clear', 'skc']
+		];
+		forecast.properties.periods = forecast.properties.periods.slice(0, texts.length);
+		forecast.properties.periods.forEach((period, index) => {
+			delete period.icon;
+			period.shortForecast = texts[index][0];
+		});
+		const { periods } = parseForecast(hourly(), forecast, now);
+		assert.deepEqual(
+			periods.map((period) => period.condition),
+			texts.map(([, condition]) => condition)
+		);
+	});
+
+	it('rejects an hourly forecast with no temperature and a forecast with no coming days', () => {
+		assert.throws(() => parseForecast({ properties: { periods: [] } }, daily(), now), /no temperature/);
+		const lastWeek = Date.parse('2026-10-05T12:00:00-04:00');
+		assert.throws(() => parseForecast(hourly(), daily(), lastWeek), /no forecast periods/);
+	});
+});
+
+// The saved response is for every trailhead point, asked on Monday 21 September
+// 2026, so each location carries Friday through Monday and Monday is today.
+describe('parseHistory', () => {
+	const locations = () => [].concat(JSON.parse(fixture('open-meteo-history.json')));
+	const now = Date.parse('2026-09-21T18:30:00-04:00');
+
+	it('answers one location for every trailhead point, in order', () => {
+		assert.equal(locations().length, HISTORY_POINTS.length);
+	});
+
+	it('keeps the three days before today, oldest first, with the rain in inches', () => {
+		const days = parseHistory(locations()[0], now);
+		assert.deepEqual(
+			days.map((day) => day.date),
+			['2026-09-18', '2026-09-19', '2026-09-20']
+		);
+		for (const day of days) {
+			assert.equal(typeof day.condition, 'string');
+			assert.equal(typeof day.description, 'string');
+			assert.equal(Number.isInteger(day.high), true);
+			assert.equal(Number.isInteger(day.low), true);
+			assert.ok(day.high >= day.low);
+			assert.equal(day.precipitation, Math.round(day.precipitation * 100) / 100);
+		}
+	});
+
+	it('names the conditions the way the NWS does, from the WMO code', () => {
+		const location = {
+			daily: {
+				precipitation_sum: [0, 0.3, 1.2, 0.05],
+				temperature_2m_max: [70.4, 66, 61, 58],
+				temperature_2m_min: [52.6, 50, 48, 40],
+				time: ['2026-09-18', '2026-09-19', '2026-09-20', '2026-09-21'],
+				weather_code: [1, 81, 95, 71]
+			}
+		};
+		const days = parseHistory(location, now);
+		assert.deepEqual(
+			days.map((day) => [day.condition, day.description, day.high, day.low, day.precipitation]),
+			[
+				['few', 'Mostly clear', 70, 53, 0],
+				['rain_showers', 'Showers', 66, 50, 0.3],
+				['tsra', 'Thunderstorms', 61, 48, 1.2]
+			]
+		);
+	});
+
+	it('drops today and any day with a reading missing rather than showing a blank as dry', () => {
+		const location = {
+			daily: {
+				precipitation_sum: [0.2, null, 0.1, 0],
+				temperature_2m_max: [70, 66, null, 58],
+				temperature_2m_min: [52, 50, 48, 40],
+				time: ['2026-09-18', '2026-09-19', '2026-09-20', '2026-09-21'],
+				weather_code: [3, 61, 61, 0]
+			}
+		};
+		assert.deepEqual(
+			parseHistory(location, now).map((day) => day.date),
+			['2026-09-18']
+		);
+		assert.deepEqual(parseHistory({}, now), []);
 	});
 });

@@ -15,14 +15,18 @@ const card = (overrides = {}) => ({
 	status: 'open',
 	timestamp: 1000,
 	updatedAt: '2 hours ago',
-	weather: { code: 800, temperature: 70 },
+	weather: { condition: 'skc', temperature: 70 },
 	...overrides
 });
 const other = card({ id: 'oec-flow', name: 'OECR - Flow Trail', status: 'closed' });
 
 describe('conditionsChanged', () => {
 	it('ignores the clock-driven fields and the weather', () => {
-		const moved = card({ timestamp: 9999, updatedAt: '3 hours ago', weather: { code: 500, temperature: 55 } });
+		const moved = card({
+			timestamp: 9999,
+			updatedAt: '3 hours ago',
+			weather: { condition: 'rain', temperature: 55 }
+		});
 		assert.equal(conditionsChanged([card()], [moved]), false);
 	});
 

@@ -3,9 +3,10 @@
 	"sources": {
 		"bsky": 1,
 		"cambaHome": 21,
+		"history": 20,
 		"metroparks": 7,
 		"trailforks": 0,
-		"weather": 20
+		"weather": 19
 	},
 	"trails": [
 		{
@@ -22,11 +23,122 @@
 			"timestamp": 1789822680000,
 			"updatedAt": "Sep 19, 08:58 AM",
 			"weather": {
-				"code": 804,
-				"description": "Overcast clouds",
-				"forecastUrl": "https://www.forecaweather.com/105166177/Parma-Cuyahoga-OH",
-				"isDay": true,
-				"temperature": 64
+				"condition": "rain_showers",
+				"date": "2026-09-21",
+				"description": "Rain Showers Likely",
+				"isDay": false,
+				"precipitationChance": 61,
+				"temperature": 60,
+				"periods": [
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-21",
+						"description": "Rain Showers Likely",
+						"isDay": false,
+						"precipitationChance": 66,
+						"temperature": 56,
+						"name": "Tonight"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-22",
+						"description": "Chance Rain Showers",
+						"isDay": true,
+						"precipitationChance": 26,
+						"temperature": 65,
+						"name": "Tuesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-22",
+						"description": "Chance Rain Showers",
+						"isDay": false,
+						"precipitationChance": 51,
+						"temperature": 56,
+						"name": "Tuesday Night"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-23",
+						"description": "Rain Showers Likely",
+						"isDay": true,
+						"precipitationChance": 58,
+						"temperature": 63,
+						"name": "Wednesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-23",
+						"description": "Rain Showers Likely then Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 58,
+						"temperature": 53,
+						"name": "Wednesday Night"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-09-24",
+						"description": "Mostly Sunny",
+						"isDay": true,
+						"precipitationChance": 4,
+						"temperature": 67,
+						"name": "Thursday"
+					},
+					{
+						"condition": "few",
+						"date": "2026-09-24",
+						"description": "Mostly Clear",
+						"isDay": false,
+						"precipitationChance": 0,
+						"temperature": 49,
+						"name": "Thursday Night"
+					},
+					{
+						"condition": "few",
+						"date": "2026-09-25",
+						"description": "Sunny",
+						"isDay": true,
+						"precipitationChance": 0,
+						"temperature": 65,
+						"name": "Friday"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-09-25",
+						"description": "Partly Cloudy",
+						"isDay": false,
+						"precipitationChance": 0,
+						"temperature": 52,
+						"name": "Friday Night"
+					}
+				],
+				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.3881&lon=-81.6942",
+				"history": [
+					{
+						"condition": "ovc",
+						"date": "2026-09-18",
+						"description": "Overcast",
+						"high": 75,
+						"low": 63,
+						"precipitation": 0
+					},
+					{
+						"condition": "ovc",
+						"date": "2026-09-19",
+						"description": "Overcast",
+						"high": 70,
+						"low": 61,
+						"precipitation": 0
+					},
+					{
+						"condition": "rain",
+						"date": "2026-09-20",
+						"description": "Drizzle",
+						"high": 67,
+						"low": 63,
+						"precipitation": 0.03
+					}
+				]
 			}
 		},
 		{
@@ -43,11 +155,122 @@
 			"timestamp": 1789822140000,
 			"updatedAt": "Sep 19, 08:49 AM",
 			"weather": {
-				"code": 501,
-				"description": "Moderate rain",
-				"forecastUrl": "https://www.forecaweather.com/105151622/Cuyahoga-Heights-Cuyahoga-OH",
-				"isDay": true,
-				"temperature": 66
+				"condition": "rain_showers",
+				"date": "2026-09-21",
+				"description": "Rain Showers Likely",
+				"isDay": false,
+				"precipitationChance": 59,
+				"temperature": 61,
+				"periods": [
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-21",
+						"description": "Rain Showers Likely",
+						"isDay": false,
+						"precipitationChance": 65,
+						"temperature": 56,
+						"name": "Tonight"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-22",
+						"description": "Chance Rain Showers",
+						"isDay": true,
+						"precipitationChance": 26,
+						"temperature": 67,
+						"name": "Tuesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-22",
+						"description": "Chance Rain Showers",
+						"isDay": false,
+						"precipitationChance": 50,
+						"temperature": 56,
+						"name": "Tuesday Night"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-23",
+						"description": "Rain Showers Likely",
+						"isDay": true,
+						"precipitationChance": 57,
+						"temperature": 65,
+						"name": "Wednesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-23",
+						"description": "Rain Showers Likely then Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 57,
+						"temperature": 54,
+						"name": "Wednesday Night"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-09-24",
+						"description": "Mostly Sunny",
+						"isDay": true,
+						"precipitationChance": 4,
+						"temperature": 69,
+						"name": "Thursday"
+					},
+					{
+						"condition": "few",
+						"date": "2026-09-24",
+						"description": "Mostly Clear",
+						"isDay": false,
+						"precipitationChance": 0,
+						"temperature": 51,
+						"name": "Thursday Night"
+					},
+					{
+						"condition": "few",
+						"date": "2026-09-25",
+						"description": "Sunny",
+						"isDay": true,
+						"precipitationChance": 0,
+						"temperature": 67,
+						"name": "Friday"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-09-25",
+						"description": "Partly Cloudy",
+						"isDay": false,
+						"precipitationChance": 0,
+						"temperature": 52,
+						"name": "Friday Night"
+					}
+				],
+				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.4309&lon=-81.6624",
+				"history": [
+					{
+						"condition": "ovc",
+						"date": "2026-09-18",
+						"description": "Overcast",
+						"high": 76,
+						"low": 63,
+						"precipitation": 0
+					},
+					{
+						"condition": "ovc",
+						"date": "2026-09-19",
+						"description": "Overcast",
+						"high": 70,
+						"low": 61,
+						"precipitation": 0
+					},
+					{
+						"condition": "rain",
+						"date": "2026-09-20",
+						"description": "Light drizzle",
+						"high": 69,
+						"low": 63,
+						"precipitation": 0.02
+					}
+				]
 			}
 		},
 		{
@@ -64,11 +287,122 @@
 			"timestamp": 1789757640000,
 			"updatedAt": "Sep 18, 2:54 PM",
 			"weather": {
-				"code": 800,
-				"description": "Clear sky",
-				"forecastUrl": "https://www.forecaweather.com/105145476/Akron-Summit-OH",
-				"isDay": true,
-				"temperature": 67
+				"condition": "rain_showers",
+				"date": "2026-09-21",
+				"description": "Rain Showers Likely",
+				"isDay": false,
+				"precipitationChance": 69,
+				"temperature": 58,
+				"periods": [
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-21",
+						"description": "Rain Showers Likely",
+						"isDay": false,
+						"precipitationChance": 69,
+						"temperature": 54,
+						"name": "Tonight"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-22",
+						"description": "Chance Rain Showers",
+						"isDay": true,
+						"precipitationChance": 28,
+						"temperature": 65,
+						"name": "Tuesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-22",
+						"description": "Chance Rain Showers",
+						"isDay": false,
+						"precipitationChance": 54,
+						"temperature": 53,
+						"name": "Tuesday Night"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-23",
+						"description": "Rain Showers Likely",
+						"isDay": true,
+						"precipitationChance": 65,
+						"temperature": 63,
+						"name": "Wednesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-23",
+						"description": "Rain Showers Likely",
+						"isDay": false,
+						"precipitationChance": 65,
+						"temperature": 51,
+						"name": "Wednesday Night"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-09-24",
+						"description": "Mostly Sunny",
+						"isDay": true,
+						"precipitationChance": 7,
+						"temperature": 67,
+						"name": "Thursday"
+					},
+					{
+						"condition": "few",
+						"date": "2026-09-24",
+						"description": "Mostly Clear",
+						"isDay": false,
+						"precipitationChance": 1,
+						"temperature": 46,
+						"name": "Thursday Night"
+					},
+					{
+						"condition": "few",
+						"date": "2026-09-25",
+						"description": "Sunny",
+						"isDay": true,
+						"precipitationChance": 0,
+						"temperature": 67,
+						"name": "Friday"
+					},
+					{
+						"condition": "few",
+						"date": "2026-09-25",
+						"description": "Mostly Clear",
+						"isDay": false,
+						"precipitationChance": 0,
+						"temperature": 47,
+						"name": "Friday Night"
+					}
+				],
+				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.1512&lon=-81.5507",
+				"history": [
+					{
+						"condition": "ovc",
+						"date": "2026-09-18",
+						"description": "Overcast",
+						"high": 76,
+						"low": 61,
+						"precipitation": 0
+					},
+					{
+						"condition": "rain",
+						"date": "2026-09-19",
+						"description": "Light drizzle",
+						"high": 69,
+						"low": 60,
+						"precipitation": 0.02
+					},
+					{
+						"condition": "rain",
+						"date": "2026-09-20",
+						"description": "Rain",
+						"high": 70,
+						"low": 62,
+						"precipitation": 0.29
+					}
+				]
 			}
 		},
 		{
@@ -85,11 +419,122 @@
 			"timestamp": 1789740960000,
 			"updatedAt": "Sep 18, 10:16 AM",
 			"weather": {
-				"code": 802,
-				"description": "Scattered clouds",
-				"forecastUrl": "https://www.forecaweather.com/105175655/Walton-Hills-Cuyahoga-OH",
-				"isDay": true,
-				"temperature": 65
+				"condition": "rain_showers",
+				"date": "2026-09-21",
+				"description": "Rain Showers Likely",
+				"isDay": false,
+				"precipitationChance": 62,
+				"temperature": 60,
+				"periods": [
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-21",
+						"description": "Rain Showers Likely",
+						"isDay": false,
+						"precipitationChance": 67,
+						"temperature": 54,
+						"name": "Tonight"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-22",
+						"description": "Chance Rain Showers",
+						"isDay": true,
+						"precipitationChance": 27,
+						"temperature": 66,
+						"name": "Tuesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-22",
+						"description": "Chance Rain Showers",
+						"isDay": false,
+						"precipitationChance": 52,
+						"temperature": 54,
+						"name": "Tuesday Night"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-23",
+						"description": "Rain Showers Likely",
+						"isDay": true,
+						"precipitationChance": 61,
+						"temperature": 64,
+						"name": "Wednesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-23",
+						"description": "Rain Showers Likely then Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 61,
+						"temperature": 52,
+						"name": "Wednesday Night"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-09-24",
+						"description": "Mostly Sunny",
+						"isDay": true,
+						"precipitationChance": 5,
+						"temperature": 68,
+						"name": "Thursday"
+					},
+					{
+						"condition": "few",
+						"date": "2026-09-24",
+						"description": "Mostly Clear",
+						"isDay": false,
+						"precipitationChance": 1,
+						"temperature": 48,
+						"name": "Thursday Night"
+					},
+					{
+						"condition": "few",
+						"date": "2026-09-25",
+						"description": "Sunny",
+						"isDay": true,
+						"precipitationChance": 0,
+						"temperature": 67,
+						"name": "Friday"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-09-25",
+						"description": "Partly Cloudy",
+						"isDay": false,
+						"precipitationChance": 0,
+						"temperature": 50,
+						"name": "Friday Night"
+					}
+				],
+				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.3588&lon=-81.5636",
+				"history": [
+					{
+						"condition": "fog",
+						"date": "2026-09-18",
+						"description": "Fog",
+						"high": 76,
+						"low": 62,
+						"precipitation": 0
+					},
+					{
+						"condition": "ovc",
+						"date": "2026-09-19",
+						"description": "Overcast",
+						"high": 70,
+						"low": 60,
+						"precipitation": 0
+					},
+					{
+						"condition": "rain",
+						"date": "2026-09-20",
+						"description": "Heavy drizzle",
+						"high": 68,
+						"low": 63,
+						"precipitation": 0.06
+					}
+				]
 			}
 		},
 		{
@@ -121,11 +566,122 @@
 			"timestamp": 1789675200000,
 			"updatedAt": "2 days ago",
 			"weather": {
-				"code": 211,
-				"description": "Thunderstorm",
-				"forecastUrl": "https://www.forecaweather.com/105162512/Medina-OH",
-				"isDay": true,
-				"temperature": 63
+				"condition": "rain_showers",
+				"date": "2026-09-21",
+				"description": "Rain Showers Likely",
+				"isDay": false,
+				"precipitationChance": 68,
+				"temperature": 57,
+				"periods": [
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-21",
+						"description": "Rain Showers Likely",
+						"isDay": false,
+						"precipitationChance": 68,
+						"temperature": 53,
+						"name": "Tonight"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-22",
+						"description": "Chance Rain Showers",
+						"isDay": true,
+						"precipitationChance": 27,
+						"temperature": 65,
+						"name": "Tuesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-22",
+						"description": "Chance Rain Showers",
+						"isDay": false,
+						"precipitationChance": 54,
+						"temperature": 53,
+						"name": "Tuesday Night"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-23",
+						"description": "Rain Showers Likely",
+						"isDay": true,
+						"precipitationChance": 65,
+						"temperature": 63,
+						"name": "Wednesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-23",
+						"description": "Rain Showers Likely",
+						"isDay": false,
+						"precipitationChance": 65,
+						"temperature": 50,
+						"name": "Wednesday Night"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-09-24",
+						"description": "Mostly Sunny",
+						"isDay": true,
+						"precipitationChance": 7,
+						"temperature": 66,
+						"name": "Thursday"
+					},
+					{
+						"condition": "few",
+						"date": "2026-09-24",
+						"description": "Mostly Clear",
+						"isDay": false,
+						"precipitationChance": 0,
+						"temperature": 46,
+						"name": "Thursday Night"
+					},
+					{
+						"condition": "few",
+						"date": "2026-09-25",
+						"description": "Sunny",
+						"isDay": true,
+						"precipitationChance": 0,
+						"temperature": 66,
+						"name": "Friday"
+					},
+					{
+						"condition": "few",
+						"date": "2026-09-25",
+						"description": "Mostly Clear",
+						"isDay": false,
+						"precipitationChance": 0,
+						"temperature": 47,
+						"name": "Friday Night"
+					}
+				],
+				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.1181&lon=-81.8129",
+				"history": [
+					{
+						"condition": "fog",
+						"date": "2026-09-18",
+						"description": "Fog",
+						"high": 77,
+						"low": 62,
+						"precipitation": 0
+					},
+					{
+						"condition": "ovc",
+						"date": "2026-09-19",
+						"description": "Overcast",
+						"high": 69,
+						"low": 59,
+						"precipitation": 0
+					},
+					{
+						"condition": "rain",
+						"date": "2026-09-20",
+						"description": "Light rain",
+						"high": 70,
+						"low": 63,
+						"precipitation": 0.22
+					}
+				]
 			}
 		},
 		{
@@ -142,11 +698,122 @@
 			"timestamp": 1788264000000,
 			"updatedAt": "3 weeks ago",
 			"weather": {
-				"code": 600,
-				"description": "Light snow",
-				"forecastUrl": "https://www.forecaweather.com/105149818/Chardon-Geauga-OH",
-				"isDay": true,
-				"temperature": 30
+				"condition": "rain_showers",
+				"date": "2026-09-21",
+				"description": "Chance Rain Showers",
+				"isDay": false,
+				"precipitationChance": 42,
+				"temperature": 60,
+				"periods": [
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-21",
+						"description": "Chance Rain Showers",
+						"isDay": false,
+						"precipitationChance": 51,
+						"temperature": 52,
+						"name": "Tonight"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-22",
+						"description": "Slight Chance Rain Showers",
+						"isDay": true,
+						"precipitationChance": 23,
+						"temperature": 64,
+						"name": "Tuesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-22",
+						"description": "Chance Rain Showers",
+						"isDay": false,
+						"precipitationChance": 41,
+						"temperature": 52,
+						"name": "Tuesday Night"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-23",
+						"description": "Rain Showers Likely",
+						"isDay": true,
+						"precipitationChance": 56,
+						"temperature": 63,
+						"name": "Wednesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-09-23",
+						"description": "Rain Showers Likely then Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 56,
+						"temperature": 50,
+						"name": "Wednesday Night"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-09-24",
+						"description": "Mostly Sunny",
+						"isDay": true,
+						"precipitationChance": 6,
+						"temperature": 66,
+						"name": "Thursday"
+					},
+					{
+						"condition": "few",
+						"date": "2026-09-24",
+						"description": "Mostly Clear",
+						"isDay": false,
+						"precipitationChance": 1,
+						"temperature": 47,
+						"name": "Thursday Night"
+					},
+					{
+						"condition": "few",
+						"date": "2026-09-25",
+						"description": "Sunny",
+						"isDay": true,
+						"precipitationChance": 0,
+						"temperature": 64,
+						"name": "Friday"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-09-25",
+						"description": "Partly Cloudy",
+						"isDay": false,
+						"precipitationChance": 0,
+						"temperature": 49,
+						"name": "Friday Night"
+					}
+				],
+				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.6183&lon=-81.2066",
+				"history": [
+					{
+						"condition": "fog",
+						"date": "2026-09-18",
+						"description": "Fog",
+						"high": 73,
+						"low": 60,
+						"precipitation": 0
+					},
+					{
+						"condition": "ovc",
+						"date": "2026-09-19",
+						"description": "Overcast",
+						"high": 68,
+						"low": 59,
+						"precipitation": 0
+					},
+					{
+						"condition": "rain",
+						"date": "2026-09-20",
+						"description": "Light drizzle",
+						"high": 68,
+						"low": 60,
+						"precipitation": 0.02
+					}
+				]
 			}
 		},
 		{

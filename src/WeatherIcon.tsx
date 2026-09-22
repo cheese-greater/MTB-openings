@@ -1,10 +1,11 @@
-import type { TrailWeather } from './trailData';
+import type { WeatherConditions } from './trailData';
 
-type WeatherGlyph = 'clear-day' | 'clear-night' | 'cloudy' | 'fog' | 'partly-cloudy' | 'rain' | 'snow' | 'thunder';
+type SkyGlyph = 'clear' | 'partly-cloudy';
+type WeatherGlyph = `${SkyGlyph}-${'day' | 'night'}` | 'cloudy' | 'fog' | 'rain' | 'snow' | 'thunder';
 
 interface Props {
 	className?: string;
-	weather: TrailWeather;
+	weather: Pick<WeatherConditions, 'condition' | 'isDay'>;
 }
 
 interface CloudProps {
@@ -12,20 +13,50 @@ interface CloudProps {
 	transform?: string;
 }
 
-// OpenWeather condition ids group by hundreds: 2xx thunderstorm, 3xx drizzle,
-// 5xx rain, 6xx snow, 7xx mist, haze and fog, 800 clear, 801 to 804 clouds by
-// how much of the sky they cover.
-function glyphFor({ code, isDay }: TrailWeather): WeatherGlyph {
-	if (code >= 200 && code < 300) return 'thunder';
-	if (code >= 300 && code < 600) return 'rain';
-	if (code >= 600 && code < 700) return 'snow';
-	if (code >= 700 && code < 800) return 'fog';
-	if (code === 800) return isDay ? 'clear-day' : 'clear-night';
-	if (code === 801 || code === 802) return 'partly-cloudy';
-	return 'cloudy';
+// The NWS names a condition after the icon that shows it (the list is at
+// https://api.weather.gov/icons): sky cover from skc, clear, through few, sct
+// and bkn to ovc, overcast, then the kinds of precipitation and haze. The two
+// sky glyphs come in a day and a night version; anything unlisted, such as the
+// tropical ones that never reach Ohio, falls back to a plain cloud.
+const GLYPH_BY_CONDITION: Record<string, WeatherGlyph | SkyGlyph> = {
+	bkn: 'cloudy',
+	blizzard: 'snow',
+	cold: 'clear',
+	dust: 'fog',
+	few: 'clear',
+	fog: 'fog',
+	fzra: 'rain',
+	haze: 'fog',
+	hot: 'clear',
+	hurricane: 'thunder',
+	ovc: 'cloudy',
+	rain: 'rain',
+	rain_fzra: 'rain',
+	rain_showers: 'rain',
+	rain_showers_hi: 'rain',
+	rain_sleet: 'rain',
+	rain_snow: 'snow',
+	sct: 'partly-cloudy',
+	skc: 'clear',
+	sleet: 'snow',
+	smoke: 'fog',
+	snow: 'snow',
+	snow_fzra: 'snow',
+	snow_sleet: 'snow',
+	tornado: 'thunder',
+	tropical_storm: 'thunder',
+	tsra: 'thunder',
+	tsra_hi: 'thunder',
+	tsra_sct: 'thunder'
+};
+
+function glyphFor({ condition, isDay }: Props['weather']): WeatherGlyph {
+	const glyph = GLYPH_BY_CONDITION[condition] ?? 'cloudy';
+	if (glyph === 'clear' || glyph === 'partly-cloudy') return `${glyph}-${isDay ? 'day' : 'night'}`;
+	return glyph;
 }
 
-// A cloud as overlapping discs on a flat base, so one colour fills it as a
+// A cloud as overlapping discs on a flat base, so one color fills it as a
 // single silhouette. Drawn to fill the 24x24 box; callers scale and shift it.
 function Cloud({ fill, transform }: CloudProps) {
 	return (
@@ -50,8 +81,8 @@ const SNOW = 'var(--weather-snow)';
 const BOLT = 'var(--weather-bolt)';
 const FOG = 'var(--weather-fog)';
 
-// Filled, two-tone icons in Dracula's or Alucard's colours, so they read as a
-// splash of weather rather than another grey glyph and still belong to the
+// Filled, two-tone icons in Dracula's or Alucard's colors, so they read as a
+// splash of weather rather than another gray glyph and still belong to the
 // theme. Later shapes paint over earlier ones, which is how a cloud sits in
 // front of the sun and a bolt in front of its cloud.
 function WeatherIcon({ className, weather }: Props) {
@@ -76,7 +107,7 @@ function WeatherIcon({ className, weather }: Props) {
 					<circle cx='22.5' cy='8.5' fill={SUN} r='0.9' />
 				</>
 			)}
-			{glyph === 'partly-cloudy' && (
+			{glyph === 'partly-cloudy-day' && (
 				<>
 					<path
 						d='M8 1v2M1 8h2M3.05 3.05l1.4 1.4M12.95 3.05l-1.4 1.4M3.05 12.95l1.4-1.4'
@@ -85,6 +116,16 @@ function WeatherIcon({ className, weather }: Props) {
 						strokeWidth='1.8'
 					/>
 					<circle cx='8' cy='8' fill={SUN} r='3.6' />
+					<Cloud fill={CLOUD} transform='translate(6.5 5.5) scale(0.74)' />
+				</>
+			)}
+			{glyph === 'partly-cloudy-night' && (
+				<>
+					<path
+						d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'
+						fill={MOON}
+						transform='translate(0.5 0.5) scale(0.58)'
+					/>
 					<Cloud fill={CLOUD} transform='translate(6.5 5.5) scale(0.74)' />
 				</>
 			)}

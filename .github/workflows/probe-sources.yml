@@ -1,7 +1,7 @@
 name: Probe scrape sources
 
 # Diagnostic only: it builds nothing and publishes nothing. Run it when a card
-# goes grey, to find out which source stopped answering; the page itself cannot
+# goes gray, to find out which source stopped answering; the page itself cannot
 # tell you, since a blocked source looks the same as a quiet trail. The report
 # lands in the run's summary.
 #
@@ -37,9 +37,6 @@ jobs:
             - name: Probe the sources
               id: probe
               continue-on-error: true
-              env:
-                  # Lets the probe check OpenWeather too; it skips that row without one.
-                  OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
               run: yarn probe
 
             - name: Publish the report

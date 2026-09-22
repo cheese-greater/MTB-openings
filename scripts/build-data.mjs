@@ -45,7 +45,7 @@ const liveCardCount = payload.trails.filter((trail) => !trail.stale).length;
 
 console.log(
 	`Sources: metroparks=${metroparks} camba=${cambaHome} bsky=${bsky} trailforks=${payload.sources.trailforks} ` +
-		`weather=${payload.sources.weather} trailheads`
+		`weather=${payload.sources.weather} grid cells history=${payload.sources.history} points`
 );
 console.log(`${payload.trails.length} cards, ${liveCardCount} of them live`);
 

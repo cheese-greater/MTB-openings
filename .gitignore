@@ -15,7 +15,7 @@ dist-ssr
 # Diagnostic output from `yarn probe`, not part of the site
 probe-report.md
 
-# Secrets: OPENWEATHER_API_KEY lives here, copied from .env.example
+# Local environment files, never committed
 .env
 
 # Playwright output from `yarn test:e2e`

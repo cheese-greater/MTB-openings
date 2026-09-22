@@ -35,6 +35,10 @@
 	"name": "my-react-app",
 	"packageManager": "yarn@4.10.3",
 	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cheese-greater/MTB-openings.git"
+	},
 	"scripts": {
 		"build": "node scripts/gen-qr.mjs && tsc -b && vite build",
 		"build:data": "node scripts/build-data.mjs",

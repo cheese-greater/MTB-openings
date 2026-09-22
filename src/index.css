@@ -28,7 +28,7 @@
 
 	--accent: #ff79c6; /* pink */
 
-	/* The weather chip on each card: filled icons in the palette's own colours */
+	/* The weather chip on each card: filled icons in the palette's own colors */
 	--weather-sun: #f1fa8c; /* yellow */
 	--weather-sun-rays: #ffb86c; /* orange */
 	--weather-moon: #bd93f9; /* purple */
@@ -38,6 +38,11 @@
 	--weather-snow: #f8f8f2; /* foreground */
 	--weather-bolt: #f1fa8c; /* yellow */
 	--weather-fog: #6272a4; /* comment */
+	/* Highs and lows in the forecast dialog: the palette's orange for warm, and
+	   purple leaned toward cyan so it reads as blue without landing on the moon
+	   or the rain. */
+	--weather-high: #ffb86c; /* orange */
+	--weather-low: #aeadfa; /* purple 70, cyan 30 */
 
 	--sans: system-ui, 'Segoe UI', Roboto, sans-serif;
 
@@ -90,6 +95,8 @@
 	--weather-snow: #036a96; /* cyan */
 	--weather-bolt: #e0a30a; /* amber */
 	--weather-fog: #6c664b; /* comment */
+	--weather-high: #a34d14; /* orange */
+	--weather-low: #4754ba; /* purple 70, cyan 30 */
 
 	color-scheme: light;
 }

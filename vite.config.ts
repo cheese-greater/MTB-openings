@@ -30,14 +30,18 @@ const base = process.env.GITHUB_PAGES === 'true' ? `/${process.env.GITHUB_REPOSI
 // QR code (scripts/gen-qr.mjs reads the same field) can never point somewhere
 // else, and it is fixed at build time rather than read from the browser because
 // a self-hosted copy on a LAN address has nothing shareable to offer.
-const { homepage: siteUrl } = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')) as {
-	homepage: string;
-};
+// The repository address feeds the footer's issue and source links the same
+// way, so a fork points its readers at its own tracker.
+const { homepage: siteUrl, repository } = JSON.parse(
+	readFileSync(new URL('./package.json', import.meta.url), 'utf8')
+) as { homepage: string; repository: { url: string } };
+const repoUrl = repository.url.replace(/\.git$/, '');
 
 export default defineConfig({
 	base,
 	define: {
 		__APP_VERSION__: JSON.stringify(version),
+		__REPO_URL__: JSON.stringify(repoUrl),
 		__SITE_URL__: JSON.stringify(siteUrl)
 	},
 	plugins: [react()],

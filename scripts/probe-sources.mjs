@@ -3,7 +3,7 @@
 //
 // It was written to settle whether GitHub's runners get blocked where a home
 // connection does not, and it earns its keep after that as the thing to run when
-// a card goes grey: it says which source stopped answering, which the page
+// a card goes gray: it says which source stopped answering, which the page
 // itself cannot tell you (a failed source looks the same as a quiet trail).
 //
 // Bot blocking rarely looks like an error. A challenge or geo-block page comes
@@ -25,10 +25,12 @@ import {
 	bskyFeedUrl,
 	CAMBA_HOME_URL,
 	getTrailsPayload,
+	HISTORY_POINTS,
 	METROPARKS_URL,
-	openWeatherUrl,
+	nwsForecastUrl,
+	openMeteoHistoryUrl,
 	TRAILFORKS_REGIONS,
-	WEATHER_POINTS
+	WEATHER_CELLS
 } from '../lib/trails.mjs';
 
 const execFileAsync = promisify(execFile);
@@ -85,29 +87,38 @@ const SOURCES = [
 		transport: 'fetch',
 		url: bskyFeedUrl(BSKY_ACCOUNTS[0].handle)
 	},
-	// Only when a key is configured: without one the scraper skips weather on
-	// purpose, which is not a blocked source. The URL carries the key, and the
-	// report prints names and measurements, never URLs.
-	...(process.env.OPENWEATHER_API_KEY
-		? [
-				{
-					carries: 'the temperature and sky on every outdoor card',
-					measure: (body) => {
-						const current = JSON.parse(body);
-						const ok = typeof current.main?.temp === 'number';
-						return {
-							detail: ok
-								? `${Math.round(current.main.temp)}°F, ${current.weather?.[0]?.description ?? 'no description'}`
-								: 'no temperature in the response',
-							ok
-						};
-					},
-					name: 'OpenWeather (first trailhead)',
-					transport: 'fetch',
-					url: openWeatherUrl(WEATHER_POINTS[0], process.env.OPENWEATHER_API_KEY)
-				}
-			]
-		: [])
+	// One grid cell stands for the lot: the scraper asks the same API for each
+	// of them, and a block or an outage would show on any one.
+	{
+		carries: 'the sky, temperature and five-day forecast on every outdoor card',
+		measure: (body) => {
+			const periods = JSON.parse(body).properties?.periods ?? [];
+			const [first] = periods;
+			return {
+				detail: first
+					? `${periods.length} periods; ${first.name}: ${first.temperature}°F, ${first.shortForecast}`
+					: 'no periods in the response',
+				ok: periods.length > 0
+			};
+		},
+		name: 'weather.gov (first grid cell)',
+		transport: 'fetch',
+		url: nwsForecastUrl(WEATHER_CELLS[0])
+	},
+	{
+		carries: 'the three past days in every forecast dialog',
+		measure: (body) => {
+			const locations = [].concat(JSON.parse(body));
+			const days = locations[0]?.daily?.time ?? [];
+			return {
+				detail: `${locations.length} locations of ${HISTORY_POINTS.length}, ${days.length} days each`,
+				ok: locations.length === HISTORY_POINTS.length && days.length > 0
+			};
+		},
+		name: 'Open-Meteo (every trailhead)',
+		transport: 'fetch',
+		url: openMeteoHistoryUrl(HISTORY_POINTS)
+	}
 ];
 
 async function fetchWithNode(url) {

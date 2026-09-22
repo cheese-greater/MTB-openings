@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 
+import ForecastDialog from './ForecastDialog';
 import { useMediaQuery } from './mediaQuery';
 import { useTimeAgo } from './timeAgo';
 import type { Trail } from './trailData';
@@ -36,6 +37,7 @@ function TrailCard({ isFavorite, onToggleFavorite, trail }: Props) {
 	const [expanded, setExpanded] = useState(false);
 	const [conditionOpen, setConditionOpen] = useState(false);
 	const [conditionOverflows, setConditionOverflows] = useState(false);
+	const [forecastOpen, setForecastOpen] = useState(false);
 	const conditionRef = useRef<HTMLParagraphElement>(null);
 	const isMobile = useMediaQuery(MOBILE_QUERY);
 	const detailsId = `trail-details-${trail.id}`;
@@ -136,16 +138,16 @@ function TrailCard({ isFavorite, onToggleFavorite, trail }: Props) {
 						<span className='trail-card__location-text'>{displayLocation(trail.location)}</span>
 					</a>
 					{trail.weather && (
-						<a
+						<button
+							aria-haspopup='dialog'
 							className='trail-card__weather'
-							href={trail.weather.forecastUrl}
-							rel='noopener noreferrer'
-							target='_blank'
-							title={`${trail.weather.description} at the trailhead as of the last hourly update (OpenWeather). Opens today's Foreca forecast.`}
+							onClick={() => setForecastOpen(true)}
+							title={trail.weather.description}
+							type='button'
 						>
 							<WeatherIcon className='trail-card__weather-icon' weather={trail.weather} />
 							<span className='trail-card__weather-temp'>{`${trail.weather.temperature}°F`}</span>
-						</a>
+						</button>
 					)}
 				</div>
 				<p
@@ -194,6 +196,14 @@ function TrailCard({ isFavorite, onToggleFavorite, trail }: Props) {
 					</div>
 				</div>
 			</div>
+			{forecastOpen && trail.weather && (
+				<ForecastDialog
+					onClose={() => setForecastOpen(false)}
+					place={displayLocation(trail.location)}
+					title={displayName}
+					weather={trail.weather}
+				/>
+			)}
 		</article>
 	);
 }

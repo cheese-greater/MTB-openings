@@ -25,7 +25,7 @@ permissions:
     id-token: write
     pages: write
 
-# Queue runs instead of cancelling: a cancelled run could drop a data commit
+# Queue runs instead of canceling: a canceled run could drop a data commit
 # halfway, and two runs pushing at once would collide.
 concurrency:
     group: pages
@@ -56,10 +56,6 @@ jobs:
 
             - name: Scrape the trail data
               id: data
-              env:
-                  # Weather on the cards. Without the secret the build still
-                  # succeeds; the cards just carry no weather.
-                  OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
               run: yarn build:data
 
             - name: Commit the data when conditions changed
