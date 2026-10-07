@@ -1,5 +1,5 @@
 {
-	"cachedAt": 1791304190293,
+	"cachedAt": 1791340014409,
 	"sources": {
 		"bsky": 1,
 		"cambaHome": 21,
@@ -25,27 +25,18 @@
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 1,
-				"temperature": 58,
+				"temperature": 52,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 2,
-						"temperature": 65,
-						"name": "Today"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 46,
+						"precipitationChance": 1,
+						"temperature": 45,
 						"name": "Tonight"
 					},
 					{
@@ -53,35 +44,35 @@
 						"date": "2026-10-07",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 2,
+						"precipitationChance": 12,
 						"temperature": 75,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 2,
-						"temperature": 52,
+						"precipitationChance": 13,
+						"temperature": 50,
 						"name": "Wednesday Night"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-08",
+						"description": "Mostly Sunny",
+						"isDay": true,
+						"precipitationChance": 0,
+						"temperature": 69,
+						"name": "Thursday"
 					},
 					{
 						"condition": "few",
 						"date": "2026-10-08",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
-						"name": "Thursday"
-					},
-					{
-						"condition": "sct",
-						"date": "2026-10-08",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 45,
+						"precipitationChance": 0,
+						"temperature": 44,
 						"name": "Thursday Night"
 					},
 					{
@@ -89,8 +80,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 67,
+						"precipitationChance": 0,
+						"temperature": 69,
 						"name": "Friday"
 					},
 					{
@@ -99,7 +90,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 45,
+						"temperature": 48,
 						"name": "Friday Night"
 					},
 					{
@@ -108,7 +99,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 73,
+						"temperature": 78,
 						"name": "Saturday"
 					},
 					{
@@ -116,8 +107,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 53,
+						"precipitationChance": 6,
+						"temperature": 57,
 						"name": "Saturday Night"
 					}
 				],
@@ -166,26 +157,17 @@
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 1,
-				"temperature": 58,
+				"temperature": 54,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 2,
-						"temperature": 66,
-						"name": "This Afternoon"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
+						"precipitationChance": 1,
 						"temperature": 46,
 						"name": "Tonight"
 					},
@@ -194,35 +176,35 @@
 						"date": "2026-10-07",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 2,
+						"precipitationChance": 12,
 						"temperature": 75,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 52,
+						"precipitationChance": 13,
+						"temperature": 51,
 						"name": "Wednesday Night"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-08",
+						"description": "Mostly Sunny",
+						"isDay": true,
+						"precipitationChance": 0,
+						"temperature": 69,
+						"name": "Thursday"
 					},
 					{
 						"condition": "few",
 						"date": "2026-10-08",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
-						"name": "Thursday"
-					},
-					{
-						"condition": "sct",
-						"date": "2026-10-08",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 45,
+						"precipitationChance": 0,
+						"temperature": 44,
 						"name": "Thursday Night"
 					},
 					{
@@ -230,8 +212,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 67,
+						"precipitationChance": 0,
+						"temperature": 69,
 						"name": "Friday"
 					},
 					{
@@ -240,7 +222,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 45,
+						"temperature": 48,
 						"name": "Friday Night"
 					},
 					{
@@ -249,7 +231,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 72,
+						"temperature": 78,
 						"name": "Saturday"
 					},
 					{
@@ -257,8 +239,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 54,
+						"precipitationChance": 6,
+						"temperature": 58,
 						"name": "Saturday Night"
 					}
 				],
@@ -307,27 +289,18 @@
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 1,
-				"temperature": 59,
+				"temperature": 55,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 2,
-						"temperature": 67,
-						"name": "Today"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 49,
+						"precipitationChance": 1,
+						"temperature": 48,
 						"name": "Tonight"
 					},
 					{
@@ -335,17 +308,17 @@
 						"date": "2026-10-07",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 2,
+						"precipitationChance": 11,
 						"temperature": 76,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 54,
+						"precipitationChance": 11,
+						"temperature": 53,
 						"name": "Wednesday Night"
 					},
 					{
@@ -353,17 +326,17 @@
 						"date": "2026-10-08",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
+						"precipitationChance": 0,
+						"temperature": 69,
 						"name": "Thursday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-08",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 48,
+						"precipitationChance": 0,
+						"temperature": 47,
 						"name": "Thursday Night"
 					},
 					{
@@ -371,8 +344,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
+						"precipitationChance": 0,
+						"temperature": 69,
 						"name": "Friday"
 					},
 					{
@@ -381,7 +354,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 48,
+						"temperature": 50,
 						"name": "Friday Night"
 					},
 					{
@@ -390,7 +363,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 73,
+						"temperature": 78,
 						"name": "Saturday"
 					},
 					{
@@ -398,8 +371,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 55,
+						"precipitationChance": 6,
+						"temperature": 59,
 						"name": "Saturday Night"
 					}
 				],
@@ -448,27 +421,18 @@
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 1,
-				"temperature": 59,
+				"temperature": 55,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 2,
-						"temperature": 67,
-						"name": "Today"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 49,
+						"precipitationChance": 1,
+						"temperature": 48,
 						"name": "Tonight"
 					},
 					{
@@ -476,17 +440,17 @@
 						"date": "2026-10-07",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 2,
+						"precipitationChance": 11,
 						"temperature": 76,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 54,
+						"precipitationChance": 11,
+						"temperature": 53,
 						"name": "Wednesday Night"
 					},
 					{
@@ -494,17 +458,17 @@
 						"date": "2026-10-08",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
+						"precipitationChance": 0,
+						"temperature": 69,
 						"name": "Thursday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-08",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 48,
+						"precipitationChance": 0,
+						"temperature": 47,
 						"name": "Thursday Night"
 					},
 					{
@@ -512,8 +476,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
+						"precipitationChance": 0,
+						"temperature": 69,
 						"name": "Friday"
 					},
 					{
@@ -522,7 +486,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 48,
+						"temperature": 50,
 						"name": "Friday Night"
 					},
 					{
@@ -531,7 +495,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 73,
+						"temperature": 78,
 						"name": "Saturday"
 					},
 					{
@@ -539,8 +503,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 55,
+						"precipitationChance": 6,
+						"temperature": 59,
 						"name": "Saturday Night"
 					}
 				],
@@ -589,27 +553,18 @@
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 1,
-				"temperature": 59,
+				"temperature": 55,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 2,
-						"temperature": 67,
-						"name": "Today"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 49,
+						"precipitationChance": 1,
+						"temperature": 48,
 						"name": "Tonight"
 					},
 					{
@@ -617,17 +572,17 @@
 						"date": "2026-10-07",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 2,
+						"precipitationChance": 11,
 						"temperature": 76,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 54,
+						"precipitationChance": 11,
+						"temperature": 53,
 						"name": "Wednesday Night"
 					},
 					{
@@ -635,17 +590,17 @@
 						"date": "2026-10-08",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
+						"precipitationChance": 0,
+						"temperature": 69,
 						"name": "Thursday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-08",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 48,
+						"precipitationChance": 0,
+						"temperature": 47,
 						"name": "Thursday Night"
 					},
 					{
@@ -653,8 +608,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
+						"precipitationChance": 0,
+						"temperature": 69,
 						"name": "Friday"
 					},
 					{
@@ -663,7 +618,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 48,
+						"temperature": 50,
 						"name": "Friday Night"
 					},
 					{
@@ -672,7 +627,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 73,
+						"temperature": 78,
 						"name": "Saturday"
 					},
 					{
@@ -680,8 +635,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 55,
+						"precipitationChance": 6,
+						"temperature": 59,
 						"name": "Saturday Night"
 					}
 				],
@@ -728,28 +683,19 @@
 			"updatedAt": "Oct 4, 10:22 AM",
 			"stale": false,
 			"weather": {
-				"condition": "few",
+				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 1,
-				"temperature": 58,
+				"temperature": 51,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 65,
-						"name": "Today"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
+						"precipitationChance": 1,
 						"temperature": 46,
 						"name": "Tonight"
 					},
@@ -758,35 +704,35 @@
 						"date": "2026-10-07",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 2,
+						"precipitationChance": 11,
 						"temperature": 75,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 2,
-						"temperature": 51,
+						"precipitationChance": 10,
+						"temperature": 50,
 						"name": "Wednesday Night"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-08",
+						"description": "Mostly Sunny",
+						"isDay": true,
+						"precipitationChance": 0,
+						"temperature": 69,
+						"name": "Thursday"
 					},
 					{
 						"condition": "few",
 						"date": "2026-10-08",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
-						"name": "Thursday"
-					},
-					{
-						"condition": "sct",
-						"date": "2026-10-08",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 44,
+						"precipitationChance": 0,
+						"temperature": 43,
 						"name": "Thursday Night"
 					},
 					{
@@ -794,8 +740,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 67,
+						"precipitationChance": 0,
+						"temperature": 68,
 						"name": "Friday"
 					},
 					{
@@ -804,7 +750,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 45,
+						"temperature": 48,
 						"name": "Friday Night"
 					},
 					{
@@ -813,7 +759,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 72,
+						"temperature": 77,
 						"name": "Saturday"
 					},
 					{
@@ -821,8 +767,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 53,
+						"precipitationChance": 7,
+						"temperature": 56,
 						"name": "Saturday Night"
 					}
 				],
@@ -871,27 +817,18 @@
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 1,
-				"temperature": 58,
+				"temperature": 52,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 65,
-						"name": "Today"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 47,
+						"precipitationChance": 1,
+						"temperature": 46,
 						"name": "Tonight"
 					},
 					{
@@ -899,7 +836,7 @@
 						"date": "2026-10-07",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 2,
+						"precipitationChance": 11,
 						"temperature": 75,
 						"name": "Wednesday"
 					},
@@ -908,26 +845,26 @@
 						"date": "2026-10-07",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
-						"temperature": 52,
+						"precipitationChance": 10,
+						"temperature": 50,
 						"name": "Wednesday Night"
-					},
-					{
-						"condition": "few",
-						"date": "2026-10-08",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 67,
-						"name": "Thursday"
 					},
 					{
 						"condition": "sct",
 						"date": "2026-10-08",
-						"description": "Partly Cloudy",
+						"description": "Mostly Sunny",
+						"isDay": true,
+						"precipitationChance": 0,
+						"temperature": 68,
+						"name": "Thursday"
+					},
+					{
+						"condition": "few",
+						"date": "2026-10-08",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 45,
+						"precipitationChance": 0,
+						"temperature": 43,
 						"name": "Thursday Night"
 					},
 					{
@@ -935,8 +872,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 66,
+						"precipitationChance": 0,
+						"temperature": 68,
 						"name": "Friday"
 					},
 					{
@@ -945,7 +882,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 46,
+						"temperature": 48,
 						"name": "Friday Night"
 					},
 					{
@@ -954,7 +891,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 72,
+						"temperature": 77,
 						"name": "Saturday"
 					},
 					{
@@ -962,8 +899,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 54,
+						"precipitationChance": 7,
+						"temperature": 57,
 						"name": "Saturday Night"
 					}
 				],
@@ -1010,29 +947,20 @@
 			"updatedAt": "Oct 6, 08:20 AM",
 			"stale": false,
 			"weather": {
-				"condition": "few",
+				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 1,
-				"temperature": 58,
+				"temperature": 53,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 2,
-						"temperature": 65,
-						"name": "This Afternoon"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 49,
+						"precipitationChance": 1,
+						"temperature": 48,
 						"name": "Tonight"
 					},
 					{
@@ -1040,7 +968,7 @@
 						"date": "2026-10-07",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 2,
+						"precipitationChance": 11,
 						"temperature": 75,
 						"name": "Wednesday"
 					},
@@ -1049,8 +977,8 @@
 						"date": "2026-10-07",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 54,
+						"precipitationChance": 11,
+						"temperature": 52,
 						"name": "Wednesday Night"
 					},
 					{
@@ -1058,17 +986,17 @@
 						"date": "2026-10-08",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 67,
+						"precipitationChance": 0,
+						"temperature": 68,
 						"name": "Thursday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-08",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 48,
+						"precipitationChance": 0,
+						"temperature": 47,
 						"name": "Thursday Night"
 					},
 					{
@@ -1076,8 +1004,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 66,
+						"precipitationChance": 0,
+						"temperature": 68,
 						"name": "Friday"
 					},
 					{
@@ -1086,7 +1014,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 48,
+						"temperature": 50,
 						"name": "Friday Night"
 					},
 					{
@@ -1095,7 +1023,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 72,
+						"temperature": 77,
 						"name": "Saturday"
 					},
 					{
@@ -1103,8 +1031,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 56,
+						"precipitationChance": 6,
+						"temperature": 59,
 						"name": "Saturday Night"
 					}
 				],
@@ -1151,29 +1079,20 @@
 			"updatedAt": "Oct 5, 9:14 AM",
 			"stale": false,
 			"weather": {
-				"condition": "few",
+				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 0,
-				"temperature": 58,
+				"temperature": 50,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 64,
-						"name": "This Afternoon"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 2,
-						"temperature": 44,
+						"precipitationChance": 1,
+						"temperature": 43,
 						"name": "Tonight"
 					},
 					{
@@ -1181,26 +1100,26 @@
 						"date": "2026-10-07",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 75,
+						"precipitationChance": 13,
+						"temperature": 74,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 50,
+						"precipitationChance": 13,
+						"temperature": 49,
 						"name": "Wednesday Night"
 					},
 					{
-						"condition": "few",
+						"condition": "sct",
 						"date": "2026-10-08",
-						"description": "Sunny",
+						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
+						"precipitationChance": 0,
+						"temperature": 70,
 						"name": "Thursday"
 					},
 					{
@@ -1208,8 +1127,8 @@
 						"date": "2026-10-08",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 43,
+						"precipitationChance": 0,
+						"temperature": 42,
 						"name": "Thursday Night"
 					},
 					{
@@ -1217,8 +1136,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 67,
+						"precipitationChance": 0,
+						"temperature": 68,
 						"name": "Friday"
 					},
 					{
@@ -1227,7 +1146,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 43,
+						"temperature": 47,
 						"name": "Friday Night"
 					},
 					{
@@ -1236,7 +1155,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 72,
+						"temperature": 77,
 						"name": "Saturday"
 					},
 					{
@@ -1244,8 +1163,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 4,
-						"temperature": 52,
+						"precipitationChance": 7,
+						"temperature": 55,
 						"name": "Saturday Night"
 					}
 				],
@@ -1288,32 +1207,23 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=105"
 			},
 			"status": "open",
-			"timestamp": 1789489789680,
+			"timestamp": 1789525614233,
 			"updatedAt": "3 weeks ago",
 			"stale": true,
 			"weather": {
-				"condition": "few",
+				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 0,
-				"temperature": 57,
+				"temperature": 50,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 64,
-						"name": "Today"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 1,
 						"temperature": 44,
 						"name": "Tonight"
 					},
@@ -1322,35 +1232,35 @@
 						"date": "2026-10-07",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 75,
+						"precipitationChance": 11,
+						"temperature": 74,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 50,
+						"precipitationChance": 11,
+						"temperature": 48,
 						"name": "Wednesday Night"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-08",
+						"description": "Mostly Sunny",
+						"isDay": true,
+						"precipitationChance": 0,
+						"temperature": 69,
+						"name": "Thursday"
 					},
 					{
 						"condition": "few",
 						"date": "2026-10-08",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
-						"name": "Thursday"
-					},
-					{
-						"condition": "sct",
-						"date": "2026-10-08",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 43,
+						"precipitationChance": 0,
+						"temperature": 42,
 						"name": "Thursday Night"
 					},
 					{
@@ -1358,8 +1268,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 67,
+						"precipitationChance": 0,
+						"temperature": 68,
 						"name": "Friday"
 					},
 					{
@@ -1368,7 +1278,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 43,
+						"temperature": 47,
 						"name": "Friday Night"
 					},
 					{
@@ -1377,7 +1287,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 72,
+						"temperature": 77,
 						"name": "Saturday"
 					},
 					{
@@ -1385,8 +1295,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 4,
-						"temperature": 52,
+						"precipitationChance": 8,
+						"temperature": 55,
 						"name": "Saturday Night"
 					}
 				],
@@ -1429,33 +1339,24 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=112"
 			},
 			"status": "open",
-			"timestamp": 1791242989677,
-			"updatedAt": "17 hours ago",
+			"timestamp": 1791242814232,
+			"updatedAt": "27 hours ago",
 			"stale": false,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 0,
-				"temperature": 57,
+				"temperature": 50,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 65,
-						"name": "This Afternoon"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 2,
-						"temperature": 44,
+						"precipitationChance": 1,
+						"temperature": 42,
 						"name": "Tonight"
 					},
 					{
@@ -1463,17 +1364,17 @@
 						"date": "2026-10-07",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 74,
+						"precipitationChance": 6,
+						"temperature": 73,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 51,
+						"precipitationChance": 7,
+						"temperature": 50,
 						"name": "Wednesday Night"
 					},
 					{
@@ -1481,7 +1382,7 @@
 						"date": "2026-10-08",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
+						"precipitationChance": 0,
 						"temperature": 70,
 						"name": "Thursday"
 					},
@@ -1490,8 +1391,8 @@
 						"date": "2026-10-08",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 4,
-						"temperature": 44,
+						"precipitationChance": 0,
+						"temperature": 43,
 						"name": "Thursday Night"
 					},
 					{
@@ -1499,8 +1400,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 67,
+						"precipitationChance": 0,
+						"temperature": 68,
 						"name": "Friday"
 					},
 					{
@@ -1509,7 +1410,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 44,
+						"temperature": 47,
 						"name": "Friday Night"
 					},
 					{
@@ -1518,7 +1419,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 72,
+						"temperature": 76,
 						"name": "Saturday"
 					},
 					{
@@ -1526,8 +1427,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 4,
-						"temperature": 51,
+						"precipitationChance": 6,
+						"temperature": 56,
 						"name": "Saturday Night"
 					}
 				],
@@ -1570,33 +1471,24 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=116"
 			},
 			"status": "open",
-			"timestamp": 1791242989678,
-			"updatedAt": "17 hours ago",
+			"timestamp": 1791242814232,
+			"updatedAt": "27 hours ago",
 			"stale": false,
 			"weather": {
-				"condition": "few",
+				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 0,
-				"temperature": 56,
+				"temperature": 49,
 				"periods": [
 					{
-						"condition": "few",
+						"condition": "skc",
 						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 64,
-						"name": "This Afternoon"
-					},
-					{
-						"condition": "few",
-						"date": "2026-10-06",
-						"description": "Mostly Clear",
+						"description": "Clear",
 						"isDay": false,
-						"precipitationChance": 2,
-						"temperature": 44,
+						"precipitationChance": 0,
+						"temperature": 43,
 						"name": "Tonight"
 					},
 					{
@@ -1604,17 +1496,17 @@
 						"date": "2026-10-07",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 73,
+						"precipitationChance": 9,
+						"temperature": 72,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 51,
+						"precipitationChance": 9,
+						"temperature": 49,
 						"name": "Wednesday Night"
 					},
 					{
@@ -1622,7 +1514,7 @@
 						"date": "2026-10-08",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
+						"precipitationChance": 0,
 						"temperature": 69,
 						"name": "Thursday"
 					},
@@ -1631,8 +1523,8 @@
 						"date": "2026-10-08",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 44,
+						"precipitationChance": 0,
+						"temperature": 43,
 						"name": "Thursday Night"
 					},
 					{
@@ -1640,8 +1532,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 66,
+						"precipitationChance": 0,
+						"temperature": 67,
 						"name": "Friday"
 					},
 					{
@@ -1650,7 +1542,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 44,
+						"temperature": 47,
 						"name": "Friday Night"
 					},
 					{
@@ -1658,8 +1550,8 @@
 						"date": "2026-10-10",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 71,
+						"precipitationChance": 1,
+						"temperature": 76,
 						"name": "Saturday"
 					},
 					{
@@ -1667,8 +1559,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 4,
-						"temperature": 52,
+						"precipitationChance": 7,
+						"temperature": 54,
 						"name": "Saturday Night"
 					}
 				],
@@ -1711,33 +1603,24 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=115"
 			},
 			"status": "open",
-			"timestamp": 1791156589679,
-			"updatedAt": "41 hours ago",
+			"timestamp": 1791167214232,
+			"updatedAt": "2 days ago",
 			"stale": false,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
-				"precipitationChance": 0,
-				"temperature": 56,
+				"description": "Clear",
+				"isDay": false,
+				"precipitationChance": 1,
+				"temperature": 50,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 64,
-						"name": "This Afternoon"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 2,
-						"temperature": 44,
+						"precipitationChance": 1,
+						"temperature": 43,
 						"name": "Tonight"
 					},
 					{
@@ -1745,17 +1628,17 @@
 						"date": "2026-10-07",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 73,
+						"precipitationChance": 10,
+						"temperature": 72,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 51,
+						"precipitationChance": 10,
+						"temperature": 50,
 						"name": "Wednesday Night"
 					},
 					{
@@ -1763,8 +1646,8 @@
 						"date": "2026-10-08",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
+						"precipitationChance": 0,
+						"temperature": 69,
 						"name": "Thursday"
 					},
 					{
@@ -1772,8 +1655,8 @@
 						"date": "2026-10-08",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 44,
+						"precipitationChance": 0,
+						"temperature": 43,
 						"name": "Thursday Night"
 					},
 					{
@@ -1781,8 +1664,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 66,
+						"precipitationChance": 0,
+						"temperature": 67,
 						"name": "Friday"
 					},
 					{
@@ -1791,7 +1674,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 44,
+						"temperature": 47,
 						"name": "Friday Night"
 					},
 					{
@@ -1800,7 +1683,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 71,
+						"temperature": 76,
 						"name": "Saturday"
 					},
 					{
@@ -1808,8 +1691,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 4,
-						"temperature": 52,
+						"precipitationChance": 6,
+						"temperature": 56,
 						"name": "Saturday Night"
 					}
 				],
@@ -1852,33 +1735,24 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=109"
 			},
 			"status": "open",
-			"timestamp": 1790699389679,
-			"updatedAt": "7 days ago",
+			"timestamp": 1790648814232,
+			"updatedAt": "8 days ago",
 			"stale": true,
 			"weather": {
-				"condition": "few",
+				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 0,
-				"temperature": 56,
+				"temperature": 50,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 63,
-						"name": "This Afternoon"
-					},
 					{
 						"condition": "skc",
 						"date": "2026-10-06",
 						"description": "Clear",
 						"isDay": false,
 						"precipitationChance": 0,
-						"temperature": 42,
+						"temperature": 41,
 						"name": "Tonight"
 					},
 					{
@@ -1886,7 +1760,7 @@
 						"date": "2026-10-07",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
+						"precipitationChance": 5,
 						"temperature": 72,
 						"name": "Wednesday"
 					},
@@ -1949,7 +1823,7 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 12,
+						"precipitationChance": 11,
 						"temperature": 56,
 						"name": "Saturday Night"
 					}
@@ -1993,32 +1867,23 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=106"
 			},
 			"status": "open",
-			"timestamp": 1790353789679,
+			"timestamp": 1790389614232,
 			"updatedAt": "11 days ago",
 			"stale": true,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 0,
-				"temperature": 58,
+				"temperature": 49,
 				"periods": [
 					{
 						"condition": "skc",
 						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 65,
-						"name": "This Afternoon"
-					},
-					{
-						"condition": "few",
-						"date": "2026-10-06",
-						"description": "Mostly Clear",
+						"description": "Clear",
 						"isDay": false,
-						"precipitationChance": 1,
+						"precipitationChance": 0,
 						"temperature": 44,
 						"name": "Tonight"
 					},
@@ -2027,17 +1892,17 @@
 						"date": "2026-10-07",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
+						"precipitationChance": 3,
 						"temperature": 74,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 51,
+						"precipitationChance": 4,
+						"temperature": 50,
 						"name": "Wednesday Night"
 					},
 					{
@@ -2046,7 +1911,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 70,
+						"temperature": 71,
 						"name": "Thursday"
 					},
 					{
@@ -2054,8 +1919,8 @@
 						"date": "2026-10-08",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 43,
+						"precipitationChance": 0,
+						"temperature": 42,
 						"name": "Thursday Night"
 					},
 					{
@@ -2063,7 +1928,7 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
+						"precipitationChance": 0,
 						"temperature": 68,
 						"name": "Friday"
 					},
@@ -2072,8 +1937,8 @@
 						"date": "2026-10-09",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 44,
+						"precipitationChance": 0,
+						"temperature": 46,
 						"name": "Friday Night"
 					},
 					{
@@ -2082,7 +1947,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 0,
-						"temperature": 72,
+						"temperature": 77,
 						"name": "Saturday"
 					},
 					{
@@ -2090,8 +1955,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 7,
-						"temperature": 52,
+						"precipitationChance": 13,
+						"temperature": 54,
 						"name": "Saturday Night"
 					}
 				],
@@ -2134,30 +1999,21 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=113"
 			},
 			"status": "open",
-			"timestamp": 1790267389679,
-			"updatedAt": "12 days ago",
+			"timestamp": 1790216814232,
+			"updatedAt": "13 days ago",
 			"stale": true,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 0,
-				"temperature": 62,
+				"temperature": 54,
 				"periods": [
 					{
 						"condition": "skc",
 						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 69,
-						"name": "Today"
-					},
-					{
-						"condition": "few",
-						"date": "2026-10-06",
-						"description": "Mostly Clear",
+						"description": "Clear",
 						"isDay": false,
 						"precipitationChance": 0,
 						"temperature": 46,
@@ -2168,8 +2024,8 @@
 						"date": "2026-10-07",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 78,
+						"precipitationChance": 1,
+						"temperature": 80,
 						"name": "Wednesday"
 					},
 					{
@@ -2177,8 +2033,8 @@
 						"date": "2026-10-07",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 52,
+						"precipitationChance": 1,
+						"temperature": 51,
 						"name": "Wednesday Night"
 					},
 					{
@@ -2186,8 +2042,8 @@
 						"date": "2026-10-08",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 74,
+						"precipitationChance": 0,
+						"temperature": 76,
 						"name": "Thursday"
 					},
 					{
@@ -2195,17 +2051,17 @@
 						"date": "2026-10-08",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
+						"precipitationChance": 0,
 						"temperature": 44,
 						"name": "Thursday Night"
 					},
 					{
-						"condition": "skc",
+						"condition": "few",
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 0,
-						"temperature": 71,
+						"temperature": 72,
 						"name": "Friday"
 					},
 					{
@@ -2213,8 +2069,8 @@
 						"date": "2026-10-09",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 2,
-						"temperature": 47,
+						"precipitationChance": 0,
+						"temperature": 50,
 						"name": "Friday Night"
 					},
 					{
@@ -2222,8 +2078,8 @@
 						"date": "2026-10-10",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 77,
+						"precipitationChance": 0,
+						"temperature": 81,
 						"name": "Saturday"
 					},
 					{
@@ -2231,8 +2087,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy then Slight Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 20,
-						"temperature": 54,
+						"precipitationChance": 23,
+						"temperature": 57,
 						"name": "Saturday Night"
 					}
 				],
@@ -2275,60 +2131,51 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=114"
 			},
 			"status": "open",
-			"timestamp": 1790267389679,
-			"updatedAt": "12 days ago",
+			"timestamp": 1790216814232,
+			"updatedAt": "13 days ago",
 			"stale": true,
 			"weather": {
-				"condition": "few",
+				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 0,
-				"temperature": 58,
+				"temperature": 50,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 65,
-						"name": "This Afternoon"
-					},
 					{
 						"condition": "skc",
 						"date": "2026-10-06",
 						"description": "Clear",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 1,
 						"temperature": 44,
 						"name": "Tonight"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Mostly Sunny",
+						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
+						"precipitationChance": 11,
 						"temperature": 75,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 50,
+						"precipitationChance": 11,
+						"temperature": 48,
 						"name": "Wednesday Night"
 					},
 					{
-						"condition": "few",
+						"condition": "sct",
 						"date": "2026-10-08",
-						"description": "Sunny",
+						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
+						"precipitationChance": 0,
+						"temperature": 70,
 						"name": "Thursday"
 					},
 					{
@@ -2336,8 +2183,8 @@
 						"date": "2026-10-08",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 43,
+						"precipitationChance": 0,
+						"temperature": 42,
 						"name": "Thursday Night"
 					},
 					{
@@ -2345,8 +2192,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 67,
+						"precipitationChance": 0,
+						"temperature": 69,
 						"name": "Friday"
 					},
 					{
@@ -2355,7 +2202,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 44,
+						"temperature": 46,
 						"name": "Friday Night"
 					},
 					{
@@ -2364,7 +2211,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 72,
+						"temperature": 77,
 						"name": "Saturday"
 					},
 					{
@@ -2372,8 +2219,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 4,
-						"temperature": 52,
+						"precipitationChance": 8,
+						"temperature": 55,
 						"name": "Saturday Night"
 					}
 				],
@@ -2416,60 +2263,51 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=114"
 			},
 			"status": "open",
-			"timestamp": 1790267389679,
-			"updatedAt": "12 days ago",
+			"timestamp": 1790216814232,
+			"updatedAt": "13 days ago",
 			"stale": true,
 			"weather": {
-				"condition": "few",
+				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 0,
-				"temperature": 58,
+				"temperature": 50,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 65,
-						"name": "This Afternoon"
-					},
 					{
 						"condition": "skc",
 						"date": "2026-10-06",
 						"description": "Clear",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 1,
 						"temperature": 44,
 						"name": "Tonight"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Mostly Sunny",
+						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
+						"precipitationChance": 11,
 						"temperature": 75,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 50,
+						"precipitationChance": 11,
+						"temperature": 48,
 						"name": "Wednesday Night"
 					},
 					{
-						"condition": "few",
+						"condition": "sct",
 						"date": "2026-10-08",
-						"description": "Sunny",
+						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
+						"precipitationChance": 0,
+						"temperature": 70,
 						"name": "Thursday"
 					},
 					{
@@ -2477,8 +2315,8 @@
 						"date": "2026-10-08",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 43,
+						"precipitationChance": 0,
+						"temperature": 42,
 						"name": "Thursday Night"
 					},
 					{
@@ -2486,8 +2324,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 67,
+						"precipitationChance": 0,
+						"temperature": 69,
 						"name": "Friday"
 					},
 					{
@@ -2496,7 +2334,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 44,
+						"temperature": 46,
 						"name": "Friday Night"
 					},
 					{
@@ -2505,7 +2343,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 72,
+						"temperature": 77,
 						"name": "Saturday"
 					},
 					{
@@ -2513,8 +2351,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 4,
-						"temperature": 52,
+						"precipitationChance": 8,
+						"temperature": 55,
 						"name": "Saturday Night"
 					}
 				],
@@ -2557,32 +2395,23 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=117"
 			},
 			"status": "open",
-			"timestamp": 1788884989680,
+			"timestamp": 1788920814233,
 			"updatedAt": "4 weeks ago",
 			"stale": true,
 			"weather": {
 				"condition": "few",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Mostly Clear",
+				"isDay": false,
 				"precipitationChance": 1,
-				"temperature": 58,
+				"temperature": 51,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 2,
-						"temperature": 64,
-						"name": "This Afternoon"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 4,
+						"precipitationChance": 1,
 						"temperature": 46,
 						"name": "Tonight"
 					},
@@ -2591,34 +2420,34 @@
 						"date": "2026-10-07",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 3,
-						"temperature": 73,
+						"precipitationChance": 12,
+						"temperature": 72,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 3,
+						"precipitationChance": 11,
 						"temperature": 52,
 						"name": "Wednesday Night"
 					},
 					{
-						"condition": "few",
+						"condition": "sct",
 						"date": "2026-10-08",
-						"description": "Sunny",
+						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
+						"precipitationChance": 2,
 						"temperature": 66,
 						"name": "Thursday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-08",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
+						"precipitationChance": 2,
 						"temperature": 45,
 						"name": "Thursday Night"
 					},
@@ -2627,8 +2456,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 65,
+						"precipitationChance": 0,
+						"temperature": 66,
 						"name": "Friday"
 					},
 					{
@@ -2636,8 +2465,8 @@
 						"date": "2026-10-09",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 2,
-						"temperature": 45,
+						"precipitationChance": 1,
+						"temperature": 48,
 						"name": "Friday Night"
 					},
 					{
@@ -2645,8 +2474,8 @@
 						"date": "2026-10-10",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 2,
-						"temperature": 71,
+						"precipitationChance": 1,
+						"temperature": 75,
 						"name": "Saturday"
 					},
 					{
@@ -2654,8 +2483,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 3,
-						"temperature": 53,
+						"precipitationChance": 5,
+						"temperature": 56,
 						"name": "Saturday Night"
 					}
 				],
@@ -2698,32 +2527,23 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=107"
 			},
 			"status": "caution",
-			"timestamp": 1788280189680,
+			"timestamp": 1788316014233,
 			"updatedAt": "5 weeks ago",
 			"stale": true,
 			"weather": {
-				"condition": "few",
+				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 0,
-				"temperature": 56,
+				"temperature": 49,
 				"periods": [
 					{
 						"condition": "skc",
 						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 64,
-						"name": "This Afternoon"
-					},
-					{
-						"condition": "few",
-						"date": "2026-10-06",
-						"description": "Mostly Clear",
+						"description": "Clear",
 						"isDay": false,
-						"precipitationChance": 1,
+						"precipitationChance": 0,
 						"temperature": 43,
 						"name": "Tonight"
 					},
@@ -2732,7 +2552,7 @@
 						"date": "2026-10-07",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
+						"precipitationChance": 6,
 						"temperature": 74,
 						"name": "Wednesday"
 					},
@@ -2741,8 +2561,8 @@
 						"date": "2026-10-07",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 50,
+						"precipitationChance": 5,
+						"temperature": 49,
 						"name": "Wednesday Night"
 					},
 					{
@@ -2750,8 +2570,8 @@
 						"date": "2026-10-08",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 69,
+						"precipitationChance": 0,
+						"temperature": 70,
 						"name": "Thursday"
 					},
 					{
@@ -2759,8 +2579,8 @@
 						"date": "2026-10-08",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 43,
+						"precipitationChance": 0,
+						"temperature": 42,
 						"name": "Thursday Night"
 					},
 					{
@@ -2768,8 +2588,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 66,
+						"precipitationChance": 0,
+						"temperature": 68,
 						"name": "Friday"
 					},
 					{
@@ -2778,7 +2598,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 43,
+						"temperature": 46,
 						"name": "Friday Night"
 					},
 					{
@@ -2786,8 +2606,8 @@
 						"date": "2026-10-10",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 71,
+						"precipitationChance": 1,
+						"temperature": 76,
 						"name": "Saturday"
 					},
 					{
@@ -2795,8 +2615,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 4,
-						"temperature": 51,
+						"precipitationChance": 10,
+						"temperature": 53,
 						"name": "Saturday Night"
 					}
 				],
@@ -2839,41 +2659,32 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=110"
 			},
 			"status": "open",
-			"timestamp": 1783528189681,
+			"timestamp": 1783564014233,
 			"updatedAt": "3 months ago",
 			"stale": true,
 			"weather": {
-				"condition": "few",
+				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 0,
-				"temperature": 59,
+				"temperature": 49,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 66,
-						"name": "This Afternoon"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 1,
 						"temperature": 46,
 						"name": "Tonight"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Mostly Sunny",
+						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
+						"precipitationChance": 6,
 						"temperature": 76,
 						"name": "Wednesday"
 					},
@@ -2882,8 +2693,8 @@
 						"date": "2026-10-07",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 51,
+						"precipitationChance": 7,
+						"temperature": 50,
 						"name": "Wednesday Night"
 					},
 					{
@@ -2891,16 +2702,16 @@
 						"date": "2026-10-08",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 69,
+						"precipitationChance": 0,
+						"temperature": 70,
 						"name": "Thursday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-08",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
+						"precipitationChance": 0,
 						"temperature": 43,
 						"name": "Thursday Night"
 					},
@@ -2909,8 +2720,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
+						"precipitationChance": 0,
+						"temperature": 69,
 						"name": "Friday"
 					},
 					{
@@ -2919,16 +2730,16 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 45,
+						"temperature": 48,
 						"name": "Friday Night"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-10",
-						"description": "Mostly Sunny",
+						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 73,
+						"temperature": 78,
 						"name": "Saturday"
 					},
 					{
@@ -2936,8 +2747,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 4,
-						"temperature": 54,
+						"precipitationChance": 8,
+						"temperature": 55,
 						"name": "Saturday Night"
 					}
 				],
@@ -2978,9 +2789,9 @@
 				"name": "Ray's prices, hours, and directions",
 				"url": "https://www.raysmtb.com/about/prices-hours-and-directions-pg141.htm"
 			},
-			"condition": "Open now until 10:00 PM. Today's hours 12:00 PM-10:00 PM - Regular season.",
-			"status": "open",
-			"timestamp": 1791259250293,
+			"condition": "Closed for the day (today was 12:00 PM-10:00 PM - Regular season). Next open tomorrow 12:00 PM-10:00 PM.",
+			"status": "closed",
+			"timestamp": 1791259254409,
 			"updatedAt": "Updated daily from the published schedule",
 			"stale": false,
 			"weather": null
@@ -2995,32 +2806,23 @@
 			},
 			"condition": "East Rim trails remain open 9/16.",
 			"status": "open",
-			"timestamp": 1790094589680,
+			"timestamp": 1790130414232,
 			"updatedAt": "2 weeks ago",
 			"stale": true,
 			"weather": {
-				"condition": "few",
+				"condition": "skc",
 				"date": "2026-10-06",
-				"description": "Sunny",
-				"isDay": true,
+				"description": "Clear",
+				"isDay": false,
 				"precipitationChance": 1,
-				"temperature": 58,
+				"temperature": 51,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-06",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 65,
-						"name": "This Afternoon"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-06",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 1,
 						"temperature": 44,
 						"name": "Tonight"
 					},
@@ -3029,17 +2831,17 @@
 						"date": "2026-10-07",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
+						"precipitationChance": 14,
 						"temperature": 74,
 						"name": "Wednesday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-07",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 51,
+						"precipitationChance": 14,
+						"temperature": 49,
 						"name": "Wednesday Night"
 					},
 					{
@@ -3047,16 +2849,16 @@
 						"date": "2026-10-08",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 68,
+						"precipitationChance": 0,
+						"temperature": 69,
 						"name": "Thursday"
 					},
 					{
-						"condition": "sct",
+						"condition": "few",
 						"date": "2026-10-08",
-						"description": "Partly Cloudy",
+						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 1,
+						"precipitationChance": 0,
 						"temperature": 43,
 						"name": "Thursday Night"
 					},
@@ -3065,8 +2867,8 @@
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
-						"temperature": 67,
+						"precipitationChance": 0,
+						"temperature": 68,
 						"name": "Friday"
 					},
 					{
@@ -3075,7 +2877,7 @@
 						"description": "Mostly Clear",
 						"isDay": false,
 						"precipitationChance": 1,
-						"temperature": 44,
+						"temperature": 47,
 						"name": "Friday Night"
 					},
 					{
@@ -3084,7 +2886,7 @@
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 72,
+						"temperature": 77,
 						"name": "Saturday"
 					},
 					{
@@ -3092,8 +2894,8 @@
 						"date": "2026-10-10",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 4,
-						"temperature": 52,
+						"precipitationChance": 6,
+						"temperature": 56,
 						"name": "Saturday Night"
 					}
 				],
