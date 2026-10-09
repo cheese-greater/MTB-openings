@@ -1,12 +1,12 @@
 {
-	"cachedAt": 1791520129304,
+	"cachedAt": 1791549116115,
 	"sources": {
 		"bsky": 1,
 		"cambaHome": 21,
 		"history": 20,
 		"metroparks": 7,
 		"trailforks": 1,
-		"weather": 16
+		"weather": 19
 	},
 	"trails": [
 		{
@@ -25,20 +25,11 @@
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 53,
+				"temperature": 44,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-09",
-						"description": "Mostly Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 44,
-						"name": "Tonight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
@@ -46,87 +37,87 @@
 						"isDay": true,
 						"precipitationChance": 1,
 						"temperature": 70,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-09",
-						"description": "Partly Cloudy",
+						"description": "Mostly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 4,
 						"temperature": 52,
-						"name": "Friday Night"
+						"name": "Tonight"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Sunny",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 77,
+						"precipitationChance": 2,
+						"temperature": 76,
 						"name": "Saturday"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Mostly Cloudy then Rain Showers",
 						"isDay": false,
-						"precipitationChance": 61,
-						"temperature": 57,
+						"precipitationChance": 95,
+						"temperature": 56,
 						"name": "Saturday Night"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms",
+						"description": "Rain Showers",
 						"isDay": true,
-						"precipitationChance": 88,
+						"precipitationChance": 97,
 						"temperature": 68,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
-						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms Likely",
-						"isDay": false,
-						"precipitationChance": 69,
-						"temperature": 59,
-						"name": "Sunday Night"
-					},
-					{
 						"condition": "rain_showers",
-						"date": "2026-10-12",
-						"description": "Slight Chance Rain Showers then Mostly Cloudy",
-						"isDay": true,
-						"precipitationChance": 15,
-						"temperature": 73,
-						"name": "Columbus Day"
+						"date": "2026-10-11",
+						"description": "Chance Rain Showers",
+						"isDay": false,
+						"precipitationChance": 51,
+						"temperature": 58,
+						"name": "Sunday Night"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Chance Rain Showers",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 14,
+						"temperature": 72,
+						"name": "Columbus Day"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-12",
+						"description": "Partly Cloudy then Chance Showers And Thunderstorms",
 						"isDay": false,
-						"precipitationChance": 26,
-						"temperature": 60,
+						"precipitationChance": 29,
+						"temperature": 59,
 						"name": "Monday Night"
 					},
 					{
-						"condition": "rain_showers",
+						"condition": "tsra_hi",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Chance Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 40,
-						"temperature": 72,
+						"precipitationChance": 36,
+						"temperature": 73,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Chance Rain Showers then Mostly Cloudy",
 						"isDay": false,
-						"precipitationChance": 27,
-						"temperature": 50,
+						"precipitationChance": 26,
+						"temperature": 52,
 						"name": "Tuesday Night"
 					}
 				],
@@ -175,20 +166,11 @@
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 53,
+				"temperature": 44,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-09",
-						"description": "Mostly Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 44,
-						"name": "Overnight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
@@ -196,33 +178,33 @@
 						"isDay": true,
 						"precipitationChance": 1,
 						"temperature": 70,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
 						"condition": "sct",
 						"date": "2026-10-09",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 4,
 						"temperature": 52,
-						"name": "Friday Night"
+						"name": "Tonight"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Sunny",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 77,
+						"precipitationChance": 2,
+						"temperature": 76,
 						"name": "Saturday"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Mostly Cloudy then Rain Showers",
 						"isDay": false,
-						"precipitationChance": 61,
-						"temperature": 57,
+						"precipitationChance": 95,
+						"temperature": 56,
 						"name": "Saturday Night"
 					},
 					{
@@ -230,35 +212,35 @@
 						"date": "2026-10-11",
 						"description": "Rain Showers",
 						"isDay": true,
-						"precipitationChance": 88,
+						"precipitationChance": 97,
 						"temperature": 68,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms Likely",
+						"description": "Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 69,
-						"temperature": 59,
+						"precipitationChance": 51,
+						"temperature": 58,
 						"name": "Sunday Night"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-12",
-						"description": "Slight Chance Rain Showers then Mostly Cloudy",
+						"description": "Slight Chance Rain Showers then Partly Sunny",
 						"isDay": true,
 						"precipitationChance": 15,
-						"temperature": 73,
+						"temperature": 72,
 						"name": "Columbus Day"
 					},
 					{
-						"condition": "bkn",
+						"condition": "sct",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Chance Rain Showers",
+						"description": "Partly Cloudy then Chance Showers And Thunderstorms",
 						"isDay": false,
-						"precipitationChance": 27,
-						"temperature": 60,
+						"precipitationChance": 29,
+						"temperature": 59,
 						"name": "Monday Night"
 					},
 					{
@@ -266,17 +248,17 @@
 						"date": "2026-10-13",
 						"description": "Chance Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 40,
-						"temperature": 72,
+						"precipitationChance": 37,
+						"temperature": 73,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Chance Rain Showers then Mostly Cloudy",
 						"isDay": false,
-						"precipitationChance": 27,
-						"temperature": 50,
+						"precipitationChance": 26,
+						"temperature": 52,
 						"name": "Tuesday Night"
 					}
 				],
@@ -319,26 +301,17 @@
 				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
 			},
 			"status": "open",
-			"timestamp": 1791462660000,
-			"updatedAt": "Oct 8, 08:31 AM",
+			"timestamp": 1791545220000,
+			"updatedAt": "Oct 9, 07:27 AM",
 			"stale": false,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 55,
+				"temperature": 46,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-09",
-						"description": "Mostly Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 45,
-						"name": "Tonight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
@@ -346,33 +319,33 @@
 						"isDay": true,
 						"precipitationChance": 1,
 						"temperature": 71,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
 						"condition": "sct",
 						"date": "2026-10-09",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 4,
 						"temperature": 54,
-						"name": "Friday Night"
+						"name": "Tonight"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Sunny",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
+						"precipitationChance": 2,
 						"temperature": 78,
 						"name": "Saturday"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Mostly Cloudy then Rain Showers",
 						"isDay": false,
-						"precipitationChance": 60,
-						"temperature": 59,
+						"precipitationChance": 95,
+						"temperature": 57,
 						"name": "Saturday Night"
 					},
 					{
@@ -380,35 +353,35 @@
 						"date": "2026-10-11",
 						"description": "Rain Showers",
 						"isDay": true,
-						"precipitationChance": 87,
-						"temperature": 69,
+						"precipitationChance": 97,
+						"temperature": 68,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms Likely",
+						"description": "Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 67,
-						"temperature": 60,
+						"precipitationChance": 49,
+						"temperature": 59,
 						"name": "Sunday Night"
 					},
 					{
-						"condition": "bkn",
+						"condition": "rain_showers",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy",
+						"description": "Slight Chance Rain Showers then Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 14,
-						"temperature": 74,
+						"precipitationChance": 15,
+						"temperature": 73,
 						"name": "Columbus Day"
 					},
 					{
-						"condition": "bkn",
+						"condition": "sct",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Chance Rain Showers",
+						"description": "Partly Cloudy then Chance Showers And Thunderstorms",
 						"isDay": false,
-						"precipitationChance": 28,
-						"temperature": 61,
+						"precipitationChance": 29,
+						"temperature": 60,
 						"name": "Monday Night"
 					},
 					{
@@ -416,17 +389,17 @@
 						"date": "2026-10-13",
 						"description": "Chance Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 40,
+						"precipitationChance": 38,
 						"temperature": 73,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Chance Rain Showers then Mostly Cloudy",
 						"isDay": false,
 						"precipitationChance": 25,
-						"temperature": 52,
+						"temperature": 54,
 						"name": "Tuesday Night"
 					}
 				],
@@ -469,26 +442,17 @@
 				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
 			},
 			"status": "open",
-			"timestamp": 1791376140000,
-			"updatedAt": "Oct 7, 08:29 AM",
+			"timestamp": 1791545220000,
+			"updatedAt": "Oct 9, 07:27 AM",
 			"stale": false,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 55,
+				"temperature": 46,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-09",
-						"description": "Mostly Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 45,
-						"name": "Tonight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
@@ -496,33 +460,33 @@
 						"isDay": true,
 						"precipitationChance": 1,
 						"temperature": 71,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
 						"condition": "sct",
 						"date": "2026-10-09",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 4,
 						"temperature": 54,
-						"name": "Friday Night"
+						"name": "Tonight"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Sunny",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
+						"precipitationChance": 2,
 						"temperature": 78,
 						"name": "Saturday"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Mostly Cloudy then Rain Showers",
 						"isDay": false,
-						"precipitationChance": 60,
-						"temperature": 59,
+						"precipitationChance": 95,
+						"temperature": 57,
 						"name": "Saturday Night"
 					},
 					{
@@ -530,35 +494,35 @@
 						"date": "2026-10-11",
 						"description": "Rain Showers",
 						"isDay": true,
-						"precipitationChance": 87,
-						"temperature": 69,
+						"precipitationChance": 97,
+						"temperature": 68,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms Likely",
+						"description": "Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 67,
-						"temperature": 60,
+						"precipitationChance": 49,
+						"temperature": 59,
 						"name": "Sunday Night"
 					},
 					{
-						"condition": "bkn",
+						"condition": "rain_showers",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy",
+						"description": "Slight Chance Rain Showers then Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 14,
-						"temperature": 74,
+						"precipitationChance": 15,
+						"temperature": 73,
 						"name": "Columbus Day"
 					},
 					{
-						"condition": "bkn",
+						"condition": "sct",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Chance Rain Showers",
+						"description": "Partly Cloudy then Chance Showers And Thunderstorms",
 						"isDay": false,
-						"precipitationChance": 28,
-						"temperature": 61,
+						"precipitationChance": 29,
+						"temperature": 60,
 						"name": "Monday Night"
 					},
 					{
@@ -566,17 +530,17 @@
 						"date": "2026-10-13",
 						"description": "Chance Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 40,
+						"precipitationChance": 38,
 						"temperature": 73,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Chance Rain Showers then Mostly Cloudy",
 						"isDay": false,
 						"precipitationChance": 25,
-						"temperature": 52,
+						"temperature": 54,
 						"name": "Tuesday Night"
 					}
 				],
@@ -619,26 +583,17 @@
 				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
 			},
 			"status": "open",
-			"timestamp": 1791376140000,
-			"updatedAt": "Oct 7, 08:29 AM",
+			"timestamp": 1791545220000,
+			"updatedAt": "Oct 9, 07:27 AM",
 			"stale": false,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 55,
+				"temperature": 46,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-09",
-						"description": "Mostly Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 45,
-						"name": "Tonight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
@@ -646,33 +601,33 @@
 						"isDay": true,
 						"precipitationChance": 1,
 						"temperature": 71,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
 						"condition": "sct",
 						"date": "2026-10-09",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 4,
 						"temperature": 54,
-						"name": "Friday Night"
+						"name": "Tonight"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Sunny",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
+						"precipitationChance": 2,
 						"temperature": 78,
 						"name": "Saturday"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Mostly Cloudy then Rain Showers",
 						"isDay": false,
-						"precipitationChance": 60,
-						"temperature": 59,
+						"precipitationChance": 95,
+						"temperature": 57,
 						"name": "Saturday Night"
 					},
 					{
@@ -680,35 +635,35 @@
 						"date": "2026-10-11",
 						"description": "Rain Showers",
 						"isDay": true,
-						"precipitationChance": 87,
-						"temperature": 69,
+						"precipitationChance": 97,
+						"temperature": 68,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms Likely",
+						"description": "Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 67,
-						"temperature": 60,
+						"precipitationChance": 49,
+						"temperature": 59,
 						"name": "Sunday Night"
 					},
 					{
-						"condition": "bkn",
+						"condition": "rain_showers",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy",
+						"description": "Slight Chance Rain Showers then Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 14,
-						"temperature": 74,
+						"precipitationChance": 15,
+						"temperature": 73,
 						"name": "Columbus Day"
 					},
 					{
-						"condition": "bkn",
+						"condition": "sct",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Chance Rain Showers",
+						"description": "Partly Cloudy then Chance Showers And Thunderstorms",
 						"isDay": false,
-						"precipitationChance": 28,
-						"temperature": 61,
+						"precipitationChance": 29,
+						"temperature": 60,
 						"name": "Monday Night"
 					},
 					{
@@ -716,17 +671,17 @@
 						"date": "2026-10-13",
 						"description": "Chance Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 40,
+						"precipitationChance": 38,
 						"temperature": 73,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Chance Rain Showers then Mostly Cloudy",
 						"isDay": false,
 						"precipitationChance": 25,
-						"temperature": 52,
+						"temperature": 54,
 						"name": "Tuesday Night"
 					}
 				],
@@ -773,22 +728,13 @@
 			"updatedAt": "Oct 8, 10:26 AM",
 			"stale": false,
 			"weather": {
-				"condition": "skc",
+				"condition": "few",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 51,
+				"temperature": 43,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-09",
-						"description": "Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 43,
-						"name": "Overnight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
@@ -796,87 +742,87 @@
 						"isDay": true,
 						"precipitationChance": 1,
 						"temperature": 70,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-09",
-						"description": "Partly Cloudy",
+						"description": "Mostly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 4,
 						"temperature": 52,
-						"name": "Friday Night"
-					},
-					{
-						"condition": "sct",
-						"date": "2026-10-10",
-						"description": "Mostly Sunny",
-						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 77,
-						"name": "Saturday"
+						"name": "Tonight"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 3,
+						"temperature": 76,
+						"name": "Saturday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-10",
+						"description": "Rain Showers",
 						"isDay": false,
-						"precipitationChance": 63,
-						"temperature": 57,
+						"precipitationChance": 95,
+						"temperature": 55,
 						"name": "Saturday Night"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms",
+						"description": "Rain Showers",
 						"isDay": true,
-						"precipitationChance": 88,
+						"precipitationChance": 97,
 						"temperature": 67,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms Likely",
+						"description": "Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 66,
-						"temperature": 59,
+						"precipitationChance": 46,
+						"temperature": 58,
 						"name": "Sunday Night"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy",
+						"description": "Partly Sunny",
 						"isDay": true,
 						"precipitationChance": 13,
-						"temperature": 73,
+						"temperature": 72,
 						"name": "Columbus Day"
 					},
 					{
-						"condition": "bkn",
+						"condition": "sct",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Chance Rain Showers",
+						"description": "Partly Cloudy then Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 27,
-						"temperature": 59,
+						"precipitationChance": 29,
+						"temperature": 58,
 						"name": "Monday Night"
 					},
 					{
-						"condition": "tsra_hi",
+						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Showers And Thunderstorms",
+						"description": "Chance Rain Showers",
 						"isDay": true,
-						"precipitationChance": 39,
-						"temperature": 72,
+						"precipitationChance": 35,
+						"temperature": 73,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers then Mostly Cloudy",
+						"description": "Slight Chance Rain Showers then Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 25,
-						"temperature": 50,
+						"precipitationChance": 23,
+						"temperature": 52,
 						"name": "Tuesday Night"
 					}
 				],
@@ -925,20 +871,11 @@
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 52,
+				"temperature": 44,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-09",
-						"description": "Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 44,
-						"name": "Tonight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
@@ -946,87 +883,87 @@
 						"isDay": true,
 						"precipitationChance": 1,
 						"temperature": 70,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-09",
-						"description": "Partly Cloudy",
+						"description": "Mostly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 4,
 						"temperature": 53,
-						"name": "Friday Night"
-					},
-					{
-						"condition": "sct",
-						"date": "2026-10-10",
-						"description": "Mostly Sunny",
-						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 77,
-						"name": "Saturday"
+						"name": "Tonight"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 3,
+						"temperature": 76,
+						"name": "Saturday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-10",
+						"description": "Rain Showers",
 						"isDay": false,
-						"precipitationChance": 63,
-						"temperature": 57,
+						"precipitationChance": 95,
+						"temperature": 56,
 						"name": "Saturday Night"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms",
+						"description": "Rain Showers",
 						"isDay": true,
-						"precipitationChance": 88,
+						"precipitationChance": 97,
 						"temperature": 67,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms Likely",
+						"description": "Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 66,
-						"temperature": 59,
+						"precipitationChance": 45,
+						"temperature": 58,
 						"name": "Sunday Night"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 13,
-						"temperature": 73,
+						"precipitationChance": 12,
+						"temperature": 72,
 						"name": "Columbus Day"
 					},
 					{
-						"condition": "bkn",
+						"condition": "sct",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Chance Rain Showers",
+						"description": "Partly Cloudy then Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 27,
-						"temperature": 60,
+						"precipitationChance": 29,
+						"temperature": 59,
 						"name": "Monday Night"
 					},
 					{
-						"condition": "tsra_hi",
+						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Showers And Thunderstorms",
+						"description": "Chance Rain Showers",
 						"isDay": true,
-						"precipitationChance": 39,
-						"temperature": 71,
+						"precipitationChance": 35,
+						"temperature": 72,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers then Mostly Cloudy",
+						"description": "Slight Chance Rain Showers then Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 25,
-						"temperature": 50,
+						"precipitationChance": 23,
+						"temperature": 52,
 						"name": "Tuesday Night"
 					}
 				],
@@ -1053,14 +990,14 @@
 						"date": "2026-10-08",
 						"description": "Clear",
 						"high": 71,
-						"low": 51,
+						"low": 50,
 						"precipitation": 0
 					}
 				]
 			}
 		},
 		{
-			"condition": "The trails are in great shape. Enjoy!",
+			"condition": "No issues reported",
 			"id": "west-creek",
 			"location": "98Q4+68 Parma, Ohio",
 			"name": "West Creek - Mountain Bike Trails",
@@ -1069,10 +1006,136 @@
 				"url": "https://www.clevelandmetroparks.com/parks/visit/activities/mountain-biking/trail-status"
 			},
 			"status": "open",
-			"timestamp": 1791289200000,
-			"updatedAt": "Oct 6, 08:20 AM",
+			"timestamp": 1791546120000,
+			"updatedAt": "Oct 9, 07:42 AM",
 			"stale": false,
-			"weather": null
+			"weather": {
+				"condition": "skc",
+				"date": "2026-10-09",
+				"description": "Sunny",
+				"isDay": true,
+				"precipitationChance": 0,
+				"temperature": 47,
+				"periods": [
+					{
+						"condition": "few",
+						"date": "2026-10-09",
+						"description": "Sunny",
+						"isDay": true,
+						"precipitationChance": 1,
+						"temperature": 69,
+						"name": "Today"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-09",
+						"description": "Partly Cloudy",
+						"isDay": false,
+						"precipitationChance": 4,
+						"temperature": 54,
+						"name": "Tonight"
+					},
+					{
+						"condition": "bkn",
+						"date": "2026-10-10",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 2,
+						"temperature": 76,
+						"name": "Saturday"
+					},
+					{
+						"condition": "bkn",
+						"date": "2026-10-10",
+						"description": "Mostly Cloudy then Rain Showers",
+						"isDay": false,
+						"precipitationChance": 95,
+						"temperature": 57,
+						"name": "Saturday Night"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-11",
+						"description": "Rain Showers",
+						"isDay": true,
+						"precipitationChance": 97,
+						"temperature": 67,
+						"name": "Sunday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-11",
+						"description": "Chance Rain Showers",
+						"isDay": false,
+						"precipitationChance": 48,
+						"temperature": 59,
+						"name": "Sunday Night"
+					},
+					{
+						"condition": "bkn",
+						"date": "2026-10-12",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 14,
+						"temperature": 71,
+						"name": "Columbus Day"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-12",
+						"description": "Partly Cloudy then Chance Showers And Thunderstorms",
+						"isDay": false,
+						"precipitationChance": 28,
+						"temperature": 60,
+						"name": "Monday Night"
+					},
+					{
+						"condition": "tsra_hi",
+						"date": "2026-10-13",
+						"description": "Chance Showers And Thunderstorms",
+						"isDay": true,
+						"precipitationChance": 37,
+						"temperature": 72,
+						"name": "Tuesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-13",
+						"description": "Chance Rain Showers then Partly Cloudy",
+						"isDay": false,
+						"precipitationChance": 25,
+						"temperature": 54,
+						"name": "Tuesday Night"
+					}
+				],
+				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.3881&lon=-81.6942",
+				"history": [
+					{
+						"condition": "few",
+						"date": "2026-10-06",
+						"description": "Mostly clear",
+						"high": 65,
+						"low": 43,
+						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-10-07",
+						"description": "Fog",
+						"high": 78,
+						"low": 52,
+						"precipitation": 0
+					},
+					{
+						"condition": "few",
+						"date": "2026-10-08",
+						"description": "Mostly clear",
+						"high": 70,
+						"low": 53,
+						"precipitation": 0
+					}
+				]
+			}
 		},
 		{
 			"condition": "Trails are open. Ride safely and enjoy the fall foliage. 10-8-26",
@@ -1088,110 +1151,101 @@
 			"updatedAt": "Oct 8, 9:31 AM",
 			"stale": false,
 			"weather": {
-				"condition": "skc",
+				"condition": "few",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 48,
+				"temperature": 41,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-09",
-						"description": "Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 41,
-						"name": "Tonight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 70,
-						"name": "Friday"
+						"temperature": 71,
+						"name": "Today"
 					},
 					{
 						"condition": "sct",
 						"date": "2026-10-09",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 3,
 						"temperature": 51,
-						"name": "Friday Night"
-					},
-					{
-						"condition": "sct",
-						"date": "2026-10-10",
-						"description": "Mostly Sunny",
-						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 77,
-						"name": "Saturday"
+						"name": "Tonight"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 2,
+						"temperature": 76,
+						"name": "Saturday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-10",
+						"description": "Rain Showers",
 						"isDay": false,
-						"precipitationChance": 64,
-						"temperature": 56,
+						"precipitationChance": 95,
+						"temperature": 55,
 						"name": "Saturday Night"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms",
+						"description": "Rain Showers",
 						"isDay": true,
-						"precipitationChance": 90,
+						"precipitationChance": 98,
 						"temperature": 67,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
-						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms",
-						"isDay": false,
-						"precipitationChance": 75,
-						"temperature": 59,
-						"name": "Sunday Night"
-					},
-					{
 						"condition": "rain_showers",
-						"date": "2026-10-12",
-						"description": "Slight Chance Rain Showers then Mostly Cloudy",
-						"isDay": true,
-						"precipitationChance": 15,
-						"temperature": 73,
-						"name": "Columbus Day"
+						"date": "2026-10-11",
+						"description": "Chance Rain Showers",
+						"isDay": false,
+						"precipitationChance": 51,
+						"temperature": 58,
+						"name": "Sunday Night"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Slight Chance Rain Showers",
+						"description": "Mostly Cloudy",
+						"isDay": true,
+						"precipitationChance": 11,
+						"temperature": 72,
+						"name": "Columbus Day"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-12",
+						"description": "Partly Cloudy then Chance Showers And Thunderstorms",
 						"isDay": false,
-						"precipitationChance": 22,
-						"temperature": 59,
+						"precipitationChance": 28,
+						"temperature": 58,
 						"name": "Monday Night"
 					},
 					{
-						"condition": "rain_showers",
+						"condition": "tsra_hi",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Chance Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 38,
-						"temperature": 72,
+						"precipitationChance": 32,
+						"temperature": 73,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Slight Chance Rain Showers then Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 29,
-						"temperature": 49,
+						"precipitationChance": 23,
+						"temperature": 51,
 						"name": "Tuesday Night"
 					}
 				],
@@ -1218,7 +1272,7 @@
 						"date": "2026-10-08",
 						"description": "Clear",
 						"high": 70,
-						"low": 48,
+						"low": 47,
 						"precipitation": 0
 					}
 				]
@@ -1234,10 +1288,136 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=105"
 			},
 			"status": "open",
-			"timestamp": 1789705729126,
+			"timestamp": 1789734715843,
 			"updatedAt": "3 weeks ago",
 			"stale": true,
-			"weather": null
+			"weather": {
+				"condition": "skc",
+				"date": "2026-10-09",
+				"description": "Sunny",
+				"isDay": true,
+				"precipitationChance": 0,
+				"temperature": 43,
+				"periods": [
+					{
+						"condition": "few",
+						"date": "2026-10-09",
+						"description": "Sunny",
+						"isDay": true,
+						"precipitationChance": 1,
+						"temperature": 71,
+						"name": "Today"
+					},
+					{
+						"condition": "bkn",
+						"date": "2026-10-09",
+						"description": "Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 3,
+						"temperature": 51,
+						"name": "Tonight"
+					},
+					{
+						"condition": "bkn",
+						"date": "2026-10-10",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 2,
+						"temperature": 76,
+						"name": "Saturday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-10",
+						"description": "Rain Showers",
+						"isDay": false,
+						"precipitationChance": 95,
+						"temperature": 55,
+						"name": "Saturday Night"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-11",
+						"description": "Rain Showers",
+						"isDay": true,
+						"precipitationChance": 97,
+						"temperature": 67,
+						"name": "Sunday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-11",
+						"description": "Chance Rain Showers",
+						"isDay": false,
+						"precipitationChance": 45,
+						"temperature": 57,
+						"name": "Sunday Night"
+					},
+					{
+						"condition": "bkn",
+						"date": "2026-10-12",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 6,
+						"temperature": 72,
+						"name": "Columbus Day"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-12",
+						"description": "Partly Cloudy then Chance Showers And Thunderstorms",
+						"isDay": false,
+						"precipitationChance": 27,
+						"temperature": 58,
+						"name": "Monday Night"
+					},
+					{
+						"condition": "tsra_hi",
+						"date": "2026-10-13",
+						"description": "Chance Showers And Thunderstorms",
+						"isDay": true,
+						"precipitationChance": 30,
+						"temperature": 73,
+						"name": "Tuesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-13",
+						"description": "Slight Chance Rain Showers then Partly Cloudy",
+						"isDay": false,
+						"precipitationChance": 21,
+						"temperature": 51,
+						"name": "Tuesday Night"
+					}
+				],
+				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.1181&lon=-81.8129",
+				"history": [
+					{
+						"condition": "few",
+						"date": "2026-10-06",
+						"description": "Mostly clear",
+						"high": 63,
+						"low": 38,
+						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-10-07",
+						"description": "Fog",
+						"high": 76,
+						"low": 44,
+						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-10-08",
+						"description": "Fog",
+						"high": 71,
+						"low": 49,
+						"precipitation": 0
+					}
+				]
+			}
 		},
 		{
 			"condition": "See CAMBA Trailmate for current conditions.",
@@ -1249,60 +1429,51 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=112"
 			},
 			"status": "open",
-			"timestamp": 1791260929125,
+			"timestamp": 1791289915842,
 			"updatedAt": "3 days ago",
 			"stale": false,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 48,
+				"temperature": 41,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-09",
-						"description": "Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 41,
-						"name": "Tonight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 1,
+						"precipitationChance": 0,
 						"temperature": 70,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
 						"condition": "sct",
 						"date": "2026-10-09",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 1,
+						"precipitationChance": 3,
 						"temperature": 49,
-						"name": "Friday Night"
-					},
-					{
-						"condition": "sct",
-						"date": "2026-10-10",
-						"description": "Mostly Sunny",
-						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 76,
-						"name": "Saturday"
+						"name": "Tonight"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 1,
+						"temperature": 75,
+						"name": "Saturday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-10",
+						"description": "Rain Showers",
 						"isDay": false,
-						"precipitationChance": 63,
-						"temperature": 56,
+						"precipitationChance": 95,
+						"temperature": 55,
 						"name": "Saturday Night"
 					},
 					{
@@ -1310,35 +1481,35 @@
 						"date": "2026-10-11",
 						"description": "Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 90,
-						"temperature": 67,
+						"precipitationChance": 99,
+						"temperature": 66,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
-						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms",
-						"isDay": false,
-						"precipitationChance": 81,
-						"temperature": 59,
-						"name": "Sunday Night"
-					},
-					{
 						"condition": "rain_showers",
-						"date": "2026-10-12",
-						"description": "Slight Chance Rain Showers then Mostly Cloudy",
-						"isDay": true,
-						"precipitationChance": 17,
-						"temperature": 73,
-						"name": "Columbus Day"
+						"date": "2026-10-11",
+						"description": "Rain Showers Likely",
+						"isDay": false,
+						"precipitationChance": 65,
+						"temperature": 58,
+						"name": "Sunday Night"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Slight Chance Rain Showers",
+						"description": "Mostly Cloudy",
+						"isDay": true,
+						"precipitationChance": 12,
+						"temperature": 72,
+						"name": "Columbus Day"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-12",
+						"description": "Partly Cloudy then Slight Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 21,
-						"temperature": 59,
+						"precipitationChance": 24,
+						"temperature": 58,
 						"name": "Monday Night"
 					},
 					{
@@ -1346,17 +1517,17 @@
 						"date": "2026-10-13",
 						"description": "Chance Rain Showers",
 						"isDay": true,
-						"precipitationChance": 40,
-						"temperature": 72,
+						"precipitationChance": 34,
+						"temperature": 73,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Slight Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 32,
-						"temperature": 50,
+						"precipitationChance": 23,
+						"temperature": 51,
 						"name": "Tuesday Night"
 					}
 				],
@@ -1399,60 +1570,51 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=116"
 			},
 			"status": "open",
-			"timestamp": 1791260929125,
+			"timestamp": 1791289915842,
 			"updatedAt": "3 days ago",
 			"stale": false,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 48,
+				"temperature": 42,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-09",
-						"description": "Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 42,
-						"name": "Tonight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 69,
-						"name": "Friday"
+						"temperature": 70,
+						"name": "Today"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-09",
-						"description": "Partly Cloudy",
+						"description": "Mostly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 3,
 						"temperature": 51,
-						"name": "Friday Night"
-					},
-					{
-						"condition": "sct",
-						"date": "2026-10-10",
-						"description": "Mostly Sunny",
-						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 75,
-						"name": "Saturday"
+						"name": "Tonight"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 1,
+						"temperature": 74,
+						"name": "Saturday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-10",
+						"description": "Rain Showers",
 						"isDay": false,
-						"precipitationChance": 65,
-						"temperature": 57,
+						"precipitationChance": 95,
+						"temperature": 56,
 						"name": "Saturday Night"
 					},
 					{
@@ -1460,53 +1622,53 @@
 						"date": "2026-10-11",
 						"description": "Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 91,
+						"precipitationChance": 99,
 						"temperature": 66,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
-						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms",
-						"isDay": false,
-						"precipitationChance": 81,
-						"temperature": 59,
-						"name": "Sunday Night"
-					},
-					{
 						"condition": "rain_showers",
-						"date": "2026-10-12",
-						"description": "Slight Chance Rain Showers then Mostly Cloudy",
-						"isDay": true,
-						"precipitationChance": 16,
-						"temperature": 72,
-						"name": "Columbus Day"
+						"date": "2026-10-11",
+						"description": "Rain Showers Likely",
+						"isDay": false,
+						"precipitationChance": 60,
+						"temperature": 58,
+						"name": "Sunday Night"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Slight Chance Rain Showers",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 6,
+						"temperature": 71,
+						"name": "Columbus Day"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-12",
+						"description": "Partly Cloudy then Chance Showers And Thunderstorms",
 						"isDay": false,
-						"precipitationChance": 20,
-						"temperature": 59,
+						"precipitationChance": 25,
+						"temperature": 58,
 						"name": "Monday Night"
 					},
 					{
-						"condition": "rain_showers",
+						"condition": "tsra_hi",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Chance Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 37,
-						"temperature": 71,
+						"precipitationChance": 30,
+						"temperature": 72,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Slight Chance Rain Showers then Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 31,
-						"temperature": 50,
+						"precipitationChance": 21,
+						"temperature": 52,
 						"name": "Tuesday Night"
 					}
 				],
@@ -1549,60 +1711,51 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=115"
 			},
 			"status": "open",
-			"timestamp": 1791174529125,
+			"timestamp": 1791203515842,
 			"updatedAt": "4 days ago",
 			"stale": false,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 48,
+				"temperature": 42,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-09",
-						"description": "Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 41,
-						"name": "Tonight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
 						"precipitationChance": 1,
-						"temperature": 69,
-						"name": "Friday"
+						"temperature": 70,
+						"name": "Today"
 					},
 					{
 						"condition": "sct",
 						"date": "2026-10-09",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 1,
+						"precipitationChance": 3,
 						"temperature": 49,
-						"name": "Friday Night"
-					},
-					{
-						"condition": "sct",
-						"date": "2026-10-10",
-						"description": "Mostly Sunny",
-						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 75,
-						"name": "Saturday"
+						"name": "Tonight"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 1,
+						"temperature": 74,
+						"name": "Saturday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-10",
+						"description": "Rain Showers",
 						"isDay": false,
-						"precipitationChance": 63,
-						"temperature": 56,
+						"precipitationChance": 95,
+						"temperature": 55,
 						"name": "Saturday Night"
 					},
 					{
@@ -1610,35 +1763,35 @@
 						"date": "2026-10-11",
 						"description": "Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 90,
+						"precipitationChance": 99,
 						"temperature": 66,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
-						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms",
-						"isDay": false,
-						"precipitationChance": 80,
-						"temperature": 59,
-						"name": "Sunday Night"
-					},
-					{
 						"condition": "rain_showers",
-						"date": "2026-10-12",
-						"description": "Slight Chance Rain Showers then Mostly Cloudy",
-						"isDay": true,
-						"precipitationChance": 17,
-						"temperature": 72,
-						"name": "Columbus Day"
+						"date": "2026-10-11",
+						"description": "Rain Showers Likely",
+						"isDay": false,
+						"precipitationChance": 63,
+						"temperature": 58,
+						"name": "Sunday Night"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Slight Chance Rain Showers",
+						"description": "Mostly Cloudy",
+						"isDay": true,
+						"precipitationChance": 13,
+						"temperature": 71,
+						"name": "Columbus Day"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-12",
+						"description": "Partly Cloudy then Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 21,
-						"temperature": 59,
+						"precipitationChance": 26,
+						"temperature": 58,
 						"name": "Monday Night"
 					},
 					{
@@ -1646,17 +1799,17 @@
 						"date": "2026-10-13",
 						"description": "Chance Rain Showers",
 						"isDay": true,
-						"precipitationChance": 39,
-						"temperature": 71,
+						"precipitationChance": 32,
+						"temperature": 72,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Slight Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 31,
-						"temperature": 49,
+						"precipitationChance": 23,
+						"temperature": 51,
 						"name": "Tuesday Night"
 					}
 				],
@@ -1699,26 +1852,17 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=109"
 			},
 			"status": "open",
-			"timestamp": 1790656129125,
+			"timestamp": 1790685115842,
 			"updatedAt": "10 days ago",
 			"stale": true,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 52,
+				"temperature": 44,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-09",
-						"description": "Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 44,
-						"name": "Overnight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
@@ -1726,7 +1870,7 @@
 						"isDay": true,
 						"precipitationChance": 1,
 						"temperature": 70,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
 						"condition": "bkn",
@@ -1735,7 +1879,7 @@
 						"isDay": false,
 						"precipitationChance": 2,
 						"temperature": 52,
-						"name": "Friday Night"
+						"name": "Tonight"
 					},
 					{
 						"condition": "bkn",
@@ -1833,7 +1977,7 @@
 						"date": "2026-10-08",
 						"description": "Clear",
 						"high": 71,
-						"low": 50,
+						"low": 49,
 						"precipitation": 0
 					}
 				]
@@ -1849,60 +1993,51 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=106"
 			},
 			"status": "open",
-			"timestamp": 1790396929125,
-			"updatedAt": "13 days ago",
+			"timestamp": 1790339515842,
+			"updatedAt": "2 weeks ago",
 			"stale": true,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 49,
+				"temperature": 43,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-09",
-						"description": "Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 42,
-						"name": "Overnight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 2,
+						"precipitationChance": 1,
 						"temperature": 72,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-09",
-						"description": "Partly Cloudy",
+						"description": "Mostly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
-						"temperature": 52,
-						"name": "Friday Night"
+						"precipitationChance": 3,
+						"temperature": 51,
+						"name": "Tonight"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Sunny",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 76,
+						"precipitationChance": 1,
+						"temperature": 75,
 						"name": "Saturday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-10",
-						"description": "Rain Showers Likely",
+						"description": "Rain Showers",
 						"isDay": false,
-						"precipitationChance": 72,
-						"temperature": 57,
+						"precipitationChance": 95,
+						"temperature": 55,
 						"name": "Saturday Night"
 					},
 					{
@@ -1910,7 +2045,7 @@
 						"date": "2026-10-11",
 						"description": "Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 93,
+						"precipitationChance": 97,
 						"temperature": 67,
 						"name": "Sunday"
 					},
@@ -1919,44 +2054,44 @@
 						"date": "2026-10-11",
 						"description": "Rain Showers Likely",
 						"isDay": false,
-						"precipitationChance": 71,
-						"temperature": 58,
+						"precipitationChance": 58,
+						"temperature": 57,
 						"name": "Sunday Night"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 13,
-						"temperature": 74,
+						"precipitationChance": 2,
+						"temperature": 73,
 						"name": "Columbus Day"
 					},
 					{
 						"condition": "sct",
 						"date": "2026-10-12",
-						"description": "Partly Cloudy then Slight Chance Rain Showers",
+						"description": "Partly Cloudy then Slight Chance Showers And Thunderstorms",
 						"isDay": false,
-						"precipitationChance": 19,
-						"temperature": 59,
+						"precipitationChance": 23,
+						"temperature": 58,
 						"name": "Monday Night"
 					},
 					{
-						"condition": "rain_showers",
+						"condition": "tsra_hi",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Chance Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 34,
-						"temperature": 73,
+						"precipitationChance": 31,
+						"temperature": 74,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers then Mostly Cloudy",
+						"description": "Slight Chance Rain Showers then Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 28,
-						"temperature": 50,
+						"precipitationChance": 16,
+						"temperature": 52,
 						"name": "Tuesday Night"
 					}
 				],
@@ -1983,7 +2118,7 @@
 						"date": "2026-10-08",
 						"description": "Clear",
 						"high": 72,
-						"low": 52,
+						"low": 51,
 						"precipitation": 0
 					}
 				]
@@ -1999,10 +2134,136 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=113"
 			},
 			"status": "open",
-			"timestamp": 1790310529126,
+			"timestamp": 1790339515843,
 			"updatedAt": "2 weeks ago",
 			"stale": true,
-			"weather": null
+			"weather": {
+				"condition": "few",
+				"date": "2026-10-09",
+				"description": "Sunny",
+				"isDay": true,
+				"precipitationChance": 0,
+				"temperature": 46,
+				"periods": [
+					{
+						"condition": "few",
+						"date": "2026-10-09",
+						"description": "Sunny",
+						"isDay": true,
+						"precipitationChance": 2,
+						"temperature": 79,
+						"name": "Today"
+					},
+					{
+						"condition": "bkn",
+						"date": "2026-10-09",
+						"description": "Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 2,
+						"temperature": 57,
+						"name": "Tonight"
+					},
+					{
+						"condition": "bkn",
+						"date": "2026-10-10",
+						"description": "Mostly Cloudy",
+						"isDay": true,
+						"precipitationChance": 6,
+						"temperature": 77,
+						"name": "Saturday"
+					},
+					{
+						"condition": "tsra",
+						"date": "2026-10-10",
+						"description": "Showers And Thunderstorms",
+						"isDay": false,
+						"precipitationChance": 92,
+						"temperature": 57,
+						"name": "Saturday Night"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-11",
+						"description": "Rain Showers",
+						"isDay": true,
+						"precipitationChance": 91,
+						"temperature": 73,
+						"name": "Sunday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-11",
+						"description": "Rain Showers Likely then Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 55,
+						"temperature": 58,
+						"name": "Sunday Night"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-12",
+						"description": "Mostly Sunny",
+						"isDay": true,
+						"precipitationChance": 0,
+						"temperature": 78,
+						"name": "Columbus Day"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-12",
+						"description": "Partly Cloudy",
+						"isDay": false,
+						"precipitationChance": 11,
+						"temperature": 62,
+						"name": "Monday Night"
+					},
+					{
+						"condition": "tsra_hi",
+						"date": "2026-10-13",
+						"description": "Slight Chance Showers And Thunderstorms",
+						"isDay": true,
+						"precipitationChance": 22,
+						"temperature": 80,
+						"name": "Tuesday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-13",
+						"description": "Slight Chance Rain Showers then Partly Cloudy",
+						"isDay": false,
+						"precipitationChance": 18,
+						"temperature": 54,
+						"name": "Tuesday Night"
+					}
+				],
+				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=39.8051&lon=-84.0933",
+				"history": [
+					{
+						"condition": "few",
+						"date": "2026-10-06",
+						"description": "Mostly clear",
+						"high": 69,
+						"low": 40,
+						"precipitation": 0
+					},
+					{
+						"condition": "skc",
+						"date": "2026-10-07",
+						"description": "Clear",
+						"high": 80,
+						"low": 46,
+						"precipitation": 0
+					},
+					{
+						"condition": "few",
+						"date": "2026-10-08",
+						"description": "Mostly clear",
+						"high": 76,
+						"low": 50,
+						"precipitation": 0
+					}
+				]
+			}
 		},
 		{
 			"condition": "See CAMBA Trailmate for current conditions.",
@@ -2014,26 +2275,17 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=114"
 			},
 			"status": "open",
-			"timestamp": 1790310529126,
+			"timestamp": 1790339515843,
 			"updatedAt": "2 weeks ago",
 			"stale": true,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 49,
+				"temperature": 42,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-09",
-						"description": "Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 42,
-						"name": "Tonight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
@@ -2041,87 +2293,87 @@
 						"isDay": true,
 						"precipitationChance": 1,
 						"temperature": 71,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-09",
-						"description": "Partly Cloudy",
+						"description": "Mostly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 4,
 						"temperature": 51,
-						"name": "Friday Night"
-					},
-					{
-						"condition": "sct",
-						"date": "2026-10-10",
-						"description": "Mostly Sunny",
-						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 77,
-						"name": "Saturday"
+						"name": "Tonight"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 2,
+						"temperature": 76,
+						"name": "Saturday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-10",
+						"description": "Rain Showers",
 						"isDay": false,
-						"precipitationChance": 65,
-						"temperature": 56,
+						"precipitationChance": 95,
+						"temperature": 55,
 						"name": "Saturday Night"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms",
+						"description": "Rain Showers",
 						"isDay": true,
-						"precipitationChance": 89,
+						"precipitationChance": 97,
 						"temperature": 67,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms Likely",
+						"description": "Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 68,
-						"temperature": 58,
+						"precipitationChance": 44,
+						"temperature": 57,
 						"name": "Sunday Night"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 14,
-						"temperature": 74,
+						"precipitationChance": 7,
+						"temperature": 73,
 						"name": "Columbus Day"
 					},
 					{
-						"condition": "bkn",
+						"condition": "sct",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Chance Rain Showers",
+						"description": "Partly Cloudy then Chance Showers And Thunderstorms",
 						"isDay": false,
-						"precipitationChance": 26,
-						"temperature": 59,
+						"precipitationChance": 28,
+						"temperature": 58,
 						"name": "Monday Night"
 					},
 					{
-						"condition": "rain_showers",
+						"condition": "tsra_hi",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Chance Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 38,
-						"temperature": 72,
+						"precipitationChance": 31,
+						"temperature": 73,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers then Mostly Cloudy",
+						"description": "Slight Chance Rain Showers then Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 27,
-						"temperature": 49,
+						"precipitationChance": 22,
+						"temperature": 51,
 						"name": "Tuesday Night"
 					}
 				],
@@ -2164,26 +2416,17 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=114"
 			},
 			"status": "open",
-			"timestamp": 1790310529126,
+			"timestamp": 1790339515843,
 			"updatedAt": "2 weeks ago",
 			"stale": true,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 49,
+				"temperature": 42,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-09",
-						"description": "Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 42,
-						"name": "Tonight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
@@ -2191,87 +2434,87 @@
 						"isDay": true,
 						"precipitationChance": 1,
 						"temperature": 71,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-09",
-						"description": "Partly Cloudy",
+						"description": "Mostly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 4,
 						"temperature": 51,
-						"name": "Friday Night"
-					},
-					{
-						"condition": "sct",
-						"date": "2026-10-10",
-						"description": "Mostly Sunny",
-						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 77,
-						"name": "Saturday"
+						"name": "Tonight"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 2,
+						"temperature": 76,
+						"name": "Saturday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-10",
+						"description": "Rain Showers",
 						"isDay": false,
-						"precipitationChance": 65,
-						"temperature": 56,
+						"precipitationChance": 95,
+						"temperature": 55,
 						"name": "Saturday Night"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms",
+						"description": "Rain Showers",
 						"isDay": true,
-						"precipitationChance": 89,
+						"precipitationChance": 97,
 						"temperature": 67,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms Likely",
+						"description": "Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 68,
-						"temperature": 58,
+						"precipitationChance": 44,
+						"temperature": 57,
 						"name": "Sunday Night"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 14,
-						"temperature": 74,
+						"precipitationChance": 7,
+						"temperature": 73,
 						"name": "Columbus Day"
 					},
 					{
-						"condition": "bkn",
+						"condition": "sct",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Chance Rain Showers",
+						"description": "Partly Cloudy then Chance Showers And Thunderstorms",
 						"isDay": false,
-						"precipitationChance": 26,
-						"temperature": 59,
+						"precipitationChance": 28,
+						"temperature": 58,
 						"name": "Monday Night"
 					},
 					{
-						"condition": "rain_showers",
+						"condition": "tsra_hi",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Chance Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 38,
-						"temperature": 72,
+						"precipitationChance": 31,
+						"temperature": 73,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers then Mostly Cloudy",
+						"description": "Slight Chance Rain Showers then Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 27,
-						"temperature": 49,
+						"precipitationChance": 22,
+						"temperature": 51,
 						"name": "Tuesday Night"
 					}
 				],
@@ -2314,26 +2557,17 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=117"
 			},
 			"status": "open",
-			"timestamp": 1789100929126,
+			"timestamp": 1789129915843,
 			"updatedAt": "4 weeks ago",
 			"stale": true,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 52,
+				"temperature": 45,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-09",
-						"description": "Mostly Clear",
-						"isDay": false,
-						"precipitationChance": 1,
-						"temperature": 44,
-						"name": "Tonight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
@@ -2341,33 +2575,33 @@
 						"isDay": true,
 						"precipitationChance": 1,
 						"temperature": 67,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
 						"condition": "sct",
 						"date": "2026-10-09",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 5,
 						"temperature": 50,
-						"name": "Friday Night"
+						"name": "Tonight"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Sunny",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 76,
+						"precipitationChance": 3,
+						"temperature": 74,
 						"name": "Saturday"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Chance Rain Showers",
+						"description": "Mostly Cloudy then Rain Showers",
 						"isDay": false,
-						"precipitationChance": 53,
-						"temperature": 56,
+						"precipitationChance": 79,
+						"temperature": 54,
 						"name": "Saturday Night"
 					},
 					{
@@ -2375,26 +2609,26 @@
 						"date": "2026-10-11",
 						"description": "Rain Showers",
 						"isDay": true,
-						"precipitationChance": 85,
+						"precipitationChance": 96,
 						"temperature": 66,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms Likely",
+						"description": "Rain Showers Likely",
 						"isDay": false,
-						"precipitationChance": 73,
-						"temperature": 57,
+						"precipitationChance": 62,
+						"temperature": 56,
 						"name": "Sunday Night"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-12",
-						"description": "Slight Chance Rain Showers then Mostly Cloudy",
+						"description": "Slight Chance Rain Showers then Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 15,
-						"temperature": 71,
+						"precipitationChance": 17,
+						"temperature": 70,
 						"name": "Columbus Day"
 					},
 					{
@@ -2402,17 +2636,17 @@
 						"date": "2026-10-12",
 						"description": "Mostly Cloudy then Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 29,
-						"temperature": 58,
+						"precipitationChance": 32,
+						"temperature": 57,
 						"name": "Monday Night"
 					},
 					{
-						"condition": "tsra_hi",
+						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Showers And Thunderstorms",
+						"description": "Chance Rain Showers",
 						"isDay": true,
 						"precipitationChance": 42,
-						"temperature": 69,
+						"temperature": 70,
 						"name": "Tuesday"
 					},
 					{
@@ -2420,8 +2654,8 @@
 						"date": "2026-10-13",
 						"description": "Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 27,
-						"temperature": 48,
+						"precipitationChance": 28,
+						"temperature": 50,
 						"name": "Tuesday Night"
 					}
 				],
@@ -2448,7 +2682,7 @@
 						"date": "2026-10-08",
 						"description": "Clear",
 						"high": 67,
-						"low": 51,
+						"low": 50,
 						"precipitation": 0
 					}
 				]
@@ -2464,114 +2698,105 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=107"
 			},
 			"status": "caution",
-			"timestamp": 1788496129126,
+			"timestamp": 1788525115843,
 			"updatedAt": "5 weeks ago",
 			"stale": true,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 48,
+				"temperature": 41,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-09",
-						"description": "Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 40,
-						"name": "Overnight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
 						"description": "Sunny",
 						"isDay": true,
-						"precipitationChance": 2,
+						"precipitationChance": 1,
 						"temperature": 71,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-09",
-						"description": "Partly Cloudy",
+						"description": "Mostly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
-						"temperature": 51,
-						"name": "Friday Night"
+						"precipitationChance": 3,
+						"temperature": 50,
+						"name": "Tonight"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Sunny",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 76,
+						"precipitationChance": 1,
+						"temperature": 75,
 						"name": "Saturday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-10",
-						"description": "Rain Showers Likely",
+						"description": "Rain Showers",
 						"isDay": false,
-						"precipitationChance": 70,
+						"precipitationChance": 95,
 						"temperature": 56,
 						"name": "Saturday Night"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms",
+						"description": "Rain Showers",
 						"isDay": true,
-						"precipitationChance": 92,
+						"precipitationChance": 97,
 						"temperature": 66,
 						"name": "Sunday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Rain Showers Likely",
+						"description": "Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 71,
-						"temperature": 58,
+						"precipitationChance": 49,
+						"temperature": 57,
 						"name": "Sunday Night"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 14,
-						"temperature": 73,
+						"precipitationChance": 3,
+						"temperature": 72,
 						"name": "Columbus Day"
 					},
 					{
 						"condition": "sct",
 						"date": "2026-10-12",
-						"description": "Partly Cloudy then Slight Chance Rain Showers",
+						"description": "Partly Cloudy then Chance Showers And Thunderstorms",
 						"isDay": false,
-						"precipitationChance": 22,
+						"precipitationChance": 25,
 						"temperature": 58,
 						"name": "Monday Night"
 					},
 					{
-						"condition": "rain_showers",
+						"condition": "tsra_hi",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Chance Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 36,
-						"temperature": 72,
+						"precipitationChance": 26,
+						"temperature": 73,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers then Mostly Cloudy",
+						"description": "Slight Chance Rain Showers then Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 28,
-						"temperature": 50,
+						"precipitationChance": 17,
+						"temperature": 52,
 						"name": "Tuesday Night"
 					}
 				],
@@ -2614,26 +2839,17 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=110"
 			},
 			"status": "open",
-			"timestamp": 1783744129127,
+			"timestamp": 1783773115844,
 			"updatedAt": "3 months ago",
 			"stale": true,
 			"weather": {
 				"condition": "few",
 				"date": "2026-10-09",
-				"description": "Mostly Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 48,
+				"temperature": 42,
 				"periods": [
-					{
-						"condition": "few",
-						"date": "2026-10-09",
-						"description": "Mostly Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 42,
-						"name": "Tonight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
@@ -2641,87 +2857,87 @@
 						"isDay": true,
 						"precipitationChance": 1,
 						"temperature": 72,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-09",
-						"description": "Partly Cloudy",
+						"description": "Mostly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
-						"temperature": 53,
-						"name": "Friday Night"
-					},
-					{
-						"condition": "sct",
-						"date": "2026-10-10",
-						"description": "Mostly Sunny",
-						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 78,
-						"name": "Saturday"
+						"precipitationChance": 4,
+						"temperature": 52,
+						"name": "Tonight"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 3,
+						"temperature": 77,
+						"name": "Saturday"
+					},
+					{
+						"condition": "rain_showers",
+						"date": "2026-10-10",
+						"description": "Rain Showers",
 						"isDay": false,
-						"precipitationChance": 66,
-						"temperature": 57,
+						"precipitationChance": 95,
+						"temperature": 56,
 						"name": "Saturday Night"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms",
+						"description": "Rain Showers",
 						"isDay": true,
-						"precipitationChance": 88,
+						"precipitationChance": 95,
 						"temperature": 68,
 						"name": "Sunday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Rain Showers Likely",
+						"description": "Chance Rain Showers",
 						"isDay": false,
-						"precipitationChance": 57,
-						"temperature": 58,
+						"precipitationChance": 40,
+						"temperature": 57,
 						"name": "Sunday Night"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 11,
+						"precipitationChance": 5,
 						"temperature": 74,
 						"name": "Columbus Day"
 					},
 					{
-						"condition": "bkn",
+						"condition": "sct",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Chance Rain Showers",
+						"description": "Partly Cloudy then Chance Showers And Thunderstorms",
 						"isDay": false,
 						"precipitationChance": 27,
 						"temperature": 59,
 						"name": "Monday Night"
 					},
 					{
-						"condition": "tsra_sct",
+						"condition": "tsra_hi",
 						"date": "2026-10-13",
 						"description": "Chance Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 36,
-						"temperature": 73,
+						"precipitationChance": 29,
+						"temperature": 74,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Slight Chance Rain Showers then Mostly Cloudy",
+						"description": "Slight Chance Rain Showers then Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 24,
-						"temperature": 50,
+						"precipitationChance": 18,
+						"temperature": 52,
 						"name": "Tuesday Night"
 					}
 				],
@@ -2748,7 +2964,7 @@
 						"date": "2026-10-08",
 						"description": "Fog",
 						"high": 72,
-						"low": 52,
+						"low": 51,
 						"precipitation": 0
 					}
 				]
@@ -2764,7 +2980,7 @@
 			},
 			"condition": "Opens today at 12:00 PM. Today's hours 12:00 PM-10:00 PM - Regular season.",
 			"status": "caution",
-			"timestamp": 1791518449304,
+			"timestamp": 1791518456115,
 			"updatedAt": "Updated daily from the published schedule",
 			"stale": false,
 			"weather": null
@@ -2779,26 +2995,17 @@
 			},
 			"condition": "East Rim trails remain open 9/16.",
 			"status": "open",
-			"timestamp": 1789705729126,
+			"timestamp": 1789734715843,
 			"updatedAt": "3 weeks ago",
 			"stale": true,
 			"weather": {
 				"condition": "skc",
 				"date": "2026-10-09",
-				"description": "Clear",
-				"isDay": false,
+				"description": "Sunny",
+				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 50,
+				"temperature": 42,
 				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-10-09",
-						"description": "Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 42,
-						"name": "Tonight"
-					},
 					{
 						"condition": "few",
 						"date": "2026-10-09",
@@ -2806,87 +3013,87 @@
 						"isDay": true,
 						"precipitationChance": 1,
 						"temperature": 70,
-						"name": "Friday"
+						"name": "Today"
 					},
 					{
 						"condition": "sct",
 						"date": "2026-10-09",
 						"description": "Partly Cloudy",
 						"isDay": false,
-						"precipitationChance": 2,
+						"precipitationChance": 3,
 						"temperature": 51,
-						"name": "Friday Night"
+						"name": "Tonight"
 					},
 					{
-						"condition": "sct",
+						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Sunny",
+						"description": "Partly Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 77,
+						"precipitationChance": 2,
+						"temperature": 76,
 						"name": "Saturday"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-10",
-						"description": "Mostly Cloudy then Rain Showers Likely",
+						"description": "Mostly Cloudy then Rain Showers",
 						"isDay": false,
-						"precipitationChance": 62,
-						"temperature": 56,
+						"precipitationChance": 95,
+						"temperature": 55,
 						"name": "Saturday Night"
 					},
 					{
-						"condition": "tsra",
+						"condition": "rain_showers",
 						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms",
+						"description": "Rain Showers",
 						"isDay": true,
-						"precipitationChance": 89,
+						"precipitationChance": 97,
 						"temperature": 67,
 						"name": "Sunday"
 					},
 					{
-						"condition": "tsra",
-						"date": "2026-10-11",
-						"description": "Showers And Thunderstorms Likely",
-						"isDay": false,
-						"precipitationChance": 72,
-						"temperature": 59,
-						"name": "Sunday Night"
-					},
-					{
 						"condition": "rain_showers",
-						"date": "2026-10-12",
-						"description": "Slight Chance Rain Showers then Mostly Cloudy",
-						"isDay": true,
-						"precipitationChance": 15,
-						"temperature": 73,
-						"name": "Columbus Day"
+						"date": "2026-10-11",
+						"description": "Chance Rain Showers",
+						"isDay": false,
+						"precipitationChance": 52,
+						"temperature": 58,
+						"name": "Sunday Night"
 					},
 					{
 						"condition": "bkn",
 						"date": "2026-10-12",
-						"description": "Mostly Cloudy then Slight Chance Rain Showers",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 14,
+						"temperature": 72,
+						"name": "Columbus Day"
+					},
+					{
+						"condition": "sct",
+						"date": "2026-10-12",
+						"description": "Partly Cloudy then Chance Showers And Thunderstorms",
 						"isDay": false,
-						"precipitationChance": 24,
-						"temperature": 59,
+						"precipitationChance": 29,
+						"temperature": 58,
 						"name": "Monday Night"
 					},
 					{
-						"condition": "rain_showers",
+						"condition": "tsra_hi",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Chance Showers And Thunderstorms",
 						"isDay": true,
-						"precipitationChance": 40,
-						"temperature": 72,
+						"precipitationChance": 34,
+						"temperature": 73,
 						"name": "Tuesday"
 					},
 					{
 						"condition": "rain_showers",
 						"date": "2026-10-13",
-						"description": "Chance Rain Showers",
+						"description": "Chance Rain Showers then Mostly Cloudy",
 						"isDay": false,
-						"precipitationChance": 28,
-						"temperature": 49,
+						"precipitationChance": 25,
+						"temperature": 51,
 						"name": "Tuesday Night"
 					}
 				],
