@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { type CSSProperties, useEffect, useMemo, useState } from 'react';
 
 import { useMediaQuery } from './mediaQuery';
 import { useTimeAgo } from './timeAgo';
@@ -12,13 +12,23 @@ type Theme = 'dracula' | 'alucard';
 
 type SortKey = 'name' | 'status' | 'updated';
 
+type SortDirection = 'asc' | 'desc';
+
 const SORT_OPTIONS: { label: string; value: SortKey }[] = [
 	{ label: 'Recently updated', value: 'updated' },
 	{ label: 'Status', value: 'status' },
 	{ label: 'Name', value: 'name' }
 ];
 
-// Status sort priority: open trails surface first, stale last.
+// The way each sort reads until the direction button turns it over, and what
+// either direction of it comes to in words, for that button's tooltip.
+const SORT_DIRECTIONS: Record<SortKey, { defaultDirection: SortDirection; orders: Record<SortDirection, string> }> = {
+	name: { defaultDirection: 'asc', orders: { asc: 'A to Z', desc: 'Z to A' } },
+	status: { defaultDirection: 'asc', orders: { asc: 'Open first', desc: 'Open last' } },
+	updated: { defaultDirection: 'desc', orders: { asc: 'Oldest first', desc: 'Newest first' } }
+};
+
+// Status sort priority, ascending: open trails surface first, stale last.
 const STATUS_ORDER: Record<Trail['status'], number> = {
 	caution: 1,
 	closed: 2,
@@ -58,6 +68,12 @@ function getInitialSort(): SortKey {
 	return 'updated';
 }
 
+function getInitialSortDirection(sort: SortKey): SortDirection {
+	const saved = readStored('sortDirection');
+	if (saved === 'asc' || saved === 'desc') return saved;
+	return SORT_DIRECTIONS[sort].defaultDirection;
+}
+
 function getInitialFavorites(): Set<string> {
 	try {
 		const saved = JSON.parse(readStored('favorites') ?? '[]') as unknown;
@@ -68,25 +84,51 @@ function getInitialFavorites(): Set<string> {
 	return new Set();
 }
 
-function compareTrails(a: Trail, b: Trail, sort: SortKey): number {
+// The ascending order of each sort, turned over whole for descending: so a
+// descending status sort is the ascending one read from the bottom, open last.
+function compareTrails(a: Trail, b: Trail, sort: SortKey, direction: SortDirection): number {
+	const sign = direction === 'asc' ? 1 : -1;
 	switch (sort) {
 		case 'name':
-			return a.name.localeCompare(b.name);
+			return sign * a.name.localeCompare(b.name);
 		case 'updated':
-			return (b.timestamp ?? 0) - (a.timestamp ?? 0);
+			return sign * ((a.timestamp ?? 0) - (b.timestamp ?? 0));
 		case 'status':
 		default:
 			// Fresh reports before stale ones, then by the reported status (so an
 			// open-but-stale trail beats a stale-stale one), then most recently
 			// posted first, then name.
 			return (
-				Number(a.stale) - Number(b.stale) ||
-				STATUS_ORDER[a.status] - STATUS_ORDER[b.status] ||
-				(b.timestamp ?? 0) - (a.timestamp ?? 0) ||
-				a.name.localeCompare(b.name)
+				sign *
+				(Number(a.stale) - Number(b.stale) ||
+					STATUS_ORDER[a.status] - STATUS_ORDER[b.status] ||
+					(b.timestamp ?? 0) - (a.timestamp ?? 0) ||
+					a.name.localeCompare(b.name))
 			);
 	}
 }
+
+// The confetti the share dialog bursts into as it closes: a dozen dots sent out
+// at even angles, to three distances so the ring is not too neat, in colors
+// from the palette. Each is an inline style of custom properties that the
+// qr-modal-confetti keyframes in App.css read.
+const BURST_COLORS = [
+	'var(--accent)',
+	'var(--status-open)',
+	'var(--weather-sun)',
+	'var(--weather-rain)',
+	'var(--status-caution)',
+	'var(--weather-moon)'
+];
+const BURST_PARTICLES: CSSProperties[] = Array.from(
+	{ length: 12 },
+	(_, index) =>
+		({
+			'--angle': `${index * 30}deg`,
+			'--color': BURST_COLORS[index % BURST_COLORS.length],
+			'--distance': `${140 + (index % 3) * 35}px`
+		}) as CSSProperties
+);
 
 // The published address from package.json's homepage, baked in by vite.config.ts.
 // The QR code beside it is generated from the same field, so the two agree, and
@@ -103,9 +145,15 @@ function App() {
 	const [cachedAt, setCachedAt] = useState<number | null>(null);
 	const [theme, setTheme] = useState<Theme>(getInitialTheme);
 	const [sort, setSort] = useState<SortKey>(getInitialSort);
+	const [sortDirection, setSortDirection] = useState<SortDirection>(() => getInitialSortDirection(sort));
 	const [favorites, setFavorites] = useState<Set<string>>(getInitialFavorites);
 	const [favoritesFirst, setFavoritesFirst] = useState(() => readStored('favoritesFirst') === 'true');
 	const [shareOpen, setShareOpen] = useState(false);
+	// Closing the share dialog first plays it out (the burst under
+	// .qr-modal--closing in App.css) and only then unmounts it, when the
+	// backdrop reports its fade, the last part of the burst, has ended.
+	const [shareClosing, setShareClosing] = useState(false);
+	const closeShare = () => setShareClosing(true);
 	const [copied, setCopied] = useState(false);
 
 	// The dog chases the mouse, so it only makes sense with one: a touch screen
@@ -127,6 +175,10 @@ function App() {
 	}, [sort]);
 
 	useEffect(() => {
+		writeStored('sortDirection', sortDirection);
+	}, [sortDirection]);
+
+	useEffect(() => {
 		writeStored('favorites', JSON.stringify([...favorites]));
 	}, [favorites]);
 
@@ -146,8 +198,9 @@ function App() {
 			return next;
 		});
 
-	// When favoritesFirst is on, favorites are pinned above everything else; the
-	// chosen sort then orders within each group. Otherwise it's a plain sort.
+	// When favoritesFirst is on, favorites are pinned above everything else
+	// whichever way the list reads; the chosen sort then orders within each
+	// group. Otherwise it's a plain sort.
 	const sortedTrails = useMemo(() => {
 		return [...trails].sort((a, b) => {
 			if (favoritesFirst) {
@@ -155,9 +208,9 @@ function App() {
 				const favB = favorites.has(b.id);
 				if (favA !== favB) return favA ? -1 : 1;
 			}
-			return compareTrails(a, b, sort);
+			return compareTrails(a, b, sort, sortDirection);
 		});
-	}, [trails, favorites, favoritesFirst, sort]);
+	}, [trails, favorites, favoritesFirst, sort, sortDirection]);
 
 	useEffect(() => {
 		// Relative to BASE_URL so it works both at the site root and under the
@@ -283,20 +336,49 @@ function App() {
 							<span className='summary-chip summary-chip--closed'>{closedCount} closed</span>
 						</div>
 						<div className='header-controls'>
-							<label className='sort-control'>
-								<span className='sort-control__label'>Sort by</span>
-								<select
-									className='sort-control__select'
-									onChange={(e) => setSort(e.target.value as SortKey)}
-									value={sort}
+							<div className='sort-control'>
+								<label className='sort-control__field'>
+									<span className='sort-control__label'>Sort by</span>
+									<select
+										className='sort-control__select'
+										value={sort}
+										onChange={(e) => {
+											const next = e.target.value as SortKey;
+											setSort(next);
+											// A new sort starts the way it reads best, not the
+											// way the last one happened to be turned.
+											setSortDirection(SORT_DIRECTIONS[next].defaultDirection);
+										}}
+									>
+										{SORT_OPTIONS.map((opt) => (
+											<option key={opt.value} value={opt.value}>
+												{opt.label}
+											</option>
+										))}
+									</select>
+								</label>
+								<button
+									aria-label='Reverse sort order'
+									className={`sort-direction sort-direction--${sortDirection}`}
+									onClick={() => setSortDirection((current) => (current === 'asc' ? 'desc' : 'asc'))}
+									title={SORT_DIRECTIONS[sort].orders[sortDirection]}
+									type='button'
 								>
-									{SORT_OPTIONS.map((opt) => (
-										<option key={opt.value} value={opt.value}>
-											{opt.label}
-										</option>
-									))}
-								</select>
-							</label>
+									<svg
+										aria-hidden='true'
+										className='sort-direction__icon'
+										fill='none'
+										stroke='currentColor'
+										strokeLinecap='round'
+										strokeLinejoin='round'
+										strokeWidth='2'
+										viewBox='0 0 24 24'
+									>
+										<path d='M4 6h10M4 12h7M4 18h4' />
+										<path d='M18 5v14M14.5 15.5 18 19l3.5-3.5' />
+									</svg>
+								</button>
+							</div>
 							<button
 								aria-checked={favoritesFirst}
 								aria-label='Pin favorites to top'
@@ -334,11 +416,12 @@ function App() {
 				)}
 				{!loading &&
 					!error &&
-					sortedTrails.map((trail) => (
+					sortedTrails.map((trail, index) => (
 						<TrailCard
 							isFavorite={favorites.has(trail.id)}
 							key={trail.id}
 							onToggleFavorite={toggleFavorite}
+							previousTimestamp={index > 0 ? sortedTrails[index - 1].timestamp : null}
 							trail={trail}
 						/>
 					))}
@@ -369,26 +452,32 @@ function App() {
 				<div
 					aria-label='Share this site'
 					aria-modal='true'
-					className='qr-modal'
-					onClick={() => setShareOpen(false)}
+					className={`qr-modal${shareClosing ? ' qr-modal--closing' : ''}`}
+					onClick={closeShare}
 					role='dialog'
+					onAnimationEnd={(event) => {
+						// The panel's and the confetti's ends bubble up here too; only
+						// the backdrop's own fade, the longest, means the burst is over.
+						if (!shareClosing || event.target !== event.currentTarget) return;
+						setShareOpen(false);
+						setShareClosing(false);
+					}}
 				>
 					<div className='qr-modal__panel' onClick={(e) => e.stopPropagation()}>
-						<button
-							aria-label='Close'
-							className='qr-modal__close'
-							onClick={() => setShareOpen(false)}
-							type='button'
-						>
+						<button aria-label='Close' className='qr-modal__close' onClick={closeShare} type='button'>
 							&times;
 						</button>
 						<h2 className='qr-modal__title'>Share this site</h2>
 						<p className='qr-modal__subtitle'>Scan the code or copy the link</p>
-						<img
-							alt={`QR code linking to ${SHARE_URL}`}
-							className='qr-modal__qr'
-							src={`${import.meta.env.BASE_URL}site-qr.svg`}
-						/>
+						{/* The wrapper is what the opening animation's scan beam sweeps
+						    across; an image cannot carry a pseudo-element of its own. */}
+						<span className='qr-modal__scan'>
+							<img
+								alt={`QR code linking to ${SHARE_URL}`}
+								className='qr-modal__qr'
+								src={`${import.meta.env.BASE_URL}site-qr.svg`}
+							/>
+						</span>
 						<div className='qr-modal__link'>
 							<span className='qr-modal__url'>{SHARE_URL}</span>
 							<button
@@ -405,6 +494,13 @@ function App() {
 							</button>
 						</div>
 					</div>
+					{shareClosing && (
+						<span aria-hidden='true' className='qr-modal__burst'>
+							{BURST_PARTICLES.map((particle, index) => (
+								<span key={index} style={particle} />
+							))}
+						</span>
+					)}
 				</div>
 			)}
 		</>

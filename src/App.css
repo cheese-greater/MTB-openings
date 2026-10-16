@@ -165,14 +165,170 @@
 	opacity: 0.8;
 }
 
-.qr-modal__qr {
-	background: #fff;
+/* The QR code and, around it, the clipping box for the beam that sweeps down
+   it as the dialog opens. */
+.qr-modal__scan {
 	border-radius: 8px;
 	display: block;
-	height: auto;
 	margin: 0 auto 20px;
-	padding: 12px;
+	overflow: hidden;
+	position: relative;
 	width: 200px;
+}
+
+.qr-modal__qr {
+	background: #fff;
+	display: block;
+	height: auto;
+	padding: 12px;
+	width: 100%;
+}
+
+/* The dialog's entrance: the backdrop fades up while the panel springs in
+   small and a touch tilted and lands with an overshoot, and once it has
+   landed a beam in the accent color sweeps down the QR code, as though
+   scanning it. The beam is a full-size overlay carrying one soft band, moved
+   its own height in each direction so the band crosses the whole code, and
+   it waits out of view before its cue and stays out after. */
+.qr-modal {
+	animation: qr-modal-fade 0.2s ease-out;
+}
+
+.qr-modal__panel {
+	animation: qr-modal-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.qr-modal__scan::after {
+	animation: qr-modal-scan 0.9s ease-in-out 0.3s both;
+	background: linear-gradient(
+		to bottom,
+		transparent 32%,
+		color-mix(in srgb, var(--accent) 35%, transparent) 48%,
+		color-mix(in srgb, var(--accent) 75%, transparent) 50%,
+		transparent 51%
+	);
+	content: '';
+	inset: 0;
+	pointer-events: none;
+	position: absolute;
+}
+
+@keyframes qr-modal-fade {
+	from {
+		opacity: 0;
+	}
+}
+
+@keyframes qr-modal-pop {
+	from {
+		opacity: 0;
+		transform: scale(0.5) rotate(-6deg);
+	}
+}
+
+@keyframes qr-modal-scan {
+	from {
+		transform: translateY(-100%);
+	}
+
+	to {
+		transform: translateY(100%);
+	}
+}
+
+/* The dialog's exit: the panel flinches, then bursts, blowing up and blurring
+   away as a dozen dots of confetti shoot out from where it stood, while the
+   backdrop fades out behind them. Each dot is sent along its own angle to its
+   own distance, both set inline from App.tsx. The backdrop's fade is the
+   longest of these, and the dialog is unmounted when it ends. It gets
+   keyframes of its own rather than the entrance's run in reverse: a browser
+   matches animations by name, so the same name would only adjust the one
+   that already finished at open, jumping to its end with no end event. */
+.qr-modal--closing {
+	animation: qr-modal-fade-out 0.6s ease-in both;
+	pointer-events: none;
+}
+
+.qr-modal--closing .qr-modal__panel {
+	animation: qr-modal-burst 0.4s ease-in both;
+}
+
+.qr-modal__burst {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+}
+
+.qr-modal__burst > span {
+	animation: qr-modal-confetti 0.55s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+	background: var(--color);
+	border-radius: 50%;
+	height: 12px;
+	left: -6px;
+	position: absolute;
+	top: -6px;
+	width: 12px;
+}
+
+@keyframes qr-modal-fade-out {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes qr-modal-burst {
+	30% {
+		opacity: 1;
+		transform: scale(0.92) rotate(-2deg);
+	}
+
+	to {
+		filter: blur(8px);
+		opacity: 0;
+		transform: scale(1.4) rotate(3deg);
+	}
+}
+
+/* The dots stay solid for the first half of the flight and fade over the
+   second, while the travel eases out across the whole of it. */
+@keyframes qr-modal-confetti {
+	from {
+		opacity: 1;
+		transform: rotate(var(--angle)) translateX(0) scale(1);
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+		transform: rotate(var(--angle)) translateX(var(--distance)) scale(0.3);
+	}
+}
+
+/* With motion reduced the panel only fades, in and out, and neither the beam
+   nor the confetti appears. */
+@media (prefers-reduced-motion: reduce) {
+	.qr-modal__panel {
+		animation: qr-modal-fade 0.2s ease-out;
+	}
+
+	.qr-modal__scan::after {
+		display: none;
+	}
+
+	.qr-modal--closing {
+		animation-duration: 0.2s;
+	}
+
+	.qr-modal--closing .qr-modal__panel {
+		animation: qr-modal-fade-out 0.2s ease-in both;
+	}
+
+	.qr-modal__burst {
+		display: none;
+	}
 }
 
 .qr-modal__link {
@@ -631,6 +787,44 @@ body:has(.forecast-dialog[open]) {
 	border-color: var(--accent);
 }
 
+.sort-control__field {
+	align-items: center;
+	display: inline-flex;
+	gap: 8px;
+}
+
+/* Turns the sort over. A square beside the select, dressed like it and as
+   tall, whose glyph shows which way the list reads: bars long to short with
+   the arrow down for descending, the whole thing flipped for ascending. */
+.sort-direction {
+	align-items: center;
+	align-self: stretch;
+	background: var(--card-bg);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	color: var(--text-h);
+	cursor: pointer;
+	display: inline-flex;
+	justify-content: center;
+	padding: 0;
+	transition: border-color 0.15s;
+	width: 32px;
+}
+
+.sort-direction:hover {
+	border-color: var(--accent);
+}
+
+.sort-direction__icon {
+	height: 16px;
+	transition: transform 0.2s ease;
+	width: 16px;
+}
+
+.sort-direction--asc .sort-direction__icon {
+	transform: scaleY(-1);
+}
+
 .trail-grid {
 	align-content: start;
 	display: grid;
@@ -1039,18 +1233,139 @@ body:has(.forecast-dialog[open]) {
 		font-size: 12px;
 	}
 
+	/* One column, always: the collapsed tiles are a list, and the age column
+	   beside them only makes sense as one. Without this, auto-fill would still
+	   seat two tiles abreast in the widest phone-layout windows. */
 	.trail-grid {
-		gap: 10px;
+		--card-gap: 10px;
+		--timeline-gap: 6px;
+		--timeline-gutter: 12px;
+		gap: var(--card-gap);
+		grid-template-columns: minmax(0, 1fr);
 		padding: 16px 12px;
+	}
+
+	/* The age column: a slim line down the left of the list, outside the cards,
+	   labelled with the report's age wherever it changes from one card to the
+	   next. The labels run sideways, so the gutter is only as wide as a line
+	   of text is tall, and it hugs the screen edge: 6px, then the gutter, then
+	   a short gap to the cards. The list makes room for it only once there are
+	   cards, so the loading and error messages stay centered. */
+	.trail-grid:has(.trail-card) {
+		padding-left: calc(6px + var(--timeline-gutter) + var(--timeline-gap));
 	}
 
 	.trail-card {
 		gap: 0;
 		padding: 12px 14px;
+		position: relative;
+	}
+
+	/* Each card draws the stretch of line beside itself, reaching up across the
+	   gap to meet the card above, so the line runs exactly the length of the
+	   list however it is sorted. It is placed from the card's padding box,
+	   which sits inside the card's borders: 4px in from the status border on
+	   the left, and 1px in at the top and bottom, which the offsets add back so
+	   neighboring stretches meet instead of stopping a pixel short of each
+	   card's edge. */
+	.trail-card::before {
+		background: var(--border);
+		bottom: -1px;
+		content: '';
+		left: calc(-4px - var(--timeline-gap) - var(--timeline-gutter) / 2);
+		position: absolute;
+		top: calc(-1 * var(--card-gap) - 1px);
+		width: 1px;
+	}
+
+	.trail-card:first-child::before {
+		top: -1px;
+	}
+
+	.trail-card__head {
+		position: relative;
+	}
+
+	/* The age itself, "3h", "2d", "3w", written sideways down the line,
+	   centered on it and level with the title row, on the page background so
+	   it reads as a break in the line. A single line of text at line height 1
+	   keeps it exactly the gutter's width; the padding is along the text, so
+	   the break clears the characters by a few pixels above and below. Its
+	   left is measured from the title row: 14px of card padding and the 4px
+	   status border back to the card's edge, then the gap and half the gutter
+	   to the line. */
+	.trail-card__age {
+		background: var(--bg);
+		color: color-mix(in srgb, var(--text-h) 60%, transparent);
+		font-size: 11px;
+		font-variant-numeric: tabular-nums;
+		font-weight: 600;
+		left: calc(-18px - var(--timeline-gap) - var(--timeline-gutter) / 2);
+		letter-spacing: 0.3px;
+		line-height: 1;
+		padding: 4px 0;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		white-space: nowrap;
+		writing-mode: vertical-rl;
 	}
 
 	.trail-card__title {
 		font-size: 16px;
+	}
+
+	/* A collapsed card shows its status as an icon. When the card opens the
+	   icon spins away and the word unrolls out of where it was; closing runs
+	   it backwards. The icon's width is known, so it animates directly; the
+	   word's is not, so it sits in a grid column that animates from no width
+	   to its content's, which is the one way CSS will animate to a size it has
+	   not been told. The word is in the markup throughout, so the badge reads
+	   in full to assistive tech either way. */
+	.trail-card__badge {
+		align-items: center;
+		display: inline-flex;
+	}
+
+	.trail-card__badge-icon {
+		flex-shrink: 0;
+		height: 14px;
+		overflow: hidden;
+		transition: width 0.25s ease;
+		width: 14px;
+	}
+
+	.trail-card__badge-icon > svg {
+		display: block;
+		height: 14px;
+		transition:
+			opacity 0.25s ease,
+			transform 0.25s ease;
+		width: 14px;
+	}
+
+	.trail-card__badge-text {
+		display: inline-grid;
+		grid-template-columns: 0fr;
+		transition: grid-template-columns 0.25s ease;
+	}
+
+	.trail-card__badge-text > span {
+		min-width: 0;
+		overflow: hidden;
+	}
+
+	.trail-card.is-expanded .trail-card__badge-icon {
+		width: 0;
+	}
+
+	.trail-card.is-expanded .trail-card__badge-icon > svg {
+		opacity: 0;
+		transform: rotate(180deg) scale(0.4);
+	}
+
+	.trail-card.is-expanded .trail-card__badge-text {
+		grid-template-columns: 1fr;
 	}
 
 	.trail-card__summary {

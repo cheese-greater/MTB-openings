@@ -1,8 +1,8 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { type ReactNode, useLayoutEffect, useRef, useState } from 'react';
 
 import ForecastDialog from './ForecastDialog';
 import { useMediaQuery } from './mediaQuery';
-import { useTimeAgo } from './timeAgo';
+import { timeAgoCompact, useTimeAgo, useTimeAgoCompact } from './timeAgo';
 import type { Trail } from './trailData';
 import WeatherIcon from './WeatherIcon';
 
@@ -17,9 +17,38 @@ const STATUS_LABEL: Record<Trail['status'], string> = {
 	stale: 'Stale'
 };
 
+// What stands in for the status word on a collapsed phone card, each drawn on
+// a 24px grid in the badge's own color: a thumbs up, a no-entry sign, a
+// warning triangle, and a snore for a report nobody has refreshed. When the card
+// opens the icon spins away and the word unrolls out of where it was (see
+// .trail-card__badge-icon in App.css).
+const STATUS_ICON: Record<Trail['status'], ReactNode> = {
+	caution: (
+		<>
+			<path d='M12 4.5 21 20H3z' />
+			<path d='M12 10.5v4M12 17.3v0.2' />
+		</>
+	),
+	closed: (
+		<>
+			<circle cx='12' cy='12' r='8.5' />
+			<path d='M8 12h8' />
+		</>
+	),
+	open: (
+		<path d='M7 11v10H4a1.5 1.5 0 0 1-1.5-1.5v-7A1.5 1.5 0 0 1 4 11h3l3.5-8a2.5 2.5 0 0 1 2.5 2.5V10h4.6a2 2 0 0 1 2 2.3l-1.2 7a2 2 0 0 1-2 1.7H7' />
+	),
+	stale: <path d='M4 8.5h6.5L4 15.5h6.5M14 12.5h5.5L14 18.5h5.5' />
+};
+
 interface Props {
 	isFavorite: boolean;
 	onToggleFavorite: (id: string) => void;
+	// When the card above this one was reported, or null at the top of the
+	// list. On mobile the age column beside the list is labelled only where
+	// the age changes, so a card labels itself when its age differs from its
+	// neighbor's.
+	previousTimestamp: number | null;
 	trail: Trail;
 }
 
@@ -33,7 +62,7 @@ function displayLocation(location: string): string {
 	return location.replace(/^\s*\S*\+\S+,?\s*/, '').trim() || location;
 }
 
-function TrailCard({ isFavorite, onToggleFavorite, trail }: Props) {
+function TrailCard({ isFavorite, onToggleFavorite, previousTimestamp, trail }: Props) {
 	const [expanded, setExpanded] = useState(false);
 	const [conditionOpen, setConditionOpen] = useState(false);
 	const [conditionOverflows, setConditionOverflows] = useState(false);
@@ -43,6 +72,10 @@ function TrailCard({ isFavorite, onToggleFavorite, trail }: Props) {
 	const detailsId = `trail-details-${trail.id}`;
 	const displayName = trail.name.replace('Ohio & Erie Canal', 'OECR');
 	const updatedAgo = useTimeAgo(trail.timestamp);
+	const updatedAgoCompact = useTimeAgoCompact(trail.timestamp);
+	// The neighbor's age from the same render, so the two always agree on
+	// which minute it is.
+	const labelsAge = isMobile && updatedAgoCompact !== '' && updatedAgoCompact !== timeAgoCompact(previousTimestamp);
 
 	// Detect whether the clamped condition overflows so we only show the toggle
 	// when it's needed. Skip while expanded (the text is unclamped then, so it
@@ -64,10 +97,31 @@ function TrailCard({ isFavorite, onToggleFavorite, trail }: Props) {
 		return () => observer.disconnect();
 	}, [trail.condition, isMobile, conditionOpen]);
 
+	const statusLabel = STATUS_LABEL[trail.status];
 	const summary = (
 		<>
 			<span className={`trail-card__badge trail-card__badge--${trail.stale ? 'stale' : trail.status}`}>
-				{STATUS_LABEL[trail.status]}
+				{isMobile ? (
+					<>
+						<span aria-hidden='true' className='trail-card__badge-icon'>
+							<svg
+								fill='none'
+								stroke='currentColor'
+								strokeLinecap='round'
+								strokeLinejoin='round'
+								strokeWidth='2.5'
+								viewBox='0 0 24 24'
+							>
+								{STATUS_ICON[trail.status]}
+							</svg>
+						</span>
+						<span className='trail-card__badge-text'>
+							<span>{statusLabel}</span>
+						</span>
+					</>
+				) : (
+					statusLabel
+				)}
 			</span>
 			<span className='trail-card__title'>{displayName}</span>
 			<span aria-hidden='true' className='trail-card__chevron'>
@@ -83,6 +137,15 @@ function TrailCard({ isFavorite, onToggleFavorite, trail }: Props) {
 			}`}
 		>
 			<div className='trail-card__head'>
+				{/* The report's age, sitting on the line that runs down the left of
+				    the list, level with this row. Hidden from assistive tech: a bare
+				    "3d" means little read aloud, and the details carry the age in
+				    full. */}
+				{labelsAge && (
+					<span aria-hidden='true' className='trail-card__age'>
+						{updatedAgoCompact}
+					</span>
+				)}
 				<h2 className='trail-card__name'>
 					{isMobile ? (
 						<button

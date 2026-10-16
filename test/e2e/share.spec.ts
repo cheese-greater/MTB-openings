@@ -24,6 +24,7 @@ test.describe('share dialog', () => {
 		expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(homepage);
 
 		await dialog.getByRole('button', { name: 'Close' }).click();
+		await expect(dialog).toHaveClass(/qr-modal--closing/);
 		await expect(dialog).toBeHidden();
 	});
 });

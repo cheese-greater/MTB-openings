@@ -23,6 +23,28 @@ test.describe('reader preferences', () => {
 		expect((await titles(page))[0]).toBe(displayName(newest));
 	});
 
+	test('the direction button turns the order over, is remembered, and resets with a new sort', async ({ page }) => {
+		await openSite(page);
+		const oldestFirst = [...fixture.trails]
+			.sort((a, b) => (a.timestamp ?? 0) - (b.timestamp ?? 0))
+			.map(displayName);
+		const direction = page.getByRole('button', { name: 'Reverse sort order' });
+		await expect(direction).toHaveAttribute('title', 'Newest first');
+
+		await direction.click();
+		await expect(direction).toHaveAttribute('title', 'Oldest first');
+		expect(await titles(page)).toEqual(oldestFirst);
+
+		await page.reload();
+		await expect(page.locator('.trail-card')).toHaveCount(fixture.trails.length);
+		await expect(direction).toHaveAttribute('title', 'Oldest first');
+		expect(await titles(page)).toEqual(oldestFirst);
+
+		await page.locator('.sort-control__select').selectOption('name');
+		await expect(direction).toHaveAttribute('title', 'A to Z');
+		expect(await titles(page)).toEqual(fixture.trails.map(displayName).sort((a, b) => a.localeCompare(b)));
+	});
+
 	test('the theme toggle switches palettes and is remembered', async ({ page }) => {
 		await openSite(page);
 		await expect(page.locator('html')).toHaveAttribute('data-theme', 'dracula');
