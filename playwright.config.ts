@@ -13,6 +13,10 @@ export default defineConfig({
 	testDir: 'test/e2e',
 	use: {
 		baseURL: 'http://localhost:4173',
+		// The tests hand the page a fixture in place of trails.json through route
+		// interception, which the service worker would answer ahead of. Kept out
+		// of the way, so the fixture reaches the page.
+		serviceWorkers: 'block',
 		trace: 'retain-on-failure'
 	},
 	webServer: {

@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import { VitePWA } from 'vite-plugin-pwa';
 
 // Build number = total git commits, computed fresh on every build. Version is
 // `4.<build>`. Falls back to 4.0 if git isn't available (e.g. a source export).
@@ -44,7 +45,50 @@ export default defineConfig({
 		__REPO_URL__: JSON.stringify(repoUrl),
 		__SITE_URL__: JSON.stringify(siteUrl)
 	},
-	plugins: [react()],
+	plugins: [
+		react(),
+		// Installable, and open offline on the last conditions it saw. The service
+		// worker precaches the app shell (the build's own files and the icons) and
+		// serves trails.json network-first, keeping the latest answer for a
+		// trailhead with no signal; the footer's "last hourly cache" line then says
+		// how old it is. A deploy that changed the app reaches an installed copy on
+		// its next launch, when the worker updates and reloads. The data file is
+		// kept out of the precache on purpose: it changes hourly, and a precache
+		// that changed with it would have every installed copy reloading on the
+		// hour. The manifest's start_url and scope follow `base`, so the installed
+		// app opens at the Pages path.
+		VitePWA({
+			manifest: {
+				background_color: '#282a36',
+				description:
+					'Is the trail open? Two dozen mountain bike trails around Cleveland on one page, with conditions, weather and directions.',
+				display: 'standalone',
+				icons: [
+					{ sizes: '192x192', src: 'pwa-192.png', type: 'image/png' },
+					{ sizes: '512x512', src: 'pwa-512.png', type: 'image/png' },
+					{ purpose: 'maskable', sizes: '512x512', src: 'pwa-maskable-512.png', type: 'image/png' }
+				],
+				name: 'CLE MTB Trails',
+				short_name: 'CLE MTB',
+				theme_color: '#282a36'
+			},
+			registerType: 'autoUpdate',
+			workbox: {
+				globPatterns: ['**/*.{js,css,html,svg,png}'],
+				runtimeCaching: [
+					{
+						handler: 'NetworkFirst',
+						options: {
+							cacheName: 'trail-conditions',
+							expiration: { maxEntries: 2 },
+							networkTimeoutSeconds: 10
+						},
+						urlPattern: /\/trails\.json$/
+					}
+				]
+			}
+		})
+	],
 	server: {
 		// public/trails.json exists as the file Pages publishes, and Vite would
 		// happily serve that build-time copy in dev. Proxy it to the scraper

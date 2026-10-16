@@ -10,6 +10,14 @@ import './App.css';
 
 type Theme = 'dracula' | 'alucard';
 
+// Each theme's page background from index.css, for the browser chrome around
+// the page (the theme-color meta in index.html, which also sets it before the
+// first paint).
+const THEME_COLOR: Record<Theme, string> = {
+	alucard: '#fffbeb',
+	dracula: '#282a36'
+};
+
 type SortKey = 'name' | 'status' | 'updated';
 
 type SortDirection = 'asc' | 'desc';
@@ -167,6 +175,7 @@ function App() {
 
 	useEffect(() => {
 		document.documentElement.dataset.theme = theme;
+		document.querySelector('meta[name="theme-color"]')?.setAttribute('content', THEME_COLOR[theme]);
 		writeStored('theme', theme);
 	}, [theme]);
 

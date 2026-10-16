@@ -8,7 +8,7 @@ Every trail gets a card: open, caution, closed, or grayed out when nobody has re
 
 The status comes from wherever each trail's people actually post: Cleveland Metroparks, CAMBA Trailmate, TrailForks, and the crews posting to Bluesky. Ray's is in there too, worked out from their published season calendar rather than guessed at. Each card also shows the sky and temperature at its trailhead right now, Ray's parking lot included. Tap that for the weather, grouped by day: the three days just gone, dimmed, with how much rain fell on each, then today and the next four days as day and night, each with its temperature and chance of rain. Enough to tell how wet the ground is and whether it will dry before you get there. Star the trails you ride and they stay pinned to the top. Sort by what changed most recently, by status, or by name. Light or dark, whichever your phone already prefers.
 
-It rescrapes and republishes itself every hour, so the page is never much further behind than the trail crews are. No app, no login, nothing to install.
+It rescrapes and republishes itself every hour, so the page is never much further behind than the trail crews are. No app store, no login, nothing to install. Add it to your home screen if you like: it opens like an app, and it keeps the last conditions it saw for a trailhead with no signal.
 
 Spotted a wrong status, a missing trail or a dead link? [Open an issue](https://github.com/cheese-greater/MTB-openings/issues).
 

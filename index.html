@@ -2,8 +2,22 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Is the trail open? Two dozen mountain bike trails around Cleveland on one page, with conditions, weather and directions."
+		/>
+		<!-- The color of the browser chrome around the page: the theme's background,
+		     set below before paint and kept in step by App.tsx when the theme toggles. -->
+		<meta name="theme-color" content="#282a36" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<!-- Home-screen details for iOS, which takes less from the manifest than
+		     the others: its own icon on a solid square, since it paints transparency
+		     black, and the name and standalone display spelled out again. -->
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<meta name="apple-mobile-web-app-title" content="CLE MTB Trails" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes" />
 		<title>CLE MTB Trails</title>
 		<script>
 			// Apply saved/preferred theme before paint to avoid a flash of the wrong palette.
@@ -23,6 +37,10 @@
 							? 'alucard'
 							: 'dracula';
 				document.documentElement.dataset.theme = theme;
+				// The page backgrounds from index.css, for the browser chrome.
+				document
+					.querySelector('meta[name="theme-color"]')
+					.setAttribute('content', theme === 'alucard' ? '#fffbeb' : '#282a36');
 			})();
 		</script>
 	</head>
