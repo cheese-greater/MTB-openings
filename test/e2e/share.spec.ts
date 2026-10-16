@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 import packageJson from '../../package.json' with { type: 'json' };
 
-import { openSite } from './helpers';
+import { fixture, openSite } from './helpers';
 
 const { homepage } = packageJson;
 
@@ -26,5 +26,29 @@ test.describe('share dialog', () => {
 		await dialog.getByRole('button', { name: 'Close' }).click();
 		await expect(dialog).toHaveClass(/qr-modal--closing/);
 		await expect(dialog).toBeHidden();
+	});
+
+	test('back closes it and stays on the page, and closing it by its button leaves the history as it found it', async ({
+		page
+	}) => {
+		await openSite(page);
+		// The entry the open dialog holds is tagged; the page's own entry is not.
+		const historyState = () => page.evaluate(() => window.history.state as unknown);
+		const dialog = page.getByRole('dialog', { name: 'Share this site' });
+		expect(await historyState()).toBeNull();
+
+		await page.locator('.qr-button').click();
+		await expect(dialog).toBeVisible();
+		expect(await historyState()).toEqual({ dialog: 'share' });
+		await page.goBack();
+		await expect(dialog).toBeHidden();
+		await expect(page.locator('.trail-card')).toHaveCount(fixture.trails.length);
+		expect(await historyState()).toBeNull();
+
+		await page.locator('.qr-button').click();
+		await expect(dialog).toBeVisible();
+		await dialog.getByRole('button', { name: 'Close' }).click();
+		await expect(dialog).toBeHidden();
+		await expect.poll(historyState).toBeNull();
 	});
 });

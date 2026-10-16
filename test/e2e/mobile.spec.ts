@@ -67,6 +67,33 @@ test.describe('phone layout', () => {
 		await expect(dialog).toBeHidden();
 	});
 
+	test('back closes the forecast and stays on the page, and a closed dialog leaves the history as it found it', async ({
+		page
+	}) => {
+		await openSite(page);
+		const trail = fixture.trails.find((candidate) => candidate.weather)!;
+		const card = cardFor(page, trail);
+		// The entry the open dialog holds is tagged; the page's own entry is not.
+		const historyState = () => page.evaluate(() => window.history.state as unknown);
+		expect(await historyState()).toBeNull();
+		await card.locator('.trail-card__summary').tap();
+		await card.locator('.trail-card__weather').tap();
+		const dialog = page.getByRole('dialog');
+		await expect(dialog).toBeVisible();
+		expect(await historyState()).toEqual({ dialog: 'forecast' });
+
+		await page.goBack();
+		await expect(dialog).toBeHidden();
+		await expect(page.locator('.trail-card')).toHaveCount(fixture.trails.length);
+		expect(await historyState()).toBeNull();
+
+		await card.locator('.trail-card__weather').tap();
+		await expect(dialog).toBeVisible();
+		await dialog.getByRole('button', { name: 'Close' }).tap();
+		await expect(dialog).toBeHidden();
+		await expect.poll(historyState).toBeNull();
+	});
+
 	test('the header keeps its toggles reachable next to the title', async ({ page }) => {
 		await openSite(page);
 		await expect(page.locator('.qr-button')).toBeVisible();

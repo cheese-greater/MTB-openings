@@ -1,5 +1,6 @@
 import { type CSSProperties, useEffect, useMemo, useState } from 'react';
 
+import { useCloseOnBack } from './closeOnBack';
 import { useMediaQuery } from './mediaQuery';
 import { useTimeAgo } from './timeAgo';
 import TrailCard from './TrailCard';
@@ -162,6 +163,9 @@ function App() {
 	// backdrop reports its fade, the last part of the burst, has ended.
 	const [shareClosing, setShareClosing] = useState(false);
 	const closeShare = () => setShareClosing(true);
+	// Open for this purpose until the burst begins, so a close by any means
+	// settles the history entry at once rather than when the dialog unmounts.
+	useCloseOnBack('share', shareOpen && !shareClosing, closeShare);
 	const [copied, setCopied] = useState(false);
 
 	// The dog chases the mouse, so it only makes sense with one: a touch screen

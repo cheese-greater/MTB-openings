@@ -2,12 +2,12 @@ import js from '@eslint/js';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import prettierConfig from 'eslint-config-prettier';
-import checkFile from 'eslint-plugin-check-file';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import reactRefreshPlugin from 'eslint-plugin-react-refresh';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import sortKeysCustomOrder from 'eslint-plugin-sort-keys-custom-order';
+import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import type { Linter } from 'eslint';
 
@@ -38,7 +38,6 @@ export default [
 		},
 		plugins: {
 			'@typescript-eslint': tsPlugin,
-			'check-file': checkFile,
 			react: reactPlugin,
 			'react-hooks': reactHooksPlugin,
 			'react-refresh': reactRefreshPlugin,
@@ -56,16 +55,6 @@ export default [
 					destructuredArrayIgnorePattern: '^_[^_]*$',
 					ignoreRestSiblings: true,
 					varsIgnorePattern: '^_[^_]*$'
-				}
-			],
-			'check-file/filename-naming-convention': [
-				'error',
-				{
-					'**/!(*.d).ts': 'CAMEL_CASE',
-					'**/*.tsx': 'PASCAL_CASE'
-				},
-				{
-					ignoreMiddleExtensions: true // Allow multiple extensions
 				}
 			],
 			'cypress/no-unnecessary-waiting': 'off',
@@ -131,6 +120,26 @@ export default [
 				version: 'detect'
 			}
 		}
+	},
+	// Filenames: .ts camelCase, .tsx PascalCase. The rule judges the name ahead
+	// of its first dot, so a spec file passes on its stem, and it is kept off
+	// directory names, which it would otherwise hold to the same case. The one
+	// declaration file is kebab-case by Vite's convention and is let be;
+	// main.tsx opts out in its own first line.
+	{
+		files: ['**/*.ts'],
+		plugins: { unicorn },
+		rules: {
+			'unicorn/filename-case': [
+				'error',
+				{ case: 'camelCase', checkDirectories: false, ignore: [/^vite-env\.d\.ts$/] }
+			]
+		}
+	},
+	{
+		files: ['**/*.tsx'],
+		plugins: { unicorn },
+		rules: { 'unicorn/filename-case': ['error', { case: 'pascalCase', checkDirectories: false }] }
 	},
 	{
 		ignores: [

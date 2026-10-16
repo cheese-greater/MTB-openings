@@ -1,4 +1,4 @@
-/* eslint-disable check-file/filename-naming-convention */
+/* eslint-disable unicorn/filename-case */
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { registerSW } from 'virtual:pwa-register';

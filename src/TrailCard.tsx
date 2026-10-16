@@ -1,5 +1,6 @@
 import { type ReactNode, useLayoutEffect, useRef, useState } from 'react';
 
+import { useCloseOnBack } from './closeOnBack';
 import ForecastDialog from './ForecastDialog';
 import { useMediaQuery } from './mediaQuery';
 import { timeAgoCompact, useTimeAgo, useTimeAgoCompact } from './timeAgo';
@@ -67,6 +68,7 @@ function TrailCard({ isFavorite, onToggleFavorite, previousTimestamp, trail }: P
 	const [conditionOpen, setConditionOpen] = useState(false);
 	const [conditionOverflows, setConditionOverflows] = useState(false);
 	const [forecastOpen, setForecastOpen] = useState(false);
+	useCloseOnBack('forecast', forecastOpen, () => setForecastOpen(false));
 	const conditionRef = useRef<HTMLParagraphElement>(null);
 	const isMobile = useMediaQuery(MOBILE_QUERY);
 	const detailsId = `trail-details-${trail.id}`;
