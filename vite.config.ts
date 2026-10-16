@@ -6,12 +6,12 @@ import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 // Build number = total git commits, computed fresh on every build. Version is
-// `4.<build>`. Falls back to 4.0 if git isn't available (e.g. a source export).
+// `5.<build>`. Falls back to 5.0 if git is not available (e.g. a source export).
 // The hourly workflow commits scraped conditions, which are not a new version of
 // the app, so commits that touched nothing but that file don't count. The
 // pathspec is left unquoted deliberately: cmd.exe would pass the quotes through
 // to git as part of the path.
-const MAJOR = 4;
+const MAJOR = 5;
 let build = 0;
 try {
 	const command = 'git rev-list --count HEAD -- . :!public/trails.json';
