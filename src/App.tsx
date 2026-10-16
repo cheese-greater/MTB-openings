@@ -1,5 +1,6 @@
-import { type CSSProperties, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
+import Burst from './Burst';
 import { useCloseOnBack } from './closeOnBack';
 import { useMediaQuery } from './mediaQuery';
 import { useTimeAgo } from './timeAgo';
@@ -116,28 +117,6 @@ function compareTrails(a: Trail, b: Trail, sort: SortKey, direction: SortDirecti
 			);
 	}
 }
-
-// The confetti the share dialog bursts into as it closes: a dozen dots sent out
-// at even angles, to three distances so the ring is not too neat, in colors
-// from the palette. Each is an inline style of custom properties that the
-// qr-modal-confetti keyframes in App.css read.
-const BURST_COLORS = [
-	'var(--accent)',
-	'var(--status-open)',
-	'var(--weather-sun)',
-	'var(--weather-rain)',
-	'var(--status-caution)',
-	'var(--weather-moon)'
-];
-const BURST_PARTICLES: CSSProperties[] = Array.from(
-	{ length: 12 },
-	(_, index) =>
-		({
-			'--angle': `${index * 30}deg`,
-			'--color': BURST_COLORS[index % BURST_COLORS.length],
-			'--distance': `${140 + (index % 3) * 35}px`
-		}) as CSSProperties
-);
 
 // The published address from package.json's homepage, baked in by vite.config.ts.
 // The QR code beside it is generated from the same field, so the two agree, and
@@ -507,13 +486,7 @@ function App() {
 							</button>
 						</div>
 					</div>
-					{shareClosing && (
-						<span aria-hidden='true' className='qr-modal__burst'>
-							{BURST_PARTICLES.map((particle, index) => (
-								<span key={index} style={particle} />
-							))}
-						</span>
-					)}
+					{shareClosing && <Burst />}
 				</div>
 			)}
 		</>

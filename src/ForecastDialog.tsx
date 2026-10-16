@@ -1,10 +1,17 @@
 import { useEffect, useId, useRef } from 'react';
 
+import Burst from './Burst';
 import type { ForecastPeriod, TrailWeather, WeatherConditions, WeatherDay } from './trailData';
 import WeatherIcon from './WeatherIcon';
 
 interface Props {
+	// Set by the owner once a close has been asked for: the dialog plays its
+	// exit, then closes for real and reports onClosed, at which point the
+	// owner unmounts it. Closing by any route (the button, the backdrop,
+	// Escape, the phone's back gesture) goes through onClose first.
+	closing: boolean;
 	onClose: () => void;
+	onClosed: () => void;
 	place: string;
 	title: string;
 	weather: TrailWeather;
@@ -79,9 +86,9 @@ function Drop() {
 // three days just gone, dimmed, with what fell on each; then today and the
 // days ahead as the National Weather Service's day and night periods, each
 // with its temperature and chance of precipitation.
-// A native dialog opened modally, so the browser draws the backdrop, traps
-// focus and closes on Escape.
-function ForecastDialog({ onClose, place, title, weather }: Props) {
+// A native dialog opened modally, so the browser draws the backdrop and traps
+// focus. Escape is caught so it too takes the animated way out.
+function ForecastDialog({ closing, onClose, onClosed, place, title, weather }: Props) {
 	const dialogRef = useRef<HTMLDialogElement>(null);
 	const titleId = useId();
 	const { forecastUrl, history, periods, ...current } = weather;
@@ -94,12 +101,36 @@ function ForecastDialog({ onClose, place, title, weather }: Props) {
 		dialogRef.current?.showModal();
 	}, []);
 
+	// The exit: the dialog stays open while the burst plays and closes when the
+	// backdrop's fade, the last part of it, has ended. That end event arrives
+	// on the dialog itself, as a pseudo-element's events do; a timer a little
+	// longer than the fade stands in should a browser not send it.
+	useEffect(() => {
+		const dialog = dialogRef.current;
+		if (!closing || !dialog) return;
+		const finish = () => dialog.close();
+		const onAnimationEnd = (event: AnimationEvent) => {
+			if (event.animationName === 'dialog-fade-out') finish();
+		};
+		dialog.addEventListener('animationend', onAnimationEnd);
+		const timer = setTimeout(finish, 750);
+		return () => {
+			dialog.removeEventListener('animationend', onAnimationEnd);
+			clearTimeout(timer);
+		};
+	}, [closing]);
+
 	return (
 		<dialog
 			aria-labelledby={titleId}
-			className='forecast-dialog'
-			onClose={onClose}
+			className={`forecast-dialog${closing ? ' forecast-dialog--closing' : ''}`}
+			onClose={onClosed}
 			ref={dialogRef}
+			onCancel={(event) => {
+				// Escape: the browser would close the dialog on the spot.
+				event.preventDefault();
+				onClose();
+			}}
 			onClick={(event) => {
 				// A click on the backdrop lands on the dialog element itself; one
 				// inside the panel has the panel or something in it as its target.
@@ -203,6 +234,7 @@ function ForecastDialog({ onClose, place, title, weather }: Props) {
 					)}
 				</p>
 			</div>
+			{closing && <Burst />}
 		</dialog>
 	);
 }

@@ -64,6 +64,7 @@ test.describe('phone layout', () => {
 		expect(panel!.x).toBeGreaterThanOrEqual(0);
 
 		await dialog.getByRole('button', { name: 'Close' }).tap();
+		await expect(dialog).toHaveClass(/forecast-dialog--closing/);
 		await expect(dialog).toBeHidden();
 	});
 
