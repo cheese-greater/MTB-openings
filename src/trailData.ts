@@ -56,6 +56,6 @@ export interface Trail {
 	timestamp: number | null;
 	updatedAt: string;
 	// Missing from payloads built before weather existed; null when the source
-	// was down or the card has no trailhead coordinates (Ray's is indoors).
+	// was down or the card has no trailhead coordinates.
 	weather?: TrailWeather | null;
 }

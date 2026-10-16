@@ -388,8 +388,9 @@ describe('mergeTrails', () => {
 		assert.equal(card.stale, true);
 	});
 
-	it("attaches weather and the forecast link by grid cell, and none to Ray's", () => {
+	it("attaches weather and the forecast link by grid cell, Ray's lot included", () => {
 		const trailhead = TRAILHEADS['west-creek'];
+		const rays = TRAILHEADS['rays-indoor'];
 		const current = {
 			condition: 'skc',
 			description: 'Sunny',
@@ -398,7 +399,10 @@ describe('mergeTrails', () => {
 			precipitationChance: 0,
 			temperature: 68
 		};
-		const weather = new Map([[trailhead.grid, current]]);
+		const weather = new Map([
+			[trailhead.grid, current],
+			[rays.grid, { ...current, temperature: 70 }]
+		]);
 		const result = merge({
 			metroparks: [metroparksCard('west-creek', 'West Creek - Mountain Bike Trails')],
 			weather
@@ -409,8 +413,12 @@ describe('mergeTrails', () => {
 			history: []
 		});
 		assert.equal(cardById(result, 'oec-flow').weather, null, 'a cell with no forecast gets none');
-		assert.equal(cardById(result, 'rays-indoor').weather, null);
-		assert.equal(result.sources.weather, 1);
+		assert.deepEqual(
+			cardById(result, 'rays-indoor').weather,
+			{ ...current, forecastUrl: rays.forecastUrl, history: [], temperature: 70 },
+			"Ray's gets the weather at its lot like any trailhead"
+		);
+		assert.equal(result.sources.weather, 2);
 	});
 
 	it('attaches the past days by trailhead point, and only where there is a forecast to hang them on', () => {

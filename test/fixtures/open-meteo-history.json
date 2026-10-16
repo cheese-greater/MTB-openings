@@ -287,6 +287,30 @@
 		}
 	},
 	{
+		"latitude": 41.453785,
+		"longitude": -81.757195,
+		"generationtime_ms": 68.08960437774658,
+		"utc_offset_seconds": -14400,
+		"timezone": "America/New_York",
+		"timezone_abbreviation": "GMT-4",
+		"elevation": 236.0,
+		"location_id": 12,
+		"daily_units": {
+			"time": "iso8601",
+			"weather_code": "wmo code",
+			"temperature_2m_max": "°F",
+			"temperature_2m_min": "°F",
+			"precipitation_sum": "inch"
+		},
+		"daily": {
+			"time": ["2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21"],
+			"weather_code": [3, 53, 53, 55],
+			"temperature_2m_max": [73.9, 69.6, 67.6, 62.1],
+			"temperature_2m_min": [63.3, 60.1, 62.5, 56.2],
+			"precipitation_sum": [0.0, 0.028, 0.043, 0.106]
+		}
+	},
+	{
 		"latitude": 41.161713,
 		"longitude": -81.82421,
 		"generationtime_ms": 0.5394220352172852,
@@ -294,7 +318,7 @@
 		"timezone": "America/New_York",
 		"timezone_abbreviation": "GMT-4",
 		"elevation": 287,
-		"location_id": 12,
+		"location_id": 13,
 		"daily_units": {
 			"time": "iso8601",
 			"weather_code": "wmo code",
@@ -318,7 +342,7 @@
 		"timezone": "America/New_York",
 		"timezone_abbreviation": "GMT-4",
 		"elevation": 278,
-		"location_id": 13,
+		"location_id": 14,
 		"daily_units": {
 			"time": "iso8601",
 			"weather_code": "wmo code",
@@ -342,7 +366,7 @@
 		"timezone": "America/New_York",
 		"timezone_abbreviation": "GMT-4",
 		"elevation": 250,
-		"location_id": 14,
+		"location_id": 15,
 		"daily_units": {
 			"time": "iso8601",
 			"weather_code": "wmo code",
@@ -366,7 +390,7 @@
 		"timezone": "America/New_York",
 		"timezone_abbreviation": "GMT-4",
 		"elevation": 295,
-		"location_id": 15,
+		"location_id": 16,
 		"daily_units": {
 			"time": "iso8601",
 			"weather_code": "wmo code",
@@ -390,7 +414,7 @@
 		"timezone": "America/New_York",
 		"timezone_abbreviation": "GMT-4",
 		"elevation": 270,
-		"location_id": 16,
+		"location_id": 17,
 		"daily_units": {
 			"time": "iso8601",
 			"weather_code": "wmo code",
@@ -414,7 +438,7 @@
 		"timezone": "America/New_York",
 		"timezone_abbreviation": "GMT-4",
 		"elevation": 350,
-		"location_id": 17,
+		"location_id": 18,
 		"daily_units": {
 			"time": "iso8601",
 			"weather_code": "wmo code",
@@ -438,7 +462,7 @@
 		"timezone": "America/New_York",
 		"timezone_abbreviation": "GMT-4",
 		"elevation": 314,
-		"location_id": 18,
+		"location_id": 19,
 		"daily_units": {
 			"time": "iso8601",
 			"weather_code": "wmo code",
@@ -462,7 +486,7 @@
 		"timezone": "America/New_York",
 		"timezone_abbreviation": "GMT-4",
 		"elevation": 283,
-		"location_id": 19,
+		"location_id": 20,
 		"daily_units": {
 			"time": "iso8601",
 			"weather_code": "wmo code",
