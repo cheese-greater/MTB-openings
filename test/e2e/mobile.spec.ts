@@ -95,6 +95,54 @@ test.describe('phone layout', () => {
 		await expect.poll(historyState).toBeNull();
 	});
 
+	test('a reload while the forecast is open drops its entry, so back leaves the page as before', async ({ page }) => {
+		await openSite(page);
+		const trail = fixture.trails.find((candidate) => candidate.weather)!;
+		const card = cardFor(page, trail);
+		const historyState = () => page.evaluate(() => window.history.state as unknown);
+		await card.locator('.trail-card__summary').tap();
+		await card.locator('.trail-card__weather').tap();
+		await expect(page.getByRole('dialog')).toBeVisible();
+		expect(await historyState()).toEqual({ dialog: 'forecast' });
+
+		// Android brings the installed app back from the background this way:
+		// the entry that was current, the dialog's, is loaded again, without the
+		// dialog. The page drops that entry at once, so the first press of back
+		// leaves rather than only popping it.
+		await page.reload();
+		await expect(page.locator('.trail-card')).toHaveCount(fixture.trails.length);
+		await expect.poll(historyState).toBeNull();
+		await expect(page.getByRole('dialog')).toHaveCount(0);
+	});
+
+	test('coming back to the page with the forecast open restores its entry, so back still closes it', async ({
+		page
+	}) => {
+		await openSite(page);
+		const trail = fixture.trails.find((candidate) => candidate.weather)!;
+		const card = cardFor(page, trail);
+		const historyState = () => page.evaluate(() => window.history.state as unknown);
+		await card.locator('.trail-card__summary').tap();
+		await card.locator('.trail-card__weather').tap();
+		const dialog = page.getByRole('dialog');
+		await expect(dialog).toBeVisible();
+		expect(await historyState()).toEqual({ dialog: 'forecast' });
+
+		// Stand-in for a browser that brings the installed app back from the
+		// background without the dialog's entry: the entry loses its tag, and
+		// the page is told it is being shown again.
+		await page.evaluate(() => {
+			window.history.replaceState(null, '');
+			window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true }));
+		});
+		await expect.poll(historyState).toEqual({ dialog: 'forecast' });
+		await expect(dialog).toBeVisible();
+
+		await page.goBack();
+		await expect(dialog).toBeHidden();
+		await expect(page.locator('.trail-card')).toHaveCount(fixture.trails.length);
+	});
+
 	test('the header keeps its toggles reachable next to the title', async ({ page }) => {
 		await openSite(page);
 		await expect(page.locator('.qr-button')).toBeVisible();
