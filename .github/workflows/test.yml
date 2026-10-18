@@ -1,11 +1,6 @@
 name: Tests
 
-# Unit tests for the scraper logic and browser tests for the page, on every push
-# and pull request. Deliberately a separate workflow from pages.yml: that one
-# runs hourly to refresh the data, and installing a browser on each of those
-# runs would cost a minute of runner time twenty four times a day to test an
-# app that has not changed. The hourly data commit touches only trails.json and
-# is marked [skip ci], so it never triggers this either.
+# Unit and browser tests on every push and pull request, separate from the hourly publish workflow.
 
 on:
     push:

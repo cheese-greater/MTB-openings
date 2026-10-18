@@ -8,13 +8,10 @@ import { dropStaleDialogEntry } from './closeOnBack';
 
 import './index.css';
 
-// The service worker built by vite.config.ts, registered at once. When a
-// deploy has changed it, the new one takes over and the page reloads itself.
+// Register the service worker; a changed one takes over and reloads the page.
 registerSW({ immediate: true });
 
-// A page loaded onto a dialog's history entry (Android brings the installed
-// app back from the background this way) settles that entry before anything
-// renders; see closeOnBack.ts.
+// Settle a stale dialog history entry before anything renders; see closeOnBack.ts.
 dropStaleDialogEntry();
 
 createRoot(document.getElementById('root')!).render(

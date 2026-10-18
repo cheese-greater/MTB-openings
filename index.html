@@ -7,22 +7,17 @@
 			name="description"
 			content="Is the trail open? Two dozen mountain bike trails around Cleveland on one page, with conditions, weather and directions."
 		/>
-		<!-- The color of the browser chrome around the page: the theme's background,
-		     set below before paint and kept in step by App.tsx when the theme toggles. -->
+		<!-- The color of the browser chrome around the page, kept in step by App.tsx. -->
 		<meta name="theme-color" content="#282a36" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
-		<!-- Home-screen details for iOS, which takes less from the manifest than
-		     the others: its own icon on a solid square, since it paints transparency
-		     black, and the name and standalone display spelled out again. -->
+		<!-- Home-screen details for iOS, which takes less from the manifest than the others. -->
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<meta name="apple-mobile-web-app-title" content="CLE MTB Trails" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="mobile-web-app-capable" content="yes" />
 		<title>CLE MTB Trails</title>
 		<script>
-			// Apply saved/preferred theme before paint to avoid a flash of the wrong palette.
-			// A browser with site data blocked throws on the read, and an uncaught error
-			// here would leave the page unthemed, so fall back to the media query.
+			// Apply the saved or preferred theme before paint.
 			(function () {
 				var saved = null;
 				try {

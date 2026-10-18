@@ -165,8 +165,7 @@
 	opacity: 0.8;
 }
 
-/* The QR code and, around it, the clipping box for the beam that sweeps down
-   it as the dialog opens. */
+/* The QR code and the clipping box for the scan beam. */
 .qr-modal__scan {
 	border-radius: 8px;
 	display: block;
@@ -184,13 +183,7 @@
 	width: 100%;
 }
 
-/* The share dialog's entrance, shared with the forecast dialog through the
-   dialog-* keyframes below: the backdrop fades up while the panel springs in
-   small and a touch tilted and lands with an overshoot. Here, once it has
-   landed, a beam in the accent color sweeps down the QR code, as though
-   scanning it. The beam is a full-size overlay carrying one soft band, moved
-   its own height in each direction so the band crosses the whole code, and
-   it waits out of view before its cue and stays out after. */
+/* The share dialog's entrance: backdrop fades up, panel springs in, then a beam sweeps down the QR code. */
 .qr-modal {
 	animation: dialog-fade 0.2s ease-out;
 }
@@ -237,15 +230,7 @@
 	}
 }
 
-/* The exit, the forecast dialog's too: the panel flinches, then bursts,
-   blowing up and blurring away as a dozen dots of confetti shoot out from
-   where it stood, while the backdrop fades out behind them. Each dot is
-   sent along its own angle to its own distance, both set inline by
-   Burst.tsx. The backdrop's fade is the longest of these, and the dialog
-   is unmounted when it ends. It gets
-   keyframes of its own rather than the entrance's run in reverse: a browser
-   matches animations by name, so the same name would only adjust the one
-   that already finished at open, jumping to its end with no end event. */
+/* The exit, shared with the forecast dialog: the panel bursts into confetti while the backdrop fades out. */
 .qr-modal--closing {
 	animation: dialog-fade-out 0.6s ease-in both;
 	pointer-events: none;
@@ -291,8 +276,7 @@
 	}
 }
 
-/* The dots stay solid for the first half of the flight and fade over the
-   second, while the travel eases out across the whole of it. */
+/* The dots stay solid for the first half of the flight and fade over the second. */
 @keyframes dialog-confetti {
 	from {
 		opacity: 1;
@@ -309,8 +293,7 @@
 	}
 }
 
-/* With motion reduced either panel only fades, in and out, and neither the
-   beam nor the confetti appears. */
+/* With motion reduced either panel only fades. */
 @media (prefers-reduced-motion: reduce) {
 	.qr-modal__panel,
 	.forecast-dialog__panel {
@@ -374,14 +357,7 @@
 	opacity: 0.85;
 }
 
-/* The forecast behind a card's weather chip. A native dialog opened modally,
-   so the browser draws the backdrop and handles focus and Escape. The dialog
-   element itself is transparent with no padding, which makes a click that
-   lands on it a click on the backdrop; the panel inside it is styled like the
-   share modal's, and it is the panel that scrolls when the days run past the
-   bottom of the screen, so its border and corners stay whole. The dialog
-   box is the panel's size and is left free to overflow, for the overshoot
-   of the panel's entrance and the swell of its exit. */
+/* The forecast dialog: a native modal whose transparent box makes a click on it a click on the backdrop. */
 .forecast-dialog {
 	background: transparent;
 	border: 0;
@@ -393,8 +369,7 @@
 	width: 380px;
 }
 
-/* The same entrance and exit as the share dialog, from the dialog-* keyframes
-   kept with it: the backdrop fades, the panel springs in and bursts out. */
+/* The same entrance and exit as the share dialog. */
 .forecast-dialog::backdrop {
 	animation: dialog-fade 0.2s ease-out;
 	background: rgba(0, 0, 0, 0.6);
@@ -428,18 +403,13 @@ body:has(.forecast-dialog[open]) {
 	box-shadow: var(--shadow-hover);
 	max-height: calc(100dvh - 40px);
 	overflow-y: auto;
-	/* No top padding: the sticky header below supplies it, since a sticky box
-	   pins at the scroller's content edge and padding above it would stay open. */
+	/* No top padding: the sticky header below supplies it. */
 	padding: 0 20px 20px;
 	position: relative;
 	text-align: left;
 }
 
-/* Title, place and the close button stay put while the days scroll beneath
-   them: stuck to the top of the panel, on the panel's own background so rows
-   pass behind, with the negative side margins swallowing the panel's padding
-   so the band runs edge to edge. The close button keeps its corner, positioned
-   against the header now instead of the panel. */
+/* Title, place and close button stay put while the days scroll beneath. */
 .forecast-dialog__head {
 	background: var(--card-bg);
 	border-bottom: 1px solid var(--border);
@@ -455,8 +425,7 @@ body:has(.forecast-dialog[open]) {
 	padding-right: 36px;
 }
 
-/* Close, in the manner of a Material icon button: a 40px circle around a 24px
-   glyph that tints with its own color on hover and darkens when pressed. */
+/* Close, in the manner of a Material icon button. */
 .forecast-dialog__close {
 	align-items: center;
 	background: none;
@@ -543,8 +512,7 @@ body:has(.forecast-dialog[open]) {
 	text-transform: uppercase;
 }
 
-/* The days already gone: there for what the trail has been through, dimmed and
-   drained of color so the eye lands on today and what is coming. */
+/* The days already gone, dimmed and drained of color. */
 .forecast-day--past {
 	opacity: 0.5;
 }
@@ -559,9 +527,7 @@ body:has(.forecast-dialog[open]) {
 	padding: 0;
 }
 
-/* Glyph, then the row's label over its short forecast, then the temperature
-   and the precipitation, each of those spanning both lines. A past day has no
-   second line: its description is the label. */
+/* Glyph, label over short forecast, then temperature and precipitation spanning both lines. */
 .forecast-row {
 	align-items: center;
 	column-gap: 10px;
@@ -608,8 +574,7 @@ body:has(.forecast-dialog[open]) {
 	text-align: right;
 }
 
-/* Highs run warm and lows cool, the way every forecast reads them. A past day
-   shows both, either side of a slash left in the text color. */
+/* Highs run warm and lows cool. */
 .forecast-row__temp--high,
 .forecast-row__high {
 	color: var(--weather-high);
@@ -639,12 +604,7 @@ body:has(.forecast-dialog[open]) {
 	width: 12px;
 }
 
-/* Where the data came from, and the way out to the full weather.gov forecast.
-   A recessed strip across the foot of the panel, so it reads as the panel's
-   footer rather than one more row: the negative margins swallow the panel's
-   padding so it runs edge to edge, and the radius is the panel's, inside its
-   border. The page background behind card-colored panel does the recessing;
-   the inset shadow is for the light theme, where the two are nearly alike. */
+/* The data credits and the link to the full forecast, as a recessed footer strip. */
 .forecast-dialog__credit {
 	background: var(--bg);
 	border-radius: 0 0 11px 11px;
@@ -819,9 +779,7 @@ body:has(.forecast-dialog[open]) {
 	gap: 8px;
 }
 
-/* Turns the sort over. A square beside the select, dressed like it and as
-   tall, whose glyph shows which way the list reads: bars long to short with
-   the arrow down for descending, the whole thing flipped for ascending. */
+/* Turns the sort over; the glyph is flipped for ascending. */
 .sort-direction {
 	align-items: center;
 	align-self: stretch;
@@ -968,8 +926,7 @@ body:has(.forecast-dialog[open]) {
 	gap: 5px;
 }
 
-/* On desktop the inner box is laid out as if it were not there; the phone
-   layout below makes it the thing that folds. */
+/* On desktop the inner box is laid out as if it were not there; on a phone it is what folds. */
 .trail-card__details-inner {
 	display: contents;
 }
@@ -1059,8 +1016,7 @@ body:has(.forecast-dialog[open]) {
 	min-width: 0;
 }
 
-/* A button that opens the five-day forecast. Icon and reading dim and
-   brighten together like the card's links. */
+/* The button that opens the five-day forecast. */
 .trail-card__weather {
 	align-items: center;
 	background: none;
@@ -1081,9 +1037,7 @@ body:has(.forecast-dialog[open]) {
 	opacity: 1;
 }
 
-/* Digits and the degree sign fill the cap height while the location text is
-   mostly lowercase, so on a shared baseline the reading looks a touch high.
-   A one-pixel drop lines their visual centers up across the row. */
+/* A one-pixel drop lines the reading up with the lowercase location text. */
 .trail-card__weather-temp {
 	transform: translateY(1px);
 }
@@ -1102,8 +1056,7 @@ body:has(.forecast-dialog[open]) {
 	padding-top: 5px;
 }
 
-/* Desktop: clamp long conditions to a few lines with an ellipsis (toggled open
-   by the Show more button). Mobile never gets this class. */
+/* Desktop: clamp long conditions with an ellipsis; mobile never gets this class. */
 .trail-card__condition--clamp {
 	-webkit-box-orient: vertical;
 	display: -webkit-box;
@@ -1184,8 +1137,7 @@ body:has(.forecast-dialog[open]) {
 	text-align: center;
 }
 
-/* The issue tracker, spelled out, and the GitHub mark for the source. Both in
-   the footer's own color, brightening on hover like every other link. */
+/* The issue tracker link and the GitHub mark for the source. */
 .site-footer__links {
 	align-items: center;
 	display: flex;
@@ -1265,9 +1217,7 @@ body:has(.forecast-dialog[open]) {
 		font-size: 12px;
 	}
 
-	/* One column, always: the collapsed tiles are a list, and the age column
-	   beside them only makes sense as one. Without this, auto-fill would still
-	   seat two tiles abreast in the widest phone-layout windows. */
+	/* One column, always: the collapsed tiles are a list. */
 	.trail-grid {
 		--card-gap: 10px;
 		--timeline-gap: 6px;
@@ -1277,12 +1227,7 @@ body:has(.forecast-dialog[open]) {
 		padding: 16px 12px;
 	}
 
-	/* The age column: a slim line down the left of the list, outside the cards,
-	   labelled with the report's age wherever it changes from one card to the
-	   next. The labels run sideways, so the gutter is only as wide as a line
-	   of text is tall, and it hugs the screen edge: 6px, then the gutter, then
-	   a short gap to the cards. The list makes room for it only once there are
-	   cards, so the loading and error messages stay centered. */
+	/* The age column: a slim line down the left of the list, labelled wherever the age changes. */
 	.trail-grid:has(.trail-card) {
 		padding-left: calc(6px + var(--timeline-gutter) + var(--timeline-gap));
 	}
@@ -1293,13 +1238,7 @@ body:has(.forecast-dialog[open]) {
 		position: relative;
 	}
 
-	/* Each card draws the stretch of line beside itself, reaching up across the
-	   gap to meet the card above, so the line runs exactly the length of the
-	   list however it is sorted. It is placed from the card's padding box,
-	   which sits inside the card's borders: 4px in from the status border on
-	   the left, and 1px in at the top and bottom, which the offsets add back so
-	   neighboring stretches meet instead of stopping a pixel short of each
-	   card's edge. */
+	/* Each card draws the stretch of line beside itself, reaching up across the gap to the card above. */
 	.trail-card::before {
 		background: var(--border);
 		bottom: -1px;
@@ -1318,14 +1257,7 @@ body:has(.forecast-dialog[open]) {
 		position: relative;
 	}
 
-	/* The age itself, "3h", "2d", "3w", written sideways down the line,
-	   centered on it and level with the title row, on the page background so
-	   it reads as a break in the line. A single line of text at line height 1
-	   keeps it exactly the gutter's width; the padding is along the text, so
-	   the break clears the characters by a few pixels above and below. Its
-	   left is measured from the title row: 14px of card padding and the 4px
-	   status border back to the card's edge, then the gap and half the gutter
-	   to the line. */
+	/* The age itself, written sideways down the line on the page background, level with the title row. */
 	.trail-card__age {
 		background: var(--bg);
 		color: color-mix(in srgb, var(--text-h) 60%, transparent);
@@ -1347,13 +1279,7 @@ body:has(.forecast-dialog[open]) {
 		font-size: 16px;
 	}
 
-	/* A collapsed card shows its status as an icon. When the card opens the
-	   icon spins away and the word unrolls out of where it was; closing runs
-	   it backwards. The icon's width is known, so it animates directly; the
-	   word's is not, so it sits in a grid column that animates from no width
-	   to its content's, which is the one way CSS will animate to a size it has
-	   not been told. The word is in the markup throughout, so the badge reads
-	   in full to assistive tech either way. */
+	/* A collapsed card shows its status as an icon; opening spins the icon away and unrolls the word. */
 	.trail-card__badge {
 		align-items: center;
 		display: inline-flex;
@@ -1418,13 +1344,7 @@ body:has(.forecast-dialog[open]) {
 		transform: rotate(90deg);
 	}
 
-	/* The details unfold rather than appear: a grid row eases from no height to
-	   its content's (the one way CSS will animate to a size it has not been
-	   told) while the content fades in just behind it, and folding runs it
-	   backwards. The gap above the content eases in with it, since padding
-	   cannot be clipped away and would hold the folded row open. Folded, the
-	   content is also hidden outright once the fold has run, so its links and
-	   buttons leave the tab order the way display: none used to take them. */
+	/* The details unfold: a grid row eases from no height to its content's while the content fades in. */
 	.trail-card__details {
 		display: grid;
 		grid-template-rows: 0fr;
@@ -1460,8 +1380,7 @@ body:has(.forecast-dialog[open]) {
 		visibility: visible;
 	}
 
-	/* With motion reduced a tile opens and closes in one step. Placed after
-	   the rules above, and naming the expanded state too, so it outranks them. */
+	/* With motion reduced a tile opens and closes in one step. */
 	@media (prefers-reduced-motion: reduce) {
 		.trail-card__details,
 		.trail-card__details-inner,

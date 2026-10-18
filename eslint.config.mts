@@ -13,8 +13,7 @@ import type { Linter } from 'eslint';
 
 export default [
 	js.configs.recommended,
-	// Plain Node modules, which is what the unit tests are, get Node's globals.
-	// The TypeScript block below only covers files the tsconfig knows about.
+	// Plain Node modules (the unit tests) get Node's globals.
 	{
 		files: ['**/*.mjs'],
 		languageOptions: {
@@ -121,11 +120,7 @@ export default [
 			}
 		}
 	},
-	// Filenames: .ts camelCase, .tsx PascalCase. The rule judges the name ahead
-	// of its first dot, so a spec file passes on its stem, and it is kept off
-	// directory names, which it would otherwise hold to the same case. The one
-	// declaration file is kebab-case by Vite's convention and is let be;
-	// main.tsx opts out in its own first line.
+	// Filenames: .ts camelCase, .tsx PascalCase.
 	{
 		files: ['**/*.ts'],
 		plugins: { unicorn },

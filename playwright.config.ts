@@ -1,9 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-// Browser tests run against the production build served by `vite preview`, with
-// trails.json intercepted per test (test/e2e/helpers.ts) so nothing here touches
-// a live source. They run from .github/workflows/test.yml on push and pull
-// request, never from the hourly publish workflow.
+// Browser tests run against the production build with trails.json intercepted per test.
 export default defineConfig({
 	forbidOnly: !!process.env.CI,
 	fullyParallel: true,
@@ -13,9 +10,7 @@ export default defineConfig({
 	testDir: 'test/e2e',
 	use: {
 		baseURL: 'http://localhost:4173',
-		// The tests hand the page a fixture in place of trails.json through route
-		// interception, which the service worker would answer ahead of. Kept out
-		// of the way, so the fixture reaches the page.
+		// Blocked so the route interception, not the service worker, answers trails.json.
 		serviceWorkers: 'block',
 		trace: 'retain-on-failure'
 	},

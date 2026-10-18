@@ -5,10 +5,7 @@ import type { ForecastPeriod, TrailWeather, WeatherConditions, WeatherDay } from
 import WeatherIcon from './WeatherIcon';
 
 interface Props {
-	// Set by the owner once a close has been asked for: the dialog plays its
-	// exit, then closes for real and reports onClosed, at which point the
-	// owner unmounts it. Closing by any route (the button, the backdrop,
-	// Escape, the phone's back gesture) goes through onClose first.
+	// Set once a close is asked for: the dialog plays its exit, then closes and reports onClosed.
 	closing: boolean;
 	onClose: () => void;
 	onClosed: () => void;
@@ -22,16 +19,14 @@ interface ForecastRow extends ForecastPeriod {
 	label: string;
 }
 
-// One calendar day of the dialog: a past day carries a single summary, today
-// and the days ahead carry the rows that belong to them.
+// One calendar day of the dialog: a past day's summary or the forecast rows under it.
 interface DayGroup {
 	date: string;
 	past?: WeatherDay;
 	rows: ForecastRow[];
 }
 
-// Dates arrive as YYYY-MM-DD on the trailhead's Eastern calendar. Reading them
-// at noon keeps the label on that date whatever clock the browser is on.
+// Dates are YYYY-MM-DD on the Eastern calendar; reading them at noon keeps the label on that date.
 const atNoon = (date: string): Date => new Date(`${date}T12:00:00`);
 const weekdayOf = (date: string): string => atNoon(date).toLocaleDateString('en-US', { weekday: 'long' });
 const monthDayOf = (date: string): string =>
@@ -39,12 +34,7 @@ const monthDayOf = (date: string): string =>
 
 const half = (period: ForecastPeriod): string => (period.isDay ? 'Day' : 'Night');
 
-// Under a heading that already names the day, a period is just its half: Day
-// or Night. The NWS's own names (Tuesday, Tuesday Night, This Afternoon,
-// Tonight) would only repeat the heading. The exception is the small hours,
-// when the night still under way and the night to come would both read Night,
-// so the earlier keeps the NWS name: Overnight, or Tonight from a forecast
-// issued before midnight.
+// A period is Day or Night under its day's heading, unless a later period of the day would read the same.
 const labelPeriods = (periods: ForecastPeriod[]): ForecastRow[] =>
 	periods.map((period, index) => {
 		const clash = periods
@@ -56,11 +46,7 @@ const labelPeriods = (periods: ForecastPeriod[]): ForecastRow[] =>
 // Rainfall as a rider reads it, in hundredths of an inch.
 const formatInches = (inches: number): string => `${inches.toFixed(2)} in`;
 
-// The past days first, then every forecast period under the day it belongs
-// to, in calendar order. Today reads Day and Night like any other day: the
-// NWS daytime period is the Day row while one is still to come, and once the
-// day is over the current hour stands in for it. While the NWS day period is
-// there the current hour is not repeated; the card's chip already shows it.
+// Past days first, then every forecast period under its day, in calendar order.
 function groupByDay(current: WeatherConditions, history: WeatherDay[], periods: ForecastPeriod[]): DayGroup[] {
 	const groups = new Map<string, DayGroup>();
 	for (const day of history) groups.set(day.date, { date: day.date, past: day, rows: [] });
@@ -82,29 +68,19 @@ function Drop() {
 	);
 }
 
-// The weather behind a card's weather chip, one group per calendar day: the
-// three days just gone, dimmed, with what fell on each; then today and the
-// days ahead as the National Weather Service's day and night periods, each
-// with its temperature and chance of precipitation.
-// A native dialog opened modally, so the browser draws the backdrop and traps
-// focus. Escape is caught so it too takes the animated way out.
+// The weather behind a card's weather chip, grouped by calendar day, in a native modal dialog.
 function ForecastDialog({ closing, onClose, onClosed, place, title, weather }: Props) {
 	const dialogRef = useRef<HTMLDialogElement>(null);
 	const titleId = useId();
 	const { forecastUrl, history, periods, ...current } = weather;
 	const days = groupByDay(current, history, periods);
 
-	// Mounted only while open, so mounting is opening. showModal on a dialog
-	// that is already modal is a no-op, which is what StrictMode's second run
-	// of this effect hits in development.
+	// Mounted only while open, so mounting is opening.
 	useEffect(() => {
 		dialogRef.current?.showModal();
 	}, []);
 
-	// The exit: the dialog stays open while the burst plays and closes when the
-	// backdrop's fade, the last part of it, has ended. That end event arrives
-	// on the dialog itself, as a pseudo-element's events do; a timer a little
-	// longer than the fade stands in should a browser not send it.
+	// The exit: close when the backdrop's fade has ended, with a timer as a fallback.
 	useEffect(() => {
 		const dialog = dialogRef.current;
 		if (!closing || !dialog) return;
@@ -132,8 +108,7 @@ function ForecastDialog({ closing, onClose, onClosed, place, title, weather }: P
 				onClose();
 			}}
 			onClick={(event) => {
-				// A click on the backdrop lands on the dialog element itself; one
-				// inside the panel has the panel or something in it as its target.
+				// A click on the backdrop lands on the dialog element itself.
 				if (event.target === event.currentTarget) onClose();
 			}}
 		>
@@ -202,11 +177,7 @@ function ForecastDialog({ closing, onClose, onClosed, place, title, weather }: P
 						);
 					})}
 				</ol>
-				{/* The source line doubles as the way out to the full forecast: the NWS
-				    name links to weather.gov's page for this trailhead. Open-Meteo's data
-				    is CC BY 4.0, which asks for credit and a link beside the data, a link
-				    to the license, and a note that the data was changed: the daily rows
-				    are its codes and readings summarized. */}
+				{/* The source line doubles as the way out to the full forecast; Open-Meteo's CC BY 4.0 asks for credit. */}
 				<p className='forecast-dialog__credit'>
 					{'Forecast from the '}
 					<a href={forecastUrl} rel='noopener noreferrer' target='_blank'>

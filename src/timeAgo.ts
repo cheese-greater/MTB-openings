@@ -1,8 +1,7 @@
 import { useSyncExternalStore } from 'react';
 
 const RELATIVE = new Intl.RelativeTimeFormat('en', { numeric: 'always' });
-// Each unit as a count of the one before it, with the abbreviation the compact
-// form writes it as.
+// Each unit as a count of the one before it, with the compact abbreviation.
 const DIVISIONS: [number, Intl.RelativeTimeFormatUnit, string][] = [
 	[60, 'second', 's'],
 	[60, 'minute', 'm'],
@@ -13,9 +12,7 @@ const DIVISIONS: [number, Intl.RelativeTimeFormatUnit, string][] = [
 	[Number.POSITIVE_INFINITY, 'year', 'y']
 ];
 
-// "47 hours ago", matching the relative style the East Rim source already uses.
-// Rounded before the unit is chosen, so 59.6 minutes reads as an hour and not
-// as "60 minutes ago".
+// "47 hours ago", rounded before the unit is chosen.
 export function timeAgo(timestamp: number | null): string {
 	if (timestamp == null) return '-';
 	let duration = (timestamp - Date.now()) / 1000;
@@ -26,9 +23,7 @@ export function timeAgo(timestamp: number | null): string {
 	return '-';
 }
 
-// "47h": the same age at its shortest, for the labels on the age column that
-// runs beside the list on a phone, where "47 hours ago" would not fit. Anything
-// under a minute, or a report stamped ahead of this clock, reads "now".
+// "47h": the same age at its shortest, for the age column on a phone.
 export function timeAgoCompact(timestamp: number | null): string {
 	if (timestamp == null) return '';
 	let duration = (Date.now() - timestamp) / 1000;
@@ -40,8 +35,7 @@ export function timeAgoCompact(timestamp: number | null): string {
 	return '';
 }
 
-// A single shared 30s ticker so every relative timestamp on the page advances
-// together (and we don't spin up one interval per card).
+// A single shared 30s ticker so every relative timestamp advances together.
 const TICK_MS = 30_000;
 const listeners = new Set<() => void>();
 let tick = 0;
@@ -66,8 +60,7 @@ function subscribe(onChange: () => void): () => void {
 
 const getTick = () => tick;
 
-// Re-renders the caller on each shared tick, so a string it derives from
-// Date.now() stays current without a manual refresh.
+// Re-renders the caller on each shared tick.
 function useTick(): void {
 	useSyncExternalStore(subscribe, getTick, getTick);
 }

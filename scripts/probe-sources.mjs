@@ -1,18 +1,4 @@
-// Source-health probe. It answers one question: is each live source actually
-// serving the markup we parse, from wherever this happens to be running?
-//
-// It was written to settle whether GitHub's runners get blocked where a home
-// connection does not, and it earns its keep after that as the thing to run when
-// a card goes gray: it says which source stopped answering, which the page
-// itself cannot tell you (a failed source looks the same as a quiet trail).
-//
-// Bot blocking rarely looks like an error. A challenge or geo-block page comes
-// back as HTTP 200 with none of the markup the scraper needs, so each source is
-// judged by the anchor it has to find, not by the status code. The addresses
-// come from lib/trails.mjs so there is one copy of them; the selectors are the
-// scrapers' own, restated here because the point is to check them from outside.
-//
-// Run: yarn probe   (writes probe-report.md, exits nonzero if a source failed)
+// Source-health probe: checks each live source still serves the markup we parse (yarn probe writes probe-report.md).
 import * as cheerio from 'cheerio';
 import { execFile } from 'child_process';
 import { writeFileSync } from 'fs';
@@ -87,8 +73,7 @@ const SOURCES = [
 		transport: 'fetch',
 		url: bskyFeedUrl(BSKY_ACCOUNTS[0].handle)
 	},
-	// One grid cell stands for the lot: the scraper asks the same API for each
-	// of them, and a block or an outage would show on any one.
+	// One grid cell stands for the lot.
 	{
 		carries: 'the sky, temperature and five-day forecast on every outdoor card',
 		measure: (body) => {
@@ -129,9 +114,7 @@ async function fetchWithNode(url) {
 	return { body: await response.text(), httpStatus: response.status, transportOk: response.ok };
 }
 
-// TrailForks sits behind Cloudflare, which 403s Node's fetch on TLS fingerprint,
-// so the scraper shells out to curl. Same call here, plus -w to recover the
-// status code that curl otherwise keeps out of the body.
+// TrailForks is behind Cloudflare, so curl like the scraper does, plus -w to recover the status code.
 async function fetchWithCurl(url) {
 	const { stdout } = await execFileAsync(
 		'curl',
@@ -161,8 +144,7 @@ async function probeSource(source) {
 	}
 }
 
-// Which address the requests went out from. Comparing a CI run against a local
-// one is the whole point, so the address belongs in the report. Best effort.
+// Which address the requests went out from, best effort.
 async function findEgressAddress() {
 	try {
 		const response = await fetch('https://api.ipify.org', { signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) });
@@ -172,8 +154,7 @@ async function findEgressAddress() {
 	}
 }
 
-// The same call scripts/build-data.mjs makes, so the merged result is measured
-// rather than inferred from the per-source checks above.
+// The same call scripts/build-data.mjs makes, so the merged result is measured.
 async function readMergedTrails() {
 	try {
 		const payload = await getTrailsPayload();

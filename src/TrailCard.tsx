@@ -7,8 +7,7 @@ import { timeAgoCompact, useTimeAgo, useTimeAgoCompact } from './timeAgo';
 import type { Trail } from './trailData';
 import WeatherIcon from './WeatherIcon';
 
-// Matches the mobile breakpoint in App.css. On mobile the whole card already
-// collapses/expands on tap, so the condition clamp is desktop-only.
+// Matches the mobile breakpoint in App.css.
 const MOBILE_QUERY = '(max-width: 768px)';
 
 const STATUS_LABEL: Record<Trail['status'], string> = {
@@ -18,11 +17,7 @@ const STATUS_LABEL: Record<Trail['status'], string> = {
 	stale: 'Stale'
 };
 
-// What stands in for the status word on a collapsed phone card, each drawn on
-// a 24px grid in the badge's own color: a thumbs up, a no-entry sign, a
-// warning triangle, and a snore for a report nobody has refreshed. When the card
-// opens the icon spins away and the word unrolls out of where it was (see
-// .trail-card__badge-icon in App.css).
+// Status icons for a collapsed phone card, on a 24px grid.
 const STATUS_ICON: Record<Trail['status'], ReactNode> = {
 	caution: (
 		<>
@@ -45,10 +40,7 @@ const STATUS_ICON: Record<Trail['status'], ReactNode> = {
 interface Props {
 	isFavorite: boolean;
 	onToggleFavorite: (id: string) => void;
-	// When the card above this one was reported, or null at the top of the
-	// list. On mobile the age column beside the list is labelled only where
-	// the age changes, so a card labels itself when its age differs from its
-	// neighbor's.
+	// When the card above was reported, for the age column's labels.
 	previousTimestamp: number | null;
 	trail: Trail;
 }
@@ -57,8 +49,7 @@ function mapsUrl(trail: Trail): string {
 	return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(trail.location)}`;
 }
 
-// Locations are stored as "<Plus Code> City, State". Hide the Plus Code in the
-// card and show only the city/state; the Maps link still uses the full string.
+// Locations are "<Plus Code> City, State"; show only the city and state.
 function displayLocation(location: string): string {
 	return location.replace(/^\s*\S*\+\S+,?\s*/, '').trim() || location;
 }
@@ -68,10 +59,7 @@ function TrailCard({ isFavorite, onToggleFavorite, previousTimestamp, trail }: P
 	const [conditionOpen, setConditionOpen] = useState(false);
 	const [conditionOverflows, setConditionOverflows] = useState(false);
 	const [forecastOpen, setForecastOpen] = useState(false);
-	// Closing the forecast first plays it out and only then unmounts it, when
-	// the dialog reports it has closed. Open for the back gesture's purposes
-	// until the exit begins, so a close by any means settles its history entry
-	// at once.
+	// Closing the forecast plays its exit first and unmounts when the dialog reports it closed.
 	const [forecastClosing, setForecastClosing] = useState(false);
 	const closeForecast = () => setForecastClosing(true);
 	useCloseOnBack('forecast', forecastOpen && !forecastClosing, closeForecast);
@@ -81,13 +69,10 @@ function TrailCard({ isFavorite, onToggleFavorite, previousTimestamp, trail }: P
 	const displayName = trail.name.replace('Ohio & Erie Canal', 'OECR');
 	const updatedAgo = useTimeAgo(trail.timestamp);
 	const updatedAgoCompact = useTimeAgoCompact(trail.timestamp);
-	// The neighbor's age from the same render, so the two always agree on
-	// which minute it is.
+	// The neighbor's age from the same render, so the two agree on the minute.
 	const labelsAge = isMobile && updatedAgoCompact !== '' && updatedAgoCompact !== timeAgoCompact(previousTimestamp);
 
-	// Detect whether the clamped condition overflows so we only show the toggle
-	// when it's needed. Skip while expanded (the text is unclamped then, so it
-	// wouldn't overflow) to preserve the previous reading and keep the toggle.
+	// Show the toggle only when the clamped condition overflows.
 	const clamped = !isMobile && !conditionOpen;
 	useLayoutEffect(() => {
 		const el = conditionRef.current;
@@ -145,10 +130,7 @@ function TrailCard({ isFavorite, onToggleFavorite, previousTimestamp, trail }: P
 			}`}
 		>
 			<div className='trail-card__head'>
-				{/* The report's age, sitting on the line that runs down the left of
-				    the list, level with this row. Hidden from assistive tech: a bare
-				    "3d" means little read aloud, and the details carry the age in
-				    full. */}
+				{/* The report's age on the line down the left of the list; hidden from assistive tech. */}
 				{labelsAge && (
 					<span aria-hidden='true' className='trail-card__age'>
 						{updatedAgoCompact}
@@ -189,8 +171,7 @@ function TrailCard({ isFavorite, onToggleFavorite, previousTimestamp, trail }: P
 					</svg>
 				</button>
 			</div>
-			{/* The inner box is what the phone layout folds and unfolds; on desktop it
-			    is laid out as if it were not there. */}
+			{/* The inner box is what the phone layout folds and unfolds. */}
 			<div className='trail-card__details' id={detailsId}>
 				<div className='trail-card__details-inner'>
 					<div className='trail-card__place'>

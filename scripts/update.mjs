@@ -1,7 +1,4 @@
-// One-command updater for anyone self-hosting the trail page from a Git clone.
-// It checks GitHub for a newer version and, if there is one, pulls it, reinstalls
-// dependencies, and rebuilds the site. Either way it ends by starting the page,
-// so it's safe to run anytime: "stop the page, run `yarn update`, you're current".
+// One-command updater for a self-hosted clone: pull if newer, reinstall, rebuild, start.
 import { execSync } from 'child_process';
 import { existsSync } from 'fs';
 import net from 'net';
@@ -21,8 +18,7 @@ function fail(message) {
 	process.exit(1);
 }
 
-// Is something already listening on the page's port? Probe both IPv4 and IPv6
-// loopback, since the server may bind either; "running" if either accepts.
+// Is something already listening on the page's port? Probe both IPv4 and IPv6 loopback.
 function canConnect(host, port) {
 	return new Promise((resolve) => {
 		const socket = net.connect({ host, port });
@@ -42,8 +38,7 @@ async function isAlreadyRunning(port) {
 	return v4 || v6;
 }
 
-// 1. Make sure we can talk to Git and that this is a real clone (ZIP downloads
-//    have no Git history, so they can't check GitHub for updates).
+// 1. Make sure this is a real Git clone (ZIP downloads cannot check for updates).
 let branch;
 try {
 	branch = capture('git rev-parse --abbrev-ref HEAD');
@@ -100,9 +95,7 @@ if (local === remote) {
 	console.log('🎉 Updated to the latest version!');
 }
 
-// 4. Start the page - unless it's already running somewhere else. Starting a
-//    second copy would just collide on the port, so detect that and explain how
-//    to load the new version instead.
+// 4. Start the page, unless it is already running somewhere else.
 if (await isAlreadyRunning(PORT)) {
 	console.log(
 		`\nℹ️  The page is already running on port ${PORT} (another window, PM2, or a service).\n` +

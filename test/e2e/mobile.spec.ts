@@ -4,8 +4,7 @@ import { cardFor, fixture, openSite } from './helpers';
 
 const STATUS_LABEL: Record<string, string> = { caution: 'Caution', closed: 'Closed', open: 'Open', stale: 'Stale' };
 
-// A device profile sets the browser type too, which Playwright only allows at
-// file level, so the whole file is the phone layout.
+// A device profile sets the browser type, which Playwright only allows at file level.
 test.use({ ...devices['Pixel 7'] });
 
 test.describe('phone layout', () => {
@@ -105,10 +104,7 @@ test.describe('phone layout', () => {
 		await expect(page.getByRole('dialog')).toBeVisible();
 		expect(await historyState()).toEqual({ dialog: 'forecast' });
 
-		// Android brings the installed app back from the background this way:
-		// the entry that was current, the dialog's, is loaded again, without the
-		// dialog. The page drops that entry at once, so the first press of back
-		// leaves rather than only popping it.
+		// Android reloads the installed app onto the dialog's entry; the page drops it at once.
 		await page.reload();
 		await expect(page.locator('.trail-card')).toHaveCount(fixture.trails.length);
 		await expect.poll(historyState).toBeNull();
@@ -128,9 +124,7 @@ test.describe('phone layout', () => {
 		await expect(dialog).toBeVisible();
 		expect(await historyState()).toEqual({ dialog: 'forecast' });
 
-		// Stand-in for a browser that brings the installed app back from the
-		// background without the dialog's entry: the entry loses its tag, and
-		// the page is told it is being shown again.
+		// Stand-in for a browser restoring the app without the dialog's entry.
 		await page.evaluate(() => {
 			window.history.replaceState(null, '');
 			window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true }));
@@ -151,8 +145,7 @@ test.describe('phone layout', () => {
 	});
 });
 
-// The widest window that still gets the phone layout: room for two tiles
-// abreast, which it must not take.
+// The widest window that still gets the phone layout.
 test.describe('phone layout in a wide window', () => {
 	test.use({ viewport: { height: 900, width: 768 } });
 

@@ -6,11 +6,7 @@ const HOUR = 60 * 60 * 1000;
 const DAY = 24 * HOUR;
 const WEEK = 7 * DAY;
 
-// Ages for the fixture's cards in name order, as the column writes them
-// (mirroring timeAgoCompact in src/timeAgo.ts): two runs of the same age, a
-// card with no report time, a run straight after it, and an age that comes
-// back after a different one. The offsets sit well inside their unit, so the
-// rounding there cannot tip any of them over.
+// Ages for the fixture's cards in name order, as the column writes them (see timeAgoCompact).
 const AGES: { label: string; offset: number | null }[] = [
 	{ label: '3h', offset: 3 * HOUR },
 	{ label: '3h', offset: 3 * HOUR + 5 * 60 * 1000 },

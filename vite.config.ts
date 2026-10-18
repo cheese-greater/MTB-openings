@@ -5,12 +5,7 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
-// Build number = total git commits, computed fresh on every build. Version is
-// `5.<build>`. Falls back to 5.0 if git is not available (e.g. a source export).
-// The hourly workflow commits scraped conditions, which are not a new version of
-// the app, so commits that touched nothing but that file don't count. The
-// pathspec is left unquoted deliberately: cmd.exe would pass the quotes through
-// to git as part of the path.
+// Version is 5.<commit count>, skipping commits that only touched public/trails.json.
 const MAJOR = 5;
 let build = 0;
 try {
@@ -21,18 +16,10 @@ try {
 }
 const version = `${MAJOR}.${build}`;
 
-// GitHub Pages serves a project site from /<repo>/, so assets and trails.json
-// need that prefix or they 404. Read from the repo name rather than hardcoded so
-// a fork publishes under its own name. Everywhere else, including a self-hosted
-// copy and dev, stays at the root.
+// GitHub Pages serves a project site from /<repo>/; everywhere else stays at the root.
 const base = process.env.GITHUB_PAGES === 'true' ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1] ?? ''}/` : '/';
 
-// The public address the share dialog offers. It comes from package.json so the
-// QR code (scripts/gen-qr.mjs reads the same field) can never point somewhere
-// else, and it is fixed at build time rather than read from the browser because
-// a self-hosted copy on a LAN address has nothing shareable to offer.
-// The repository address feeds the footer's issue and source links the same
-// way, so a fork points its readers at its own tracker.
+// The share address and repository come from package.json, so the QR code, dialog and footer agree.
 const { homepage: siteUrl, repository } = JSON.parse(
 	readFileSync(new URL('./package.json', import.meta.url), 'utf8')
 ) as { homepage: string; repository: { url: string } };
@@ -47,16 +34,7 @@ export default defineConfig({
 	},
 	plugins: [
 		react(),
-		// Installable, and open offline on the last conditions it saw. The service
-		// worker precaches the app shell (the build's own files and the icons) and
-		// serves trails.json network-first, keeping the latest answer for a
-		// trailhead with no signal; the footer's "last hourly cache" line then says
-		// how old it is. A deploy that changed the app reaches an installed copy on
-		// its next launch, when the worker updates and reloads. The data file is
-		// kept out of the precache on purpose: it changes hourly, and a precache
-		// that changed with it would have every installed copy reloading on the
-		// hour. The manifest's start_url and scope follow `base`, so the installed
-		// app opens at the Pages path.
+		// Installable and offline on the last conditions seen; trails.json is network-first and kept out of the precache.
 		VitePWA({
 			manifest: {
 				background_color: '#282a36',
@@ -90,9 +68,7 @@ export default defineConfig({
 		})
 	],
 	server: {
-		// public/trails.json exists as the file Pages publishes, and Vite would
-		// happily serve that build-time copy in dev. Proxy it to the scraper
-		// instead so `yarn dev` shows live conditions.
+		// Proxy trails.json to the scraper so yarn dev shows live conditions.
 		proxy: {
 			'/api': 'http://localhost:3000',
 			'/trails.json': 'http://localhost:3000'

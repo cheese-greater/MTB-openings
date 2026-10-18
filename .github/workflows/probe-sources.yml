@@ -1,14 +1,6 @@
 name: Probe scrape sources
 
-# Diagnostic only: it builds nothing and publishes nothing. Run it when a card
-# goes gray, to find out which source stopped answering; the page itself cannot
-# tell you, since a blocked source looks the same as a quiet trail. The report
-# lands in the run's summary.
-#
-# It also answers the question it was written for: whether these sites serve
-# GitHub's IP ranges the same way they serve a home connection. Pushing a
-# probe/* branch runs it and commits the report to that branch, which is how you
-# compare a CI report against `yarn probe` at home.
+# Diagnostic only: finds which source stopped answering. A probe/* branch commits the report.
 
 on:
     push:
@@ -43,9 +35,7 @@ jobs:
               if: always()
               run: cat probe-report.md >> "$GITHUB_STEP_SUMMARY"
 
-            # Only on a probe branch, and force-added because the report is ignored by
-            # default: it is a local scratch file everywhere except here, where
-            # committing it is the one way to read a CI report without a token.
+            # Only on a probe branch; force-added because the report is gitignored.
             - name: Commit the report to the probe branch
               if: always() && startsWith(github.ref, 'refs/heads/probe/')
               run: |

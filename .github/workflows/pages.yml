@@ -1,14 +1,6 @@
 name: Publish to Pages
 
-# Pages has no Node runtime, and the trail sources send no CORS headers, so the
-# browser cannot scrape them either. Nothing here needs to happen per visitor
-# though: conditions are the same for everyone and the app already caches them
-# for an hour. So the scrape runs here on a schedule, the result is baked into
-# the published site as trails.json, and the site itself is static.
-#
-# The hourly commit of that file (only when conditions actually change) doubles
-# as repo activity, which keeps GitHub from disabling this schedule after 60
-# idle days.
+# Scrapes hourly and bakes the result into the published site as trails.json.
 
 on:
     push:
@@ -25,8 +17,7 @@ permissions:
     id-token: write
     pages: write
 
-# Queue runs instead of canceling: a canceled run could drop a data commit
-# halfway, and two runs pushing at once would collide.
+# Queue runs instead of canceling, so a data commit is never dropped halfway.
 concurrency:
     group: pages
     cancel-in-progress: false
@@ -41,8 +32,7 @@ jobs:
         steps:
             - uses: actions/checkout@v7
               with:
-                  # vite.config.ts builds the version number from the commit count, and
-                  # the default shallow clone would make every build report the same one.
+                  # vite.config.ts builds the version number from the commit count.
                   fetch-depth: 0
 
             - uses: actions/setup-node@v7
@@ -73,10 +63,7 @@ jobs:
                   GITHUB_PAGES: 'true'
               run: yarn build
 
-            # Pages has to be switched on once by hand, under Settings > Pages >
-            # Build and deployment > Source: GitHub Actions. The API call that
-            # would do it from here is refused to a workflow token, and this step
-            # is where that shows up: 'Get Pages site failed. Error: Not Found'.
+            # Pages has to be switched on once by hand: Settings > Pages > Source: GitHub Actions.
             - uses: actions/configure-pages@v6
 
             - uses: actions/upload-pages-artifact@v5

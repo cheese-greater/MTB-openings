@@ -1,7 +1,4 @@
-// The scraper's logic, run against saved pages and fixed clocks. Nothing here
-// touches the network: the parsers get the fixtures in test/fixtures, and the
-// merge gets hand-built cards. Importing lib/trails.mjs pins TZ to Eastern, so
-// every Date below is read the way the scraper reads it.
+// The scraper's logic against saved pages and fixed clocks; importing lib/trails.mjs pins TZ to Eastern.
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { describe, it } from 'node:test';
@@ -211,8 +208,7 @@ describe('bskyTrailFromFeed', () => {
 });
 
 describe("Ray's schedule", () => {
-	// Dates come from the schedule itself so these keep passing when a new
-	// season is transcribed.
+	// Dates come from the schedule itself, so a new season keeps these passing.
 	const minutesOf = (time) => {
 		const [, hour, minute, period] = /(\d+):(\d+)\s*(AM|PM)/i.exec(time);
 		return ((+hour % 12) + (/pm/i.test(period) ? 12 : 0)) * 60 + +minute;
@@ -481,9 +477,7 @@ describe('mergeTrails', () => {
 	});
 });
 
-// The saved responses are for the Royalview grid cell, generated at 6:47 PM
-// Eastern on Monday 21 September 2026, so the forecast leads with "Tonight" and
-// the hourly forecast's first period is the 6 PM hour.
+// Saved responses for the Royalview grid cell at 6:47 PM Eastern on Monday 21 September 2026.
 describe('parseForecast', () => {
 	const daily = () => JSON.parse(fixture('nws-forecast.json'));
 	const hourly = () => JSON.parse(fixture('nws-forecast-hourly.json'));
@@ -593,8 +587,7 @@ describe('parseForecast', () => {
 	});
 });
 
-// The saved response is for every trailhead point, asked on Monday 21 September
-// 2026, so each location carries Friday through Monday and Monday is today.
+// Saved response for every trailhead point on Monday 21 September 2026, so Monday is today.
 describe('parseHistory', () => {
 	const locations = () => [].concat(JSON.parse(fixture('open-meteo-history.json')));
 	const now = Date.parse('2026-09-21T18:30:00-04:00');

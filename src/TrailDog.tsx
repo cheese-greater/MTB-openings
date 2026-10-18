@@ -2,16 +2,13 @@ import { useEffect, useRef } from 'react';
 
 import './TrailDog.css';
 
-// How far short of the cursor the dog pulls up, measured from its center, so it
-// never sits on top of whatever the reader is about to click.
+// How far short of the cursor the dog pulls up, from its center.
 const HEEL_DISTANCE = 44;
-// Top speed in px per ms (about 600 px a second): quick enough to keep up with a
-// flick across the page without looking like it teleported.
+// Top speed in px per ms.
 const TOP_SPEED = 0.6;
 // Time constant of the ease-out as the dog closes in, in ms.
 const EASE_TIME = 110;
-// A frame gap longer than this (a background tab coming back) is treated as one
-// short frame so the dog does not jump across the screen.
+// A frame gap longer than this (a background tab coming back) is treated as one short frame.
 const MAX_FRAME_MS = 50;
 // Movement slower than this reads as standing, so the legs stop cycling.
 const RUN_THRESHOLD = 0.02; // px per ms
@@ -27,12 +24,7 @@ interface Point {
 	y: number;
 }
 
-// A dog that runs after the mouse and waits at heel when it stops. Everything
-// per frame is written straight to the element (transform and a data-pose
-// attribute the CSS animates on) rather than through React state, so following
-// the cursor costs no re-renders. The caller decides when to mount it: App.tsx
-// leaves it out on touch devices, under prefers-reduced-motion, and when the
-// reader has switched it off.
+// A dog that runs after the mouse and waits at heel; each frame writes straight to the element, no React state.
 function TrailDog() {
 	const spriteRef = useRef<HTMLDivElement>(null);
 
@@ -40,9 +32,7 @@ function TrailDog() {
 		const sprite = spriteRef.current;
 		if (!sprite) return;
 
-		// Parked just off the left edge (where the stylesheet also puts it before
-		// this runs), so the first cursor movement brings the dog running in
-		// rather than popping it into existence.
+		// Parked just off the left edge, so the first cursor movement brings the dog running in.
 		const dog: Point = { x: -SPRITE_WIDTH, y: window.innerHeight * 0.8 };
 		let cursor: Point | null = null;
 		let facing = 1;
@@ -56,8 +46,7 @@ function TrailDog() {
 			if (sprite.dataset.pose !== pose) sprite.dataset.pose = pose;
 		};
 
-		// Runs only while there is ground to cover: once the dog is at heel it
-		// stops asking for frames, and the next pointer movement starts it again.
+		// Runs only while there is ground to cover.
 		const tick = (now: number) => {
 			frame = null;
 			const elapsed = Math.min(now - lastFrameAt, MAX_FRAME_MS);
@@ -94,8 +83,7 @@ function TrailDog() {
 			}
 		};
 
-		// The cursor has left the window: stop where we are rather than chasing
-		// the last point it was seen.
+		// The cursor has left the window: stop here.
 		const loseCursor = () => {
 			cursor = null;
 		};
@@ -110,9 +98,7 @@ function TrailDog() {
 		};
 	}, []);
 
-	// The sprite faces right; the container is flipped with scaleX to face left.
-	// Legs are drawn as two pairs (near side and far side) on opposite phases of
-	// the running cycle, with the body between them for depth.
+	// The sprite faces right and is flipped with scaleX to face left; legs are two pairs on opposite phases.
 	return (
 		<div aria-hidden='true' className='trail-dog' data-pose='idle' ref={spriteRef}>
 			<svg className='trail-dog__sprite' viewBox='0 0 64 40'>

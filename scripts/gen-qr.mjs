@@ -1,8 +1,4 @@
-// Generates a styled QR code SVG: rounded data dots, rounded finder "eyes",
-// and the site favicon embedded in the middle. High error correction (H) keeps
-// it scannable despite the logo covering the center.
-//
-// Runs as the first step of `yarn build`, and by hand with: yarn gen-qr
+// Generates the styled QR code SVG (rounded dots, rounded eyes, favicon in the middle); runs first in yarn build.
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -13,9 +9,7 @@ import QRCode from 'qrcode';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
 
-// The published address this QR points at, from package.json's homepage. The
-// share dialog shows the same field (vite.config.ts bakes it into the bundle),
-// so a fork changes it in one place and the code and the link cannot disagree.
+// The published address from package.json's homepage, shared with the share dialog.
 const { homepage: SITE_URL } = JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8'));
 const OUT = resolve(root, 'public/site-qr.svg');
 const LOGO = resolve(root, 'public/favicon.png');

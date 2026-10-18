@@ -1,16 +1,12 @@
 import { useSyncExternalStore } from 'react';
 
-// One matchMedia subscription per query, shared by every component that asks for
-// it, in the same shape as the shared ticker in timeAgo.ts. Subscribing per
-// component meant one MediaQueryList and one re-render per trail card for what
-// is a single page-wide boolean.
+// One matchMedia subscription per query, shared by every component that asks for it.
 interface QueryStore {
 	getSnapshot: () => boolean;
 	subscribe: (onChange: () => void) => () => void;
 }
 
-// Nothing matches before hydration, which is also what the hook reports if it is
-// ever rendered somewhere without a window.
+// Nothing matches before hydration or without a window.
 const NEVER_MATCHES: QueryStore = {
 	getSnapshot: () => false,
 	subscribe: () => () => {}
@@ -33,8 +29,7 @@ function storeFor(query: string): QueryStore {
 		listeners.forEach((listener) => listener());
 	});
 
-	// getSnapshot and subscribe keep a stable identity for the life of the query,
-	// so useSyncExternalStore does not tear down the subscription on every render.
+	// Stable identities, so useSyncExternalStore keeps the subscription across renders.
 	const store: QueryStore = {
 		getSnapshot: () => matches,
 		subscribe: (onChange) => {

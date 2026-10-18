@@ -1,5 +1,4 @@
-// The change detection behind the hourly commit: what counts as a change in
-// trail conditions and what is ignored as noise.
+// The change detection behind the hourly commit.
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 

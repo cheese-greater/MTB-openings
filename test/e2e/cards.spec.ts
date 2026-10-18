@@ -62,8 +62,7 @@ test.describe('trail cards', () => {
 		await expect(dialog).toBeVisible();
 		await expect(dialog.getByRole('heading', { level: 2 })).toHaveText(displayName(trail));
 
-		// One group per calendar day: the three past days, dimmed, then today
-		// and the days ahead, each headed by its weekday and date.
+		// One group per calendar day: past days, then today and the days ahead.
 		const forecastDates = [...new Set([weather.date, ...weather.periods.map((period) => period.date)])];
 		const days = dialog.locator('.forecast-day');
 		await expect(days).toHaveCount(weather.history.length + forecastDates.length);
@@ -91,9 +90,7 @@ test.describe('trail cards', () => {
 		await expect(dialog.locator('.forecast-day__today')).toHaveCount(1);
 		await expect(days.nth(weather.history.length).locator('.forecast-day__today')).toHaveText('Today');
 
-		// Today reads Day and Night like any other day. Its Day row is the NWS
-		// daytime period while one is still to come; once the day is over, the
-		// current hour stands in for it. Then every period follows in order.
+		// Today's Day row is the NWS daytime period while one is still to come, else the current hour.
 		const labels = rowLabels(weather.periods);
 		const dayStillAhead = weather.periods.some((period) => period.date === weather.date && period.isDay);
 		const expectedRows = [

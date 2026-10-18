@@ -13,11 +13,7 @@ interface CloudProps {
 	transform?: string;
 }
 
-// The NWS names a condition after the icon that shows it (the list is at
-// https://api.weather.gov/icons): sky cover from skc, clear, through few, sct
-// and bkn to ovc, overcast, then the kinds of precipitation and haze. The two
-// sky glyphs come in a day and a night version; anything unlisted, such as the
-// tropical ones that never reach Ohio, falls back to a plain cloud.
+// NWS condition names (https://api.weather.gov/icons) to glyphs; anything unlisted falls back to a cloud.
 const GLYPH_BY_CONDITION: Record<string, WeatherGlyph | SkyGlyph> = {
 	bkn: 'cloudy',
 	blizzard: 'snow',
@@ -56,8 +52,7 @@ function glyphFor({ condition, isDay }: Props['weather']): WeatherGlyph {
 	return glyph;
 }
 
-// A cloud as overlapping discs on a flat base, so one color fills it as a
-// single silhouette. Drawn to fill the 24x24 box; callers scale and shift it.
+// A cloud as overlapping discs on a flat base, drawn to fill the 24x24 box.
 function Cloud({ fill, transform }: CloudProps) {
 	return (
 		<g fill={fill} transform={transform}>
@@ -81,10 +76,7 @@ const SNOW = 'var(--weather-snow)';
 const BOLT = 'var(--weather-bolt)';
 const FOG = 'var(--weather-fog)';
 
-// Filled, two-tone icons in Dracula's or Alucard's colors, so they read as a
-// splash of weather rather than another gray glyph and still belong to the
-// theme. Later shapes paint over earlier ones, which is how a cloud sits in
-// front of the sun and a bolt in front of its cloud.
+// Filled, two-tone icons in the theme's colors; later shapes paint over earlier ones.
 function WeatherIcon({ className, weather }: Props) {
 	const glyph = glyphFor(weather);
 	return (

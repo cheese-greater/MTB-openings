@@ -1,18 +1,4 @@
-// Scrapes once and writes public/trails.json, which Vite copies into dist. That
-// file is how GitHub Pages serves live-ish conditions with no server: the hourly
-// workflow runs this, builds, and publishes.
-//
-// Two things it has to get right that a plain "scrape and write" would not:
-//
-// 1. Last good data. server.mjs keeps a failed scrape from blanking the page by
-//    serving its in-memory cache, which a fresh CI process does not have. The
-//    previously committed trails.json is that cache, so when every source fails
-//    this leaves it alone rather than publishing a page of empty placeholders.
-// 2. Commit churn. cachedAt changes on every run, so committing whenever the
-//    file differs would be a commit an hour forever. It reports whether the
-//    trails themselves changed, and the workflow commits only then. The
-//    published file is always the fresh one either way, so the page's "last
-//    cache" time stays honest.
+// Scrapes once and writes public/trails.json for the static GitHub Pages build.
 import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -49,9 +35,7 @@ console.log(
 );
 console.log(`${payload.trails.length} cards, ${liveCardCount} of them live`);
 
-// Every source that carries real trail status came back empty. Ray's is computed
-// from its published schedule so it survives regardless, which is why the check
-// is on the sources rather than on the card count.
+// Every source that carries real trail status came back empty (Ray's is computed, so check sources, not cards).
 if (metroparks === 0 && cambaHome === 0 && bsky === 0) {
 	if (previous) {
 		reportChanged(false);
@@ -67,8 +51,7 @@ if (metroparks === 0 && cambaHome === 0 && bsky === 0) {
 
 writeFileSync(OUTPUT_PATH, `${JSON.stringify(payload, null, '\t')}\n`);
 
-// What counts as a change, and what is ignored as hourly noise, is spelled out
-// in lib/summary.mjs.
+// What counts as a change is spelled out in lib/summary.mjs.
 const changed = conditionsChanged(previous?.trails, payload.trails);
 
 reportChanged(changed);

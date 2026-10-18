@@ -12,9 +12,7 @@ import './App.css';
 
 type Theme = 'dracula' | 'alucard';
 
-// Each theme's page background from index.css, for the browser chrome around
-// the page (the theme-color meta in index.html, which also sets it before the
-// first paint).
+// Each theme's page background, for the browser chrome (theme-color meta).
 const THEME_COLOR: Record<Theme, string> = {
 	alucard: '#fffbeb',
 	dracula: '#282a36'
@@ -30,8 +28,7 @@ const SORT_OPTIONS: { label: string; value: SortKey }[] = [
 	{ label: 'Name', value: 'name' }
 ];
 
-// The way each sort reads until the direction button turns it over, and what
-// either direction of it comes to in words, for that button's tooltip.
+// Each sort's default direction and the words for either direction, for the direction button's tooltip.
 const SORT_DIRECTIONS: Record<SortKey, { defaultDirection: SortDirection; orders: Record<SortDirection, string> }> = {
 	name: { defaultDirection: 'asc', orders: { asc: 'A to Z', desc: 'Z to A' } },
 	status: { defaultDirection: 'asc', orders: { asc: 'Open first', desc: 'Open last' } },
@@ -46,10 +43,7 @@ const STATUS_ORDER: Record<Trail['status'], number> = {
 	stale: 3
 };
 
-// Accessing localStorage throws outright in a browser with site data blocked, and
-// these run inside useState initializers, so an unguarded read takes the whole app
-// down before it mounts. Going through these means such a browser loses the saved
-// preference, not the page.
+// localStorage throws with site data blocked, so these guard the reads and writes.
 function readStored(key: string): string | null {
 	try {
 		return localStorage.getItem(key);
@@ -94,8 +88,7 @@ function getInitialFavorites(): Set<string> {
 	return new Set();
 }
 
-// The ascending order of each sort, turned over whole for descending: so a
-// descending status sort is the ascending one read from the bottom, open last.
+// The ascending order of each sort, turned over whole for descending.
 function compareTrails(a: Trail, b: Trail, sort: SortKey, direction: SortDirection): number {
 	const sign = direction === 'asc' ? 1 : -1;
 	switch (sort) {
@@ -105,9 +98,7 @@ function compareTrails(a: Trail, b: Trail, sort: SortKey, direction: SortDirecti
 			return sign * ((a.timestamp ?? 0) - (b.timestamp ?? 0));
 		case 'status':
 		default:
-			// Fresh reports before stale ones, then by the reported status (so an
-			// open-but-stale trail beats a stale-stale one), then most recently
-			// posted first, then name.
+			// Fresh before stale, then by status, then most recent, then name.
 			return (
 				sign *
 				(Number(a.stale) - Number(b.stale) ||
@@ -119,11 +110,8 @@ function compareTrails(a: Trail, b: Trail, sort: SortKey, direction: SortDirecti
 }
 
 // The published address from package.json's homepage, baked in by vite.config.ts.
-// The QR code beside it is generated from the same field, so the two agree, and
-// a self-hosted copy offers the public site rather than its own LAN address.
 const SHARE_URL = __SITE_URL__;
-// The repository, from package.json's repository field the same way, for the
-// footer's issue tracker and source links.
+// The repository address, for the footer's links.
 const REPO_URL = __REPO_URL__;
 
 function App() {
@@ -137,20 +125,14 @@ function App() {
 	const [favorites, setFavorites] = useState<Set<string>>(getInitialFavorites);
 	const [favoritesFirst, setFavoritesFirst] = useState(() => readStored('favoritesFirst') === 'true');
 	const [shareOpen, setShareOpen] = useState(false);
-	// Closing the share dialog first plays it out (the burst under
-	// .qr-modal--closing in App.css) and only then unmounts it, when the
-	// backdrop reports its fade, the last part of the burst, has ended.
+	// Closing the share dialog plays its exit first and unmounts when the backdrop's fade ends.
 	const [shareClosing, setShareClosing] = useState(false);
 	const closeShare = () => setShareClosing(true);
-	// Open for this purpose until the burst begins, so a close by any means
-	// settles the history entry at once rather than when the dialog unmounts.
+	// Open until the burst begins, so any close settles the history entry at once.
 	useCloseOnBack('share', shareOpen && !shareClosing, closeShare);
 	const [copied, setCopied] = useState(false);
 
-	// The dog chases the mouse, so it only makes sense with one: a touch screen
-	// has no cursor to follow (a laptop with a touchscreen still has a fine
-	// primary pointer, so it keeps it). It also stays away when the reader has
-	// asked the OS for less motion. Otherwise it is on until switched off.
+	// The dog needs a mouse and a reader who has not asked for less motion.
 	const hasFinePointer = useMediaQuery('(pointer: fine)');
 	const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
 	const trailDogAvailable = hasFinePointer && !prefersReducedMotion;
@@ -190,9 +172,7 @@ function App() {
 			return next;
 		});
 
-	// When favoritesFirst is on, favorites are pinned above everything else
-	// whichever way the list reads; the chosen sort then orders within each
-	// group. Otherwise it's a plain sort.
+	// Favorites pin above everything when favoritesFirst is on; the chosen sort orders within each group.
 	const sortedTrails = useMemo(() => {
 		return [...trails].sort((a, b) => {
 			if (favoritesFirst) {
@@ -205,11 +185,7 @@ function App() {
 	}, [trails, favorites, favoritesFirst, sort, sortDirection]);
 
 	useEffect(() => {
-		// Relative to BASE_URL so it works both at the site root and under the
-		// /MTB-openings/ path Pages serves from. On Pages this is the file the
-		// hourly workflow published; run by server.mjs it is scraped on the spot.
-		// Always revalidated: Pages caches it for ten minutes, and a copy from
-		// before a deploy that changed its shape would otherwise meet the new app.
+		// Relative to BASE_URL for the Pages path; always revalidated.
 		fetch(`${import.meta.env.BASE_URL}trails.json`, { cache: 'no-cache' })
 			.then((res) => {
 				if (!res.ok) throw new Error();
@@ -337,8 +313,7 @@ function App() {
 										onChange={(e) => {
 											const next = e.target.value as SortKey;
 											setSort(next);
-											// A new sort starts the way it reads best, not the
-											// way the last one happened to be turned.
+											// A new sort starts in its default direction.
 											setSortDirection(SORT_DIRECTIONS[next].defaultDirection);
 										}}
 									>
@@ -448,8 +423,7 @@ function App() {
 					onClick={closeShare}
 					role='dialog'
 					onAnimationEnd={(event) => {
-						// The panel's and the confetti's ends bubble up here too; only
-						// the backdrop's own fade, the longest, means the burst is over.
+						// Only the backdrop's own fade, the longest, means the burst is over.
 						if (!shareClosing || event.target !== event.currentTarget) return;
 						setShareOpen(false);
 						setShareClosing(false);
@@ -461,8 +435,7 @@ function App() {
 						</button>
 						<h2 className='qr-modal__title'>Share this site</h2>
 						<p className='qr-modal__subtitle'>Scan the code or copy the link</p>
-						{/* The wrapper is what the opening animation's scan beam sweeps
-						    across; an image cannot carry a pseudo-element of its own. */}
+						{/* The wrapper is what the scan beam sweeps across. */}
 						<span className='qr-modal__scan'>
 							<img
 								alt={`QR code linking to ${SHARE_URL}`}
