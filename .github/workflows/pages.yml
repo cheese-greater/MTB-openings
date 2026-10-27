@@ -1,6 +1,8 @@
 name: Publish to Pages
 
 # Scrapes hourly and bakes the result into the published site as trails.json.
+# GitHub's cron has fired hours late since October 2026, so refresh-ticker.yml dispatches this workflow
+# on the hour instead; the schedule below stays as a fallback for when the chain breaks.
 
 on:
     push:

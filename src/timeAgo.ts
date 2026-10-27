@@ -35,17 +35,32 @@ export function timeAgoCompact(timestamp: number | null): string {
 	return '';
 }
 
-// A single shared 30s ticker so every relative timestamp advances together.
+// "5 hours": the age as a plain duration, rounded the way timeAgo rounds.
+export function ageLabel(timestamp: number, now: number): string {
+	let duration = (now - timestamp) / 1000;
+	for (const [amount, unit] of DIVISIONS) {
+		if (Math.abs(Math.round(duration)) < amount) {
+			return new Intl.NumberFormat('en', { style: 'unit', unit, unitDisplay: 'long' }).format(
+				Math.round(duration)
+			);
+		}
+		duration /= amount;
+	}
+	return '';
+}
+
+// A single shared 30s ticker so every relative timestamp advances together. The store's snapshot is the
+// time of the last tick, so each tick is a new value and re-renders every subscriber.
 const TICK_MS = 30_000;
 const listeners = new Set<() => void>();
-let tick = 0;
+let tickedAt = Date.now();
 let timer: ReturnType<typeof setInterval> | undefined;
 
 function subscribe(onChange: () => void): () => void {
 	listeners.add(onChange);
 	if (timer === undefined) {
 		timer = setInterval(() => {
-			tick++;
+			tickedAt = Date.now();
 			listeners.forEach((l) => l());
 		}, TICK_MS);
 	}
@@ -58,11 +73,16 @@ function subscribe(onChange: () => void): () => void {
 	};
 }
 
-const getTick = () => tick;
+const getTickedAt = () => tickedAt;
 
 // Re-renders the caller on each shared tick.
 function useTick(): void {
-	useSyncExternalStore(subscribe, getTick, getTick);
+	useSyncExternalStore(subscribe, getTickedAt, getTickedAt);
+}
+
+// The time as of the last tick, for anything that holds an age against a limit.
+export function useNow(): number {
+	return useSyncExternalStore(subscribe, getTickedAt, getTickedAt);
 }
 
 // Live version of timeAgo: the displayed "x minutes ago" keeps up on its own.

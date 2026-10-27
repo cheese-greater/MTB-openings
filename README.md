@@ -12,6 +12,6 @@ It rescrapes and republishes itself every hour, so the page is never much furthe
 
 Spotted a wrong status, a missing trail or a dead link? [Open an issue](https://github.com/cheese-greater/MTB-openings/issues).
 
-MIT licensed. React and Vite, published free on GitHub Pages by a scheduled Action. Running your own copy needs no keys or secrets: every source, the weather included, is public.
+MIT licensed. React and Vite, published free on GitHub Pages by a scheduled Action. Running your own copy needs no keys or secrets: every source, the weather included, is public. GitHub's own scheduler has run hours late since October 2026, so a second workflow, `refresh-ticker.yml`, keeps the hourly beat with an environment wait timer; it needs one environment created by hand, as described at the top of that file. When the page has not been refreshed for two hours a notice pops up and the footer's cache line turns red.
 
 The forecast is the National Weather Service's, which is public domain and not subject to copyright. The past days are [weather data by Open-Meteo.com](https://open-meteo.com/) under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), summarized to a daily condition, high, low and rainfall. That summary is what the hourly commit of `public/trails.json` carries.

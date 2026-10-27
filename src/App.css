@@ -304,6 +304,14 @@
 		display: none;
 	}
 
+	.stale-toast__content {
+		animation: dialog-fade 0.2s ease-out;
+	}
+
+	.stale-toast--closing .stale-toast__content {
+		animation: dialog-fade-out 0.2s ease-in both;
+	}
+
 	.qr-modal--closing,
 	.forecast-dialog--closing::backdrop {
 		animation-duration: 0.2s;
@@ -1116,6 +1124,121 @@ body:has(.forecast-dialog[open]) {
 	width: 11px;
 }
 
+/* A snackbar in MUI's manner, bottom center, when the hourly publish has fallen behind. */
+.stale-toast {
+	bottom: 24px;
+	display: flex;
+	justify-content: center;
+	left: 24px;
+	pointer-events: none;
+	position: fixed;
+	right: 24px;
+	z-index: 95;
+}
+
+.stale-toast__content {
+	align-items: center;
+	animation: toast-in 0.225s cubic-bezier(0, 0, 0.2, 1) both;
+	background: var(--notice-bg);
+	border-radius: 4px;
+	box-shadow:
+		rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+		rgba(0, 0, 0, 0.14) 0 6px 10px 0,
+		rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+	color: var(--notice-text);
+	display: flex;
+	font-size: 14px;
+	line-height: 1.43;
+	max-width: 640px;
+	min-width: 288px;
+	padding: 6px 16px;
+	pointer-events: auto;
+}
+
+.stale-toast--closing .stale-toast__content {
+	animation: toast-out 0.195s cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+/* Sized and spaced as MUI's alert icon. */
+.stale-toast__icon {
+	flex-shrink: 0;
+	height: 22px;
+	margin-right: 12px;
+	opacity: 0.9;
+	width: 22px;
+}
+
+.stale-toast__message {
+	flex: 1;
+	padding: 8px 0;
+}
+
+/* The title on its own line above the body, as MUI's alert title sits. */
+.stale-toast__title {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 2px;
+}
+
+/* The one link in the notice, underlined so it shows against the fill and never split by a wrap. */
+.stale-toast__link {
+	color: inherit;
+	font-weight: 600;
+	text-decoration: underline;
+	white-space: nowrap;
+}
+
+.stale-toast__close {
+	align-items: center;
+	background: none;
+	border: 0;
+	border-radius: 50%;
+	color: inherit;
+	cursor: pointer;
+	display: inline-flex;
+	margin: 0 -8px 0 auto;
+	opacity: 0.7;
+	padding: 8px;
+	transition: opacity 0.15s;
+}
+
+.stale-toast__close:hover {
+	opacity: 1;
+}
+
+.stale-toast__close svg {
+	height: 20px;
+	width: 20px;
+}
+
+@keyframes toast-in {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+}
+
+@keyframes toast-out {
+	to {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+}
+
+/* A phone gets the full-width snackbar, clear of the home indicator. */
+@media (max-width: 600px) {
+	.stale-toast {
+		bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+		left: 8px;
+		right: 8px;
+	}
+
+	.stale-toast__content {
+		min-width: 0;
+		width: 100%;
+	}
+}
+
 .status-msg {
 	color: var(--text);
 	font-size: 15px;
@@ -1135,6 +1258,11 @@ body:has(.forecast-dialog[open]) {
 	opacity: 0.7;
 	padding: 20px 24px;
 	text-align: center;
+}
+
+/* The cache line turns red once the hourly publish has fallen behind. */
+.site-footer__cache--stale {
+	color: var(--status-closed);
 }
 
 /* The issue tracker link and the GitHub mark for the source. */

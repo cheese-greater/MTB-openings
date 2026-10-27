@@ -33,8 +33,11 @@ export const rowLabels = (periods: ForecastPeriod[]): string[] =>
 export const cardFor = (page: Page, trail: Trail) =>
 	page.locator('.trail-card', { has: page.locator(`#trail-details-${trail.id}`) });
 
+// The fixture as the hourly publish would just have written it; an old cachedAt is a test's own choice.
+export const freshFixture = (): Payload => ({ ...fixture, cachedAt: Date.now() });
+
 // Serve the fixture in place of trails.json, then wait for the cards.
-export async function openSite(page: Page, trails: Payload = fixture): Promise<void> {
+export async function openSite(page: Page, trails: Payload = freshFixture()): Promise<void> {
 	await page.route('**/trails.json', (route) => route.fulfill({ json: trails }));
 	await page.goto('/');
 	await expect(page.locator('.trail-card')).toHaveCount(trails.trails.length);

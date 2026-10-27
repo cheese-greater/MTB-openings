@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import Burst from './Burst';
+import { isCacheStale } from './cacheAge';
 import { useCloseOnBack } from './closeOnBack';
 import { useMediaQuery } from './mediaQuery';
-import { useTimeAgo } from './timeAgo';
+import StaleToast from './StaleToast';
+import { useNow, useTimeAgo } from './timeAgo';
 import TrailCard from './TrailCard';
 import type { Trail } from './trailData';
 import TrailDog from './TrailDog';
@@ -200,6 +202,8 @@ function App() {
 	}, []);
 
 	const cachedAgo = useTimeAgo(cachedAt);
+	const now = useNow();
+	const cacheStale = cachedAt != null && isCacheStale(cachedAt, now);
 	const cautionCount = trails.filter((t) => !t.stale && t.status === 'caution').length;
 	const closedCount = trails.filter((t) => !t.stale && t.status === 'closed').length;
 	const openCount = trails.filter((t) => !t.stale && t.status === 'open').length;
@@ -395,7 +399,11 @@ function App() {
 			</main>
 			<footer className='site-footer'>
 				<p>v{__APP_VERSION__}</p>
-				{cachedAt != null && <p>Last hourly cache: {cachedAgo}</p>}
+				{cachedAt != null && (
+					<p className={`site-footer__cache${cacheStale ? ' site-footer__cache--stale' : ''}`}>
+						Last hourly cache: {cachedAgo}
+					</p>
+				)}
 				<p className='site-footer__links'>
 					<a href={`${REPO_URL}/issues`} rel='noopener noreferrer' target='_blank'>
 						Report an issue
@@ -415,6 +423,7 @@ function App() {
 				</p>
 			</footer>
 			{trailDogAvailable && trailDog && <TrailDog />}
+			{cachedAt != null && <StaleToast cachedAt={cachedAt} open={cacheStale} />}
 			{shareOpen && (
 				<div
 					aria-label='Share this site'

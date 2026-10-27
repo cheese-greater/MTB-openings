@@ -1,0 +1,60 @@
+name: Hourly refresh ticker
+
+# GitHub's cron has fired hours late, or not at all, since October 2026
+# (github.com/orgs/community/discussions/207346), while workflow_dispatch still starts within seconds.
+# This chain keeps the hourly cadence without the cron: each run sits on the hourly-wait environment's
+# wait timer, which holds no runner, then arms the next tick and dispatches the publish workflow.
+#
+# One-time setup, by hand: Settings > Environments > New environment > "hourly-wait" > Wait timer: 60.
+# Then start the chain: Actions > Hourly refresh ticker > Run workflow. One run always shows as waiting.
+# A broken chain restarts itself the next time GitHub gets round to firing the cron below.
+#
+# The other dependable route is an outside cron (any machine or free cron service) calling
+#   POST https://api.github.com/repos/<owner>/<repo>/actions/workflows/pages.yml/dispatches  {"ref":"master"}
+# with a fine-grained token that has Actions: write on this repository.
+
+on:
+    schedule:
+        - cron: '17 * * * *'
+    workflow_dispatch:
+
+permissions:
+    actions: write
+
+jobs:
+    tick:
+        runs-on: ubuntu-latest
+        timeout-minutes: 5
+        environment: hourly-wait
+        env:
+            GH_REPO: ${{ github.repository }}
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            TICKER: refresh-ticker.yml
+        steps:
+            # An environment without the wait timer would start the next tick at once, forever.
+            - name: Check that the wait timer held this run for an hour
+              run: |
+                  created=$(gh api "repos/$GH_REPO/actions/runs/$GITHUB_RUN_ID" --jq .created_at)
+                  waited=$(( $(date +%s) - $(date -d "$created" +%s) ))
+                  echo "Started ${waited}s after the run was created."
+                  if [ "$waited" -lt 3000 ]; then
+                      echo "::error::The hourly-wait environment needs a 60 minute wait timer (Settings > Environments). Not arming the next tick."
+                      exit 1
+                  fi
+
+            # Armed before publishing so a failed dispatch of the publish does not end the chain.
+            # Two ticks an hour apart would publish twice, so one waiting tick is enough.
+            - name: Arm the next tick unless one is already waiting
+              run: |
+                  for status in waiting queued pending; do
+                      others=$(gh api "repos/$GH_REPO/actions/workflows/$TICKER/runs?status=$status&per_page=20" \
+                          --jq "[.workflow_runs[] | select(.id != $GITHUB_RUN_ID)] | length")
+                      if [ "$others" -gt 0 ]; then
+                          echo "A $status tick already covers the next hour."
+                          exit 0
+                      fi
+                  done
+                  gh workflow run "$TICKER" --ref "$GITHUB_REF_NAME"
+
+            - name: Publish
+              run: gh workflow run pages.yml --ref "$GITHUB_REF_NAME"

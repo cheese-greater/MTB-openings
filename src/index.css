@@ -28,6 +28,10 @@
 
 	--accent: #ff79c6; /* pink */
 
+	/* The stale-conditions notice, filled with the caution orange so it reads as a warning */
+	--notice-bg: #ffb86c; /* orange */
+	--notice-text: #282a36; /* background */
+
 	/* The weather chip on each card: filled icons in the palette's own colors */
 	--weather-sun: #f1fa8c; /* yellow */
 	--weather-sun-rays: #ffb86c; /* orange */
@@ -83,6 +87,10 @@
 	--diff-green: #14710a; /* green: easy */
 
 	--accent: #a3144d; /* pink */
+
+	/* The notice as a plain snackbar: the inverted surface */
+	--notice-bg: #1f1f1f; /* foreground */
+	--notice-text: #fffbeb; /* background */
 
 	--weather-sun: #e0a30a; /* amber: Alucard's own yellow is too dark to read as a sun */
 	--weather-sun-rays: #a34d14; /* orange */
