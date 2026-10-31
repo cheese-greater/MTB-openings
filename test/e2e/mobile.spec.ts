@@ -139,9 +139,27 @@ test.describe('phone layout', () => {
 
 	test('the header keeps its toggles reachable next to the title', async ({ page }) => {
 		await openSite(page);
+		await expect(page.locator('.guide-button')).toBeVisible();
 		await expect(page.locator('.qr-button')).toBeVisible();
 		await expect(page.locator('.theme-toggle')).toBeVisible();
 		await expect(page.locator('h1')).toBeVisible();
+	});
+
+	test('the guide opens from the header and fits the screen', async ({ page }) => {
+		await openSite(page);
+		await page.locator('.guide-button').tap();
+		const dialog = page.getByRole('dialog', { name: 'How it works' });
+		await expect(dialog).toBeVisible();
+		const viewport = page.viewportSize()!;
+		const panel = await dialog.locator('.guide-dialog__panel').boundingBox();
+		expect(panel!.width).toBeLessThanOrEqual(viewport.width);
+		expect(panel!.x).toBeGreaterThanOrEqual(0);
+		// The tallest part scrolls within the panel rather than off the screen.
+		expect(panel!.height).toBeLessThanOrEqual(viewport.height);
+		await expect(dialog.locator('.guide-tile').last()).toBeAttached();
+
+		await dialog.getByRole('button', { name: 'Close' }).tap();
+		await expect(dialog).toBeHidden();
 	});
 });
 

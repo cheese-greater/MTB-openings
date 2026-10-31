@@ -1,0 +1,318 @@
+/* The guide dialog (FeatureGuide.tsx): the shell shares the forecast dialog's rules in App.css; this is what fills it. */
+.guide-dialog {
+	width: 640px;
+}
+
+.guide-section {
+	margin-top: 18px;
+}
+
+.guide-section__title {
+	color: var(--text-h);
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	margin: 0 0 10px;
+	opacity: 0.75;
+	text-transform: uppercase;
+}
+
+.guide-section__note {
+	color: var(--text);
+	font-size: 12px;
+	line-height: 1.45;
+	margin-top: 10px;
+	opacity: 0.85;
+}
+
+/* The data flow: the sources on the left feed the hourly scrape, which feeds the page. */
+.guide-flow {
+	align-items: center;
+	display: flex;
+	gap: 10px;
+}
+
+.guide-flow__sources {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: 6px;
+	list-style: none;
+	margin: 0;
+	min-width: 0;
+	padding: 0;
+}
+
+.guide-flow__source {
+	align-items: center;
+	background: var(--bg);
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	color: var(--text-h);
+	display: flex;
+	font-size: 12px;
+	font-weight: 500;
+	gap: 7px;
+	padding: 4px 11px;
+	white-space: nowrap;
+}
+
+.guide-flow__source::before {
+	background: var(--accent);
+	border-radius: 50%;
+	content: '';
+	flex-shrink: 0;
+	height: 6px;
+	width: 6px;
+}
+
+.guide-flow__arrow {
+	color: var(--text);
+	flex-shrink: 0;
+	height: 22px;
+	opacity: 0.6;
+	width: 22px;
+}
+
+.guide-flow__node {
+	align-items: center;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: 2px;
+	text-align: center;
+}
+
+.guide-flow__node-icon {
+	color: var(--accent);
+	height: 40px;
+	margin-bottom: 4px;
+	width: 40px;
+}
+
+.guide-flow__node-title {
+	color: var(--text-h);
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.guide-flow__node-note {
+	color: var(--text);
+	font-size: 11px;
+	line-height: 1.35;
+	opacity: 0.75;
+}
+
+/* A sample card drawn as the real ones are, with numbered callouts the legend beneath picks up. */
+.guide-card {
+	background: var(--bg);
+	border: 1px solid var(--border);
+	border-left: 4px solid var(--status-open);
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	padding: 10px 16px 8px;
+}
+
+.guide-card__head {
+	align-items: center;
+	display: flex;
+	gap: 8px;
+}
+
+.guide-card__title {
+	color: var(--text-h);
+	flex: 1;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.25;
+	min-width: 0;
+}
+
+.guide-card__star {
+	color: var(--status-caution);
+	flex-shrink: 0;
+	height: 20px;
+	width: 20px;
+}
+
+.guide-card__place {
+	align-items: center;
+	display: flex;
+	gap: 12px;
+	justify-content: space-between;
+}
+
+.guide-card__location,
+.guide-card__weather {
+	align-items: center;
+	color: var(--text-h);
+	display: inline-flex;
+	font-size: 13px;
+	gap: 4px;
+	opacity: 0.8;
+}
+
+.guide-card__location-icon {
+	height: 13px;
+	width: 13px;
+}
+
+.guide-card__weather-icon {
+	height: 17px;
+	width: 17px;
+}
+
+.guide-card__condition {
+	border-top: 1px solid var(--border);
+	color: var(--text);
+	font-size: 13px;
+	line-height: 1.45;
+	padding-top: 5px;
+}
+
+.guide-card__foot {
+	align-items: center;
+	border-top: 1px solid var(--border);
+	display: flex;
+	font-size: 12px;
+	gap: 10px;
+	justify-content: space-between;
+	padding-top: 5px;
+}
+
+.guide-card__updated,
+.guide-card__source {
+	align-items: center;
+	color: var(--text-h);
+	display: inline-flex;
+	gap: 3px;
+	opacity: 0.7;
+}
+
+.guide-card__source-icon {
+	height: 11px;
+	width: 11px;
+}
+
+/* The callout numbers, on the card and again down the legend. */
+.guide-mark,
+.guide-legend > li::before {
+	align-items: center;
+	background: var(--accent);
+	border-radius: 50%;
+	color: var(--bg);
+	display: inline-flex;
+	flex-shrink: 0;
+	font-size: 10px;
+	font-weight: 700;
+	height: 16px;
+	justify-content: center;
+	line-height: 1;
+	width: 16px;
+}
+
+.guide-mark {
+	margin-left: 4px;
+	vertical-align: middle;
+}
+
+.guide-legend {
+	counter-reset: guide-callout;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	list-style: none;
+	margin: 12px 0 0;
+	padding: 0;
+}
+
+/* The number, then the text as one block, so the inline runs never become columns of their own. */
+.guide-legend > li {
+	align-items: flex-start;
+	color: var(--text);
+	counter-increment: guide-callout;
+	display: flex;
+	font-size: 13px;
+	gap: 8px;
+	line-height: 1.45;
+}
+
+.guide-legend > li::before {
+	content: counter(guide-callout);
+	margin-top: 2px;
+}
+
+.guide-legend__text {
+	min-width: 0;
+}
+
+.guide-legend strong {
+	color: var(--text-h);
+	font-weight: 600;
+}
+
+.guide-legend__badges {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-top: 6px;
+}
+
+/* One tile per feature, in as many columns as fit. */
+.guide-tiles {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.guide-tile {
+	background: var(--bg);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	padding: 12px 12px 14px;
+}
+
+.guide-tile__icon {
+	color: var(--accent);
+	height: 24px;
+	width: 24px;
+}
+
+.guide-tile__title {
+	color: var(--text-h);
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0;
+}
+
+.guide-tile__body {
+	color: var(--text);
+	font-size: 12px;
+	line-height: 1.45;
+	opacity: 0.85;
+}
+
+/* A phone stacks the flow: the sources as a wrapped row, then the stops beneath, with the arrows pointing down. */
+@media (max-width: 560px) {
+	.guide-flow {
+		flex-direction: column;
+	}
+
+	.guide-flow__sources {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.guide-flow__arrow {
+		transform: rotate(90deg);
+	}
+}

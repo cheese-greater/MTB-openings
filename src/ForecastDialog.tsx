@@ -1,6 +1,7 @@
-import { useEffect, useId, useRef } from 'react';
+import { useId } from 'react';
 
 import Burst from './Burst';
+import { useModalDialog } from './modalDialog';
 import type { ForecastPeriod, TrailWeather, WeatherConditions, WeatherDay } from './trailData';
 import WeatherIcon from './WeatherIcon';
 
@@ -70,47 +71,19 @@ function Drop() {
 
 // The weather behind a card's weather chip, grouped by calendar day, in a native modal dialog.
 function ForecastDialog({ closing, onClose, onClosed, place, title, weather }: Props) {
-	const dialogRef = useRef<HTMLDialogElement>(null);
+	const { dialogRef, onCancel, onClick } = useModalDialog(closing, onClose);
 	const titleId = useId();
 	const { forecastUrl, history, periods, ...current } = weather;
 	const days = groupByDay(current, history, periods);
-
-	// Mounted only while open, so mounting is opening.
-	useEffect(() => {
-		dialogRef.current?.showModal();
-	}, []);
-
-	// The exit: close when the backdrop's fade has ended, with a timer as a fallback.
-	useEffect(() => {
-		const dialog = dialogRef.current;
-		if (!closing || !dialog) return;
-		const finish = () => dialog.close();
-		const onAnimationEnd = (event: AnimationEvent) => {
-			if (event.animationName === 'dialog-fade-out') finish();
-		};
-		dialog.addEventListener('animationend', onAnimationEnd);
-		const timer = setTimeout(finish, 750);
-		return () => {
-			dialog.removeEventListener('animationend', onAnimationEnd);
-			clearTimeout(timer);
-		};
-	}, [closing]);
 
 	return (
 		<dialog
 			aria-labelledby={titleId}
 			className={`forecast-dialog${closing ? ' forecast-dialog--closing' : ''}`}
+			onCancel={onCancel}
+			onClick={onClick}
 			onClose={onClosed}
 			ref={dialogRef}
-			onCancel={(event) => {
-				// Escape: the browser would close the dialog on the spot.
-				event.preventDefault();
-				onClose();
-			}}
-			onClick={(event) => {
-				// A click on the backdrop lands on the dialog element itself.
-				if (event.target === event.currentTarget) onClose();
-			}}
 		>
 			<div className='forecast-dialog__panel'>
 				<header className='forecast-dialog__head'>

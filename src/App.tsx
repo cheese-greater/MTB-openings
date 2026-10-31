@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Burst from './Burst';
 import { isCacheStale } from './cacheAge';
 import { useCloseOnBack } from './closeOnBack';
+import FeatureGuide from './FeatureGuide';
 import { useMediaQuery } from './mediaQuery';
 import StaleToast from './StaleToast';
 import { useNow, useTimeAgo } from './timeAgo';
@@ -133,6 +134,11 @@ function App() {
 	// Open until the burst begins, so any close settles the history entry at once.
 	useCloseOnBack('share', shareOpen && !shareClosing, closeShare);
 	const [copied, setCopied] = useState(false);
+	const [guideOpen, setGuideOpen] = useState(false);
+	// Closing the guide plays its exit first and unmounts when the dialog reports it closed.
+	const [guideClosing, setGuideClosing] = useState(false);
+	const closeGuide = () => setGuideClosing(true);
+	useCloseOnBack('guide', guideOpen && !guideClosing, closeGuide);
 
 	// The dog needs a mouse and a reader who has not asked for less motion.
 	const hasFinePointer = useMediaQuery('(pointer: fine)');
@@ -212,6 +218,27 @@ function App() {
 		<>
 			<header className='site-header'>
 				<div className='header-toggles'>
+					<button
+						aria-label='How this page works'
+						className='guide-button'
+						onClick={() => setGuideOpen(true)}
+						type='button'
+					>
+						<svg
+							aria-hidden='true'
+							className='guide-button__icon'
+							fill='none'
+							stroke='currentColor'
+							strokeLinecap='round'
+							strokeLinejoin='round'
+							strokeWidth='2'
+							viewBox='0 0 24 24'
+						>
+							<circle cx='12' cy='12' r='9.5' />
+							<path d='M9.3 9.4a2.7 2.7 0 0 1 5.4 0.5c0 1.8-2.7 2.3-2.7 4' />
+							<path d='M12 17.3v0.2' />
+						</svg>
+					</button>
 					{trailDogAvailable && (
 						<button
 							aria-label='Trail dog follows the cursor'
@@ -424,6 +451,16 @@ function App() {
 			</footer>
 			{trailDogAvailable && trailDog && <TrailDog />}
 			{cachedAt != null && <StaleToast cachedAt={cachedAt} open={cacheStale} />}
+			{guideOpen && (
+				<FeatureGuide
+					closing={guideClosing}
+					onClose={closeGuide}
+					onClosed={() => {
+						setGuideOpen(false);
+						setGuideClosing(false);
+					}}
+				/>
+			)}
 			{shareOpen && (
 				<div
 					aria-label='Share this site'

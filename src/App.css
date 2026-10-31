@@ -55,7 +55,9 @@
 	width: 28px;
 }
 
-.qr-button {
+/* The guide and share buttons: plain icons that light up on hover. */
+.qr-button,
+.guide-button {
 	align-items: center;
 	background: none;
 	border: 0;
@@ -69,12 +71,14 @@
 		opacity 0.15s;
 }
 
-.qr-button:hover {
+.qr-button:hover,
+.guide-button:hover {
 	color: var(--accent);
 	opacity: 1;
 }
 
-.qr-button__icon {
+.qr-button__icon,
+.guide-button__icon {
 	height: 22px;
 	width: 22px;
 }
@@ -151,14 +155,16 @@
 }
 
 .qr-modal__title,
-.forecast-dialog__title {
+.forecast-dialog__title,
+.guide-dialog__title {
 	color: var(--text-h);
 	font-size: 20px;
 	margin: 0;
 }
 
 .qr-modal__subtitle,
-.forecast-dialog__subtitle {
+.forecast-dialog__subtitle,
+.guide-dialog__subtitle {
 	color: var(--text);
 	font-size: 13px;
 	margin: 4px 0 20px;
@@ -296,7 +302,8 @@
 /* With motion reduced either panel only fades. */
 @media (prefers-reduced-motion: reduce) {
 	.qr-modal__panel,
-	.forecast-dialog__panel {
+	.forecast-dialog__panel,
+	.guide-dialog__panel {
 		animation: dialog-fade 0.2s ease-out;
 	}
 
@@ -313,12 +320,14 @@
 	}
 
 	.qr-modal--closing,
-	.forecast-dialog--closing::backdrop {
+	.forecast-dialog--closing::backdrop,
+	.guide-dialog--closing::backdrop {
 		animation-duration: 0.2s;
 	}
 
 	.qr-modal--closing .qr-modal__panel,
-	.forecast-dialog--closing .forecast-dialog__panel {
+	.forecast-dialog--closing .forecast-dialog__panel,
+	.guide-dialog--closing .guide-dialog__panel {
 		animation: dialog-fade-out 0.2s ease-in both;
 	}
 
@@ -365,8 +374,9 @@
 	opacity: 0.85;
 }
 
-/* The forecast dialog: a native modal whose transparent box makes a click on it a click on the backdrop. */
-.forecast-dialog {
+/* The forecast and guide dialogs: native modals whose transparent box makes a click on it a click on the backdrop. */
+.forecast-dialog,
+.guide-dialog {
 	background: transparent;
 	border: 0;
 	color: var(--text);
@@ -374,37 +384,46 @@
 	max-width: calc(100vw - 40px);
 	overflow: visible;
 	padding: 0;
+}
+
+.forecast-dialog {
 	width: 380px;
 }
 
 /* The same entrance and exit as the share dialog. */
-.forecast-dialog::backdrop {
+.forecast-dialog::backdrop,
+.guide-dialog::backdrop {
 	animation: dialog-fade 0.2s ease-out;
 	background: rgba(0, 0, 0, 0.6);
 }
 
-.forecast-dialog__panel {
+.forecast-dialog__panel,
+.guide-dialog__panel {
 	animation: dialog-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.forecast-dialog--closing {
+.forecast-dialog--closing,
+.guide-dialog--closing {
 	pointer-events: none;
 }
 
-.forecast-dialog--closing::backdrop {
+.forecast-dialog--closing::backdrop,
+.guide-dialog--closing::backdrop {
 	animation: dialog-fade-out 0.6s ease-in both;
 }
 
-.forecast-dialog--closing .forecast-dialog__panel {
+.forecast-dialog--closing .forecast-dialog__panel,
+.guide-dialog--closing .guide-dialog__panel {
 	animation: dialog-burst 0.4s ease-in both;
 }
 
 /* Nothing behind the dialog scrolls while it is up. */
-body:has(.forecast-dialog[open]) {
+body:has(.forecast-dialog[open], .guide-dialog[open]) {
 	overflow: hidden;
 }
 
-.forecast-dialog__panel {
+.forecast-dialog__panel,
+.guide-dialog__panel {
 	background: var(--card-bg);
 	border: 1px solid var(--border);
 	border-radius: 12px;
@@ -417,8 +436,9 @@ body:has(.forecast-dialog[open]) {
 	text-align: left;
 }
 
-/* Title, place and close button stay put while the days scroll beneath. */
-.forecast-dialog__head {
+/* Title, subtitle and close button stay put while the rest scrolls beneath. */
+.forecast-dialog__head,
+.guide-dialog__head {
 	background: var(--card-bg);
 	border-bottom: 1px solid var(--border);
 	margin: 0 -20px;
@@ -429,12 +449,14 @@ body:has(.forecast-dialog[open]) {
 }
 
 /* Room on the right for the close button, which sits on the title's line. */
-.forecast-dialog__title {
+.forecast-dialog__title,
+.guide-dialog__title {
 	padding-right: 36px;
 }
 
 /* Close, in the manner of a Material icon button. */
-.forecast-dialog__close {
+.forecast-dialog__close,
+.guide-dialog__close {
 	align-items: center;
 	background: none;
 	border: 0;
@@ -455,26 +477,31 @@ body:has(.forecast-dialog[open]) {
 	width: 40px;
 }
 
-.forecast-dialog__close:hover {
+.forecast-dialog__close:hover,
+.guide-dialog__close:hover {
 	background-color: color-mix(in srgb, currentColor 8%, transparent);
 	opacity: 1;
 }
 
-.forecast-dialog__close:active {
+.forecast-dialog__close:active,
+.guide-dialog__close:active {
 	background-color: color-mix(in srgb, currentColor 16%, transparent);
 }
 
-.forecast-dialog__close:focus-visible {
+.forecast-dialog__close:focus-visible,
+.guide-dialog__close:focus-visible {
 	outline: 2px solid var(--accent);
 	outline-offset: 2px;
 }
 
-.forecast-dialog__close svg {
+.forecast-dialog__close svg,
+.guide-dialog__close svg {
 	height: 24px;
 	width: 24px;
 }
 
-.forecast-dialog__subtitle {
+.forecast-dialog__subtitle,
+.guide-dialog__subtitle {
 	margin-bottom: 0;
 }
 
@@ -612,8 +639,9 @@ body:has(.forecast-dialog[open]) {
 	width: 12px;
 }
 
-/* The data credits and the link to the full forecast, as a recessed footer strip. */
-.forecast-dialog__credit {
+/* A recessed footer strip: the forecast's data credits, the guide's closing line. */
+.forecast-dialog__credit,
+.guide-dialog__credit {
 	background: var(--bg);
 	border-radius: 0 0 11px 11px;
 	border-top: 1px solid var(--border);
@@ -625,7 +653,8 @@ body:has(.forecast-dialog[open]) {
 	padding: 10px 20px 12px;
 }
 
-.forecast-dialog__credit a {
+.forecast-dialog__credit a,
+.guide-dialog__credit a {
 	color: inherit;
 	text-decoration: underline;
 }
@@ -1302,14 +1331,27 @@ body:has(.forecast-dialog[open]) {
 		text-align: left;
 	}
 
-	/* Reserve space on the right so a long title never slides under the toggles. */
+	/* The corner holds the guide, share and theme buttons, so on a phone they sit tighter than on a desktop. */
+	.header-toggles {
+		gap: 0;
+	}
+
+	.guide-button,
+	.dog-button,
+	.qr-button,
+	.theme-toggle {
+		padding: 4px;
+	}
+
+	/* Reserve space on the right so a long title never slides under the toggles: their width, plus the
+	   two pixels by which they sit further in than the header's padding. */
 	.site-header h1 {
-		padding-right: 92px;
+		padding-right: 112px;
 	}
 
 	/* A narrow window with a mouse gets the dog toggle too, so a bit more. */
 	.site-header:has(.dog-button) h1 {
-		padding-right: 130px;
+		padding-right: 142px;
 	}
 
 	.site-header__subtitle {
