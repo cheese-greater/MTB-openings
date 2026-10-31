@@ -1326,32 +1326,41 @@ body:has(.forecast-dialog[open], .guide-dialog[open]) {
 
 /* Mobile: collapse each card to a tappable summary row */
 @media (max-width: 768px) {
+	/* The title and the corner buttons share the top row: the title never wraps, the buttons do when they must. */
 	.site-header {
+		align-items: center;
+		column-gap: 6px;
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
 		padding: 14px 14px 12px;
 		text-align: left;
 	}
 
-	/* The corner holds the guide, share and theme buttons, so on a phone they sit tighter than on a desktop. */
-	.header-toggles {
-		gap: 0;
+	.site-header > * {
+		grid-column: 1 / -1;
 	}
 
+	.site-header h1 {
+		grid-column: 1;
+		grid-row: 1;
+		white-space: nowrap;
+	}
+
+	.header-toggles {
+		flex-wrap: wrap;
+		gap: 2px 0;
+		grid-column: 2;
+		grid-row: 1;
+		justify-content: flex-end;
+		position: static;
+	}
+
+	/* Tighter than on a desktop, so the three fit beside the title on a 360px phone. */
 	.guide-button,
 	.dog-button,
 	.qr-button,
 	.theme-toggle {
 		padding: 4px;
-	}
-
-	/* Reserve space on the right so a long title never slides under the toggles: their width, plus the
-	   two pixels by which they sit further in than the header's padding. */
-	.site-header h1 {
-		padding-right: 112px;
-	}
-
-	/* A narrow window with a mouse gets the dog toggle too, so a bit more. */
-	.site-header:has(.dog-button) h1 {
-		padding-right: 142px;
 	}
 
 	.site-header__subtitle {

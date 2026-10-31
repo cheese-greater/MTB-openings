@@ -163,6 +163,25 @@ test.describe('phone layout', () => {
 	});
 });
 
+// A screen too narrow for the title and all three corner buttons on one line.
+test.describe('phone layout on a narrow screen', () => {
+	test.use({ viewport: { height: 640, width: 320 } });
+
+	test('keeps the title on one line and wraps the corner buttons instead', async ({ page }) => {
+		await openSite(page);
+		const titleLines = await page.locator('h1').evaluate((element) => {
+			const range = document.createRange();
+			range.selectNodeContents(element);
+			return range.getClientRects().length;
+		});
+		expect(titleLines).toBe(1);
+		const guide = (await page.locator('.guide-button').boundingBox())!;
+		const theme = (await page.locator('.theme-toggle').boundingBox())!;
+		expect(theme.y).toBeGreaterThanOrEqual(guide.y + guide.height);
+		await expect(page.locator('.theme-toggle')).toBeVisible();
+	});
+});
+
 // The widest window that still gets the phone layout.
 test.describe('phone layout in a wide window', () => {
 	test.use({ viewport: { height: 900, width: 768 } });
