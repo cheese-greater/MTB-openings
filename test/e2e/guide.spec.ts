@@ -10,9 +10,9 @@ test.describe('feature guide', () => {
 		const dialog = page.getByRole('dialog', { name: 'How it works' });
 		await expect(dialog).toBeVisible();
 		await expect(dialog.locator('.guide-section__title')).toHaveText([
-			'Where the word comes from',
-			'Reading a card',
-			'Around the page'
+			'Where the status comes from',
+			'What a card shows',
+			'Everything else'
 		]);
 		await expect(dialog.locator('.guide-flow__source')).toHaveCount(5);
 		await expect(dialog.locator('.guide-tile')).toHaveCount(9);

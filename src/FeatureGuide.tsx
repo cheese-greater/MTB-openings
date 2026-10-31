@@ -28,7 +28,7 @@ const SOURCES = [
 	'CAMBA Trailmate',
 	'TrailForks',
 	'Trail crews on Bluesky',
-	"Ray's season calendar"
+	"Ray's season schedule"
 ];
 
 // A line icon for a feature tile, on the 24px grid the header buttons use.
@@ -52,12 +52,12 @@ function TileIcon({ children, filled = false }: { children: ReactNode; filled?: 
 // Everything on the page beyond the cards themselves, one tile each.
 const FEATURES: Feature[] = [
 	{
-		body: "Tap a card's weather for the days around today: the three just gone, dimmed, with how much rain fell on each, then today and the next four as day and night, each with its chance of rain.",
+		body: "Tap a card's weather to see the last three days, with how much rain fell, and the next five days with the chance of rain. Handy for guessing how wet the trail is.",
 		icon: <WeatherIcon className='guide-tile__icon' weather={{ condition: 'rain_showers', isDay: true }} />,
 		title: 'Forecast'
 	},
 	{
-		body: 'By what changed most recently, by status, or by name. The arrow beside it turns the order over, and the page remembers your pick.',
+		body: 'Sort the list by newest report, by status, or by name. The arrow button flips the order. Your choice is saved.',
 		icon: (
 			<TileIcon>
 				<path d='M4 6h10M4 12h7M4 18h4' />
@@ -67,7 +67,7 @@ const FEATURES: Feature[] = [
 		title: 'Sort'
 	},
 	{
-		body: 'The star switch beside the sort keeps your starred trails pinned above everything else, whatever the sort.',
+		body: 'Turn on the star switch and your starred trails always come first, whatever the sort.',
 		icon: (
 			<TileIcon filled>
 				<path d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z' />
@@ -76,7 +76,7 @@ const FEATURES: Feature[] = [
 		title: 'Favorites first'
 	},
 	{
-		body: 'Follows whichever your phone already prefers. The switch in the corner overrides it, and that sticks too.',
+		body: "The page matches your phone's light or dark setting. The switch in the corner changes it, and that choice is saved.",
 		icon: (
 			<TileIcon>
 				<circle cx='12' cy='12' r='9' />
@@ -86,7 +86,7 @@ const FEATURES: Feature[] = [
 		title: 'Light or dark'
 	},
 	{
-		body: 'The page rescrapes and republishes itself every hour. The footer says how old the last refresh is, and a notice pops up if it falls two hours behind.',
+		body: 'The page updates itself every hour. The footer shows when it last updated. If it falls two hours behind, a notice pops up.',
 		icon: (
 			<TileIcon>
 				<circle cx='12' cy='12' r='9' />
@@ -96,7 +96,7 @@ const FEATURES: Feature[] = [
 		title: 'Hourly refresh'
 	},
 	{
-		body: "No app store, no login. Add it to your home screen from the browser's menu: it opens like an app and keeps the last conditions it saw for a trailhead with no signal.",
+		body: "No app store and no login. Use your browser's menu to add the page to your home screen. It opens like an app and still shows the last conditions when you have no signal.",
 		icon: (
 			<TileIcon>
 				<rect height='18' rx='3' width='12' x='6' y='3' />
@@ -106,7 +106,7 @@ const FEATURES: Feature[] = [
 		title: 'Add to home screen'
 	},
 	{
-		body: 'The share button in the corner shows a QR code to scan and a link to copy, for the rider next to you.',
+		body: 'The share button in the corner shows a QR code and a link you can copy, so you can pass the page to a friend.',
 		icon: (
 			<TileIcon>
 				<circle cx='18' cy='5' r='3' />
@@ -118,7 +118,7 @@ const FEATURES: Feature[] = [
 		title: 'Share'
 	},
 	{
-		body: 'On a desktop with a mouse, the paw print in the corner sends a dog running after your cursor. It stays home when your system asks for less motion.',
+		body: 'On a computer with a mouse, the paw print in the corner adds a dog that chases your cursor. Tap the paw to turn it off. It stays off if you have reduced motion turned on.',
 		icon: (
 			<TileIcon filled>
 				<circle cx='6' cy='9.5' r='2.1' />
@@ -131,14 +131,14 @@ const FEATURES: Feature[] = [
 		title: 'Trail dog'
 	},
 	{
-		body: 'On a phone, the back button closes whatever is open, this guide included, instead of leaving the page.',
+		body: 'On a phone, the back button closes any open window, like this one, instead of leaving the page.',
 		icon: (
 			<TileIcon>
 				<path d='M9 14l-4-4 4-4' />
 				<path d='M5 10h9a5 5 0 0 1 0 10h-3' />
 			</TileIcon>
 		),
-		title: 'Back closes'
+		title: 'Back button'
 	}
 ];
 
@@ -189,11 +189,11 @@ function FeatureGuide({ closing, onClose, onClosed }: Props) {
 					<h2 className='guide-dialog__title' id={titleId}>
 						How it works
 					</h2>
-					<p className='guide-dialog__subtitle'>Everything on this page, at a glance.</p>
+					<p className='guide-dialog__subtitle'>A quick tour of the page.</p>
 				</header>
 
 				<section className='guide-section'>
-					<h3 className='guide-section__title'>Where the word comes from</h3>
+					<h3 className='guide-section__title'>Where the status comes from</h3>
 					<div className='guide-flow'>
 						<ul className='guide-flow__sources'>
 							{SOURCES.map((source) => (
@@ -218,7 +218,7 @@ function FeatureGuide({ closing, onClose, onClosed }: Props) {
 								<path d='M12 7v5l3.5 2' />
 							</svg>
 							<span className='guide-flow__node-title'>Every hour</span>
-							<span className='guide-flow__node-note'>scraped and republished</span>
+							<span className='guide-flow__node-note'>the page checks every source</span>
 						</div>
 						<FlowArrow />
 						<div className='guide-flow__node'>
@@ -236,17 +236,17 @@ function FeatureGuide({ closing, onClose, onClosed }: Props) {
 								<path d='M8.5 7h7M8.5 11h7M8.5 15h4' />
 							</svg>
 							<span className='guide-flow__node-title'>This page</span>
-							<span className='guide-flow__node-note'>never much further behind than the crews</span>
+							<span className='guide-flow__node-note'>updated within the hour</span>
 						</div>
 					</div>
 					<p className='guide-section__note'>
-						Each status comes from wherever that trail&apos;s people actually post. Ray&apos;s is worked out
-						from the published season calendar rather than guessed at.
+						Each trail&apos;s status comes from the people who look after it, wherever they post. Ray&apos;s
+						follows its published season schedule.
 					</p>
 				</section>
 
 				<section className='guide-section'>
-					<h3 className='guide-section__title'>Reading a card</h3>
+					<h3 className='guide-section__title'>What a card shows</h3>
 					{/* Drawn as the real cards are; the legend says it all for a screen reader. */}
 					<div aria-hidden='true' className='guide-card'>
 						<div className='guide-card__head'>
@@ -295,8 +295,8 @@ function FeatureGuide({ closing, onClose, onClosed }: Props) {
 					<ol className='guide-legend'>
 						<li>
 							<div className='guide-legend__text'>
-								<strong>Status.</strong> What the trail crew says: open, caution or closed, and grayed
-								out once nobody has reported in a week. The chips at the top count them up.
+								<strong>Status.</strong> Open, caution or closed, as the trail crew reports it. A card
+								turns gray when there has been no report for a week. The counts at the top add them up.
 								<div className='guide-legend__badges'>
 									<span className='trail-card__badge trail-card__badge--open'>Open</span>
 									<span className='trail-card__badge trail-card__badge--caution'>Caution</span>
@@ -307,38 +307,38 @@ function FeatureGuide({ closing, onClose, onClosed }: Props) {
 						</li>
 						<li>
 							<div className='guide-legend__text'>
-								<strong>Star.</strong> Star the trails you ride. With the star switch in the header on,
-								they stay pinned to the top.
+								<strong>Star.</strong> Tap the star on the trails you ride. Turn on the star switch at
+								the top and they stay at the top of the list.
 							</div>
 						</li>
 						<li>
 							<div className='guide-legend__text'>
-								<strong>Directions.</strong> The trailhead lot, opened in your maps app.
+								<strong>Directions.</strong> Tap the place name to open the trailhead in your maps app.
 							</div>
 						</li>
 						<li>
 							<div className='guide-legend__text'>
-								<strong>Weather now.</strong> The sky and temperature at that lot this hour. Tap it for
-								the days around today.
+								<strong>Weather now.</strong> The sky and temperature at the trailhead right now. Tap it
+								for the forecast.
 							</div>
 						</li>
 						<li>
 							<div className='guide-legend__text'>
-								<strong>The report.</strong> The latest conditions in the crew&apos;s own words. On a
-								desktop a long one folds to two lines; on a phone the whole card folds until you tap it.
+								<strong>The report.</strong> The latest report, in the trail crew&apos;s own words. On a
+								phone, tap a card to open it.
 							</div>
 						</li>
 						<li>
 							<div className='guide-legend__text'>
-								<strong>When, and where from.</strong> How long ago that report went up, and a link to
-								the post or page it came from.
+								<strong>When, and where from.</strong> How long ago the report was posted, and a link to
+								where it came from.
 							</div>
 						</li>
 					</ol>
 				</section>
 
 				<section className='guide-section'>
-					<h3 className='guide-section__title'>Around the page</h3>
+					<h3 className='guide-section__title'>Everything else</h3>
 					<ul className='guide-tiles'>
 						{FEATURES.map((feature) => (
 							<li className='guide-tile' key={feature.title}>
@@ -351,7 +351,7 @@ function FeatureGuide({ closing, onClose, onClosed }: Props) {
 				</section>
 
 				<p className='guide-dialog__credit'>
-					Free, open source and nothing to install. Wrong status, missing trail or dead link?{' '}
+					Free and open source. Wrong status, missing trail or broken link?{' '}
 					<a href={ISSUES_URL} rel='noopener noreferrer' target='_blank'>
 						Open an issue
 					</a>
