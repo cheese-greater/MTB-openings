@@ -1,5 +1,5 @@
 {
-	"cachedAt": 1794239828035,
+	"cachedAt": 1794241516025,
 	"sources": {
 		"bsky": 1,
 		"cambaHome": 21,
@@ -28,7 +28,7 @@
 				"description": "Partly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 50,
+				"temperature": 51,
 				"periods": [
 					{
 						"condition": "sct",
@@ -166,7 +166,7 @@
 			"weather": {
 				"condition": "bkn",
 				"date": "2026-11-09",
-				"description": "Mostly Cloudy",
+				"description": "Partly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
 				"temperature": 50,
@@ -310,7 +310,7 @@
 				"description": "Partly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 50,
+				"temperature": 51,
 				"periods": [
 					{
 						"condition": "sct",
@@ -451,7 +451,7 @@
 				"description": "Partly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 50,
+				"temperature": 51,
 				"periods": [
 					{
 						"condition": "sct",
@@ -592,7 +592,7 @@
 				"description": "Partly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 50,
+				"temperature": 51,
 				"periods": [
 					{
 						"condition": "sct",
@@ -728,9 +728,9 @@
 			"updatedAt": "Nov 9, 10:02 AM",
 			"stale": false,
 			"weather": {
-				"condition": "bkn",
+				"condition": "sct",
 				"date": "2026-11-09",
-				"description": "Partly Sunny",
+				"description": "Mostly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
 				"temperature": 50,
@@ -869,9 +869,9 @@
 			"updatedAt": "Nov 9, 10:03 AM",
 			"stale": false,
 			"weather": {
-				"condition": "bkn",
+				"condition": "sct",
 				"date": "2026-11-09",
-				"description": "Partly Sunny",
+				"description": "Mostly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
 				"temperature": 49,
@@ -1010,9 +1010,9 @@
 			"updatedAt": "Nov 8, 09:48 AM",
 			"stale": false,
 			"weather": {
-				"condition": "bkn",
+				"condition": "sct",
 				"date": "2026-11-09",
-				"description": "Partly Sunny",
+				"description": "Mostly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
 				"temperature": 49,
@@ -1288,16 +1288,16 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=105"
 			},
 			"status": "open",
-			"timestamp": 1789401427454,
+			"timestamp": 1789403115600,
 			"updatedAt": "8 weeks ago",
 			"stale": true,
 			"weather": {
-				"condition": "bkn",
+				"condition": "sct",
 				"date": "2026-11-09",
-				"description": "Partly Sunny",
+				"description": "Mostly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 48,
+				"temperature": 50,
 				"periods": [
 					{
 						"condition": "sct",
@@ -1420,6 +1420,147 @@
 			}
 		},
 		{
+			"condition": "Clarifying that Huffman and River trails are closed for the city's deer control program until February 7th 2027.",
+			"id": "huffman",
+			"location": "RW44+2M Dayton, Ohio",
+			"name": "Huffman",
+			"source": {
+				"name": "CAMBA Trailmate",
+				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=113"
+			},
+			"status": "closed",
+			"timestamp": 1794240315597,
+			"updatedAt": "20 minutes ago",
+			"stale": false,
+			"weather": {
+				"condition": "skc",
+				"date": "2026-11-09",
+				"description": "Sunny",
+				"isDay": true,
+				"precipitationChance": 0,
+				"temperature": 53,
+				"periods": [
+					{
+						"condition": "skc",
+						"date": "2026-11-09",
+						"description": "Sunny",
+						"isDay": true,
+						"precipitationChance": 0,
+						"temperature": 62,
+						"name": "Today"
+					},
+					{
+						"condition": "few",
+						"date": "2026-11-09",
+						"description": "Mostly Clear",
+						"isDay": false,
+						"precipitationChance": 0,
+						"temperature": 39,
+						"name": "Tonight"
+					},
+					{
+						"condition": "skc",
+						"date": "2026-11-10",
+						"description": "Sunny",
+						"isDay": true,
+						"precipitationChance": 0,
+						"temperature": 66,
+						"name": "Tuesday"
+					},
+					{
+						"condition": "few",
+						"date": "2026-11-10",
+						"description": "Mostly Clear",
+						"isDay": false,
+						"precipitationChance": 0,
+						"temperature": 39,
+						"name": "Tuesday Night"
+					},
+					{
+						"condition": "bkn",
+						"date": "2026-11-11",
+						"description": "Partly Sunny",
+						"isDay": true,
+						"precipitationChance": 5,
+						"temperature": 63,
+						"name": "Veterans Day"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-11",
+						"description": "Light Rain Likely",
+						"isDay": false,
+						"precipitationChance": 74,
+						"temperature": 43,
+						"name": "Wednesday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-12",
+						"description": "Light Rain Likely",
+						"isDay": true,
+						"precipitationChance": 74,
+						"temperature": 52,
+						"name": "Thursday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-12",
+						"description": "Light Rain Likely",
+						"isDay": false,
+						"precipitationChance": 61,
+						"temperature": 32,
+						"name": "Thursday Night"
+					},
+					{
+						"condition": "snow",
+						"date": "2026-11-13",
+						"description": "Chance Rain And Snow",
+						"isDay": true,
+						"precipitationChance": 29,
+						"temperature": 43,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-13",
+						"description": "Slight Chance Light Rain then Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 17,
+						"temperature": 29,
+						"name": "Friday Night"
+					}
+				],
+				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=39.8051&lon=-84.0933",
+				"history": [
+					{
+						"condition": "ovc",
+						"date": "2026-11-06",
+						"description": "Overcast",
+						"high": 53,
+						"low": 45,
+						"precipitation": 0
+					},
+					{
+						"condition": "ovc",
+						"date": "2026-11-07",
+						"description": "Overcast",
+						"high": 51,
+						"low": 36,
+						"precipitation": 0
+					},
+					{
+						"condition": "sct",
+						"date": "2026-11-08",
+						"description": "Partly cloudy",
+						"high": 60,
+						"low": 32,
+						"precipitation": 0
+					}
+				]
+			}
+		},
+		{
 			"condition": "Trails are leafy and moist but good to ride!",
 			"id": "camp-tuscazoar",
 			"location": "GJW2+G2 Dover, Ohio",
@@ -1429,7 +1570,7 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=109"
 			},
 			"status": "open",
-			"timestamp": 1793980627452,
+			"timestamp": 1793982315598,
 			"updatedAt": "3 days ago",
 			"stale": false,
 			"weather": {
@@ -1438,7 +1579,7 @@
 				"description": "Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 48,
+				"temperature": 51,
 				"periods": [
 					{
 						"condition": "few",
@@ -1570,7 +1711,7 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=110"
 			},
 			"status": "open",
-			"timestamp": 1793548627453,
+			"timestamp": 1793550315598,
 			"updatedAt": "8 days ago",
 			"stale": true,
 			"weather": {
@@ -1579,7 +1720,7 @@
 				"description": "Mostly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 48,
+				"temperature": 50,
 				"periods": [
 					{
 						"condition": "few",
@@ -1711,16 +1852,16 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=114"
 			},
 			"status": "open",
-			"timestamp": 1793548627453,
+			"timestamp": 1793550315599,
 			"updatedAt": "8 days ago",
 			"stale": true,
 			"weather": {
-				"condition": "bkn",
+				"condition": "sct",
 				"date": "2026-11-09",
-				"description": "Partly Sunny",
+				"description": "Mostly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 49,
+				"temperature": 50,
 				"periods": [
 					{
 						"condition": "sct",
@@ -1852,16 +1993,16 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=114"
 			},
 			"status": "open",
-			"timestamp": 1793548627453,
+			"timestamp": 1793550315599,
 			"updatedAt": "8 days ago",
 			"stale": true,
 			"weather": {
-				"condition": "bkn",
+				"condition": "sct",
 				"date": "2026-11-09",
-				"description": "Partly Sunny",
+				"description": "Mostly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 49,
+				"temperature": 50,
 				"periods": [
 					{
 						"condition": "sct",
@@ -1993,16 +2134,16 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=106"
 			},
 			"status": "open",
-			"timestamp": 1793548627453,
+			"timestamp": 1793550315599,
 			"updatedAt": "8 days ago",
 			"stale": true,
 			"weather": {
-				"condition": "few",
+				"condition": "skc",
 				"date": "2026-11-09",
 				"description": "Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 49,
+				"temperature": 50,
 				"periods": [
 					{
 						"condition": "few",
@@ -2125,147 +2266,6 @@
 			}
 		},
 		{
-			"condition": "Closed until Feb. 7 for the city's deer control program.",
-			"id": "huffman",
-			"location": "RW44+2M Dayton, Ohio",
-			"name": "Huffman",
-			"source": {
-				"name": "CAMBA Trailmate",
-				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=113"
-			},
-			"status": "closed",
-			"timestamp": 1793030227453,
-			"updatedAt": "2 weeks ago",
-			"stale": true,
-			"weather": {
-				"condition": "few",
-				"date": "2026-11-09",
-				"description": "Sunny",
-				"isDay": true,
-				"precipitationChance": 0,
-				"temperature": 50,
-				"periods": [
-					{
-						"condition": "skc",
-						"date": "2026-11-09",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 62,
-						"name": "Today"
-					},
-					{
-						"condition": "few",
-						"date": "2026-11-09",
-						"description": "Mostly Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 39,
-						"name": "Tonight"
-					},
-					{
-						"condition": "skc",
-						"date": "2026-11-10",
-						"description": "Sunny",
-						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 66,
-						"name": "Tuesday"
-					},
-					{
-						"condition": "few",
-						"date": "2026-11-10",
-						"description": "Mostly Clear",
-						"isDay": false,
-						"precipitationChance": 0,
-						"temperature": 39,
-						"name": "Tuesday Night"
-					},
-					{
-						"condition": "bkn",
-						"date": "2026-11-11",
-						"description": "Partly Sunny",
-						"isDay": true,
-						"precipitationChance": 5,
-						"temperature": 63,
-						"name": "Veterans Day"
-					},
-					{
-						"condition": "rain",
-						"date": "2026-11-11",
-						"description": "Light Rain Likely",
-						"isDay": false,
-						"precipitationChance": 74,
-						"temperature": 43,
-						"name": "Wednesday Night"
-					},
-					{
-						"condition": "rain",
-						"date": "2026-11-12",
-						"description": "Light Rain Likely",
-						"isDay": true,
-						"precipitationChance": 74,
-						"temperature": 52,
-						"name": "Thursday"
-					},
-					{
-						"condition": "rain",
-						"date": "2026-11-12",
-						"description": "Light Rain Likely",
-						"isDay": false,
-						"precipitationChance": 61,
-						"temperature": 32,
-						"name": "Thursday Night"
-					},
-					{
-						"condition": "snow",
-						"date": "2026-11-13",
-						"description": "Chance Rain And Snow",
-						"isDay": true,
-						"precipitationChance": 29,
-						"temperature": 43,
-						"name": "Friday"
-					},
-					{
-						"condition": "rain",
-						"date": "2026-11-13",
-						"description": "Slight Chance Light Rain then Mostly Cloudy",
-						"isDay": false,
-						"precipitationChance": 17,
-						"temperature": 29,
-						"name": "Friday Night"
-					}
-				],
-				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=39.8051&lon=-84.0933",
-				"history": [
-					{
-						"condition": "ovc",
-						"date": "2026-11-06",
-						"description": "Overcast",
-						"high": 53,
-						"low": 45,
-						"precipitation": 0
-					},
-					{
-						"condition": "ovc",
-						"date": "2026-11-07",
-						"description": "Overcast",
-						"high": 51,
-						"low": 36,
-						"precipitation": 0
-					},
-					{
-						"condition": "sct",
-						"date": "2026-11-08",
-						"description": "Partly cloudy",
-						"high": 60,
-						"low": 32,
-						"precipitation": 0
-					}
-				]
-			}
-		},
-		{
 			"condition": "It's in great shape.",
 			"id": "big-creek",
 			"location": "JQ9V+89 Chardon, Ohio",
@@ -2275,7 +2275,7 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=117"
 			},
 			"status": "open",
-			"timestamp": 1793030227453,
+			"timestamp": 1793031915599,
 			"updatedAt": "2 weeks ago",
 			"stale": true,
 			"weather": {
@@ -2416,13 +2416,13 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=115"
 			},
 			"status": "open",
-			"timestamp": 1792425427453,
+			"timestamp": 1792427115599,
 			"updatedAt": "3 weeks ago",
 			"stale": true,
 			"weather": {
 				"condition": "bkn",
 				"date": "2026-11-09",
-				"description": "Mostly Cloudy",
+				"description": "Partly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
 				"temperature": 50,
@@ -2557,16 +2557,16 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=112"
 			},
 			"status": "caution",
-			"timestamp": 1791820627453,
+			"timestamp": 1791822315599,
 			"updatedAt": "4 weeks ago",
 			"stale": true,
 			"weather": {
 				"condition": "bkn",
 				"date": "2026-11-09",
-				"description": "Mostly Cloudy",
+				"description": "Partly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 51,
+				"temperature": 52,
 				"periods": [
 					{
 						"condition": "sct",
@@ -2698,16 +2698,16 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=116"
 			},
 			"status": "caution",
-			"timestamp": 1791820627454,
+			"timestamp": 1791822315599,
 			"updatedAt": "4 weeks ago",
 			"stale": true,
 			"weather": {
-				"condition": "bkn",
+				"condition": "sct",
 				"date": "2026-11-09",
-				"description": "Partly Sunny",
+				"description": "Mostly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 49,
+				"temperature": 50,
 				"periods": [
 					{
 						"condition": "sct",
@@ -2839,7 +2839,7 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=107"
 			},
 			"status": "caution",
-			"timestamp": 1789055827454,
+			"timestamp": 1789057515600,
 			"updatedAt": "2 months ago",
 			"stale": true,
 			"weather": {
@@ -2848,7 +2848,7 @@
 				"description": "Mostly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
-				"temperature": 48,
+				"temperature": 49,
 				"periods": [
 					{
 						"condition": "few",
@@ -2980,13 +2980,13 @@
 			},
 			"condition": "Opens today at 12:00 PM. Today's hours 12:00 PM-10:00 PM - Regular season.",
 			"status": "caution",
-			"timestamp": 1794200408035,
+			"timestamp": 1794200416025,
 			"updatedAt": "Updated daily from the published schedule",
 			"stale": false,
 			"weather": {
-				"condition": "bkn",
+				"condition": "sct",
 				"date": "2026-11-09",
-				"description": "Partly Sunny",
+				"description": "Mostly Sunny",
 				"isDay": true,
 				"precipitationChance": 0,
 				"temperature": 50,
@@ -3121,7 +3121,7 @@
 			},
 			"condition": "East Rim Trails remain OPEN - 10/22/26. Get out and enjoy the beautiful fall weather 🍁.",
 			"status": "open",
-			"timestamp": 1793030227453,
+			"timestamp": 1793031915599,
 			"updatedAt": "2 weeks ago",
 			"stale": true,
 			"weather": {
