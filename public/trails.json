@@ -1,11 +1,11 @@
 {
-	"cachedAt": 1795403862333,
+	"cachedAt": 1795411070249,
 	"sources": {
 		"bsky": 1,
 		"cambaHome": 21,
 		"history": 21,
 		"metroparks": 7,
-		"trailforks": 0,
+		"trailforks": 1,
 		"weather": 20
 	},
 	"trails": [
@@ -24,20 +24,20 @@
 			"stale": false,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Slight Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 15,
-				"temperature": 55,
+				"precipitationChance": 72,
+				"temperature": 53,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 72,
 						"temperature": 43,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "bkn",
@@ -110,18 +110,28 @@
 						"precipitationChance": 71,
 						"temperature": 35,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": true,
+						"precipitationChance": 43,
+						"temperature": 44,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": false,
+						"precipitationChance": 32,
+						"temperature": 32,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.3588&lon=-81.5636",
 				"history": [
-					{
-						"condition": "sct",
-						"date": "2026-11-19",
-						"description": "Partly cloudy",
-						"high": 65,
-						"low": 36,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -136,6 +146,14 @@
 						"description": "Fog",
 						"high": 68,
 						"low": 38,
+						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-11-22",
+						"description": "Fog",
+						"high": 67,
+						"low": 44,
 						"precipitation": 0
 					}
 				]
@@ -155,21 +173,21 @@
 			"updatedAt": "Nov 22, 11:46 AM",
 			"stale": false,
 			"weather": {
-				"condition": "sct",
-				"date": "2026-11-22",
-				"description": "Partly Cloudy",
+				"condition": "rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 14,
-				"temperature": 55,
+				"precipitationChance": 73,
+				"temperature": 53,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 73,
 						"temperature": 43,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "bkn",
@@ -242,18 +260,28 @@
 						"precipitationChance": 71,
 						"temperature": 35,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": true,
+						"precipitationChance": 43,
+						"temperature": 44,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": false,
+						"precipitationChance": 32,
+						"temperature": 32,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.3726&lon=-81.5654",
 				"history": [
-					{
-						"condition": "sct",
-						"date": "2026-11-19",
-						"description": "Partly cloudy",
-						"high": 65,
-						"low": 34,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -268,6 +296,14 @@
 						"description": "Fog",
 						"high": 67,
 						"low": 37,
+						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-11-22",
+						"description": "Fog",
+						"high": 67,
+						"low": 42,
 						"precipitation": 0
 					}
 				]
@@ -288,20 +324,20 @@
 			"stale": false,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Slight Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 15,
-				"temperature": 56,
+				"precipitationChance": 73,
+				"temperature": 54,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 73,
 						"temperature": 43,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "bkn",
@@ -374,18 +410,28 @@
 						"precipitationChance": 71,
 						"temperature": 36,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": true,
+						"precipitationChance": 44,
+						"temperature": 45,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": false,
+						"precipitationChance": 32,
+						"temperature": 33,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.4309&lon=-81.6624",
 				"history": [
-					{
-						"condition": "ovc",
-						"date": "2026-11-19",
-						"description": "Overcast",
-						"high": 67,
-						"low": 38,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -400,6 +446,14 @@
 						"description": "Clear",
 						"high": 70,
 						"low": 40,
+						"precipitation": 0
+					},
+					{
+						"condition": "ovc",
+						"date": "2026-11-22",
+						"description": "Overcast",
+						"high": 70,
+						"low": 46,
 						"precipitation": 0
 					}
 				]
@@ -420,20 +474,20 @@
 			"stale": false,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Slight Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 15,
-				"temperature": 56,
+				"precipitationChance": 73,
+				"temperature": 54,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 73,
 						"temperature": 43,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "bkn",
@@ -506,18 +560,28 @@
 						"precipitationChance": 71,
 						"temperature": 36,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": true,
+						"precipitationChance": 44,
+						"temperature": 45,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": false,
+						"precipitationChance": 32,
+						"temperature": 33,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.4309&lon=-81.6624",
 				"history": [
-					{
-						"condition": "ovc",
-						"date": "2026-11-19",
-						"description": "Overcast",
-						"high": 67,
-						"low": 38,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -532,6 +596,14 @@
 						"description": "Clear",
 						"high": 70,
 						"low": 40,
+						"precipitation": 0
+					},
+					{
+						"condition": "ovc",
+						"date": "2026-11-22",
+						"description": "Overcast",
+						"high": 70,
+						"low": 46,
 						"precipitation": 0
 					}
 				]
@@ -552,20 +624,20 @@
 			"stale": false,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Slight Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 15,
-				"temperature": 56,
+				"precipitationChance": 73,
+				"temperature": 54,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 73,
 						"temperature": 43,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "bkn",
@@ -638,18 +710,28 @@
 						"precipitationChance": 71,
 						"temperature": 36,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": true,
+						"precipitationChance": 44,
+						"temperature": 45,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": false,
+						"precipitationChance": 32,
+						"temperature": 33,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.4309&lon=-81.6624",
 				"history": [
-					{
-						"condition": "ovc",
-						"date": "2026-11-19",
-						"description": "Overcast",
-						"high": 67,
-						"low": 38,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -664,6 +746,14 @@
 						"description": "Clear",
 						"high": 70,
 						"low": 40,
+						"precipitation": 0
+					},
+					{
+						"condition": "ovc",
+						"date": "2026-11-22",
+						"description": "Overcast",
+						"high": 70,
+						"low": 46,
 						"precipitation": 0
 					}
 				]
@@ -684,20 +774,20 @@
 			"stale": false,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Slight Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 18,
-				"temperature": 55,
+				"precipitationChance": 73,
+				"temperature": 52,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 73,
 						"temperature": 41,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "bkn",
@@ -770,18 +860,28 @@
 						"precipitationChance": 70,
 						"temperature": 35,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": true,
+						"precipitationChance": 43,
+						"temperature": 43,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": false,
+						"precipitationChance": 30,
+						"temperature": 31,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.3108&lon=-81.7936",
 				"history": [
-					{
-						"condition": "sct",
-						"date": "2026-11-19",
-						"description": "Partly cloudy",
-						"high": 65,
-						"low": 37,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -796,6 +896,14 @@
 						"description": "Fog",
 						"high": 68,
 						"low": 40,
+						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-11-22",
+						"description": "Fog",
+						"high": 68,
+						"low": 45,
 						"precipitation": 0
 					}
 				]
@@ -816,20 +924,20 @@
 			"stale": false,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Slight Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 18,
-				"temperature": 55,
+				"precipitationChance": 72,
+				"temperature": 52,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 72,
 						"temperature": 42,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "sct",
@@ -902,18 +1010,28 @@
 						"precipitationChance": 70,
 						"temperature": 35,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": true,
+						"precipitationChance": 43,
+						"temperature": 43,
+						"name": "Friday"
+					},
+					{
+						"condition": "snow",
+						"date": "2026-11-27",
+						"description": "Slight Chance Rain And Snow",
+						"isDay": false,
+						"precipitationChance": 29,
+						"temperature": 32,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.3008&lon=-81.8043",
 				"history": [
-					{
-						"condition": "fog",
-						"date": "2026-11-19",
-						"description": "Fog",
-						"high": 65,
-						"low": 35,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -928,6 +1046,14 @@
 						"description": "Fog",
 						"high": 68,
 						"low": 39,
+						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-11-22",
+						"description": "Fog",
+						"high": 67,
+						"low": 44,
 						"precipitation": 0
 					}
 				]
@@ -948,20 +1074,20 @@
 			"stale": false,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Slight Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 16,
-				"temperature": 56,
+				"precipitationChance": 73,
+				"temperature": 54,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 73,
 						"temperature": 43,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "bkn",
@@ -1034,18 +1160,28 @@
 						"precipitationChance": 71,
 						"temperature": 36,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": true,
+						"precipitationChance": 44,
+						"temperature": 43,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": false,
+						"precipitationChance": 31,
+						"temperature": 33,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.3881&lon=-81.6942",
 				"history": [
-					{
-						"condition": "sct",
-						"date": "2026-11-19",
-						"description": "Partly cloudy",
-						"high": 65,
-						"low": 42,
-						"precipitation": 0
-					},
 					{
 						"condition": "fog",
 						"date": "2026-11-20",
@@ -1060,6 +1196,14 @@
 						"description": "Fog",
 						"high": 69,
 						"low": 42,
+						"precipitation": 0
+					},
+					{
+						"condition": "ovc",
+						"date": "2026-11-22",
+						"description": "Overcast",
+						"high": 68,
+						"low": 48,
 						"precipitation": 0
 					}
 				]
@@ -1080,20 +1224,20 @@
 			"stale": false,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Slight Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 16,
-				"temperature": 52,
+				"precipitationChance": 61,
+				"temperature": 51,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 70,
 						"temperature": 41,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "sct",
@@ -1166,18 +1310,28 @@
 						"precipitationChance": 71,
 						"temperature": 34,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "snow",
+						"date": "2026-11-27",
+						"description": "Chance Rain And Snow",
+						"isDay": true,
+						"precipitationChance": 41,
+						"temperature": 43,
+						"name": "Friday"
+					},
+					{
+						"condition": "snow",
+						"date": "2026-11-27",
+						"description": "Slight Chance Rain And Snow",
+						"isDay": false,
+						"precipitationChance": 29,
+						"temperature": 29,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.1512&lon=-81.5507",
 				"history": [
-					{
-						"condition": "ovc",
-						"date": "2026-11-19",
-						"description": "Overcast",
-						"high": 64,
-						"low": 29,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -1193,6 +1347,14 @@
 						"high": 67,
 						"low": 34,
 						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-11-22",
+						"description": "Fog",
+						"high": 67,
+						"low": 39,
+						"precipitation": 0
 					}
 				]
 			}
@@ -1207,25 +1369,25 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=105"
 			},
 			"status": "open",
+			"timestamp": 1790227069468,
 			"updatedAt": "2 months ago",
-			"timestamp": 1790219862333,
 			"stale": true,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Slight Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 21,
-				"temperature": 53,
+				"precipitationChance": 69,
+				"temperature": 52,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 69,
 						"temperature": 41,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "sct",
@@ -1298,18 +1460,28 @@
 						"precipitationChance": 71,
 						"temperature": 34,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": true,
+						"precipitationChance": 41,
+						"temperature": 43,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain then Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 28,
+						"temperature": 30,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.1181&lon=-81.8129",
 				"history": [
-					{
-						"condition": "fog",
-						"date": "2026-11-19",
-						"description": "Fog",
-						"high": 64,
-						"low": 30,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -1325,6 +1497,14 @@
 						"high": 67,
 						"low": 35,
 						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-11-22",
+						"description": "Fog",
+						"high": 67,
+						"low": 37,
+						"precipitation": 0
 					}
 				]
 			}
@@ -1339,33 +1519,33 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=109"
 			},
 			"status": "open",
-			"timestamp": 1795263462332,
-			"updatedAt": "39 hours ago",
+			"timestamp": 1795263469467,
+			"updatedAt": "41 hours ago",
 			"stale": false,
 			"weather": {
-				"condition": "sct",
-				"date": "2026-11-22",
-				"description": "Partly Cloudy",
+				"condition": "rain",
+				"date": "2026-11-23",
+				"description": "Patchy Fog",
 				"isDay": false,
-				"precipitationChance": 6,
-				"temperature": 52,
+				"precipitationChance": 22,
+				"temperature": 51,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
-						"description": "Light Rain Likely",
+						"date": "2026-11-23",
+						"description": "Patchy Fog",
 						"isDay": false,
-						"precipitationChance": 66,
+						"precipitationChance": 72,
 						"temperature": 43,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "sct",
 						"date": "2026-11-23",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 0,
-						"temperature": 48,
+						"precipitationChance": 3,
+						"temperature": 47,
 						"name": "Monday"
 					},
 					{
@@ -1373,16 +1553,16 @@
 						"date": "2026-11-23",
 						"description": "Mostly Clear",
 						"isDay": false,
-						"precipitationChance": 6,
+						"precipitationChance": 1,
 						"temperature": 30,
 						"name": "Monday Night"
 					},
 					{
-						"condition": "few",
+						"condition": "sct",
 						"date": "2026-11-24",
-						"description": "Sunny",
+						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 3,
+						"precipitationChance": 1,
 						"temperature": 42,
 						"name": "Tuesday"
 					},
@@ -1400,8 +1580,8 @@
 						"date": "2026-11-25",
 						"description": "Mostly Sunny",
 						"isDay": true,
-						"precipitationChance": 2,
-						"temperature": 46,
+						"precipitationChance": 0,
+						"temperature": 47,
 						"name": "Wednesday"
 					},
 					{
@@ -1409,39 +1589,49 @@
 						"date": "2026-11-25",
 						"description": "Mostly Cloudy then Chance Light Rain",
 						"isDay": false,
-						"precipitationChance": 36,
-						"temperature": 36,
+						"precipitationChance": 27,
+						"temperature": 37,
 						"name": "Wednesday Night"
 					},
 					{
 						"condition": "rain",
 						"date": "2026-11-26",
-						"description": "Light Rain Likely",
+						"description": "Light Rain",
 						"isDay": true,
-						"precipitationChance": 72,
-						"temperature": 46,
+						"precipitationChance": 93,
+						"temperature": 45,
 						"name": "Thanksgiving Day"
 					},
 					{
 						"condition": "rain",
 						"date": "2026-11-26",
-						"description": "Light Rain Likely then Chance Rain And Snow",
+						"description": "Light Rain",
 						"isDay": false,
-						"precipitationChance": 72,
-						"temperature": 35,
+						"precipitationChance": 93,
+						"temperature": 36,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "snow",
+						"date": "2026-11-27",
+						"description": "Rain And Snow Likely",
+						"isDay": true,
+						"precipitationChance": 73,
+						"temperature": 42,
+						"name": "Friday"
+					},
+					{
+						"condition": "snow",
+						"date": "2026-11-27",
+						"description": "Slight Chance Rain And Snow",
+						"isDay": false,
+						"precipitationChance": 46,
+						"temperature": 32,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=40.5463&lon=-81.3999",
 				"history": [
-					{
-						"condition": "skc",
-						"date": "2026-11-19",
-						"description": "Clear",
-						"high": 64,
-						"low": 29,
-						"precipitation": 0
-					},
 					{
 						"condition": "few",
 						"date": "2026-11-20",
@@ -1457,6 +1647,14 @@
 						"high": 67,
 						"low": 31,
 						"precipitation": 0
+					},
+					{
+						"condition": "few",
+						"date": "2026-11-22",
+						"description": "Mostly clear",
+						"high": 67,
+						"low": 37,
+						"precipitation": 0
 					}
 				]
 			}
@@ -1471,25 +1669,25 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=115"
 			},
 			"status": "closed",
-			"timestamp": 1795263462332,
-			"updatedAt": "39 hours ago",
+			"timestamp": 1795263469467,
+			"updatedAt": "41 hours ago",
 			"stale": false,
 			"weather": {
-				"condition": "sct",
-				"date": "2026-11-22",
-				"description": "Partly Cloudy",
+				"condition": "rain",
+				"date": "2026-11-23",
+				"description": "Chance Light Rain",
 				"isDay": false,
-				"precipitationChance": 4,
-				"temperature": 52,
+				"precipitationChance": 40,
+				"temperature": 51,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 67,
 						"temperature": 42,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "bkn",
@@ -1562,18 +1760,28 @@
 						"precipitationChance": 69,
 						"temperature": 33,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "snow",
+						"date": "2026-11-27",
+						"description": "Chance Rain And Snow",
+						"isDay": true,
+						"precipitationChance": 42,
+						"temperature": 43,
+						"name": "Friday"
+					},
+					{
+						"condition": "snow",
+						"date": "2026-11-27",
+						"description": "Slight Chance Rain And Snow",
+						"isDay": false,
+						"precipitationChance": 29,
+						"temperature": 29,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.1322&lon=-81.1422",
 				"history": [
-					{
-						"condition": "fog",
-						"date": "2026-11-19",
-						"description": "Fog",
-						"high": 64,
-						"low": 29,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -1589,6 +1797,14 @@
 						"high": 67,
 						"low": 34,
 						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-11-22",
+						"description": "Fog",
+						"high": 67,
+						"low": 39,
+						"precipitation": 0
 					}
 				]
 			}
@@ -1603,25 +1819,25 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=106"
 			},
 			"status": "open",
-			"timestamp": 1795263462332,
-			"updatedAt": "39 hours ago",
+			"timestamp": 1795263469467,
+			"updatedAt": "41 hours ago",
 			"stale": false,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 28,
-				"temperature": 54,
+				"precipitationChance": 70,
+				"temperature": 53,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 70,
 						"temperature": 40,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "sct",
@@ -1694,18 +1910,28 @@
 						"precipitationChance": 74,
 						"temperature": 33,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "snow",
+						"date": "2026-11-27",
+						"description": "Chance Rain And Snow",
+						"isDay": true,
+						"precipitationChance": 39,
+						"temperature": 43,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain then Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 26,
+						"temperature": 30,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=40.6081&lon=-82.2581",
 				"history": [
-					{
-						"condition": "sct",
-						"date": "2026-11-19",
-						"description": "Partly cloudy",
-						"high": 64,
-						"low": 31,
-						"precipitation": 0
-					},
 					{
 						"condition": "skc",
 						"date": "2026-11-20",
@@ -1721,6 +1947,14 @@
 						"high": 67,
 						"low": 34,
 						"precipitation": 0
+					},
+					{
+						"condition": "ovc",
+						"date": "2026-11-22",
+						"description": "Overcast",
+						"high": 66,
+						"low": 40,
+						"precipitation": 0
 					}
 				]
 			}
@@ -1735,25 +1969,25 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=112"
 			},
 			"status": "closed",
-			"timestamp": 1795263462332,
-			"updatedAt": "39 hours ago",
+			"timestamp": 1795263469467,
+			"updatedAt": "41 hours ago",
 			"stale": false,
 			"weather": {
-				"condition": "sct",
-				"date": "2026-11-22",
-				"description": "Partly Cloudy",
+				"condition": "rain",
+				"date": "2026-11-23",
+				"description": "Chance Light Rain",
 				"isDay": false,
-				"precipitationChance": 2,
-				"temperature": 52,
+				"precipitationChance": 32,
+				"temperature": 51,
 				"periods": [
 					{
-						"condition": "bkn",
-						"date": "2026-11-22",
-						"description": "Mostly Cloudy then Light Rain Likely",
+						"condition": "rain",
+						"date": "2026-11-23",
+						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 69,
 						"temperature": 43,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "bkn",
@@ -1826,18 +2060,28 @@
 						"precipitationChance": 70,
 						"temperature": 33,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "snow",
+						"date": "2026-11-27",
+						"description": "Chance Rain And Snow",
+						"isDay": true,
+						"precipitationChance": 41,
+						"temperature": 44,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain then Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 30,
+						"temperature": 29,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.0564&lon=-80.9674",
 				"history": [
-					{
-						"condition": "ovc",
-						"date": "2026-11-19",
-						"description": "Overcast",
-						"high": 65,
-						"low": 30,
-						"precipitation": 0
-					},
 					{
 						"condition": "skc",
 						"date": "2026-11-20",
@@ -1853,6 +2097,14 @@
 						"high": 67,
 						"low": 33,
 						"precipitation": 0
+					},
+					{
+						"condition": "sct",
+						"date": "2026-11-22",
+						"description": "Partly cloudy",
+						"high": 67,
+						"low": 41,
+						"precipitation": 0
 					}
 				]
 			}
@@ -1867,25 +2119,25 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=116"
 			},
 			"status": "open",
-			"timestamp": 1795058262332,
+			"timestamp": 1795065469468,
 			"updatedAt": "4 days ago",
 			"stale": false,
 			"weather": {
-				"condition": "sct",
-				"date": "2026-11-22",
-				"description": "Partly Cloudy",
+				"condition": "rain",
+				"date": "2026-11-23",
+				"description": "Chance Light Rain",
 				"isDay": false,
-				"precipitationChance": 5,
+				"precipitationChance": 41,
 				"temperature": 51,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 67,
 						"temperature": 42,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "sct",
@@ -1958,18 +2210,28 @@
 						"precipitationChance": 71,
 						"temperature": 34,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "snow",
+						"date": "2026-11-27",
+						"description": "Chance Rain And Snow",
+						"isDay": true,
+						"precipitationChance": 39,
+						"temperature": 43,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain then Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 28,
+						"temperature": 30,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=40.9768&lon=-81.3104",
 				"history": [
-					{
-						"condition": "ovc",
-						"date": "2026-11-19",
-						"description": "Overcast",
-						"high": 62,
-						"low": 32,
-						"precipitation": 0
-					},
 					{
 						"condition": "sct",
 						"date": "2026-11-20",
@@ -1985,6 +2247,14 @@
 						"high": 65,
 						"low": 34,
 						"precipitation": 0
+					},
+					{
+						"condition": "sct",
+						"date": "2026-11-22",
+						"description": "Partly cloudy",
+						"high": 66,
+						"low": 39,
+						"precipitation": 0
 					}
 				]
 			}
@@ -1999,25 +2269,25 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=110"
 			},
 			"status": "open",
-			"timestamp": 1794971862332,
+			"timestamp": 1794979069468,
 			"updatedAt": "5 days ago",
 			"stale": false,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 33,
-				"temperature": 55,
+				"precipitationChance": 69,
+				"temperature": 52,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 69,
 						"temperature": 40,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "sct",
@@ -2090,18 +2360,28 @@
 						"precipitationChance": 72,
 						"temperature": 34,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": true,
+						"precipitationChance": 42,
+						"temperature": 43,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain then Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 27,
+						"temperature": 31,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.1384&lon=-82.2142",
 				"history": [
-					{
-						"condition": "ovc",
-						"date": "2026-11-19",
-						"description": "Overcast",
-						"high": 65,
-						"low": 34,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -2117,6 +2397,14 @@
 						"high": 68,
 						"low": 38,
 						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-11-22",
+						"description": "Fog",
+						"high": 68,
+						"low": 44,
+						"precipitation": 0
 					}
 				]
 			}
@@ -2131,25 +2419,25 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=113"
 			},
 			"status": "closed",
-			"timestamp": 1794280662333,
+			"timestamp": 1794287869468,
 			"updatedAt": "13 days ago",
 			"stale": true,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Light Rain Likely",
+				"date": "2026-11-23",
+				"description": "Chance Light Rain",
 				"isDay": false,
-				"precipitationChance": 73,
-				"temperature": 55,
+				"precipitationChance": 29,
+				"temperature": 51,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
-						"description": "Light Rain Likely",
+						"date": "2026-11-23",
+						"description": "Chance Light Rain",
 						"isDay": false,
-						"precipitationChance": 73,
+						"precipitationChance": 29,
 						"temperature": 39,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "few",
@@ -2222,18 +2510,28 @@
 						"precipitationChance": 68,
 						"temperature": 34,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "snow",
+						"date": "2026-11-27",
+						"description": "Chance Rain And Snow",
+						"isDay": true,
+						"precipitationChance": 25,
+						"temperature": 46,
+						"name": "Friday"
+					},
+					{
+						"condition": "bkn",
+						"date": "2026-11-27",
+						"description": "Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 12,
+						"temperature": 33,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=39.8051&lon=-84.0933",
 				"history": [
-					{
-						"condition": "skc",
-						"date": "2026-11-19",
-						"description": "Clear",
-						"high": 64,
-						"low": 33,
-						"precipitation": 0
-					},
 					{
 						"condition": "skc",
 						"date": "2026-11-20",
@@ -2249,6 +2547,14 @@
 						"high": 71,
 						"low": 34,
 						"precipitation": 0
+					},
+					{
+						"condition": "ovc",
+						"date": "2026-11-22",
+						"description": "Overcast",
+						"high": 68,
+						"low": 38,
+						"precipitation": 0
 					}
 				]
 			}
@@ -2263,25 +2569,25 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=114"
 			},
 			"status": "open",
-			"timestamp": 1793589462333,
+			"timestamp": 1793596669468,
 			"updatedAt": "3 weeks ago",
 			"stale": true,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Slight Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 21,
-				"temperature": 54,
+				"precipitationChance": 70,
+				"temperature": 52,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 70,
 						"temperature": 41,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "sct",
@@ -2354,18 +2660,28 @@
 						"precipitationChance": 70,
 						"temperature": 34,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": true,
+						"precipitationChance": 42,
+						"temperature": 43,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": false,
+						"precipitationChance": 28,
+						"temperature": 30,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.1534&lon=-81.8402",
 				"history": [
-					{
-						"condition": "sct",
-						"date": "2026-11-19",
-						"description": "Partly cloudy",
-						"high": 65,
-						"low": 34,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -2380,6 +2696,14 @@
 						"description": "Fog",
 						"high": 67,
 						"low": 38,
+						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-11-22",
+						"description": "Fog",
+						"high": 67,
+						"low": 42,
 						"precipitation": 0
 					}
 				]
@@ -2395,25 +2719,25 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=114"
 			},
 			"status": "open",
-			"timestamp": 1793589462333,
+			"timestamp": 1793596669468,
 			"updatedAt": "3 weeks ago",
 			"stale": true,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Slight Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 21,
-				"temperature": 54,
+				"precipitationChance": 70,
+				"temperature": 52,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 70,
 						"temperature": 41,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "sct",
@@ -2486,18 +2810,28 @@
 						"precipitationChance": 70,
 						"temperature": 34,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": true,
+						"precipitationChance": 42,
+						"temperature": 43,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": false,
+						"precipitationChance": 28,
+						"temperature": 30,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.1554&lon=-81.8319",
 				"history": [
-					{
-						"condition": "sct",
-						"date": "2026-11-19",
-						"description": "Partly cloudy",
-						"high": 65,
-						"low": 34,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -2513,6 +2847,14 @@
 						"high": 67,
 						"low": 38,
 						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-11-22",
+						"description": "Fog",
+						"high": 67,
+						"low": 42,
+						"precipitation": 0
 					}
 				]
 			}
@@ -2527,25 +2869,25 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=117"
 			},
 			"status": "caution",
-			"timestamp": 1792984662333,
+			"timestamp": 1792991869468,
 			"updatedAt": "4 weeks ago",
 			"stale": true,
 			"weather": {
-				"condition": "sct",
-				"date": "2026-11-22",
-				"description": "Partly Cloudy",
+				"condition": "rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 9,
-				"temperature": 55,
+				"precipitationChance": 70,
+				"temperature": 53,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 73,
 						"temperature": 42,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "bkn",
@@ -2618,18 +2960,28 @@
 						"precipitationChance": 71,
 						"temperature": 35,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": true,
+						"precipitationChance": 49,
+						"temperature": 43,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain then Slight Chance Rain And Snow",
+						"isDay": false,
+						"precipitationChance": 42,
+						"temperature": 32,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.6183&lon=-81.2066",
 				"history": [
-					{
-						"condition": "sct",
-						"date": "2026-11-19",
-						"description": "Partly cloudy",
-						"high": 63,
-						"low": 40,
-						"precipitation": 0
-					},
 					{
 						"condition": "fog",
 						"date": "2026-11-20",
@@ -2645,6 +2997,14 @@
 						"high": 67,
 						"low": 41,
 						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-11-22",
+						"description": "Fog",
+						"high": 66,
+						"low": 48,
+						"precipitation": 0
 					}
 				]
 			}
@@ -2659,25 +3019,25 @@
 				"url": "https://dualrates.com/a/r/szz/camba/trail?p6_id=107"
 			},
 			"status": "caution",
-			"timestamp": 1787627862333,
+			"timestamp": 1787635069468,
 			"updatedAt": "3 months ago",
 			"stale": true,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Slight Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 23,
-				"temperature": 52,
+				"precipitationChance": 70,
+				"temperature": 51,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 70,
 						"temperature": 40,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "sct",
@@ -2750,18 +3110,28 @@
 						"precipitationChance": 73,
 						"temperature": 33,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "snow",
+						"date": "2026-11-27",
+						"description": "Chance Rain And Snow",
+						"isDay": true,
+						"precipitationChance": 40,
+						"temperature": 43,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain then Mostly Cloudy",
+						"isDay": false,
+						"precipitationChance": 26,
+						"temperature": 29,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=40.8509&lon=-81.9804",
 				"history": [
-					{
-						"condition": "sct",
-						"date": "2026-11-19",
-						"description": "Partly cloudy",
-						"high": 63,
-						"low": 30,
-						"precipitation": 0
-					},
 					{
 						"condition": "sct",
 						"date": "2026-11-20",
@@ -2777,6 +3147,14 @@
 						"high": 66,
 						"low": 35,
 						"precipitation": 0
+					},
+					{
+						"condition": "ovc",
+						"date": "2026-11-22",
+						"description": "Overcast",
+						"high": 66,
+						"low": 41,
+						"precipitation": 0
 					}
 				]
 			}
@@ -2789,27 +3167,27 @@
 				"name": "Ray's prices, hours, and directions",
 				"url": "https://www.raysmtb.com/about/prices-hours-and-directions-pg141.htm"
 			},
-			"condition": "Closed for the day (today was 9:00 AM-10:00 PM - Regular season). Next open tomorrow 12:00 PM-10:00 PM.",
-			"status": "closed",
-			"timestamp": 1795323642333,
+			"condition": "Opens today at 12:00 PM. Today's hours 12:00 PM-10:00 PM - Regular season.",
+			"status": "caution",
+			"timestamp": 1795410050249,
 			"updatedAt": "Updated daily from the published schedule",
 			"stale": false,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Slight Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 17,
-				"temperature": 56,
+				"precipitationChance": 71,
+				"temperature": 53,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 71,
 						"temperature": 42,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "bkn",
@@ -2882,18 +3260,28 @@
 						"precipitationChance": 71,
 						"temperature": 35,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": true,
+						"precipitationChance": 45,
+						"temperature": 44,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": false,
+						"precipitationChance": 32,
+						"temperature": 32,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.4547&lon=-81.7523",
 				"history": [
-					{
-						"condition": "ovc",
-						"date": "2026-11-19",
-						"description": "Overcast",
-						"high": 66,
-						"low": 36,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -2909,6 +3297,14 @@
 						"high": 70,
 						"low": 37,
 						"precipitation": 0
+					},
+					{
+						"condition": "ovc",
+						"date": "2026-11-22",
+						"description": "Overcast",
+						"high": 69,
+						"low": 44,
+						"precipitation": 0
 					}
 				]
 			}
@@ -2923,25 +3319,25 @@
 			},
 			"condition": "East Rim Trails are OPEN and in great shape - 11/19/29",
 			"status": "open",
-			"timestamp": 1795144662332,
+			"timestamp": 1795151869468,
 			"updatedAt": "3 days ago",
 			"stale": false,
 			"weather": {
 				"condition": "rain",
-				"date": "2026-11-22",
-				"description": "Slight Chance Light Rain",
+				"date": "2026-11-23",
+				"description": "Light Rain Likely",
 				"isDay": false,
-				"precipitationChance": 17,
-				"temperature": 53,
+				"precipitationChance": 67,
+				"temperature": 52,
 				"periods": [
 					{
 						"condition": "rain",
-						"date": "2026-11-22",
+						"date": "2026-11-23",
 						"description": "Light Rain Likely",
 						"isDay": false,
 						"precipitationChance": 71,
 						"temperature": 42,
-						"name": "Tonight"
+						"name": "Overnight"
 					},
 					{
 						"condition": "bkn",
@@ -3014,18 +3410,28 @@
 						"precipitationChance": 71,
 						"temperature": 34,
 						"name": "Thursday Night"
+					},
+					{
+						"condition": "snow",
+						"date": "2026-11-27",
+						"description": "Chance Rain And Snow",
+						"isDay": true,
+						"precipitationChance": 43,
+						"temperature": 44,
+						"name": "Friday"
+					},
+					{
+						"condition": "rain",
+						"date": "2026-11-27",
+						"description": "Chance Light Rain",
+						"isDay": false,
+						"precipitationChance": 30,
+						"temperature": 30,
+						"name": "Friday Night"
 					}
 				],
 				"forecastUrl": "https://forecast.weather.gov/MapClick.php?lat=41.2552&lon=-81.5189",
 				"history": [
-					{
-						"condition": "ovc",
-						"date": "2026-11-19",
-						"description": "Overcast",
-						"high": 64,
-						"low": 32,
-						"precipitation": 0
-					},
 					{
 						"condition": "ovc",
 						"date": "2026-11-20",
@@ -3040,6 +3446,14 @@
 						"description": "Fog",
 						"high": 67,
 						"low": 36,
+						"precipitation": 0
+					},
+					{
+						"condition": "fog",
+						"date": "2026-11-22",
+						"description": "Fog",
+						"high": 66,
+						"low": 41,
 						"precipitation": 0
 					}
 				]
